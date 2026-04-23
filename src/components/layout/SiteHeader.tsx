@@ -25,25 +25,29 @@ export const SiteHeader = () => {
   return (
     <header className="sticky top-0 z-40 w-full border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80">
       {/* Linha institucional: lockup · tagline · CTA */}
-      <div className="container grid h-20 grid-cols-[auto_1fr_auto] items-center gap-6">
+      <div className="container grid h-28 grid-cols-[auto_1fr_auto] items-center gap-8">
         {/* Lockup institucional (esquerda) */}
         <Link
           to={ROUTES.home}
           onClick={() => setOpen(false)}
-          className="flex items-center gap-3 group"
+          className="flex items-center gap-5 group"
           aria-label="Walter Inglez — Advocacia e Consultoria"
         >
           <img
             src={logoWI}
             alt=""
             aria-hidden="true"
-            className="h-12 w-12 shrink-0"
+            className="h-20 w-20 shrink-0 transition-opacity group-hover:opacity-90"
+          />
+          <span
+            aria-hidden="true"
+            className="hidden sm:block h-14 w-px bg-border/70"
           />
           <span className="flex flex-col leading-tight">
-            <span className="font-serif text-base text-foreground tracking-wide">
+            <span className="font-serif text-xl text-foreground tracking-[0.12em]">
               WALTER INGLEZ
             </span>
-            <span className="text-[10px] uppercase tracking-[0.18em] text-muted-foreground">
+            <span className="mt-1 text-[11px] uppercase tracking-[0.28em] text-muted-foreground">
               Advocacia e Consultoria
             </span>
           </span>
