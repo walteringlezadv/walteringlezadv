@@ -5,6 +5,7 @@ import { NavLink } from "@/components/NavLink";
 import { SolicitarTriagemCTA } from "@/components/cta/SolicitarTriagemCTA";
 import { MAIN_NAV, ROUTES } from "@/lib/routes";
 import { cn } from "@/lib/utils";
+import logoWI from "@/assets/logo-wi.svg";
 
 /**
  * Cabeçalho institucional único, compartilhado por todas as rotas
@@ -32,12 +33,12 @@ export const SiteHeader = () => {
           className="flex items-center gap-3 group"
           aria-label="Walter Inglez — Advocacia e Consultoria"
         >
-          <span
+          <img
+            src={logoWI}
+            alt=""
             aria-hidden="true"
-            className="flex h-11 w-11 items-center justify-center rounded-sm border border-primary/60 font-serif text-lg font-medium tracking-tight text-primary transition-colors group-hover:border-primary"
-          >
-            WI
-          </span>
+            className="h-12 w-12 shrink-0"
+          />
           <span className="flex flex-col leading-tight">
             <span className="font-serif text-base text-foreground tracking-wide">
               WALTER INGLEZ
