@@ -22,9 +22,12 @@ describe("smoke: main route", () => {
       </MemoryRouter>,
     );
 
-    // H1 da home
+    // H1 da home — herdado da landing institucional validada (Fase 2).
     expect(
-      screen.getByRole("heading", { level: 1, name: /walter inglez/i }),
+      screen.getByRole("heading", {
+        level: 1,
+        name: /você tem certeza do que está assinando\?/i,
+      }),
     ).toBeInTheDocument();
   });
 
