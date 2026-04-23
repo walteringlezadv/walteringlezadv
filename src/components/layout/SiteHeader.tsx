@@ -5,7 +5,6 @@ import { NavLink } from "@/components/NavLink";
 import { SolicitarTriagemCTA } from "@/components/cta/SolicitarTriagemCTA";
 import { MAIN_NAV, ROUTES } from "@/lib/routes";
 import { cn } from "@/lib/utils";
-import logoWI from "@/assets/logo-wi.svg";
 
 /**
  * Cabeçalho institucional único, compartilhado por todas as rotas
@@ -26,28 +25,28 @@ export const SiteHeader = () => {
     <header className="sticky top-0 z-40 w-full border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80">
       {/* Linha institucional: lockup · tagline · CTA */}
       <div className="container grid h-28 grid-cols-[auto_1fr_auto] items-center gap-8">
-        {/* Lockup institucional (esquerda) */}
+        {/* Lockup institucional (esquerda) — monograma tipográfico + nome */}
         <Link
           to={ROUTES.home}
           onClick={() => setOpen(false)}
-          className="flex items-center gap-5 group"
+          className="flex items-center gap-4 group"
           aria-label="Walter Inglez — Advocacia e Consultoria"
         >
-          <img
-            src={logoWI}
-            alt=""
-            aria-hidden="true"
-            className="h-20 w-20 shrink-0 transition-opacity group-hover:opacity-90 [filter:brightness(0)_invert(1)_drop-shadow(0_1px_2px_rgb(0_0_0/0.35))]"
-          />
           <span
             aria-hidden="true"
-            className="hidden sm:block h-14 w-px bg-border/70"
+            className="hidden sm:inline-flex h-14 w-14 shrink-0 items-center justify-center rounded-sm border border-primary/70 font-serif text-2xl tracking-[0.05em] text-primary transition-colors group-hover:border-primary group-hover:text-primary-foreground group-hover:bg-primary"
+          >
+            WI
+          </span>
+          <span
+            aria-hidden="true"
+            className="hidden sm:block h-12 w-px bg-border/70"
           />
           <span className="flex flex-col leading-tight">
-            <span className="font-serif text-xl text-foreground tracking-[0.12em]">
+            <span className="font-serif text-2xl text-foreground tracking-[0.14em] md:text-[1.6rem]">
               WALTER INGLEZ
             </span>
-            <span className="mt-1 text-[11px] uppercase tracking-[0.28em] text-muted-foreground">
+            <span className="mt-1.5 text-[11px] uppercase tracking-[0.32em] text-muted-foreground">
               Advocacia e Consultoria
             </span>
           </span>
