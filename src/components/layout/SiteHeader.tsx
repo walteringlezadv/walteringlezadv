@@ -37,7 +37,7 @@ export const SiteHeader = () => {
             src={logoWI}
             alt=""
             aria-hidden="true"
-            className="h-20 w-20 shrink-0 transition-opacity group-hover:opacity-90"
+            className="h-20 w-20 shrink-0 transition-opacity group-hover:opacity-90 [filter:brightness(0)_invert(1)_drop-shadow(0_1px_2px_rgb(0_0_0/0.35))]"
           />
           <span
             aria-hidden="true"
