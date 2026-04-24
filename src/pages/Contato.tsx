@@ -85,35 +85,13 @@ const Contato = () => {
                 </a>
               </Button>
 
-              <div className="flex flex-col gap-2">
-                <a
-                  href={EMAIL_HREF}
-                  className="inline-flex items-center gap-2 text-base font-medium text-foreground underline underline-offset-4 decoration-primary/70 hover:decoration-primary"
-                >
-                  <Mail className="h-4 w-4" aria-hidden />
-                  {EMAIL_ADDRESS}
-                </a>
-                <Button
-                  type="button"
-                  variant="outline"
-                  size="sm"
-                  onClick={copyEmail}
-                  aria-label="Copiar e-mail"
-                  className="w-fit"
-                >
-                  {copied ? (
-                    <>
-                      <Check className="h-3.5 w-3.5" aria-hidden />
-                      Copiado
-                    </>
-                  ) : (
-                    <>
-                      <Copy className="h-3.5 w-3.5" aria-hidden />
-                      Copiar e-mail
-                    </>
-                  )}
-                </Button>
-              </div>
+              <a
+                href={EMAIL_HREF}
+                className="inline-flex items-center gap-2 text-base font-medium text-foreground underline underline-offset-4 decoration-primary/70 hover:decoration-primary"
+              >
+                <Mail className="h-4 w-4" aria-hidden />
+                {EMAIL_ADDRESS}
+              </a>
             </div>
           </div>
 
