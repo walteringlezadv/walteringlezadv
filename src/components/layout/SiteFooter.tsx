@@ -127,6 +127,16 @@ export const SiteFooter = () => {
                     LinkedIn
                   </a>
                 </li>
+                <li>
+                  <a
+                    href="https://www.tiktok.com/@walteringlezadv"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-muted-foreground transition-colors hover:text-foreground"
+                  >
+                    TikTok
+                  </a>
+                </li>
               </ul>
             </div>
           </div>
