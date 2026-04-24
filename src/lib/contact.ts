@@ -18,9 +18,8 @@ export const WHATSAPP_HREF = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIC
   WHATSAPP_MESSAGE,
 )}`;
 
-export const EMAIL_SUBJECT = "Triagem";
-export const EMAIL_BODY =
-  "Olá, segue informações iniciais para triagem:\n\nEmpresa:\nFaturamento médio:\nTipo de dívida:\nSituação atual:";
+export const EMAIL_SUBJECT = "Triagem Jurídica";
+export const EMAIL_BODY = "Olá, gostaria de iniciar uma triagem do meu passivo.";
 
 export const EMAIL_HREF = `mailto:${EMAIL_ADDRESS}?subject=${encodeURIComponent(
   EMAIL_SUBJECT,
