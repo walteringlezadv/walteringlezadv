@@ -16,18 +16,6 @@ import { EMAIL_ADDRESS, EMAIL_HREF, WHATSAPP_HREF } from "@/lib/contact";
  */
 
 const Contato = () => {
-  const [copied, setCopied] = useState(false);
-
-  const copyEmail = async () => {
-    try {
-      await navigator.clipboard.writeText(EMAIL_ADDRESS);
-      setCopied(true);
-      setTimeout(() => setCopied(false), 2000);
-    } catch {
-      // silencioso — usuário pode copiar manualmente do texto exibido
-    }
-  };
-
   return (
     <SiteShell>
       <PageSeo
