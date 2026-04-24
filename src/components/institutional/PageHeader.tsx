@@ -16,12 +16,12 @@ export const PageHeader = ({ eyebrow, title, lead, className }: Props) => {
   return (
     <header
       className={cn(
-        "container max-w-3xl py-20 text-center md:py-28",
+        "container max-w-3xl py-12 text-center md:py-16",
         className,
       )}
     >
       {eyebrow ? (
-        <p className="mb-6 text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground">
+        <p className="mb-4 text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground">
           {eyebrow}
         </p>
       ) : null}
@@ -29,7 +29,7 @@ export const PageHeader = ({ eyebrow, title, lead, className }: Props) => {
         {title}
       </h1>
       {lead ? (
-        <div className="mx-auto mt-8 max-w-2xl text-lg leading-relaxed text-muted-foreground">
+        <div className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground">
           {lead}
         </div>
       ) : null}
