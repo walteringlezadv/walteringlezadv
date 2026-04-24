@@ -19,6 +19,8 @@ export type PageSeoInput = {
 const SITE_NAME = "Walter Inglez";
 // Base canônica do site. Ajustar quando o domínio definitivo for conectado.
 const SITE_URL = "https://walteringlez.com.br";
+// Imagem institucional padrão para Open Graph/Twitter quando a página não fornece uma própria.
+const DEFAULT_OG_IMAGE = `${SITE_URL}/og-image.png`;
 
 export function buildCanonicalUrl(path?: string): string {
   if (!path) return SITE_URL;
@@ -45,4 +47,4 @@ export function organizationJsonLd() {
   };
 }
 
-export { SITE_NAME, SITE_URL };
+export { SITE_NAME, SITE_URL, DEFAULT_OG_IMAGE };
