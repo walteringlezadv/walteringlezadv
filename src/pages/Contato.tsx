@@ -1,5 +1,4 @@
-import { useState } from "react";
-import { Check, Copy, Mail, MessageCircle } from "lucide-react";
+import { Mail, MessageCircle } from "lucide-react";
 import { SiteShell } from "@/components/layout/SiteShell";
 import { PageSeo } from "@/components/seo/PageSeo";
 import { PageHeader } from "@/components/institutional/PageHeader";
