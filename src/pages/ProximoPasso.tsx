@@ -1,31 +1,18 @@
-import { Check, X } from "lucide-react";
+import { Check, Mail, X } from "lucide-react";
 import { SiteShell } from "@/components/layout/SiteShell";
 import { PageSeo } from "@/components/seo/PageSeo";
 import { PageHeader } from "@/components/institutional/PageHeader";
 import { Button } from "@/components/ui/button";
 import { INSTITUTIONAL_LABELS, ROUTES } from "@/lib/routes";
-
-const WHATSAPP_MESSAGE = `Olá, sou empresário e estou com pressão bancária.
-
-Gostaria de iniciar a triagem do meu passivo.
-
-Empresa:
-Faturamento médio:
-Tipo de dívida:
-Situação atual:`;
-
-const WHATSAPP_HREF = `https://wa.me/5511914988818?text=${encodeURIComponent(
-  WHATSAPP_MESSAGE,
-)}`;
-const EMAIL_HREF =
-  "mailto:contato@walteringlezadv.com.br?subject=Triagem&body=Ol%C3%A1%2C%20segue%20informa%C3%A7%C3%B5es%20iniciais%20para%20triagem%3A";
+import { EMAIL_HREF, WHATSAPP_HREF } from "@/lib/contact";
 
 /**
  * Próximo Passo — Fase 3A.
  *
  * Página de conversão. Mantém o título institucional protegido
- * (INSTITUTIONAL_LABELS.pageTitleProximoPasso) e usa o CTA canônico
- * apenas no fechamento estrutural.
+ * (INSTITUTIONAL_LABELS.pageTitleProximoPasso) e substitui o CTA
+ * canônico do fechamento por contato direto (WhatsApp + e-mail),
+ * já que esta é a página final do funil.
  */
 
 const paraQuemE = [
@@ -70,17 +57,17 @@ const ProximoPasso = () => {
 
       {/* Para quem é · Para quem não é */}
       <section className="border-b border-border/40">
-        <div className="container max-w-5xl py-20 md:py-28">
+        <div className="container max-w-5xl py-14 md:py-20">
           <h2 className="text-center font-serif text-3xl leading-tight tracking-tight text-foreground md:text-4xl">
             Para quem é · Para quem não é
           </h2>
 
-          <div className="mt-12 grid gap-8 md:grid-cols-2">
+          <div className="mt-10 grid gap-6 md:grid-cols-2 md:gap-8">
             <div className="rounded-lg border border-border/60 bg-card/60 p-6 md:p-8">
               <h3 className="font-serif text-xl text-foreground md:text-2xl">
                 Para quem é
               </h3>
-              <ul className="mt-6 space-y-4">
+              <ul className="mt-5 space-y-3">
                 {paraQuemE.map((item) => (
                   <li key={item} className="flex items-start gap-3">
                     <Check
@@ -99,7 +86,7 @@ const ProximoPasso = () => {
               <h3 className="font-serif text-xl text-foreground md:text-2xl">
                 Para quem não é
               </h3>
-              <ul className="mt-6 space-y-4">
+              <ul className="mt-5 space-y-3">
                 {paraQuemNaoE.map((item) => (
                   <li key={item} className="flex items-start gap-3">
                     <X
@@ -119,11 +106,11 @@ const ProximoPasso = () => {
 
       {/* O que esperar */}
       <section className="border-b border-border/40 bg-secondary/30">
-        <div className="container max-w-3xl py-20 md:py-28">
+        <div className="container max-w-3xl py-14 md:py-20">
           <h2 className="font-serif text-3xl leading-tight tracking-tight text-foreground md:text-4xl">
             O que esperar após a solicitação
           </h2>
-          <ul className="mt-10 grid gap-4 md:grid-cols-2">
+          <ul className="mt-8 grid gap-3 md:grid-cols-2 md:gap-4">
             {oQueEsperar.map((item) => (
               <li
                 key={item}
@@ -139,7 +126,7 @@ const ProximoPasso = () => {
               </li>
             ))}
           </ul>
-          <p className="mt-10 text-xs leading-relaxed text-muted-foreground/80">
+          <p className="mt-8 text-xs leading-relaxed text-muted-foreground/80">
             A triagem possui natureza jurídica e contratual, com foco na
             compreensão inicial do caso antes de qualquer aprofundamento formal.
           </p>
@@ -148,11 +135,11 @@ const ProximoPasso = () => {
 
       {/* Fechamento institucional — contato direto */}
       <section>
-        <div className="container max-w-3xl py-20 text-center md:py-28">
-          <p className="mb-6 text-base italic text-muted-foreground">
+        <div className="container max-w-3xl py-14 text-center md:py-20">
+          <p className="mb-5 text-base italic text-muted-foreground">
             Se o banco está pressionando e o papel está na mesa, este é o momento.
           </p>
-          <p className="mx-auto mb-8 max-w-xl text-sm leading-relaxed text-foreground/90">
+          <p className="mx-auto mb-6 max-w-xl text-sm leading-relaxed text-foreground/90">
             A triagem começa pelo envio das informações essenciais da empresa e
             do passivo bancário envolvido.
           </p>
@@ -168,12 +155,13 @@ const ProximoPasso = () => {
             <a
               href={EMAIL_HREF}
               aria-label="Enviar informações iniciais por e-mail"
-              className="text-xs text-muted-foreground underline underline-offset-4 decoration-muted-foreground/40 hover:text-foreground hover:decoration-muted-foreground"
+              className="inline-flex items-center gap-2 text-sm font-medium text-foreground underline underline-offset-4 decoration-primary/70 transition-colors hover:decoration-primary"
             >
+              <Mail className="h-4 w-4" aria-hidden />
               Enviar por e-mail
             </a>
           </div>
-          <p className="mx-auto mt-8 max-w-xl text-xs leading-relaxed text-muted-foreground/80">
+          <p className="mx-auto mt-6 max-w-xl text-xs leading-relaxed text-muted-foreground/80">
             Exclusivo para empresas com operação ativa. Retorno em até 48h úteis
             para confirmação de aderência e orientação do próximo passo.
           </p>
