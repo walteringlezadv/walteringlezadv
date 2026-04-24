@@ -1,20 +1,19 @@
 import { Button, type ButtonProps } from "@/components/ui/button";
 import { INSTITUTIONAL_LABELS } from "@/lib/routes";
-import { WHATSAPP_HREF } from "@/lib/contact";
+import { useTriagemDialog } from "@/components/cta/TriagemDialog";
 import { cn } from "@/lib/utils";
 
 /**
  * CTA institucional canônico — ÚNICO componente que renderiza o botão
  * de conversão "Solicitar triagem" em todo o site.
  *
- * Regra: nenhuma página pode instanciar esse rótulo manualmente.
- * Sempre use <SolicitarTriagemCTA />.
+ * Comportamento: abre o modal de Triagem Qualificada (3 etapas).
+ * O envio final, dentro do modal, oferece WhatsApp (primário) e
+ * e-mail (secundário) com mensagem pré-preenchida a partir dos
+ * dados do formulário.
  *
- * Comportamento: abre DIRETAMENTE o WhatsApp com mensagem pré-preenchida
- * (fonte única em src/lib/contact.ts). Não há mais navegação intermediária
- * para /proximo-passo — a página /proximo-passo continua existindo no
- * menu como conteúdo institucional, mas o CTA de conversão vai direto
- * ao canal de contato.
+ * O botão flutuante de WhatsApp segue como canal direto/persistente
+ * separado — ele NÃO usa este CTA.
  */
 type Variant = "primary" | "secondary" | "inline";
 
@@ -29,19 +28,21 @@ export const SolicitarTriagemCTA = ({
   size = "default",
   className,
 }: Props) => {
+  const { open } = useTriagemDialog();
+  const label = INSTITUTIONAL_LABELS.ctaSolicitarTriagem;
+
   if (variant === "inline") {
     return (
-      <a
-        href={WHATSAPP_HREF}
-        target="_blank"
-        rel="noopener noreferrer"
+      <button
+        type="button"
+        onClick={open}
         className={cn(
           "text-primary underline-offset-4 hover:underline",
           className,
         )}
       >
-        {INSTITUTIONAL_LABELS.ctaSolicitarTriagem}
-      </a>
+        {label}
+      </button>
     );
   }
 
@@ -49,10 +50,14 @@ export const SolicitarTriagemCTA = ({
     variant === "secondary" ? "outline" : "default";
 
   return (
-    <Button asChild variant={buttonVariant} size={size} className={className}>
-      <a href={WHATSAPP_HREF} target="_blank" rel="noopener noreferrer">
-        {INSTITUTIONAL_LABELS.ctaSolicitarTriagem}
-      </a>
+    <Button
+      type="button"
+      variant={buttonVariant}
+      size={size}
+      className={className}
+      onClick={open}
+    >
+      {label}
     </Button>
   );
 };
