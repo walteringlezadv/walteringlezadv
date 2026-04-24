@@ -107,6 +107,26 @@ const BlogPost = () => {
         </article>
       </section>
 
+      {/* Leitura relacionada — link sóbrio para Como Funciona */}
+      <section className="border-b border-border/40">
+        <div className="container max-w-3xl py-16 md:py-20">
+          <p className="text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground">
+            Leitura relacionada
+          </p>
+          <p className="mt-4 text-base leading-relaxed text-muted-foreground md:text-lg">
+            Antes de qualquer movimento, vale entender{" "}
+            <Link
+              to={ROUTES.comoFunciona}
+              className="text-primary underline-offset-4 hover:underline"
+            >
+              como funciona o processo
+            </Link>
+            {" "}— a sequência institucional de leitura técnica que precede
+            qualquer indicação de próximo passo.
+          </p>
+        </div>
+      </section>
+
       {/* Fechamento institucional — CTA canônico */}
       <section>
         <div className="container max-w-3xl py-20 text-center md:py-28">
