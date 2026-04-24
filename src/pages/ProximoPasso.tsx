@@ -2,9 +2,9 @@ import { Check, Mail, X } from "lucide-react";
 import { SiteShell } from "@/components/layout/SiteShell";
 import { PageSeo } from "@/components/seo/PageSeo";
 import { PageHeader } from "@/components/institutional/PageHeader";
-import { Button } from "@/components/ui/button";
+import { SolicitarTriagemCTA } from "@/components/cta/SolicitarTriagemCTA";
 import { INSTITUTIONAL_LABELS, ROUTES } from "@/lib/routes";
-import { EMAIL_HREF, WHATSAPP_HREF } from "@/lib/contact";
+import { EMAIL_HREF } from "@/lib/contact";
 
 /**
  * Próximo Passo — Fase 3A.
@@ -147,11 +147,7 @@ const ProximoPasso = () => {
             <p className="text-xs text-muted-foreground">
               Envie as informações iniciais para avaliação técnica.
             </p>
-            <Button asChild size="lg">
-              <a href={WHATSAPP_HREF} target="_blank" rel="noopener noreferrer">
-                Iniciar triagem pelo WhatsApp
-              </a>
-            </Button>
+            <SolicitarTriagemCTA size="lg" />
             <a
               href={EMAIL_HREF}
               aria-label="Enviar informações iniciais por e-mail"

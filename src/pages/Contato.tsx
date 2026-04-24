@@ -60,8 +60,8 @@ const Contato = () => {
             Identificação
           </h2>
           <div className="mt-8 border-t border-border/60 pt-6 text-sm md:text-base">
-            <p className="font-medium text-foreground">Walter Inglez · Advogado</p>
-            <p className="mt-1 text-muted-foreground">Fortaleza – CE · São Paulo – SP</p>
+            <p className="font-medium text-foreground">Walter Inglez Advocacia e Consultoria</p>
+            <p className="mt-1 text-muted-foreground">Atendimento mediante triagem prévia.</p>
           </div>
 
           <div className="mt-10 border-t border-border/60 pt-8">
@@ -79,7 +79,7 @@ const Contato = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Enviar informações pelo WhatsApp
+                  Falar no WhatsApp
                 </a>
               </Button>
               <a

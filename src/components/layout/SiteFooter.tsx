@@ -28,20 +28,19 @@ export const SiteFooter = () => {
               to={ROUTES.home}
               className="font-semibold tracking-tight text-foreground"
             >
-              Walter Inglez – Advogado
+              Walter Inglez Advocacia e Consultoria
             </Link>
             <p className="mt-3 text-sm text-muted-foreground">
               Gestão estratégica do passivo bancário empresarial.
             </p>
           </div>
 
-          {/* Cidades de atuação */}
+          {/* Atendimento */}
           <div>
-            <h2 className="text-sm font-medium text-foreground">Atuação</h2>
-            <address className="mt-3 space-y-2 text-sm not-italic text-muted-foreground">
-              <div>Fortaleza – CE</div>
-              <div>São Paulo – SP</div>
-            </address>
+            <h2 className="text-sm font-medium text-foreground">Atendimento</h2>
+            <p className="mt-3 text-sm text-muted-foreground">
+              Atendimento mediante triagem prévia.
+            </p>
           </div>
 
           {/* Canais diretos */}
@@ -124,7 +123,7 @@ export const SiteFooter = () => {
         </div>
 
         <div className="mt-10 border-t border-border pt-6 text-xs text-muted-foreground">
-          © {year} Walter Inglez – Advogado. Todos os direitos reservados.
+          © {year} Walter Inglez Advocacia e Consultoria. Todos os direitos reservados.
         </div>
       </div>
     </footer>
