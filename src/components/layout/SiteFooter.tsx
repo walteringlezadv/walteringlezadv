@@ -38,11 +38,25 @@ export const SiteFooter = () => {
           {/* Atendimento */}
           <div>
             <h2 className="text-sm font-medium text-foreground">Atendimento</h2>
-            <ul className="mt-3 space-y-1 text-sm text-muted-foreground">
-              <li>Fortaleza – CE</li>
-              <li>São Paulo – SP</li>
+            <ul className="mt-3 space-y-4 text-sm text-muted-foreground">
+              <li>
+                <p className="font-medium text-foreground">Fortaleza – CE</p>
+                <p className="mt-1 leading-relaxed">
+                  R. Dr. Gilberto Studart, 55, Torre Sul, Sala 1.018 — Cocó
+                  <br />
+                  CEP 60192-105
+                </p>
+              </li>
+              <li>
+                <p className="font-medium text-foreground">São Paulo – SP</p>
+                <p className="mt-1 leading-relaxed">
+                  Av. Paulista, 1636, Sala 1105/1064 — Cerqueira César
+                  <br />
+                  CEP 01310-200
+                </p>
+              </li>
             </ul>
-            <p className="mt-3 text-sm text-muted-foreground">
+            <p className="mt-4 text-sm text-muted-foreground">
               Atendimento mediante triagem prévia.
             </p>
           </div>
