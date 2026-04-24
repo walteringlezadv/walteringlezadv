@@ -2,8 +2,11 @@ import { Check, X } from "lucide-react";
 import { SiteShell } from "@/components/layout/SiteShell";
 import { PageSeo } from "@/components/seo/PageSeo";
 import { PageHeader } from "@/components/institutional/PageHeader";
-import { SolicitarTriagemCTA } from "@/components/cta/SolicitarTriagemCTA";
+import { Button } from "@/components/ui/button";
 import { INSTITUTIONAL_LABELS, ROUTES } from "@/lib/routes";
+
+const WHATSAPP_HREF = "https://wa.me/5511914988818";
+const EMAIL_HREF = "mailto:contato@walteringlezadv.com.br";
 
 /**
  * Próximo Passo — Fase 3A.
