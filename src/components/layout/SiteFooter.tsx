@@ -38,6 +38,10 @@ export const SiteFooter = () => {
           {/* Atendimento */}
           <div>
             <h2 className="text-sm font-medium text-foreground">Atendimento</h2>
+            <ul className="mt-3 space-y-1 text-sm text-muted-foreground">
+              <li>Fortaleza – CE</li>
+              <li>São Paulo – SP</li>
+            </ul>
             <p className="mt-3 text-sm text-muted-foreground">
               Atendimento mediante triagem prévia.
             </p>
@@ -92,30 +96,36 @@ export const SiteFooter = () => {
               <h2 className="text-sm font-medium text-foreground">
                 Presença digital
               </h2>
-              <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
+              <ul className="mt-3 space-y-2 text-sm">
                 <li>
-                  <span aria-disabled="true" className="cursor-default">
+                  <a
+                    href="https://instagram.com/walteringlezadv"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-muted-foreground transition-colors hover:text-foreground"
+                  >
                     Instagram
-                  </span>
-                  <span className="ml-2 text-xs text-muted-foreground/60">
-                    em breve
-                  </span>
+                  </a>
                 </li>
                 <li>
-                  <span aria-disabled="true" className="cursor-default">
+                  <a
+                    href="https://youtube.com/@walteringlezadv"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-muted-foreground transition-colors hover:text-foreground"
+                  >
                     YouTube
-                  </span>
-                  <span className="ml-2 text-xs text-muted-foreground/60">
-                    em breve
-                  </span>
+                  </a>
                 </li>
                 <li>
-                  <span aria-disabled="true" className="cursor-default">
+                  <a
+                    href="https://linkedin.com/in/walteringlezadv"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-muted-foreground transition-colors hover:text-foreground"
+                  >
                     LinkedIn
-                  </span>
-                  <span className="ml-2 text-xs text-muted-foreground/60">
-                    em breve
-                  </span>
+                  </a>
                 </li>
               </ul>
             </div>
