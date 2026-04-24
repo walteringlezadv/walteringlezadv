@@ -1,10 +1,12 @@
+import { useState } from "react";
+import { Check, Copy, Mail, MessageCircle } from "lucide-react";
 import { SiteShell } from "@/components/layout/SiteShell";
 import { PageSeo } from "@/components/seo/PageSeo";
 import { PageHeader } from "@/components/institutional/PageHeader";
 import { SolicitarTriagemCTA } from "@/components/cta/SolicitarTriagemCTA";
 import { Button } from "@/components/ui/button";
 import { ROUTES } from "@/lib/routes";
-import { EMAIL_HREF, WHATSAPP_HREF } from "@/lib/contact";
+import { EMAIL_ADDRESS, EMAIL_HREF, WHATSAPP_HREF } from "@/lib/contact";
 
 /**
  * Contato — Fase 3A.
@@ -15,6 +17,18 @@ import { EMAIL_HREF, WHATSAPP_HREF } from "@/lib/contact";
  */
 
 const Contato = () => {
+  const [copied, setCopied] = useState(false);
+
+  const copyEmail = async () => {
+    try {
+      await navigator.clipboard.writeText(EMAIL_ADDRESS);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch {
+      // silencioso — usuário pode copiar manualmente do texto exibido
+    }
+  };
+
   return (
     <SiteShell>
       <PageSeo
@@ -72,22 +86,47 @@ const Contato = () => {
               Para envio direto das informações iniciais da empresa e do
               passivo bancário envolvido.
             </p>
-            <div className="mt-6 flex flex-col items-start gap-4">
+            <div className="mt-6 flex flex-col items-start gap-5">
               <Button asChild size="lg">
                 <a
                   href={WHATSAPP_HREF}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
+                  <MessageCircle className="h-4 w-4" aria-hidden />
                   Falar no WhatsApp
                 </a>
               </Button>
-              <a
-                href={EMAIL_HREF}
-                className="text-sm font-medium text-foreground underline underline-offset-4 decoration-primary/70 hover:decoration-primary"
-              >
-                Enviar por e-mail
-              </a>
+
+              <div className="flex flex-col gap-2">
+                <a
+                  href={EMAIL_HREF}
+                  className="inline-flex items-center gap-2 text-base font-medium text-foreground underline underline-offset-4 decoration-primary/70 hover:decoration-primary"
+                >
+                  <Mail className="h-4 w-4" aria-hidden />
+                  {EMAIL_ADDRESS}
+                </a>
+                <Button
+                  type="button"
+                  variant="outline"
+                  size="sm"
+                  onClick={copyEmail}
+                  aria-label="Copiar e-mail"
+                  className="w-fit"
+                >
+                  {copied ? (
+                    <>
+                      <Check className="h-3.5 w-3.5" aria-hidden />
+                      Copiado
+                    </>
+                  ) : (
+                    <>
+                      <Copy className="h-3.5 w-3.5" aria-hidden />
+                      Copiar e-mail
+                    </>
+                  )}
+                </Button>
+              </div>
             </div>
           </div>
 
