@@ -11,14 +11,8 @@ export const WHATSAPP_DISPLAY = "+55 11 91498-8818";
 
 export const EMAIL_ADDRESS = "contato@walteringlezadv.com.br";
 
-export const WHATSAPP_MESSAGE = `Olá, sou empresário e estou com pressão bancária.
-
-Gostaria de iniciar a triagem do meu passivo.
-
-Empresa:
-Faturamento médio:
-Tipo de dívida:
-Situação atual:`;
+export const WHATSAPP_MESSAGE =
+  "Olá, sou empresário e estou com pressão bancária. Gostaria de iniciar a triagem do meu passivo.";
 
 export const WHATSAPP_HREF = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
   WHATSAPP_MESSAGE,
