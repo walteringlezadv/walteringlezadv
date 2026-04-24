@@ -96,7 +96,7 @@ const BlogPost = () => {
 
       {/* Corpo do artigo */}
       <section className="border-b border-border/40">
-        <article className="container max-w-3xl py-20 md:py-28">
+        <article className="container max-w-3xl py-14 md:py-20">
           <ArticleProse>
             {typeof article.body === "string" ? (
               <p>{article.body}</p>
