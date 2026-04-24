@@ -1,3 +1,4 @@
+import { Check } from "lucide-react";
 import { SiteShell } from "@/components/layout/SiteShell";
 import { PageSeo } from "@/components/seo/PageSeo";
 import { PageHeader } from "@/components/institutional/PageHeader";
@@ -26,6 +27,38 @@ const principios = [
   },
 ];
 
+const experiencia = [
+  "Atuação concentrada em contratos bancários e passivo empresarial",
+  "Análise de garantias reais, fianças e cláusulas de exposição cruzada",
+  "Leitura de propostas de renegociação e aditivos antes da formalização",
+  "Acompanhamento de empresas sob pressão concreta de instituições financeiras",
+];
+
+const metodo = [
+  {
+    n: "1",
+    title: "Leitura inicial do cenário",
+    body: "Compreensão objetiva do momento contratual, do passivo envolvido e do grau de pressão da instituição financeira.",
+  },
+  {
+    n: "2",
+    title: "Mapeamento estrutural",
+    body: "Identificação de garantias, gatilhos contratuais, obrigações acessórias e exposição entre contratos do mesmo grupo.",
+  },
+  {
+    n: "3",
+    title: "Indicação do próximo passo",
+    body: "Encaminhamento técnico coerente com o cenário identificado — sem promessa de desconto e sem providência precipitada.",
+  },
+];
+
+const paraQuemE = [
+  "Empresas com operação ativa e passivo bancário relevante",
+  "Cenários com proposta de renegociação ou aditivo pendente de assinatura",
+  "Situações de pressão concreta da instituição financeira, com prazo curto de decisão",
+  "Casos em que ainda existe espaço contratual antes da formalização",
+];
+
 const Sobre = () => {
   return (
     <SiteShell>
@@ -44,13 +77,13 @@ const Sobre = () => {
         />
       </section>
 
-      {/* Trajetória */}
+      {/* Atuação */}
       <section className="border-b border-border/40">
-        <div className="container max-w-3xl py-20 md:py-28">
+        <div className="container max-w-3xl py-14 md:py-20">
           <h2 className="font-serif text-3xl leading-tight tracking-tight text-foreground md:text-4xl">
             Atuação
           </h2>
-          <div className="mt-8 space-y-6 text-base leading-relaxed text-muted-foreground md:text-lg">
+          <div className="mt-6 space-y-5 text-base leading-relaxed text-muted-foreground md:text-lg">
             <p>
               A prática se concentra no momento em que a pressão é real, o prazo
               é curto e uma decisão mal posicionada pode consolidar desvantagens
@@ -67,24 +100,111 @@ const Sobre = () => {
             </p>
           </div>
 
-          <div className="mt-10 border-t border-border/60 pt-6 text-sm">
+          <div className="mt-8 border-t border-border/60 pt-5 text-sm">
             <p className="font-medium text-foreground">Walter Inglez · Advogado</p>
             <p className="mt-1 text-muted-foreground">Fortaleza – CE · São Paulo – SP</p>
           </div>
         </div>
       </section>
 
-      {/* Princípios */}
+      {/* Experiência */}
       <section className="border-b border-border/40 bg-secondary/30">
-        <div className="container max-w-3xl py-20 md:py-28">
+        <div className="container max-w-3xl py-14 md:py-20">
+          <h2 className="font-serif text-3xl leading-tight tracking-tight text-foreground md:text-4xl">
+            Experiência
+          </h2>
+          <p className="mt-5 text-base leading-relaxed text-muted-foreground md:text-lg">
+            A trajetória profissional concentra-se em situações em que a
+            estrutura contratual define o desfecho — e não o discurso comercial
+            do banco.
+          </p>
+          <ul className="mt-8 grid gap-3 md:grid-cols-2 md:gap-4">
+            {experiencia.map((item) => (
+              <li
+                key={item}
+                className="flex items-start gap-3 rounded-md border border-border/60 bg-card/50 p-4"
+              >
+                <Check
+                  className="mt-0.5 h-4 w-4 shrink-0 text-primary"
+                  aria-hidden
+                />
+                <span className="text-sm leading-relaxed text-foreground/90">
+                  {item}
+                </span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      {/* Método de atuação */}
+      <section className="border-b border-border/40">
+        <div className="container max-w-3xl py-14 md:py-20">
+          <h2 className="font-serif text-3xl leading-tight tracking-tight text-foreground md:text-4xl">
+            Método de atuação
+          </h2>
+          <p className="mt-5 text-base leading-relaxed text-muted-foreground md:text-lg">
+            Cada caso é examinado em três etapas, na sequência em que a leitura
+            jurídica produz mais clareza para a empresa.
+          </p>
+          <ol className="mt-8 space-y-6">
+            {metodo.map((step) => (
+              <li
+                key={step.n}
+                className="flex gap-4 border-l-2 border-primary/60 pl-5"
+              >
+                <div>
+                  <p className="font-serif text-lg text-foreground md:text-xl">
+                    <span className="mr-2 text-primary">{step.n}.</span>
+                    {step.title}
+                  </p>
+                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground md:text-base">
+                    {step.body}
+                  </p>
+                </div>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </section>
+
+      {/* Para quem é o serviço */}
+      <section className="border-b border-border/40 bg-secondary/30">
+        <div className="container max-w-3xl py-14 md:py-20">
+          <h2 className="font-serif text-3xl leading-tight tracking-tight text-foreground md:text-4xl">
+            Para quem é o serviço
+          </h2>
+          <p className="mt-5 text-base leading-relaxed text-muted-foreground md:text-lg">
+            A triagem é dirigida a cenários empresariais específicos, em que a
+            leitura jurídica preventiva ainda pode preservar margem de decisão.
+          </p>
+          <ul className="mt-8 space-y-4">
+            {paraQuemE.map((item) => (
+              <li key={item} className="flex items-start gap-3">
+                <Check
+                  className="mt-1 h-4 w-4 shrink-0 text-primary"
+                  aria-hidden
+                />
+                <span className="text-sm leading-relaxed text-foreground/90 md:text-base">
+                  {item}
+                </span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      {/* Princípios */}
+      <section className="border-b border-border/40">
+        <div className="container max-w-3xl py-14 md:py-20">
           <h2 className="text-center font-serif text-3xl leading-tight tracking-tight text-foreground md:text-4xl">
             Princípios da atuação
           </h2>
-          <ul className="mt-12 space-y-8">
+          <ul className="mt-10 space-y-6">
             {principios.map((p) => (
               <li
                 key={p.title}
-                className="flex gap-4 border-l-2 border-primary/60 pl-6"
+                className="flex gap-4 border-l-2 border-primary/60 pl-5"
               >
                 <div>
                   <p className="text-base font-medium leading-snug text-foreground md:text-lg">
@@ -102,8 +222,8 @@ const Sobre = () => {
 
       {/* Fechamento institucional */}
       <section>
-        <div className="container max-w-3xl py-20 text-center md:py-28">
-          <p className="mb-6 text-base italic text-muted-foreground">
+        <div className="container max-w-3xl py-14 text-center md:py-20">
+          <p className="mb-5 text-base italic text-muted-foreground">
             Se o banco está pressionando e o papel está na mesa, este é o momento.
           </p>
           <SolicitarTriagemCTA size="lg" />
