@@ -2,6 +2,7 @@ import { Helmet } from "react-helmet";
 import {
   buildCanonicalUrl,
   buildPageTitle,
+  DEFAULT_OG_IMAGE,
   type PageSeoInput,
 } from "@/lib/seo";
 
@@ -18,6 +19,7 @@ export const PageSeo = ({
 }: PageSeoInput) => {
   const fullTitle = buildPageTitle(title);
   const canonical = buildCanonicalUrl(path);
+  const ogImage = image ?? DEFAULT_OG_IMAGE;
 
   return (
     <Helmet>
@@ -30,13 +32,18 @@ export const PageSeo = ({
       <meta property="og:description" content={description} />
       <meta property="og:type" content={type} />
       <meta property="og:url" content={canonical} />
-      {image ? <meta property="og:image" content={image} /> : null}
+      <meta property="og:site_name" content="Walter Inglez" />
+      <meta property="og:locale" content="pt_BR" />
+      <meta property="og:image" content={ogImage} />
+      <meta property="og:image:width" content="1280" />
+      <meta property="og:image:height" content="672" />
+      <meta property="og:image:alt" content="Walter Inglez — Você tem certeza do que está assinando?" />
 
       {/* Twitter */}
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={fullTitle} />
       <meta name="twitter:description" content={description} />
-      {image ? <meta name="twitter:image" content={image} /> : null}
+      <meta name="twitter:image" content={ogImage} />
     </Helmet>
   );
 };
