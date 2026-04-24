@@ -5,8 +5,10 @@ import { PageHeader } from "@/components/institutional/PageHeader";
 import { Button } from "@/components/ui/button";
 import { INSTITUTIONAL_LABELS, ROUTES } from "@/lib/routes";
 
-const WHATSAPP_HREF = "https://wa.me/5511914988818";
-const EMAIL_HREF = "mailto:contato@walteringlezadv.com.br";
+const WHATSAPP_HREF =
+  "https://wa.me/5511914988818?text=Ol%C3%A1%2C%20gostaria%20de%20iniciar%20a%20triagem%20do%20meu%20caso.";
+const EMAIL_HREF =
+  "mailto:contato@walteringlezadv.com.br?subject=Triagem&body=Ol%C3%A1%2C%20segue%20informa%C3%A7%C3%B5es%20iniciais%20para%20triagem%3A";
 
 /**
  * Próximo Passo — Fase 3A.
@@ -152,7 +154,7 @@ const ProximoPasso = () => {
             </Button>
             <a
               href={EMAIL_HREF}
-              className="text-sm text-primary underline-offset-4 hover:underline"
+              className="text-sm font-medium text-foreground underline underline-offset-4 decoration-primary/70 hover:decoration-primary"
             >
               Enviar por e-mail
             </a>
