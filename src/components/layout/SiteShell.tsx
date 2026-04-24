@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
 import { SiteHeader } from "./SiteHeader";
 import { SiteFooter } from "./SiteFooter";
+import { FloatingWhatsAppButton } from "@/components/cta/FloatingWhatsAppButton";
 
 /**
  * Wrapper aplicado em TODAS as páginas — incluindo o blog.
@@ -12,6 +13,7 @@ export const SiteShell = ({ children }: { children: ReactNode }) => {
       <SiteHeader />
       <main className="flex-1">{children}</main>
       <SiteFooter />
+      <FloatingWhatsAppButton />
     </div>
   );
 };
