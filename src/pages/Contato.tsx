@@ -34,7 +34,7 @@ const Contato = () => {
 
       {/* Canal preferencial — CTA canônico */}
       <section className="border-b border-border/40">
-        <div className="container max-w-3xl py-20 text-center md:py-28">
+        <div className="container max-w-3xl py-14 text-center md:py-20">
           <h2 className="font-serif text-3xl leading-tight tracking-tight text-foreground md:text-4xl">
             Canal preferencial
           </h2>
@@ -55,7 +55,7 @@ const Contato = () => {
 
       {/* Identificação institucional + canais diretos */}
       <section className="bg-secondary/30">
-        <div className="container max-w-3xl py-20 md:py-28">
+        <div className="container max-w-3xl py-14 md:py-20">
           <h2 className="font-serif text-3xl leading-tight tracking-tight text-foreground md:text-4xl">
             Identificação
           </h2>

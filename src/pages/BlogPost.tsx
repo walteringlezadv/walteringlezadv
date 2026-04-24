@@ -63,7 +63,7 @@ const BlogPost = () => {
 
       {/* Cabeçalho institucional do artigo */}
       <section className="border-b border-border/40">
-        <header className="container max-w-3xl py-20 text-center md:py-28">
+        <header className="container max-w-3xl py-14 text-center md:py-20">
           <p className="mb-6 text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground">
             Blog
           </p>
@@ -129,7 +129,7 @@ const BlogPost = () => {
 
       {/* Fechamento institucional — CTA canônico */}
       <section>
-        <div className="container max-w-3xl py-20 text-center md:py-28">
+        <div className="container max-w-3xl py-14 text-center md:py-20">
           <p className="mb-6 text-base italic text-muted-foreground">
             Se o banco está pressionando e o papel está na mesa, este é o momento.
           </p>
