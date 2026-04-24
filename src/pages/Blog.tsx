@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { SiteShell } from "@/components/layout/SiteShell";
 import { PageSeo } from "@/components/seo/PageSeo";
 import { PageHeader } from "@/components/institutional/PageHeader";
@@ -65,6 +66,17 @@ const Blog = () => {
       {/* Fechamento institucional — CTA canônico */}
       <section>
         <div className="container max-w-3xl py-20 text-center md:py-28">
+          <p className="mx-auto mb-6 max-w-2xl text-sm leading-relaxed text-muted-foreground md:text-base">
+            Para entender como uma leitura técnica é conduzida antes de
+            qualquer providência, veja{" "}
+            <Link
+              to={ROUTES.comoFunciona}
+              className="text-primary underline-offset-4 hover:underline"
+            >
+              como funciona o processo
+            </Link>
+            .
+          </p>
           <p className="mb-6 text-base italic text-muted-foreground">
             Se o banco está pressionando e o papel está na mesa, este é o momento.
           </p>
