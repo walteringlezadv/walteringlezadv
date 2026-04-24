@@ -150,7 +150,7 @@ const Index = () => {
           3 FATORES
           ====================================================== */}
       <section className="border-b border-border/40">
-        <div className="container max-w-3xl py-20 md:py-28">
+        <div className="container max-w-3xl py-14 md:py-20">
           <h2 className="text-center font-serif text-3xl leading-tight tracking-tight text-foreground md:text-4xl">
             3 fatores que determinam sua posição antes de assinar
           </h2>
@@ -183,7 +183,7 @@ const Index = () => {
           TRIAGEM CONDUZIDA POR WALTER INGLEZ
           ====================================================== */}
       <section className="border-b border-border/40 bg-secondary/30">
-        <div className="container max-w-3xl py-20 md:py-28">
+        <div className="container max-w-3xl py-14 md:py-20">
           <h2 className="text-center font-serif text-3xl leading-tight tracking-tight text-foreground md:text-4xl">
             Triagem jurídica conduzida por Walter Inglez
           </h2>
@@ -230,7 +230,7 @@ const Index = () => {
           O QUE A SOLICITAÇÃO PERMITE VERIFICAR
           ====================================================== */}
       <section className="border-b border-border/40">
-        <div className="container max-w-3xl py-20 md:py-28">
+        <div className="container max-w-3xl py-14 md:py-20">
           <h2 className="font-serif text-3xl leading-tight tracking-tight text-foreground md:text-4xl">
             O que a solicitação de triagem permite verificar
           </h2>
@@ -271,7 +271,7 @@ const Index = () => {
           PARA QUEM É · PARA QUEM NÃO É
           ====================================================== */}
       <section className="border-b border-border/40 bg-secondary/30">
-        <div className="container max-w-5xl py-20 md:py-28">
+        <div className="container max-w-5xl py-14 md:py-20">
           <h2 className="text-center font-serif text-3xl leading-tight tracking-tight text-foreground md:text-4xl">
             Para quem é · Para quem não é
           </h2>
@@ -316,7 +316,7 @@ const Index = () => {
           COMO FUNCIONA O PROCESSO
           ====================================================== */}
       <section className="border-b border-border/40">
-        <div className="container max-w-3xl py-20 md:py-28">
+        <div className="container max-w-3xl py-14 md:py-20">
           <h2 className="text-center font-serif text-3xl leading-tight tracking-tight text-foreground md:text-4xl">
             Como funciona o processo
           </h2>
@@ -357,7 +357,7 @@ const Index = () => {
           QUEM CONDUZ
           ====================================================== */}
       <section className="border-b border-border/40 bg-secondary/30">
-        <div className="container max-w-3xl py-20 md:py-28">
+        <div className="container max-w-3xl py-14 md:py-20">
           <h2 className="font-serif text-3xl leading-tight tracking-tight text-foreground md:text-4xl">
             Quem conduz sua triagem
           </h2>
@@ -388,7 +388,7 @@ const Index = () => {
           FAQ
           ====================================================== */}
       <section className="border-b border-border/40">
-        <div className="container max-w-3xl py-20 md:py-28">
+        <div className="container max-w-3xl py-14 md:py-20">
           <h2 className="text-center font-serif text-3xl leading-tight tracking-tight text-foreground md:text-4xl">
             Perguntas frequentes
           </h2>

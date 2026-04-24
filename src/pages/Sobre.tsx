@@ -79,7 +79,7 @@ const Sobre = () => {
 
       {/* Atuação */}
       <section className="border-b border-border/40">
-        <div className="container max-w-3xl py-14 md:py-20">
+        <div className="container max-w-3xl py-12 md:py-16">
           <h2 className="font-serif text-3xl leading-tight tracking-tight text-foreground md:text-4xl">
             Atuação
           </h2>
@@ -98,6 +98,37 @@ const Sobre = () => {
               encaminhamento definido conforme a aderência do caso ao escopo
               técnico.
             </p>
+          </div>
+
+          {/* Bloco complementar — densidade institucional */}
+          <div className="mt-10 grid gap-6 border-t border-border/60 pt-8 md:grid-cols-3 md:gap-8">
+            <div>
+              <p className="text-xs font-medium uppercase tracking-[0.18em] text-muted-foreground">
+                Experiência
+              </p>
+              <p className="mt-3 text-sm leading-relaxed text-foreground/90">
+                Experiência construída em ambiente de decisão sob pressão, com
+                foco em leitura de cenários complexos.
+              </p>
+            </div>
+            <div>
+              <p className="text-xs font-medium uppercase tracking-[0.18em] text-muted-foreground">
+                Método
+              </p>
+              <p className="mt-3 text-sm leading-relaxed text-foreground/90">
+                A atuação se baseia na leitura jurídica estrutural dos contratos
+                e do passivo, antes de qualquer decisão.
+              </p>
+            </div>
+            <div>
+              <p className="text-xs font-medium uppercase tracking-[0.18em] text-muted-foreground">
+                Posicionamento
+              </p>
+              <p className="mt-3 text-sm leading-relaxed text-foreground/90">
+                Não se trata de renegociação isolada, mas de enquadramento
+                estratégico do problema.
+              </p>
+            </div>
           </div>
 
           <div className="mt-8 border-t border-border/60 pt-5 text-sm">

@@ -40,7 +40,7 @@ const Blog = () => {
 
       {/* Listagem editorial */}
       <section className="border-b border-border/40">
-        <div className="container max-w-3xl py-20 md:py-28">
+        <div className="container max-w-3xl py-14 md:py-20">
           {articles.length === 0 ? (
             <div className="text-center">
               <p className="font-serif text-xl italic leading-relaxed text-muted-foreground md:text-2xl">
@@ -65,7 +65,7 @@ const Blog = () => {
 
       {/* Fechamento institucional — CTA canônico */}
       <section>
-        <div className="container max-w-3xl py-20 text-center md:py-28">
+        <div className="container max-w-3xl py-14 text-center md:py-20">
           <p className="mx-auto mb-6 max-w-2xl text-sm leading-relaxed text-muted-foreground md:text-base">
             Para entender como uma leitura técnica é conduzida antes de
             qualquer providência, veja{" "}
