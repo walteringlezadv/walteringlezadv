@@ -5,8 +5,18 @@ import { PageHeader } from "@/components/institutional/PageHeader";
 import { Button } from "@/components/ui/button";
 import { INSTITUTIONAL_LABELS, ROUTES } from "@/lib/routes";
 
-const WHATSAPP_HREF =
-  "https://wa.me/5511914988818?text=Ol%C3%A1%2C%20gostaria%20de%20iniciar%20a%20triagem%20do%20meu%20caso.";
+const WHATSAPP_MESSAGE = `Olá, sou empresário e estou com pressão bancária.
+
+Gostaria de iniciar a triagem do meu passivo.
+
+Empresa:
+Faturamento médio:
+Tipo de dívida:
+Situação atual:`;
+
+const WHATSAPP_HREF = `https://wa.me/5511914988818?text=${encodeURIComponent(
+  WHATSAPP_MESSAGE,
+)}`;
 const EMAIL_HREF =
   "mailto:contato@walteringlezadv.com.br?subject=Triagem&body=Ol%C3%A1%2C%20segue%20informa%C3%A7%C3%B5es%20iniciais%20para%20triagem%3A";
 
@@ -147,14 +157,18 @@ const ProximoPasso = () => {
             do passivo bancário envolvido.
           </p>
           <div className="flex flex-col items-center gap-4">
+            <p className="text-xs text-muted-foreground">
+              Envie as informações iniciais para avaliação técnica.
+            </p>
             <Button asChild size="lg">
               <a href={WHATSAPP_HREF} target="_blank" rel="noopener noreferrer">
-                Enviar informações pelo WhatsApp
+                Iniciar triagem pelo WhatsApp
               </a>
             </Button>
             <a
               href={EMAIL_HREF}
-              className="text-sm font-medium text-foreground underline underline-offset-4 decoration-primary/70 hover:decoration-primary"
+              aria-label="Enviar informações iniciais por e-mail"
+              className="text-xs text-muted-foreground underline underline-offset-4 decoration-muted-foreground/40 hover:text-foreground hover:decoration-muted-foreground"
             >
               Enviar por e-mail
             </a>
