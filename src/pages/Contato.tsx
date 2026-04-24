@@ -4,11 +4,7 @@ import { PageHeader } from "@/components/institutional/PageHeader";
 import { SolicitarTriagemCTA } from "@/components/cta/SolicitarTriagemCTA";
 import { Button } from "@/components/ui/button";
 import { ROUTES } from "@/lib/routes";
-
-const WHATSAPP_HREF =
-  "https://wa.me/5511914988818?text=Ol%C3%A1%2C%20gostaria%20de%20iniciar%20a%20triagem%20do%20meu%20caso.";
-const EMAIL_HREF =
-  "mailto:contato@walteringlezadv.com.br?subject=Triagem&body=Ol%C3%A1%2C%20segue%20informa%C3%A7%C3%B5es%20iniciais%20para%20triagem%3A";
+import { EMAIL_HREF, WHATSAPP_HREF } from "@/lib/contact";
 
 /**
  * Contato — Fase 3A.

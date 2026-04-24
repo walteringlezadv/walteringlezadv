@@ -50,23 +50,23 @@ const ComoFunciona = () => {
 
       {/* Etapas do processo */}
       <section className="border-b border-border/40">
-        <div className="container max-w-3xl py-20 md:py-28">
-          <ol className="space-y-12">
+        <div className="container max-w-3xl py-14 md:py-20">
+          <ol className="space-y-10">
             {processo.map((step, i) => (
               <li key={step.n}>
                 <div className="flex flex-col items-center text-center">
-                  <span className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-full border border-primary/60 font-serif text-lg text-primary">
+                  <span className="mb-3 inline-flex h-10 w-10 items-center justify-center rounded-full border border-primary/60 font-serif text-lg text-primary">
                     {step.n}
                   </span>
                   <h2 className="font-serif text-xl text-foreground md:text-2xl">
                     {step.title}
                   </h2>
-                  <p className="mt-4 max-w-2xl text-sm leading-relaxed text-muted-foreground md:text-base">
+                  <p className="mt-3 max-w-2xl text-sm leading-relaxed text-muted-foreground md:text-base">
                     {step.body}
                   </p>
                 </div>
                 {i < processo.length - 1 ? (
-                  <div className="mt-10 flex justify-center" aria-hidden>
+                  <div className="mt-8 flex justify-center" aria-hidden>
                     <ArrowDown className="h-5 w-5 text-muted-foreground/60" />
                   </div>
                 ) : null}
@@ -78,11 +78,11 @@ const ComoFunciona = () => {
 
       {/* Natureza da etapa */}
       <section className="border-b border-border/40 bg-secondary/30">
-        <div className="container max-w-3xl py-20 md:py-28">
+        <div className="container max-w-3xl py-14 md:py-20">
           <h2 className="font-serif text-3xl leading-tight tracking-tight text-foreground md:text-4xl">
             Natureza da etapa
           </h2>
-          <div className="mt-8 space-y-6 text-base leading-relaxed text-muted-foreground md:text-lg">
+          <div className="mt-6 space-y-5 text-base leading-relaxed text-muted-foreground md:text-lg">
             <p>
               A triagem é uma etapa jurídica preliminar de enquadramento e
               leitura contratual. Não há ajuizamento, comunicação ao banco ou
@@ -98,8 +98,8 @@ const ComoFunciona = () => {
 
       {/* Fechamento institucional */}
       <section>
-        <div className="container max-w-3xl py-20 text-center md:py-28">
-          <p className="mb-6 text-base italic text-muted-foreground">
+        <div className="container max-w-3xl py-14 text-center md:py-20">
+          <p className="mb-5 text-base italic text-muted-foreground">
             Se o banco está pressionando e o papel está na mesa, este é o momento.
           </p>
           <SolicitarTriagemCTA size="lg" />
