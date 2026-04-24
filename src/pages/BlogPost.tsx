@@ -127,13 +127,20 @@ const BlogPost = () => {
         </div>
       </section>
 
-      {/* Fechamento institucional — CTA canônico */}
+      {/* Fechamento institucional — condução do leitor */}
       <section>
         <div className="container max-w-3xl py-14 text-center md:py-20">
-          <p className="mb-6 text-base italic text-muted-foreground">
-            Se o banco está pressionando e o papel está na mesa, este é o momento.
+          <h2 className="font-serif text-3xl leading-tight tracking-tight text-foreground md:text-4xl">
+            Antes de decidir, entenda o seu cenário
+          </h2>
+          <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-muted-foreground md:text-lg">
+            Se o banco já apresentou proposta ou a decisão está próxima, a
+            leitura técnica do passivo evita erros que podem se consolidar por
+            anos.
           </p>
-          <SolicitarTriagemCTA size="lg" />
+          <div className="mt-8 flex justify-center">
+            <SolicitarTriagemCTA size="lg" />
+          </div>
           <div className="mt-12">
             <Link
               to={ROUTES.blog}
