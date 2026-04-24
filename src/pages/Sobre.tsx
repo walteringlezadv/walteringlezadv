@@ -132,8 +132,10 @@ const Sobre = () => {
           </div>
 
           <div className="mt-8 border-t border-border/60 pt-5 text-sm">
-            <p className="font-medium text-foreground">Walter Inglez · Advogado</p>
-            <p className="mt-1 text-muted-foreground">Fortaleza – CE · São Paulo – SP</p>
+            <p className="font-medium text-foreground">Walter Inglez Advocacia e Consultoria</p>
+            <p className="mt-1 text-muted-foreground">
+              Assessoria jurídica estratégica para empresas sob pressão bancária.
+            </p>
           </div>
         </div>
       </section>
