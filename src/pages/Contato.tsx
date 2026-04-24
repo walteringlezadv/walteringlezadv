@@ -1,5 +1,4 @@
-import { useState } from "react";
-import { Check, Copy, Mail, MessageCircle } from "lucide-react";
+import { Mail, MessageCircle } from "lucide-react";
 import { SiteShell } from "@/components/layout/SiteShell";
 import { PageSeo } from "@/components/seo/PageSeo";
 import { PageHeader } from "@/components/institutional/PageHeader";
@@ -17,18 +16,6 @@ import { EMAIL_ADDRESS, EMAIL_HREF, WHATSAPP_HREF } from "@/lib/contact";
  */
 
 const Contato = () => {
-  const [copied, setCopied] = useState(false);
-
-  const copyEmail = async () => {
-    try {
-      await navigator.clipboard.writeText(EMAIL_ADDRESS);
-      setCopied(true);
-      setTimeout(() => setCopied(false), 2000);
-    } catch {
-      // silencioso — usuário pode copiar manualmente do texto exibido
-    }
-  };
-
   return (
     <SiteShell>
       <PageSeo
@@ -98,35 +85,13 @@ const Contato = () => {
                 </a>
               </Button>
 
-              <div className="flex flex-col gap-2">
-                <a
-                  href={EMAIL_HREF}
-                  className="inline-flex items-center gap-2 text-base font-medium text-foreground underline underline-offset-4 decoration-primary/70 hover:decoration-primary"
-                >
-                  <Mail className="h-4 w-4" aria-hidden />
-                  {EMAIL_ADDRESS}
-                </a>
-                <Button
-                  type="button"
-                  variant="outline"
-                  size="sm"
-                  onClick={copyEmail}
-                  aria-label="Copiar e-mail"
-                  className="w-fit"
-                >
-                  {copied ? (
-                    <>
-                      <Check className="h-3.5 w-3.5" aria-hidden />
-                      Copiado
-                    </>
-                  ) : (
-                    <>
-                      <Copy className="h-3.5 w-3.5" aria-hidden />
-                      Copiar e-mail
-                    </>
-                  )}
-                </Button>
-              </div>
+              <a
+                href={EMAIL_HREF}
+                className="inline-flex items-center gap-2 text-base font-medium text-foreground underline underline-offset-4 decoration-primary/70 hover:decoration-primary"
+              >
+                <Mail className="h-4 w-4" aria-hidden />
+                {EMAIL_ADDRESS}
+              </a>
             </div>
           </div>
 
