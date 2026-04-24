@@ -134,13 +134,29 @@ const ProximoPasso = () => {
         </div>
       </section>
 
-      {/* Fechamento institucional — CTA canônico */}
+      {/* Fechamento institucional — contato direto */}
       <section>
         <div className="container max-w-3xl py-20 text-center md:py-28">
           <p className="mb-6 text-base italic text-muted-foreground">
             Se o banco está pressionando e o papel está na mesa, este é o momento.
           </p>
-          <SolicitarTriagemCTA size="lg" />
+          <p className="mx-auto mb-8 max-w-xl text-sm leading-relaxed text-foreground/90">
+            A triagem começa pelo envio das informações essenciais da empresa e
+            do passivo bancário envolvido.
+          </p>
+          <div className="flex flex-col items-center gap-4">
+            <Button asChild size="lg">
+              <a href={WHATSAPP_HREF} target="_blank" rel="noopener noreferrer">
+                Enviar informações pelo WhatsApp
+              </a>
+            </Button>
+            <a
+              href={EMAIL_HREF}
+              className="text-sm text-primary underline-offset-4 hover:underline"
+            >
+              Enviar por e-mail
+            </a>
+          </div>
           <p className="mx-auto mt-8 max-w-xl text-xs leading-relaxed text-muted-foreground/80">
             Exclusivo para empresas com operação ativa. Retorno em até 48h úteis
             para confirmação de aderência e orientação do próximo passo.
