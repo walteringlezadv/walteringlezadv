@@ -21,6 +21,20 @@ export const WHATSAPP_HREF = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIC
 export const EMAIL_SUBJECT = "Triagem Jurídica";
 export const EMAIL_BODY = "Olá, gostaria de iniciar uma triagem do meu passivo.";
 
-export const EMAIL_HREF = `mailto:${EMAIL_ADDRESS}?subject=${encodeURIComponent(
+/**
+ * Link de composição de e-mail via Gmail Web.
+ *
+ * Substitui `mailto:` porque, em muitos navegadores desktop, o `mailto`
+ * não tem cliente associado e o clique não produz efeito visível.
+ * Abrir Gmail compose em nova aba garante feedback imediato e funciona
+ * em qualquer navegador moderno, mesmo para usuários sem cliente nativo.
+ */
+export const EMAIL_HREF = `https://mail.google.com/mail/?view=cm&fs=1&to=${EMAIL_ADDRESS}&su=${encodeURIComponent(
   EMAIL_SUBJECT,
 )}&body=${encodeURIComponent(EMAIL_BODY)}`;
+
+/** Constrói um link Gmail compose com assunto/corpo customizados. */
+export const buildEmailHref = (subject: string, body: string) =>
+  `https://mail.google.com/mail/?view=cm&fs=1&to=${EMAIL_ADDRESS}&su=${encodeURIComponent(
+    subject,
+  )}&body=${encodeURIComponent(body)}`;
