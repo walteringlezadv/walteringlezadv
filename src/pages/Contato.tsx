@@ -79,7 +79,7 @@ const Contato = () => {
       <section className="bg-secondary/30">
         <div className="container max-w-5xl py-14 md:py-20">
           <h2 className="font-serif text-3xl leading-tight tracking-tight text-foreground md:text-4xl">
-            Contato institucional
+            Início da triagem do passivo
           </h2>
           <p className="mt-3 text-sm text-muted-foreground md:text-base">
             Walter Inglez Advocacia e Consultoria · Atendimento mediante triagem prévia.
@@ -92,8 +92,11 @@ const Contato = () => {
                 Canais diretos
               </h3>
               <p className="mt-4 text-sm leading-relaxed text-muted-foreground md:text-base">
-                Para envio das informações iniciais da empresa e do passivo
-                bancário envolvido.
+                Este é o ponto inicial da triagem.
+              </p>
+              <p className="mt-2 text-sm leading-relaxed text-muted-foreground md:text-base">
+                O objetivo aqui não é enviar uma mensagem, mas iniciar a leitura
+                estruturada do passivo.
               </p>
               <div className="mt-6 flex flex-col items-start gap-5">
                 <Button asChild size="lg">
