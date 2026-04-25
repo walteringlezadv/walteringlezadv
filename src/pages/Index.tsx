@@ -361,7 +361,7 @@ const Index = () => {
           <h2 className="font-serif text-3xl leading-tight tracking-tight text-foreground md:text-4xl">
             Quem conduz sua triagem
           </h2>
-          <div className="mt-8 space-y-6 text-base leading-relaxed text-muted-foreground md:text-lg">
+          <div className="mt-7 space-y-5 text-base leading-relaxed text-muted-foreground md:text-lg">
             <p>
               Walter Inglez é advogado com atuação voltada à análise jurídica de
               passivos bancários empresariais. Seu trabalho se concentra no
