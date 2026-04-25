@@ -230,20 +230,20 @@ const Index = () => {
           O QUE A SOLICITAÇÃO PERMITE VERIFICAR
           ====================================================== */}
       <section className="border-b border-border/20">
-        <div className="container max-w-3xl py-12 md:py-16">
+        <div className="container max-w-3xl py-10 md:py-14">
           <h2 className="font-serif text-3xl leading-tight tracking-tight text-foreground md:text-4xl">
             O que a solicitação de triagem permite verificar
           </h2>
-          <p className="mt-6 text-base leading-relaxed text-muted-foreground md:text-lg">
+          <p className="mt-5 text-base leading-relaxed text-muted-foreground md:text-lg">
             Esta etapa é voltada à compreensão inicial do contexto e à definição
             do encaminhamento mais adequado.
           </p>
-          <p className="mt-4 text-sm leading-relaxed text-muted-foreground/90">
+          <p className="mt-3 text-sm leading-relaxed text-muted-foreground/90">
             Quando indicado e mediante contratação formal, a etapa técnica
             aprofundada pode examinar:
           </p>
 
-          <ul className="mt-10 grid gap-4 md:grid-cols-2">
+          <ul className="mt-8 grid gap-4 md:grid-cols-2">
             {escopo.map((item) => (
               <li
                 key={item}
