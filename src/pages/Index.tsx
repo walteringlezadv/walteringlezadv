@@ -118,7 +118,7 @@ const Index = () => {
           HERO
           ====================================================== */}
       <section className="border-b border-border/20">
-        <div className="container max-w-3xl py-12 text-center md:py-16">
+        <div className="container max-w-3xl py-16 text-center md:py-20">
           <p className="mb-6 text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground">
             Gestão Estratégica de Passivos
           </p>
