@@ -40,7 +40,7 @@ const ComoFunciona = () => {
       />
 
       {/* Cabeçalho institucional */}
-      <section className="border-b border-border/40">
+      <section className="border-b border-border/20">
         <PageHeader
           eyebrow="Como Funciona"
           title="Como funciona o processo"
@@ -49,8 +49,8 @@ const ComoFunciona = () => {
       </section>
 
       {/* Etapas do processo */}
-      <section className="border-b border-border/40">
-        <div className="container max-w-3xl py-14 md:py-20">
+      <section className="border-b border-border/20">
+        <div className="container max-w-3xl py-12 md:py-16">
           <ol className="space-y-10">
             {processo.map((step, i) => (
               <li key={step.n}>
@@ -77,8 +77,8 @@ const ComoFunciona = () => {
       </section>
 
       {/* Natureza da etapa */}
-      <section className="border-b border-border/40 bg-secondary/30">
-        <div className="container max-w-3xl py-14 md:py-20">
+      <section className="border-b border-border/20 bg-secondary/30">
+        <div className="container max-w-3xl py-12 md:py-16">
           <h2 className="font-serif text-3xl leading-tight tracking-tight text-foreground md:text-4xl">
             Natureza da etapa
           </h2>
@@ -98,7 +98,7 @@ const ComoFunciona = () => {
 
       {/* Fechamento institucional */}
       <section>
-        <div className="container max-w-3xl py-14 text-center md:py-20">
+        <div className="container max-w-3xl py-12 text-center md:py-16">
           <p className="mb-5 text-base italic text-muted-foreground">
             Se o banco está pressionando e o papel está na mesa, este é o momento.
           </p>
