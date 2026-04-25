@@ -142,9 +142,9 @@ const Index = () => {
               <p className="mb-6 text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground">
                 Gestão Estratégica de Passivo Bancário
               </p>
-              <h1 className="font-serif text-4xl leading-[1.05] tracking-tight text-foreground md:text-5xl lg:text-6xl">
-                A dívida não é o único problema. O risco está em decidir sem
-                leitura.
+              <h1 className="font-serif text-[1.875rem] leading-[1.1] tracking-tight text-foreground sm:text-4xl md:text-5xl md:leading-[1.05] lg:text-6xl">
+                A dívida não é o único problema.
+                <span className="block">O risco está em decidir sem leitura.</span>
               </h1>
               <p className="mt-7 max-w-2xl text-lg leading-relaxed text-muted-foreground md:text-xl">
                 Antes de renegociar, assinar ou responder ao banco, é
