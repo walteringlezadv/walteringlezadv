@@ -155,7 +155,30 @@ export const SiteFooter = () => {
           </div>
         </div>
 
-        <div className="mt-12 border-t border-border pt-6 text-[11px] leading-relaxed text-muted-foreground">
+        {/* Faixa discreta — Endereços de atendimento */}
+        <div className="mt-12 border-t border-border pt-8">
+          <h2 className="text-xs font-semibold uppercase tracking-wider text-foreground">
+            Endereços de atendimento
+          </h2>
+          <div className="mt-4 grid gap-4 text-[11px] leading-relaxed text-muted-foreground md:grid-cols-2">
+            <div>
+              <p className="font-medium text-foreground/80">Fortaleza – CE</p>
+              <p>
+                R. Dr. Gilberto Studart, 55, Torre Sul, Sala 1.018 — Cocó · CEP
+                60192-105
+              </p>
+            </div>
+            <div>
+              <p className="font-medium text-foreground/80">São Paulo – SP</p>
+              <p>
+                Av. Paulista, 1636, Sala 1105/1064 — Cerqueira César · CEP
+                01310-200
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div className="mt-8 border-t border-border pt-6 text-[11px] leading-relaxed text-muted-foreground">
           © {year} Walter Inglez Advocacia e Consultoria. Todos os direitos
           reservados.
         </div>
