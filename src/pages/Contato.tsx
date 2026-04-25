@@ -87,6 +87,8 @@ const Contato = () => {
 
               <a
                 href={EMAIL_HREF}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 text-base font-medium text-foreground underline underline-offset-4 decoration-primary/70 hover:decoration-primary"
               >
                 <Mail className="h-4 w-4" aria-hidden />
