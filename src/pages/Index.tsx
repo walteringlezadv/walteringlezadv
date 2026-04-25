@@ -125,19 +125,25 @@ const Index = () => {
           <h1 className="font-serif text-4xl leading-[1.05] tracking-tight text-foreground md:text-6xl">
             Você tem certeza do que está assinando?
           </h1>
-          <p className="mx-auto mt-8 max-w-2xl text-lg leading-relaxed text-muted-foreground md:text-xl">
-            O banco apresentou uma proposta. O prazo está correndo. Antes de
-            assinar, você precisa saber o que esse contrato realmente produz
-            para a sua empresa.
+          <p className="mx-auto mt-7 max-w-2xl text-lg leading-relaxed text-muted-foreground md:text-xl">
+            O banco já apresentou uma proposta. Antes de assinar, é necessário
+            compreender o que esse contrato realmente produz para a sua empresa.
           </p>
-          <p className="mx-auto mt-6 max-w-xl text-base italic text-muted-foreground/90">
-            Se o banco está pressionando e o papel está na mesa, este é o momento.
+          <p className="mx-auto mt-5 max-w-xl text-base italic text-muted-foreground/90">
+            Se há prazo em curso ou pressão do banco, este é o momento de
+            entender antes de formalizar.
           </p>
-          <div className="mt-8 flex justify-center">
+          <div className="mt-7 flex justify-center">
             <SolicitarTriagemCTA size="lg" />
           </div>
+          <p className="mx-auto mt-4 max-w-xl text-xs leading-relaxed text-muted-foreground/90">
+            Etapa inicial de enquadramento técnico do seu cenário.
+          </p>
+          <p className="mx-auto mt-1 max-w-xl text-[11px] leading-relaxed text-muted-foreground/70">
+            Sem envio de documentos nesta etapa inicial.
+          </p>
           <p className="mt-6 text-sm text-muted-foreground">
-            Walter Inglez · Advogado
+            Walter Inglez Advocacia e Consultoria
           </p>
           <p className="mx-auto mt-2 max-w-xl text-xs leading-relaxed text-muted-foreground/80">
             Exclusivo para empresas com operação ativa. Retorno em até 48h úteis
@@ -378,8 +384,7 @@ const Index = () => {
             </p>
           </div>
           <div className="mt-8 border-t border-border/60 pt-6 text-sm">
-            <p className="font-medium text-foreground">Walter Inglez · Advogado</p>
-            <p className="mt-1 text-muted-foreground">Fortaleza – CE · São Paulo – SP</p>
+            <p className="font-medium text-foreground">Walter Inglez Advocacia e Consultoria</p>
           </div>
         </div>
       </section>
