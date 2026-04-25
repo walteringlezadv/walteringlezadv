@@ -72,7 +72,7 @@ const Sobre = () => {
       <section className="border-b border-border/20">
         <PageHeader
           eyebrow="Sobre"
-          title="Walter Inglez · Advogado"
+          title="Walter Inglez Advocacia e Consultoria"
           lead="Atuação voltada à análise jurídica de passivos bancários empresariais, com foco no momento mais delicado da relação entre empresa e banco."
         />
       </section>
