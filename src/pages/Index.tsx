@@ -276,7 +276,7 @@ const Index = () => {
             Para quem é · Para quem não é
           </h2>
 
-          <div className="mt-12 grid gap-8 md:grid-cols-2">
+          <div className="mt-10 grid gap-8 md:grid-cols-2">
             <div className="rounded-lg border border-border/60 bg-card/60 p-6 md:p-8">
               <h3 className="font-serif text-xl text-foreground md:text-2xl">
                 Para quem é
