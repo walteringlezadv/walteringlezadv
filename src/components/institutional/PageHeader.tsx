@@ -16,7 +16,7 @@ export const PageHeader = ({ eyebrow, title, lead, className }: Props) => {
   return (
     <header
       className={cn(
-        "container max-w-3xl py-12 text-center md:py-16",
+        "container max-w-3xl py-10 text-center md:py-14",
         className,
       )}
     >
