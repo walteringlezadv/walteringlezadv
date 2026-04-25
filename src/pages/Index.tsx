@@ -377,7 +377,7 @@ const Index = () => {
               irreversíveis após determinadas assinaturas.
             </p>
           </div>
-          <div className="mt-10 border-t border-border/60 pt-6 text-sm">
+          <div className="mt-8 border-t border-border/60 pt-6 text-sm">
             <p className="font-medium text-foreground">Walter Inglez · Advogado</p>
             <p className="mt-1 text-muted-foreground">Fortaleza – CE · São Paulo – SP</p>
           </div>
