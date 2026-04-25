@@ -143,23 +143,23 @@ const Index = () => {
                 Gestão Estratégica de Passivo Bancário
               </p>
               <h1 className="font-serif text-4xl leading-[1.05] tracking-tight text-foreground md:text-5xl lg:text-6xl">
-                Gestão estratégica de passivo bancário para empresas sob
-                pressão de bancos.
+                A dívida não é o único problema. O risco está em decidir sem
+                leitura.
               </h1>
               <p className="mt-7 max-w-2xl text-lg leading-relaxed text-muted-foreground md:text-xl">
-                Antes de renegociar, assinar um acordo ou responder a uma
-                cobrança, a empresa precisa entender o que está em jogo:
-                contratos, garantias, risco e margem real de decisão.
+                Antes de renegociar, assinar ou responder ao banco, é
+                necessário entender contratos, garantias, risco e margem real
+                de decisão.
               </p>
               <p className="mt-5 max-w-xl text-base italic text-muted-foreground/90">
-                Em dívida bancária empresarial, decidir sem leitura prévia
-                costuma ampliar o risco.
+                Em dívida bancária empresarial, decidir sem leitura costuma
+                ampliar o risco.
               </p>
               <div className="mt-7">
                 <SolicitarTriagemCTA size="lg" />
               </div>
               <p className="mt-4 max-w-xl text-xs leading-relaxed text-muted-foreground/90">
-                Etapa inicial de enquadramento técnico do seu cenário.
+                Etapa inicial de leitura técnica do seu cenário.
               </p>
               <p className="mt-1 max-w-xl text-[11px] leading-relaxed text-muted-foreground/70">
                 Sem envio de documentos nesta etapa inicial.
@@ -207,11 +207,6 @@ const Index = () => {
             a posição jurídica da empresa.
           </h2>
           <div className="mt-7 space-y-5 text-base leading-relaxed text-muted-foreground md:text-lg">
-            <p>
-              Muitos empresários só procuram uma saída quando o banco já
-              ligou, a proposta chegou, a cobrança avançou ou a execução
-              parece próxima.
-            </p>
             <p>
               Nessa hora, a pressão leva a decisões rápidas: aceitar acordo,
               alongar dívida, entregar nova garantia, refinanciar ou apenas
@@ -313,7 +308,7 @@ const Index = () => {
       <section className="border-b border-border/20">
         <div className="container max-w-3xl py-12 md:py-16">
           <h2 className="font-serif text-3xl leading-tight tracking-tight text-foreground md:text-4xl">
-            O que a triagem inicial procura identificar
+            O que a triagem permite enxergar logo no início
           </h2>
           <p className="mt-5 text-base leading-relaxed text-muted-foreground md:text-lg">
             A triagem é a etapa inicial de enquadramento do cenário. Ela não
@@ -577,7 +572,12 @@ const Index = () => {
             antes do próximo passo.
           </p>
 
-          <div className="mt-10 flex justify-center">
+          <p className="mx-auto mt-8 max-w-2xl text-base leading-relaxed text-foreground md:text-lg">
+            O próximo passo não é responder ao banco. É entender a posição
+            da empresa.
+          </p>
+
+          <div className="mt-8 flex justify-center">
             <SolicitarTriagemCTA size="lg" />
           </div>
 
