@@ -133,13 +133,13 @@ const Index = () => {
           <p className="mx-auto mt-6 max-w-xl text-base italic text-muted-foreground/90">
             Se o banco está pressionando e o papel está na mesa, este é o momento.
           </p>
-          <div className="mt-10 flex justify-center">
+          <div className="mt-8 flex justify-center">
             <SolicitarTriagemCTA size="lg" />
           </div>
-          <p className="mt-8 text-sm text-muted-foreground">
+          <p className="mt-6 text-sm text-muted-foreground">
             Walter Inglez · Advogado
           </p>
-          <p className="mx-auto mt-3 max-w-xl text-xs leading-relaxed text-muted-foreground/80">
+          <p className="mx-auto mt-2 max-w-xl text-xs leading-relaxed text-muted-foreground/80">
             Exclusivo para empresas com operação ativa. Retorno em até 48h úteis
             para confirmação de aderência e orientação do próximo passo.
           </p>
