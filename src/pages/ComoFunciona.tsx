@@ -78,7 +78,7 @@ const ComoFunciona = () => {
 
       {/* Natureza da etapa */}
       <section className="border-b border-border/20 bg-secondary/30">
-        <div className="container max-w-3xl py-12 md:py-16">
+        <div className="container max-w-3xl py-10 md:py-14">
           <h2 className="font-serif text-3xl leading-tight tracking-tight text-foreground md:text-4xl">
             Natureza da etapa
           </h2>

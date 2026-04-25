@@ -118,7 +118,7 @@ const Index = () => {
           HERO
           ====================================================== */}
       <section className="border-b border-border/20">
-        <div className="container max-w-3xl py-12 text-center md:py-16">
+        <div className="container max-w-3xl py-16 text-center md:py-20">
           <p className="mb-6 text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground">
             Gestão Estratégica de Passivos
           </p>
@@ -150,11 +150,11 @@ const Index = () => {
           3 FATORES
           ====================================================== */}
       <section className="border-b border-border/20">
-        <div className="container max-w-3xl py-12 md:py-16">
+        <div className="container max-w-3xl py-10 md:py-14">
           <h2 className="text-center font-serif text-3xl leading-tight tracking-tight text-foreground md:text-4xl">
             3 fatores que determinam sua posição antes de assinar
           </h2>
-          <ul className="mt-12 space-y-8">
+          <ul className="mt-10 space-y-7">
             {fatores.map((f, i) => (
               <li key={i} className="flex gap-4 border-l-2 border-primary/60 pl-6">
                 <div>
@@ -170,7 +170,7 @@ const Index = () => {
               </li>
             ))}
           </ul>
-          <div className="mt-12 text-center">
+          <div className="mt-10 text-center">
             <p className="mb-6 text-base italic text-muted-foreground">
               Se o banco está pressionando e o papel está na mesa, este é o momento.
             </p>
@@ -183,11 +183,11 @@ const Index = () => {
           TRIAGEM CONDUZIDA POR WALTER INGLEZ
           ====================================================== */}
       <section className="border-b border-border/20 bg-secondary/30">
-        <div className="container max-w-3xl py-12 md:py-16">
+        <div className="container max-w-3xl pt-8 pb-12 md:pt-10 md:pb-16">
           <h2 className="text-center font-serif text-3xl leading-tight tracking-tight text-foreground md:text-4xl">
             Triagem jurídica conduzida por Walter Inglez
           </h2>
-          <div className="mt-10 space-y-6 text-base leading-relaxed text-muted-foreground md:text-lg">
+          <div className="mt-8 space-y-5 text-base leading-relaxed text-muted-foreground md:text-lg">
             <p>
               A triagem é conduzida diretamente por Walter Inglez. Em até 48h,
               você recebe uma leitura objetiva do seu momento contratual — com
@@ -200,7 +200,7 @@ const Index = () => {
             </p>
           </div>
 
-          <ul className="mt-10 space-y-3 border-t border-border/60 pt-8 text-sm text-muted-foreground md:text-base">
+          <ul className="mt-8 space-y-3 border-t border-border/60 pt-6 text-sm text-muted-foreground md:text-base">
             <li className="flex gap-3">
               <span aria-hidden className="mt-2 h-1 w-1 shrink-0 rounded-full bg-primary" />
               atuação focada em contratos bancários e passivo empresarial
@@ -219,7 +219,7 @@ const Index = () => {
             </li>
           </ul>
 
-          <p className="mt-8 text-xs leading-relaxed text-muted-foreground/80">
+          <p className="mt-6 text-xs leading-relaxed text-muted-foreground/80">
             A triagem possui natureza jurídica e contratual, com foco na
             compreensão inicial do caso antes de qualquer aprofundamento formal.
           </p>
@@ -230,20 +230,20 @@ const Index = () => {
           O QUE A SOLICITAÇÃO PERMITE VERIFICAR
           ====================================================== */}
       <section className="border-b border-border/20">
-        <div className="container max-w-3xl py-12 md:py-16">
+        <div className="container max-w-3xl py-10 md:py-14">
           <h2 className="font-serif text-3xl leading-tight tracking-tight text-foreground md:text-4xl">
             O que a solicitação de triagem permite verificar
           </h2>
-          <p className="mt-6 text-base leading-relaxed text-muted-foreground md:text-lg">
+          <p className="mt-5 text-base leading-relaxed text-muted-foreground md:text-lg">
             Esta etapa é voltada à compreensão inicial do contexto e à definição
             do encaminhamento mais adequado.
           </p>
-          <p className="mt-4 text-sm leading-relaxed text-muted-foreground/90">
+          <p className="mt-3 text-sm leading-relaxed text-muted-foreground/90">
             Quando indicado e mediante contratação formal, a etapa técnica
             aprofundada pode examinar:
           </p>
 
-          <ul className="mt-10 grid gap-4 md:grid-cols-2">
+          <ul className="mt-8 grid gap-4 md:grid-cols-2">
             {escopo.map((item) => (
               <li
                 key={item}
@@ -257,11 +257,11 @@ const Index = () => {
             ))}
           </ul>
 
-          <p className="mt-10 text-xs leading-relaxed text-muted-foreground/80">
+          <p className="mt-8 text-xs leading-relaxed text-muted-foreground/80">
             Esta triagem possui natureza jurídica e contratual e não se confunde
             com assessoria financeira.
           </p>
-          <div className="mt-8">
+          <div className="mt-6">
             <SolicitarTriagemCTA />
           </div>
         </div>
@@ -276,7 +276,7 @@ const Index = () => {
             Para quem é · Para quem não é
           </h2>
 
-          <div className="mt-12 grid gap-8 md:grid-cols-2">
+          <div className="mt-10 grid gap-8 md:grid-cols-2">
             <div className="rounded-lg border border-border/60 bg-card/60 p-6 md:p-8">
               <h3 className="font-serif text-xl text-foreground md:text-2xl">
                 Para quem é
@@ -316,12 +316,12 @@ const Index = () => {
           COMO FUNCIONA O PROCESSO
           ====================================================== */}
       <section className="border-b border-border/20">
-        <div className="container max-w-3xl py-12 md:py-16">
+        <div className="container max-w-3xl pt-8 pb-12 md:pt-10 md:pb-16">
           <h2 className="text-center font-serif text-3xl leading-tight tracking-tight text-foreground md:text-4xl">
             Como funciona o processo
           </h2>
 
-          <ol className="mt-14 space-y-12">
+          <ol className="mt-12 space-y-10">
             {processo.map((step, i) => (
               <li key={step.n}>
                 <div className="flex flex-col items-center text-center">
@@ -336,7 +336,7 @@ const Index = () => {
                   </p>
                 </div>
                 {i < processo.length - 1 ? (
-                  <div className="mt-10 flex justify-center" aria-hidden>
+                  <div className="mt-8 flex justify-center" aria-hidden>
                     <ArrowDown className="h-5 w-5 text-muted-foreground/60" />
                   </div>
                 ) : null}
@@ -344,7 +344,7 @@ const Index = () => {
             ))}
           </ol>
 
-          <div className="mt-16 text-center">
+          <div className="mt-12 text-center">
             <p className="mb-6 text-base italic text-muted-foreground">
               Se o banco está pressionando e o papel está na mesa, este é o momento.
             </p>
@@ -361,7 +361,7 @@ const Index = () => {
           <h2 className="font-serif text-3xl leading-tight tracking-tight text-foreground md:text-4xl">
             Quem conduz sua triagem
           </h2>
-          <div className="mt-8 space-y-6 text-base leading-relaxed text-muted-foreground md:text-lg">
+          <div className="mt-7 space-y-5 text-base leading-relaxed text-muted-foreground md:text-lg">
             <p>
               Walter Inglez é advogado com atuação voltada à análise jurídica de
               passivos bancários empresariais. Seu trabalho se concentra no
@@ -377,7 +377,7 @@ const Index = () => {
               irreversíveis após determinadas assinaturas.
             </p>
           </div>
-          <div className="mt-10 border-t border-border/60 pt-6 text-sm">
+          <div className="mt-8 border-t border-border/60 pt-6 text-sm">
             <p className="font-medium text-foreground">Walter Inglez · Advogado</p>
             <p className="mt-1 text-muted-foreground">Fortaleza – CE · São Paulo – SP</p>
           </div>
@@ -388,11 +388,11 @@ const Index = () => {
           FAQ
           ====================================================== */}
       <section className="border-b border-border/20">
-        <div className="container max-w-3xl py-12 md:py-16">
+        <div className="container max-w-3xl py-10 md:py-14">
           <h2 className="text-center font-serif text-3xl leading-tight tracking-tight text-foreground md:text-4xl">
             Perguntas frequentes
           </h2>
-          <Accordion type="single" collapsible className="mt-10">
+          <Accordion type="single" collapsible className="mt-8">
             {faq.map((item, i) => (
               <AccordionItem key={i} value={`faq-${i}`} className="border-border/60">
                 <AccordionTrigger className="text-left font-serif text-lg text-foreground hover:no-underline md:text-xl">
