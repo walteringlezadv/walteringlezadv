@@ -117,8 +117,8 @@ const Index = () => {
       {/* ======================================================
           HERO
           ====================================================== */}
-      <section className="border-b border-border/40">
-        <div className="container max-w-3xl py-14 text-center md:py-20">
+      <section className="border-b border-border/20">
+        <div className="container max-w-3xl py-12 text-center md:py-16">
           <p className="mb-6 text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground">
             Gestão Estratégica de Passivos
           </p>
@@ -149,8 +149,8 @@ const Index = () => {
       {/* ======================================================
           3 FATORES
           ====================================================== */}
-      <section className="border-b border-border/40">
-        <div className="container max-w-3xl py-14 md:py-20">
+      <section className="border-b border-border/20">
+        <div className="container max-w-3xl py-12 md:py-16">
           <h2 className="text-center font-serif text-3xl leading-tight tracking-tight text-foreground md:text-4xl">
             3 fatores que determinam sua posição antes de assinar
           </h2>
@@ -182,8 +182,8 @@ const Index = () => {
       {/* ======================================================
           TRIAGEM CONDUZIDA POR WALTER INGLEZ
           ====================================================== */}
-      <section className="border-b border-border/40 bg-secondary/30">
-        <div className="container max-w-3xl py-14 md:py-20">
+      <section className="border-b border-border/20 bg-secondary/30">
+        <div className="container max-w-3xl py-12 md:py-16">
           <h2 className="text-center font-serif text-3xl leading-tight tracking-tight text-foreground md:text-4xl">
             Triagem jurídica conduzida por Walter Inglez
           </h2>
@@ -229,8 +229,8 @@ const Index = () => {
       {/* ======================================================
           O QUE A SOLICITAÇÃO PERMITE VERIFICAR
           ====================================================== */}
-      <section className="border-b border-border/40">
-        <div className="container max-w-3xl py-14 md:py-20">
+      <section className="border-b border-border/20">
+        <div className="container max-w-3xl py-12 md:py-16">
           <h2 className="font-serif text-3xl leading-tight tracking-tight text-foreground md:text-4xl">
             O que a solicitação de triagem permite verificar
           </h2>
@@ -270,8 +270,8 @@ const Index = () => {
       {/* ======================================================
           PARA QUEM É · PARA QUEM NÃO É
           ====================================================== */}
-      <section className="border-b border-border/40 bg-secondary/30">
-        <div className="container max-w-5xl py-14 md:py-20">
+      <section className="border-b border-border/20 bg-secondary/30">
+        <div className="container max-w-5xl py-12 md:py-16">
           <h2 className="text-center font-serif text-3xl leading-tight tracking-tight text-foreground md:text-4xl">
             Para quem é · Para quem não é
           </h2>
@@ -315,8 +315,8 @@ const Index = () => {
       {/* ======================================================
           COMO FUNCIONA O PROCESSO
           ====================================================== */}
-      <section className="border-b border-border/40">
-        <div className="container max-w-3xl py-14 md:py-20">
+      <section className="border-b border-border/20">
+        <div className="container max-w-3xl py-12 md:py-16">
           <h2 className="text-center font-serif text-3xl leading-tight tracking-tight text-foreground md:text-4xl">
             Como funciona o processo
           </h2>
@@ -356,8 +356,8 @@ const Index = () => {
       {/* ======================================================
           QUEM CONDUZ
           ====================================================== */}
-      <section className="border-b border-border/40 bg-secondary/30">
-        <div className="container max-w-3xl py-14 md:py-20">
+      <section className="border-b border-border/20 bg-secondary/30">
+        <div className="container max-w-3xl py-12 md:py-16">
           <h2 className="font-serif text-3xl leading-tight tracking-tight text-foreground md:text-4xl">
             Quem conduz sua triagem
           </h2>
@@ -387,8 +387,8 @@ const Index = () => {
       {/* ======================================================
           FAQ
           ====================================================== */}
-      <section className="border-b border-border/40">
-        <div className="container max-w-3xl py-14 md:py-20">
+      <section className="border-b border-border/20">
+        <div className="container max-w-3xl py-12 md:py-16">
           <h2 className="text-center font-serif text-3xl leading-tight tracking-tight text-foreground md:text-4xl">
             Perguntas frequentes
           </h2>
@@ -411,7 +411,7 @@ const Index = () => {
           FECHAMENTO
           ====================================================== */}
       <section>
-        <div className="container max-w-3xl py-24 text-center md:py-32">
+        <div className="container max-w-3xl py-16 text-center md:py-20">
           <h2 className="font-serif text-3xl leading-[1.15] tracking-tight text-foreground md:text-5xl">
             Decidir sem leitura estratégica da estrutura contratual é assumir
             risco invisível.

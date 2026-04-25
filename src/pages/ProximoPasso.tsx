@@ -47,7 +47,7 @@ const ProximoPasso = () => {
       />
 
       {/* Cabeçalho institucional (rótulo público protegido) */}
-      <section className="border-b border-border/40">
+      <section className="border-b border-border/20">
         <PageHeader
           eyebrow={INSTITUTIONAL_LABELS.menuProximoPasso}
           title={INSTITUTIONAL_LABELS.pageTitleProximoPasso}
@@ -56,8 +56,8 @@ const ProximoPasso = () => {
       </section>
 
       {/* Para quem é · Para quem não é */}
-      <section className="border-b border-border/40">
-        <div className="container max-w-5xl py-14 md:py-20">
+      <section className="border-b border-border/20">
+        <div className="container max-w-5xl py-12 md:py-16">
           <h2 className="text-center font-serif text-3xl leading-tight tracking-tight text-foreground md:text-4xl">
             Para quem é · Para quem não é
           </h2>
@@ -105,8 +105,8 @@ const ProximoPasso = () => {
       </section>
 
       {/* O que esperar */}
-      <section className="border-b border-border/40 bg-secondary/30">
-        <div className="container max-w-3xl py-14 md:py-20">
+      <section className="border-b border-border/20 bg-secondary/30">
+        <div className="container max-w-3xl py-12 md:py-16">
           <h2 className="font-serif text-3xl leading-tight tracking-tight text-foreground md:text-4xl">
             O que esperar após a solicitação
           </h2>
@@ -135,7 +135,7 @@ const ProximoPasso = () => {
 
       {/* Fechamento institucional — contato direto */}
       <section>
-        <div className="container max-w-3xl py-14 text-center md:py-20">
+        <div className="container max-w-3xl py-12 text-center md:py-16">
           <p className="mb-5 text-base italic text-muted-foreground">
             Se o banco está pressionando e o papel está na mesa, este é o momento.
           </p>

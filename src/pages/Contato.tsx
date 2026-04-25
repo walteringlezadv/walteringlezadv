@@ -22,7 +22,7 @@ const Contato = () => {
       />
 
       {/* Cabeçalho institucional */}
-      <section className="border-b border-border/40">
+      <section className="border-b border-border/20">
         <PageHeader
           eyebrow="Contato"
           title="Contato institucional"
@@ -31,8 +31,8 @@ const Contato = () => {
       </section>
 
       {/* Canal preferencial — CTA canônico */}
-      <section className="border-b border-border/40">
-        <div className="container max-w-3xl py-14 text-center md:py-20">
+      <section className="border-b border-border/20">
+        <div className="container max-w-3xl py-12 text-center md:py-16">
           <h2 className="font-serif text-3xl leading-tight tracking-tight text-foreground md:text-4xl">
             Canal preferencial
           </h2>

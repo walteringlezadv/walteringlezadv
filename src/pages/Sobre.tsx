@@ -69,7 +69,7 @@ const Sobre = () => {
       />
 
       {/* Cabeçalho institucional */}
-      <section className="border-b border-border/40">
+      <section className="border-b border-border/20">
         <PageHeader
           eyebrow="Sobre"
           title="Walter Inglez · Advogado"
@@ -78,7 +78,7 @@ const Sobre = () => {
       </section>
 
       {/* Atuação */}
-      <section className="border-b border-border/40">
+      <section className="border-b border-border/20">
         <div className="container max-w-3xl py-12 md:py-16">
           <h2 className="font-serif text-3xl leading-tight tracking-tight text-foreground md:text-4xl">
             Atuação
@@ -141,8 +141,8 @@ const Sobre = () => {
       </section>
 
       {/* Experiência */}
-      <section className="border-b border-border/40 bg-secondary/30">
-        <div className="container max-w-3xl py-14 md:py-20">
+      <section className="border-b border-border/20 bg-secondary/30">
+        <div className="container max-w-3xl py-12 md:py-16">
           <h2 className="font-serif text-3xl leading-tight tracking-tight text-foreground md:text-4xl">
             Experiência
           </h2>
@@ -171,8 +171,8 @@ const Sobre = () => {
       </section>
 
       {/* Método de atuação */}
-      <section className="border-b border-border/40">
-        <div className="container max-w-3xl py-14 md:py-20">
+      <section className="border-b border-border/20">
+        <div className="container max-w-3xl py-12 md:py-16">
           <h2 className="font-serif text-3xl leading-tight tracking-tight text-foreground md:text-4xl">
             Método de atuação
           </h2>
@@ -202,8 +202,8 @@ const Sobre = () => {
       </section>
 
       {/* Para quem é o serviço */}
-      <section className="border-b border-border/40 bg-secondary/30">
-        <div className="container max-w-3xl py-14 md:py-20">
+      <section className="border-b border-border/20 bg-secondary/30">
+        <div className="container max-w-3xl py-12 md:py-16">
           <h2 className="font-serif text-3xl leading-tight tracking-tight text-foreground md:text-4xl">
             Para quem é o serviço
           </h2>
@@ -228,8 +228,8 @@ const Sobre = () => {
       </section>
 
       {/* Princípios */}
-      <section className="border-b border-border/40">
-        <div className="container max-w-3xl py-14 md:py-20">
+      <section className="border-b border-border/20">
+        <div className="container max-w-3xl py-12 md:py-16">
           <h2 className="text-center font-serif text-3xl leading-tight tracking-tight text-foreground md:text-4xl">
             Princípios da atuação
           </h2>
@@ -255,7 +255,7 @@ const Sobre = () => {
 
       {/* Fechamento institucional */}
       <section>
-        <div className="container max-w-3xl py-14 text-center md:py-20">
+        <div className="container max-w-3xl py-12 text-center md:py-16">
           <p className="mb-5 text-base italic text-muted-foreground">
             Se o banco está pressionando e o papel está na mesa, este é o momento.
           </p>
