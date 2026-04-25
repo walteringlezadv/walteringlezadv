@@ -183,11 +183,11 @@ const Index = () => {
           TRIAGEM CONDUZIDA POR WALTER INGLEZ
           ====================================================== */}
       <section className="border-b border-border/20 bg-secondary/30">
-        <div className="container max-w-3xl py-12 md:py-16">
+        <div className="container max-w-3xl pt-8 pb-12 md:pt-10 md:pb-16">
           <h2 className="text-center font-serif text-3xl leading-tight tracking-tight text-foreground md:text-4xl">
             Triagem jurídica conduzida por Walter Inglez
           </h2>
-          <div className="mt-10 space-y-6 text-base leading-relaxed text-muted-foreground md:text-lg">
+          <div className="mt-8 space-y-5 text-base leading-relaxed text-muted-foreground md:text-lg">
             <p>
               A triagem é conduzida diretamente por Walter Inglez. Em até 48h,
               você recebe uma leitura objetiva do seu momento contratual — com
@@ -200,7 +200,7 @@ const Index = () => {
             </p>
           </div>
 
-          <ul className="mt-10 space-y-3 border-t border-border/60 pt-8 text-sm text-muted-foreground md:text-base">
+          <ul className="mt-8 space-y-3 border-t border-border/60 pt-6 text-sm text-muted-foreground md:text-base">
             <li className="flex gap-3">
               <span aria-hidden className="mt-2 h-1 w-1 shrink-0 rounded-full bg-primary" />
               atuação focada em contratos bancários e passivo empresarial
