@@ -29,12 +29,12 @@ export const EMAIL_BODY = "Olá, gostaria de iniciar uma triagem do meu passivo.
  * Abrir Gmail compose em nova aba garante feedback imediato e funciona
  * em qualquer navegador moderno, mesmo para usuários sem cliente nativo.
  */
-export const EMAIL_HREF = `https://mail.google.com/mail/?view=cm&fs=1&to=${EMAIL_ADDRESS}&su=${encodeURIComponent(
+export const EMAIL_HREF = `https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=${EMAIL_ADDRESS}&su=${encodeURIComponent(
   EMAIL_SUBJECT,
 )}&body=${encodeURIComponent(EMAIL_BODY)}`;
 
 /** Constrói um link Gmail compose com assunto/corpo customizados. */
 export const buildEmailHref = (subject: string, body: string) =>
-  `https://mail.google.com/mail/?view=cm&fs=1&to=${EMAIL_ADDRESS}&su=${encodeURIComponent(
+  `https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=${EMAIL_ADDRESS}&su=${encodeURIComponent(
     subject,
   )}&body=${encodeURIComponent(body)}`;
