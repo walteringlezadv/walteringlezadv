@@ -257,11 +257,11 @@ const Index = () => {
             ))}
           </ul>
 
-          <p className="mt-10 text-xs leading-relaxed text-muted-foreground/80">
+          <p className="mt-8 text-xs leading-relaxed text-muted-foreground/80">
             Esta triagem possui natureza jurídica e contratual e não se confunde
             com assessoria financeira.
           </p>
-          <div className="mt-8">
+          <div className="mt-6">
             <SolicitarTriagemCTA />
           </div>
         </div>
