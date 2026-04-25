@@ -316,12 +316,12 @@ const Index = () => {
           COMO FUNCIONA O PROCESSO
           ====================================================== */}
       <section className="border-b border-border/20">
-        <div className="container max-w-3xl py-12 md:py-16">
+        <div className="container max-w-3xl pt-8 pb-12 md:pt-10 md:pb-16">
           <h2 className="text-center font-serif text-3xl leading-tight tracking-tight text-foreground md:text-4xl">
             Como funciona o processo
           </h2>
 
-          <ol className="mt-14 space-y-12">
+          <ol className="mt-12 space-y-10">
             {processo.map((step, i) => (
               <li key={step.n}>
                 <div className="flex flex-col items-center text-center">
