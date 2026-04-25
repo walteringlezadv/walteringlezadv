@@ -219,7 +219,7 @@ const Index = () => {
             </li>
           </ul>
 
-          <p className="mt-8 text-xs leading-relaxed text-muted-foreground/80">
+          <p className="mt-6 text-xs leading-relaxed text-muted-foreground/80">
             A triagem possui natureza jurídica e contratual, com foco na
             compreensão inicial do caso antes de qualquer aprofundamento formal.
           </p>
