@@ -127,39 +127,60 @@ const Contato = () => {
               <h3 className="font-serif text-xl text-foreground md:text-2xl">
                 Endereços de atendimento
               </h3>
-              <div className="mt-6 space-y-6 text-sm md:text-base">
-                <div className="flex gap-3">
-                  <MapPin
-                    className="mt-0.5 h-4 w-4 shrink-0 text-primary"
-                    aria-hidden
-                  />
-                  <div>
-                    <p className="font-medium text-foreground">Fortaleza – CE</p>
-                    <p className="mt-1 leading-relaxed text-muted-foreground">
-                      R. Dr. Gilberto Studart, 55
-                      <br />
-                      Torre Sul, Sala 1.018 — Cocó
-                      <br />
-                      CEP 60192-105
-                    </p>
-                  </div>
-                </div>
-                <div className="flex gap-3">
-                  <MapPin
-                    className="mt-0.5 h-4 w-4 shrink-0 text-primary"
-                    aria-hidden
-                  />
-                  <div>
-                    <p className="font-medium text-foreground">São Paulo – SP</p>
-                    <p className="mt-1 leading-relaxed text-muted-foreground">
-                      Av. Paulista, 1636
-                      <br />
-                      Sala 1105/1064 — Cerqueira César
-                      <br />
-                      CEP 01310-200
-                    </p>
-                  </div>
-                </div>
+              <div className="mt-6 space-y-5 text-sm">
+                <details className="group">
+                  <summary className="flex cursor-pointer list-none gap-3">
+                    <MapPin
+                      className="mt-0.5 h-4 w-4 shrink-0 text-primary"
+                      aria-hidden
+                    />
+                    <div>
+                      <p className="font-medium text-foreground">Fortaleza – CE</p>
+                      <p className="mt-0.5 text-muted-foreground">
+                        Cocó · Torre Sul
+                      </p>
+                      <span className="mt-1 inline-block text-xs text-primary underline underline-offset-4 group-open:hidden">
+                        Ver endereço completo
+                      </span>
+                      <span className="mt-1 hidden text-xs text-primary underline underline-offset-4 group-open:inline-block">
+                        Recolher
+                      </span>
+                    </div>
+                  </summary>
+                  <p className="mt-2 pl-7 text-xs leading-relaxed text-muted-foreground">
+                    R. Dr. Gilberto Studart, 55
+                    <br />
+                    Torre Sul, Sala 1.018 — Cocó
+                    <br />
+                    CEP 60192-105
+                  </p>
+                </details>
+
+                <details className="group">
+                  <summary className="flex cursor-pointer list-none gap-3">
+                    <MapPin
+                      className="mt-0.5 h-4 w-4 shrink-0 text-primary"
+                      aria-hidden
+                    />
+                    <div>
+                      <p className="font-medium text-foreground">São Paulo – SP</p>
+                      <p className="mt-0.5 text-muted-foreground">Av. Paulista</p>
+                      <span className="mt-1 inline-block text-xs text-primary underline underline-offset-4 group-open:hidden">
+                        Ver endereço completo
+                      </span>
+                      <span className="mt-1 hidden text-xs text-primary underline underline-offset-4 group-open:inline-block">
+                        Recolher
+                      </span>
+                    </div>
+                  </summary>
+                  <p className="mt-2 pl-7 text-xs leading-relaxed text-muted-foreground">
+                    Av. Paulista, 1636
+                    <br />
+                    Sala 1105/1064 — Cerqueira César
+                    <br />
+                    CEP 01310-200
+                  </p>
+                </details>
               </div>
             </div>
           </div>
@@ -167,7 +188,7 @@ const Contato = () => {
           {/* Presença digital */}
           <div className="mt-12 border-t border-border/60 pt-8">
             <h3 className="text-xs font-semibold uppercase tracking-wider text-foreground">
-              Presença digital
+              Conteúdo e análise contínua:
             </h3>
             <ul className="mt-5 flex flex-wrap items-center gap-3">
               {SOCIAL_LINKS.map(({ label, href, Icon }) => (
@@ -187,7 +208,11 @@ const Contato = () => {
             </ul>
           </div>
 
-          <p className="mt-10 text-xs leading-relaxed text-muted-foreground/80">
+          <p className="mt-10 text-sm font-medium italic leading-relaxed text-foreground/80">
+            Decisão estratégica começa com leitura correta.
+          </p>
+
+          <p className="mt-4 text-xs leading-relaxed text-muted-foreground/80">
             Atuação voltada à análise jurídica de passivos bancários
             empresariais. A triagem possui natureza jurídica e contratual e não
             se confunde com assessoria financeira.
