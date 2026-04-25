@@ -336,7 +336,7 @@ const Index = () => {
                   </p>
                 </div>
                 {i < processo.length - 1 ? (
-                  <div className="mt-10 flex justify-center" aria-hidden>
+                  <div className="mt-8 flex justify-center" aria-hidden>
                     <ArrowDown className="h-5 w-5 text-muted-foreground/60" />
                   </div>
                 ) : null}
@@ -344,7 +344,7 @@ const Index = () => {
             ))}
           </ol>
 
-          <div className="mt-16 text-center">
+          <div className="mt-12 text-center">
             <p className="mb-6 text-base italic text-muted-foreground">
               Se o banco está pressionando e o papel está na mesa, este é o momento.
             </p>
