@@ -87,11 +87,42 @@ const Contato = () => {
 
               <a
                 href={EMAIL_HREF}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 text-base font-medium text-foreground underline underline-offset-4 decoration-primary/70 hover:decoration-primary"
               >
                 <Mail className="h-4 w-4" aria-hidden />
                 {EMAIL_ADDRESS}
               </a>
+            </div>
+          </div>
+
+          {/* Endereços de atendimento — movidos do rodapé */}
+          <div className="mt-10 border-t border-border/60 pt-8">
+            <h3 className="font-serif text-xl text-foreground md:text-2xl">
+              Endereços de atendimento
+            </h3>
+            <div className="mt-6 grid gap-8 sm:grid-cols-2">
+              <div className="text-sm md:text-base">
+                <p className="font-medium text-foreground">Fortaleza – CE</p>
+                <p className="mt-2 leading-relaxed text-muted-foreground">
+                  R. Dr. Gilberto Studart, 55
+                  <br />
+                  Torre Sul, Sala 1.018 — Cocó
+                  <br />
+                  CEP 60192-105
+                </p>
+              </div>
+              <div className="text-sm md:text-base">
+                <p className="font-medium text-foreground">São Paulo – SP</p>
+                <p className="mt-2 leading-relaxed text-muted-foreground">
+                  Av. Paulista, 1636
+                  <br />
+                  Sala 1105/1064 — Cerqueira César
+                  <br />
+                  CEP 01310-200
+                </p>
+              </div>
             </div>
           </div>
 

@@ -150,6 +150,8 @@ const ProximoPasso = () => {
             <SolicitarTriagemCTA size="lg" />
             <a
               href={EMAIL_HREF}
+              target="_blank"
+              rel="noopener noreferrer"
               aria-label="Enviar informações iniciais por e-mail"
               className="inline-flex items-center gap-2 text-sm font-medium text-foreground underline underline-offset-4 decoration-primary/70 transition-colors hover:decoration-primary"
             >

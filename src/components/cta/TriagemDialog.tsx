@@ -1,5 +1,5 @@
 import { createContext, useCallback, useContext, useMemo, useState, type ReactNode } from "react";
-import { Check, Copy, Mail, MessageCircle } from "lucide-react";
+import { Check, Mail, MessageCircle } from "lucide-react";
 import {
   Dialog,
   DialogContent,
@@ -18,6 +18,7 @@ import {
 import {
   EMAIL_ADDRESS,
   WHATSAPP_NUMBER,
+  buildEmailHref,
 } from "@/lib/contact";
 import {
   EMPTY_TRIAGEM,
@@ -86,12 +87,10 @@ type TriagemDialogProps = {
 const TriagemDialog = ({ open, onOpenChange }: TriagemDialogProps) => {
   const [step, setStep] = useState<1 | 2 | 3>(1);
   const [data, setData] = useState<TriagemFormData>(EMPTY_TRIAGEM);
-  const [copied, setCopied] = useState(false);
 
   const reset = useCallback(() => {
     setStep(1);
     setData(EMPTY_TRIAGEM);
-    setCopied(false);
   }, []);
 
   const handleOpenChange = (v: boolean) => {
@@ -108,19 +107,7 @@ const TriagemDialog = ({ open, onOpenChange }: TriagemDialogProps) => {
   const message = buildTriagemMessage(data);
 
   const whatsappHref = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
-  const mailtoHref = `mailto:${EMAIL_ADDRESS}?subject=${encodeURIComponent(
-    "Triagem qualificada",
-  )}&body=${encodeURIComponent(message)}`;
-
-  const copyEmail = async () => {
-    try {
-      await navigator.clipboard.writeText(EMAIL_ADDRESS);
-      setCopied(true);
-      setTimeout(() => setCopied(false), 2000);
-    } catch {
-      // silencioso — usuário pode copiar manualmente do texto exibido
-    }
-  };
+  const emailHref = buildEmailHref("Triagem qualificada", message);
 
   const canAdvance =
     step === 1
@@ -316,41 +303,19 @@ const TriagemDialog = ({ open, onOpenChange }: TriagemDialogProps) => {
             <div className="rounded-md border border-border/60 bg-secondary/30 p-4">
               <p className="text-xs text-muted-foreground">Ou envie por e-mail:</p>
               <a
-                href={mailtoHref}
+                href={emailHref}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="mt-2 inline-flex items-center gap-2 text-sm font-medium text-foreground underline underline-offset-4 decoration-primary/70 hover:decoration-primary"
               >
                 <Mail className="h-4 w-4" aria-hidden />
-                Enviar por e-mail
+                {EMAIL_ADDRESS}
               </a>
-              <div className="mt-3 flex flex-wrap items-center gap-2">
-                <code className="break-all rounded bg-background px-2 py-1 text-xs text-foreground">
-                  {EMAIL_ADDRESS}
-                </code>
-                <Button
-                  type="button"
-                  variant="outline"
-                  size="sm"
-                  onClick={copyEmail}
-                  aria-label="Copiar e-mail"
-                >
-                  {copied ? (
-                    <>
-                      <Check className="h-3.5 w-3.5" aria-hidden />
-                      Copiado
-                    </>
-                  ) : (
-                    <>
-                      <Copy className="h-3.5 w-3.5" aria-hidden />
-                      Copiar e-mail
-                    </>
-                  )}
-                </Button>
-              </div>
             </div>
 
             <p className="text-xs leading-relaxed text-muted-foreground/80">
               Sem backend nesta etapa: a mensagem é montada localmente e
-              enviada pelo seu próprio WhatsApp ou cliente de e-mail.
+              enviada pelo seu próprio WhatsApp ou pelo Gmail.
             </p>
           </div>
         )}
