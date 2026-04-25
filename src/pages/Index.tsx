@@ -150,11 +150,11 @@ const Index = () => {
           3 FATORES
           ====================================================== */}
       <section className="border-b border-border/20">
-        <div className="container max-w-3xl py-12 md:py-16">
+        <div className="container max-w-3xl py-10 md:py-14">
           <h2 className="text-center font-serif text-3xl leading-tight tracking-tight text-foreground md:text-4xl">
             3 fatores que determinam sua posição antes de assinar
           </h2>
-          <ul className="mt-12 space-y-8">
+          <ul className="mt-10 space-y-7">
             {fatores.map((f, i) => (
               <li key={i} className="flex gap-4 border-l-2 border-primary/60 pl-6">
                 <div>
