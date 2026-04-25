@@ -170,7 +170,7 @@ const Index = () => {
               </li>
             ))}
           </ul>
-          <div className="mt-12 text-center">
+          <div className="mt-10 text-center">
             <p className="mb-6 text-base italic text-muted-foreground">
               Se o banco está pressionando e o papel está na mesa, este é o momento.
             </p>
