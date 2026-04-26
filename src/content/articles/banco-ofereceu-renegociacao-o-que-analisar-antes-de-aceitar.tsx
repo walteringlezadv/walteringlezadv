@@ -302,17 +302,22 @@ const article: Article = {
 
       <p>Antes de aceitar, a empresa precisa saber exatamente o que está assinando.</p>
 
-      <hr />
-
-      <p>
-        <em>
+      <aside
+        role="note"
+        aria-label="Nota institucional"
+        className="mt-12 rounded-md border border-border/50 bg-muted/30 p-5 md:p-6 text-sm leading-relaxed text-muted-foreground"
+      >
+        <p className="mb-2 text-xs font-medium uppercase tracking-[0.18em] text-foreground/80">
+          Nota institucional
+        </p>
+        <p className="text-sm leading-relaxed text-muted-foreground">
           Este conteúdo tem finalidade exclusivamente informativa e não
           substitui a análise individual do caso concreto. Situações
           envolvendo passivo bancário empresarial exigem avaliação dos
           contratos, garantias, valores, documentos assinados e estágio de
           cobrança.
-        </em>
-      </p>
+        </p>
+      </aside>
     </>
   ),
   seo: {
