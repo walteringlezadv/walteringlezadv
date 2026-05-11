@@ -1,4 +1,5 @@
 import type { Article } from "@/types/article";
+import ccbOriginalExecucaoStj from "./ccb-original-execucao-stj-maio-2026";
 import quandoRenegociar from "./quando-renegociar-passivo-bancario";
 import clausulasSilenciosas from "./clausulas-silenciosas-contratos-bancarios";
 import bancoOfereceuRenegociacao from "./banco-ofereceu-renegociacao-o-que-analisar-antes-de-aceitar";
@@ -11,6 +12,7 @@ import bancoOfereceuRenegociacao from "./banco-ofereceu-renegociacao-o-que-anali
  * 2. Importe-o aqui e adicione ao array `articles`.
  */
 export const articles: Article[] = [
+  ccbOriginalExecucaoStj,
   bancoOfereceuRenegociacao,
   quandoRenegociar,
   clausulasSilenciosas,
