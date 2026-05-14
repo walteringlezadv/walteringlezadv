@@ -5,6 +5,11 @@ import ccbOriginalExecucaoStj from "./ccb-original-execucao-stj-maio-2026";
 import quandoRenegociar from "./quando-renegociar-passivo-bancario";
 import clausulasSilenciosas from "./clausulas-silenciosas-contratos-bancarios";
 import bancoOfereceuRenegociacao from "./banco-ofereceu-renegociacao-o-que-analisar-antes-de-aceitar";
+import prescricaoIntercorrente from "./prescricao-intercorrente-limita-execucao-bancaria-abril-2026";
+import stjAdmiteExecucaoCcb from "./stj-admite-execucao-ccb-documento-digitalizado-abril-2026";
+import garantiasBancarias from "./garantias-bancarias-transferem-risco-patrimonio-socios-abril-2026";
+import confissaoDivida from "./confissao-divida-pode-acelerar-execucao-empresa-abril-2026";
+import recuperacaoCredito from "./recuperacao-credito-estrategia-patrimonial-precisa-abril-2026";
 
 /**
  * Agregador de artigos do blog.
@@ -20,4 +25,9 @@ export const articles: Article[] = [
   bancoOfereceuRenegociacao,
   quandoRenegociar,
   clausulasSilenciosas,
+  prescricaoIntercorrente,
+  stjAdmiteExecucaoCcb,
+  garantiasBancarias,
+  confissaoDivida,
+  recuperacaoCredito,
 ];
