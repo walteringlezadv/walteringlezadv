@@ -1,85 +1,99 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://walteringlez.com.br/</loc>
-    <changefreq>monthly</changefreq>
+    <loc>https://blog.walteringlezadv.com.br/</loc>
+    <lastmod>2026-05-15</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://walteringlez.com.br/como-funciona</loc>
-    <changefreq>monthly</changefreq>
+    <loc>https://blog.walteringlezadv.com.br/blog</loc>
+    <lastmod>2026-05-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://blog.walteringlezadv.com.br/blog/tema-1210-stj-risco-patrimonial-socios-maio-2026</loc>
+    <lastmod>2026-05-14</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://walteringlez.com.br/sobre</loc>
+    <loc>https://blog.walteringlezadv.com.br/blog/capital-de-giro-empresarial-risco-passivo-bancario</loc>
+    <lastmod>2026-05-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://blog.walteringlezadv.com.br/blog/ccb-original-execucao-stj-maio-2026</loc>
+    <lastmod>2026-05-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://blog.walteringlezadv.com.br/blog/prescricao-intercorrente-limita-execucao-bancaria-abril-2026</loc>
+    <lastmod>2026-04-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://blog.walteringlezadv.com.br/blog/stj-admite-execucao-ccb-documento-digitalizado-abril-2026</loc>
+    <lastmod>2026-04-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://blog.walteringlezadv.com.br/blog/garantias-bancarias-transferem-risco-patrimonio-socios-abril-2026</loc>
+    <lastmod>2026-04-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://blog.walteringlezadv.com.br/blog/confissao-divida-pode-acelerar-execucao-empresa-abril-2026</loc>
+    <lastmod>2026-04-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://blog.walteringlezadv.com.br/blog/recuperacao-credito-estrategia-patrimonial-precisa-abril-2026</loc>
+    <lastmod>2026-04-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://blog.walteringlezadv.com.br/blog/banco-ofereceu-renegociacao-o-que-analisar-antes-de-aceitar</loc>
+    <lastmod>2026-04-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://blog.walteringlezadv.com.br/blog/clausulas-silenciosas-contratos-bancarios</loc>
+    <lastmod>2026-04-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://blog.walteringlezadv.com.br/blog/quando-renegociar-passivo-bancario</loc>
+    <lastmod>2025-03-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://blog.walteringlezadv.com.br/como-funciona</loc>
+    <lastmod>2026-05-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://walteringlez.com.br/blog</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://walteringlez.com.br/proximo-passo</loc>
+    <loc>https://blog.walteringlezadv.com.br/sobre</loc>
+    <lastmod>2026-05-15</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://walteringlez.com.br/contato</loc>
+    <loc>https://blog.walteringlezadv.com.br/contato</loc>
+    <lastmod>2026-05-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://walteringlez.com.br/blog/quando-renegociar-passivo-bancario</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://walteringlez.com.br/blog/clausulas-silenciosas-contratos-bancarios</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://walteringlez.com.br/blog/ccb-original-execucao-stj-maio-2026</loc>
-    <lastmod>2026-05-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://walteringlez.com.br/blog/banco-ofereceu-renegociacao-o-que-analisar-antes-de-aceitar</loc>
-    <lastmod>2026-05-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://walteringlez.com.br/blog/stj-admite-execucao-ccb-documento-digitalizado</loc>
-    <lastmod>2026-05-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://walteringlez.com.br/blog/recuperacao-credito-estrategia-patrimonial</loc>
-    <lastmod>2026-05-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://walteringlez.com.br/blog/confissao-divida-acelerar-execucao-empresa</loc>
-    <lastmod>2026-05-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://walteringlez.com.br/blog/garantias-bancarias-risco-patrimonio-socios</loc>
-    <lastmod>2026-05-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://walteringlez.com.br/blog/tema-1210-stj-risco-patrimonial-socios-maio-2026</loc>
-    <lastmod>2026-05-14</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
   </url>
 </urlset>
