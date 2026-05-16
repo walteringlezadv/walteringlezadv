@@ -38,8 +38,8 @@ const Blog = () => {
               onClick={() => setActiveCategory(null)}
               className={`shrink-0 rounded-sm border px-4 py-1.5 text-xs font-medium uppercase tracking-widest transition-colors ${
                 activeCategory === null
-                  ? "border-foreground bg-foreground text-background"
-                  : "border-foreground/30 text-foreground/70 hover:border-foreground/60 hover:text-foreground"
+                  ? "border-white bg-white text-[#0d2b27]"
+                  : "border-[#ffffff40] text-[#ffffffb3] hover:border-[#ffffff99] hover:text-white"
               }`}
             >
               Todas
@@ -52,8 +52,8 @@ const Blog = () => {
                 }
                 className={`shrink-0 rounded-sm border px-4 py-1.5 text-xs font-medium uppercase tracking-widest transition-colors ${
                   activeCategory === cat
-                    ? "border-foreground bg-foreground text-background"
-                    : "border-foreground/30 text-foreground/70 hover:border-foreground/60 hover:text-foreground"
+                    ? "border-white bg-white text-[#0d2b27]"
+                    : "border-[#ffffff40] text-[#ffffffb3] hover:border-[#ffffff99] hover:text-white"
                 }`}
               >
                 {cat}
