@@ -36,11 +36,11 @@ const Blog = () => {
           <div className="flex flex-wrap gap-2 py-3">
             <button
               onClick={() => setActiveCategory(null)}
-              className={`shrink-0 rounded-sm border border-white/20 px-3 py-1 text-[11px] font-medium uppercase tracking-widest transition-colors outline-none focus:outline-none ${
+              className={
                 activeCategory === null
-                  ? "border-white bg-white/20 text-white font-semibold"
-                  : "border-white/60 text-white hover:border-white/70 hover:text-white"
-              }`}
+                  ? "shrink-0 rounded-sm border border-white bg-white/25 px-3 py-1 text-[11px] font-semibold uppercase tracking-widest transition-colors text-white outline-none focus:outline-none"
+                  : "shrink-0 rounded-sm border border-white/70 px-3 py-1 text-[11px] font-medium uppercase tracking-widest transition-colors text-white hover:bg-white/20 outline-none focus:outline-none"
+              }
             >
               Todas
             </button>
@@ -50,11 +50,11 @@ const Blog = () => {
                 onClick={() =>
                   setActiveCategory(activeCategory === cat ? null : cat)
                 }
-                className={`shrink-0 rounded-sm border border-white/20 px-3 py-1 text-[11px] font-medium uppercase tracking-widest transition-colors outline-none focus:outline-none ${
+                className={
                   activeCategory === cat
-                    ? "border-white/40 bg-white/15 text-white font-semibold"
-                    : "border-white/40 text-white/80 hover:border-white/70 hover:text-white"
-                }`}
+                    ? "shrink-0 rounded-sm border border-white bg-white/25 px-3 py-1 text-[11px] font-semibold uppercase tracking-widest transition-colors text-white outline-none focus:outline-none"
+                    : "shrink-0 rounded-sm border border-white/70 px-3 py-1 text-[11px] font-medium uppercase tracking-widest transition-colors text-white hover:bg-white/20 outline-none focus:outline-none"
+                }
               >
                 {cat}
               </button>
