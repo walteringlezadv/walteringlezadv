@@ -33,3 +33,20 @@ jobs:
             -H "Authorization: Bearer $SYNC_API_KEY" \
             -H "Content-Type: application/json" \
             -d @/tmp/articles-payload.json
+
+      - name: Detect new article
+        id: detect
+        run: |
+          NEW=$(git diff --name-status HEAD~1 HEAD -- 'src/content/articles/*.tsx' | grep '^A' | wc -l | tr -d ' ')
+          echo "new_articles=$NEW" >> $GITHUB_OUTPUT
+
+      - name: Install nodemailer
+        if: steps.detect.outputs.new_articles != '0'
+        run: npm install nodemailer
+
+      - name: Send article email
+        if: steps.detect.outputs.new_articles != '0'
+        env:
+          GMAIL_USER: walter.inglezadv@gmail.com
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+        run: node scripts/send-article-email.mjs
