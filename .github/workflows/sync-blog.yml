@@ -22,18 +22,6 @@ jobs:
       - name: Install dependencies
         run: npm ci --legacy-peer-deps
 
-      - name: Extract articles
-        run: node scripts/extract-articles.mjs
-
-      - name: Send to blog API
-        env:
-          SYNC_API_KEY: ${{ secrets.SYNC_API_KEY }}
-        run: |
-          curl -X POST https://walterblog-ezbkvzzn.manus.space/api/sync/articles \
-            -H "Authorization: Bearer $SYNC_API_KEY" \
-            -H "Content-Type: application/json" \
-            -d @/tmp/articles-payload.json
-
       - name: Detect new article
         id: detect
         run: |
