@@ -23,7 +23,7 @@ export const SiteHeader = () => {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-40 w-full border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80">
+    <header className="sticky top-0 z-40 w-full border-b border-border bg-[#0a1f1c]">
       {/* Linha institucional: lockup · tagline · CTA */}
       <div className="container grid h-28 grid-cols-[auto_1fr_auto] items-center gap-8">
         {/* Lockup institucional (esquerda) — SVG oficial + wordmark */}
@@ -78,7 +78,7 @@ export const SiteHeader = () => {
       {/* Linha de navegação principal (desktop) */}
       <nav
         aria-label="Navegação principal"
-        className="hidden md:block border-t border-border/60"
+        className="hidden md:block border-t border-border/60 bg-[#112420]"
       >
         <ul className="container flex items-center justify-center gap-8 py-3">
           {MAIN_NAV.map((item) => (
