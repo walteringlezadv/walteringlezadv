@@ -32,7 +32,7 @@ const Blog = () => {
         />
       </section>
       <section className="border-b border-foreground/10 bg-[#0d2b27] sticky top-0 z-10">
-        <div className="container max-w-5xl">
+        <div className="container max-w-7xl">
           <div className="flex gap-2 overflow-x-auto py-3 scrollbar-none">
             <button
               onClick={() => setActiveCategory(null)}
