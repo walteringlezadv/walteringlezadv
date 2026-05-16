@@ -31,15 +31,15 @@ const Blog = () => {
           lead="Leituras técnicas e sóbrias sobre o momento contratual entre empresa e banco — sem promessas, sem atalhos."
         />
       </section>
-      <section className="border-b border-border/20 bg-background/60 sticky top-0 z-10 backdrop-blur-sm">
+      <section className="border-b border-foreground/10 bg-background sticky top-0 z-10">
         <div className="container max-w-5xl">
-          <div className="flex gap-1 overflow-x-auto py-3 scrollbar-none">
+          <div className="flex gap-2 overflow-x-auto py-3 scrollbar-none">
             <button
               onClick={() => setActiveCategory(null)}
-              className={`shrink-0 rounded-sm px-4 py-1.5 text-xs font-medium uppercase tracking-widest transition-colors ${
+              className={`shrink-0 rounded-sm border px-4 py-1.5 text-xs font-medium uppercase tracking-widest transition-colors ${
                 activeCategory === null
-                  ? "bg-foreground text-background"
-                  : "text-muted-foreground hover:text-foreground"
+                  ? "border-foreground bg-foreground text-background"
+                  : "border-foreground/30 text-foreground/70 hover:border-foreground/60 hover:text-foreground"
               }`}
             >
               Todas
@@ -50,10 +50,10 @@ const Blog = () => {
                 onClick={() =>
                   setActiveCategory(activeCategory === cat ? null : cat)
                 }
-                className={`shrink-0 rounded-sm px-4 py-1.5 text-xs font-medium uppercase tracking-widest transition-colors ${
+                className={`shrink-0 rounded-sm border px-4 py-1.5 text-xs font-medium uppercase tracking-widest transition-colors ${
                   activeCategory === cat
-                    ? "bg-foreground text-background"
-                    : "text-muted-foreground hover:text-foreground"
+                    ? "border-foreground bg-foreground text-background"
+                    : "border-foreground/30 text-foreground/70 hover:border-foreground/60 hover:text-foreground"
                 }`}
               >
                 {cat}
