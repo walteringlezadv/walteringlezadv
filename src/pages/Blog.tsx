@@ -36,7 +36,7 @@ const Blog = () => {
           <div className="flex flex-wrap gap-2 py-3">
             <button
               onClick={() => setActiveCategory(null)}
-              className={`shrink-0 rounded-sm border px-4 py-1.5 text-xs font-medium uppercase tracking-widest transition-colors ${
+              className={`shrink-0 rounded-sm border border-white/20 px-3 py-1 text-[11px] font-medium uppercase tracking-widest transition-colors ${
                 activeCategory === null
                   ? "border-white/80 bg-white/10 text-white"
                   : "border-[#ffffff40] text-[#ffffffb3] hover:border-[#ffffff99] hover:text-white"
@@ -50,7 +50,7 @@ const Blog = () => {
                 onClick={() =>
                   setActiveCategory(activeCategory === cat ? null : cat)
                 }
-                className={`shrink-0 rounded-sm border px-4 py-1.5 text-xs font-medium uppercase tracking-widest transition-colors ${
+                className={`shrink-0 rounded-sm border border-white/20 px-3 py-1 text-[11px] font-medium uppercase tracking-widest transition-colors ${
                   activeCategory === cat
                     ? "border-white/80 bg-white/10 text-white"
                     : "border-[#ffffff40] text-[#ffffffb3] hover:border-[#ffffff99] hover:text-white"
