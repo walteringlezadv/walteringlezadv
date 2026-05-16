@@ -17,7 +17,7 @@ const article: Article = {
     name: "Walter Inglez",
     role: "Advocacia e Consultoria",
   },
-  category: "Contratos",
+  category: "Contratos Bancários",
   tags: ["cláusulas", "garantias", "leitura contratual"],
   readingTime: 5,
   body: (
