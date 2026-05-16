@@ -17,7 +17,7 @@ const article: Article = {
     name: "Walter Inglez",
     role: "Advocacia e Consultoria",
   },
-  category: "Gestão de Passivos",
+  category: "Capital de Giro",
   tags: [
     "capital de giro",
     "passivo bancário",
