@@ -33,12 +33,12 @@ const Blog = () => {
       </section>
       <section className="border-b border-foreground/10 bg-[#0d2b27] sticky top-0 z-10">
         <div className="container max-w-7xl">
-          <div className="flex gap-2 overflow-x-auto py-3 scrollbar-none">
+          <div className="flex flex-wrap gap-2 py-3">
             <button
               onClick={() => setActiveCategory(null)}
               className={`shrink-0 rounded-sm border px-4 py-1.5 text-xs font-medium uppercase tracking-widest transition-colors ${
                 activeCategory === null
-                  ? "border-white bg-white text-[#0d2b27]"
+                  ? "border-white/80 bg-white/10 text-white"
                   : "border-[#ffffff40] text-[#ffffffb3] hover:border-[#ffffff99] hover:text-white"
               }`}
             >
@@ -52,7 +52,7 @@ const Blog = () => {
                 }
                 className={`shrink-0 rounded-sm border px-4 py-1.5 text-xs font-medium uppercase tracking-widest transition-colors ${
                   activeCategory === cat
-                    ? "border-white bg-white text-[#0d2b27]"
+                    ? "border-white/80 bg-white/10 text-white"
                     : "border-[#ffffff40] text-[#ffffffb3] hover:border-[#ffffff99] hover:text-white"
                 }`}
               >
