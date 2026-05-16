@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { SiteShell } from "@/components/layout/SiteShell";
 import { PageSeo } from "@/components/seo/PageSeo";
@@ -5,21 +6,16 @@ import { PageHeader } from "@/components/institutional/PageHeader";
 import { SolicitarTriagemCTA } from "@/components/cta/SolicitarTriagemCTA";
 import { ArticleCard } from "@/components/blog/ArticleCard";
 import { ROUTES } from "@/lib/routes";
-import { getAllArticles } from "@/lib/articles";
+import { getAllArticles, getAllCategories } from "@/lib/articles";
 
-/**
- * Blog — Fase 3B.
- *
- * Índice editorial. Inerda integralmente o ritmo institucional da Fase 2/3A:
- *  - SiteShell, header e footer compartilhados
- *  - PageHeader (eyebrow → h1 → lead) idêntico às páginas institucionais
- *  - Containers max-w-3xl e seções com a mesma cadência vertical
- *  - CTA canônico apenas no fechamento estrutural
- *
- * O blog é continuação do site, nunca um produto separado.
- */
 const Blog = () => {
-  const articles = getAllArticles();
+  const allArticles = getAllArticles();
+  const categories = getAllCategories();
+  const [activeCategory, setActiveCategory] = useState<string | null>(null);
+
+  const filtered = activeCategory
+    ? allArticles.filter((a) => a.category === activeCategory)
+    : allArticles;
 
   return (
     <SiteShell>
@@ -28,8 +24,6 @@ const Blog = () => {
         description="Análises sóbrias e técnicas sobre gestão estratégica do passivo bancário empresarial."
         path={ROUTES.blog}
       />
-
-      {/* Cabeçalho institucional */}
       <section className="border-b border-border/20">
         <PageHeader
           eyebrow="Blog"
@@ -37,23 +31,54 @@ const Blog = () => {
           lead="Leituras técnicas e sóbrias sobre o momento contratual entre empresa e banco — sem promessas, sem atalhos."
         />
       </section>
-
-      {/* Listagem editorial */}
+      <section className="border-b border-border/20 bg-background/60 sticky top-0 z-10 backdrop-blur-sm">
+        <div className="container max-w-5xl">
+          <div className="flex gap-1 overflow-x-auto py-3 scrollbar-none">
+            <button
+              onClick={() => setActiveCategory(null)}
+              className={`shrink-0 rounded-sm px-4 py-1.5 text-xs font-medium uppercase tracking-widest transition-colors ${
+                activeCategory === null
+                  ? "bg-foreground text-background"
+                  : "text-muted-foreground hover:text-foreground"
+              }`}
+            >
+              Todas
+            </button>
+            {categories.map((cat) => (
+              <button
+                key={cat}
+                onClick={() =>
+                  setActiveCategory(activeCategory === cat ? null : cat)
+                }
+                className={`shrink-0 rounded-sm px-4 py-1.5 text-xs font-medium uppercase tracking-widest transition-colors ${
+                  activeCategory === cat
+                    ? "bg-foreground text-background"
+                    : "text-muted-foreground hover:text-foreground"
+                }`}
+              >
+                {cat}
+              </button>
+            ))}
+          </div>
+        </div>
+      </section>
       <section className="border-b border-border/20">
         <div className="container max-w-3xl py-12 md:py-16">
-          {articles.length === 0 ? (
+          {filtered.length === 0 ? (
             <div className="text-center">
               <p className="font-serif text-xl italic leading-relaxed text-muted-foreground md:text-2xl">
-                Os primeiros artigos serão publicados em breve.
+                Nenhum artigo nesta categoria ainda.
               </p>
-              <p className="mx-auto mt-6 max-w-xl text-sm leading-relaxed text-muted-foreground/90 md:text-base">
-                A linha editorial acompanha a mesma sobriedade da prática: foco
-                no momento contratual, leitura estrutural e linguagem objetiva.
-              </p>
+              <button
+                onClick={() => setActiveCategory(null)}
+                className="mt-6 text-sm text-primary underline-offset-4 hover:underline"
+              >
+                Ver todos os artigos
+              </button>
             </div>
           ) : (
             <ul className="space-y-14 md:space-y-16">
-              {articles.map((article) => (
+              {filtered.map((article) => (
                 <li key={article.slug}>
                   <ArticleCard article={article} />
                 </li>
@@ -62,8 +87,6 @@ const Blog = () => {
           )}
         </div>
       </section>
-
-      {/* Fechamento institucional — CTA canônico */}
       <section>
         <div className="container max-w-3xl py-12 text-center md:py-16">
           <p className="mx-auto mb-6 max-w-2xl text-sm leading-relaxed text-muted-foreground md:text-base">
