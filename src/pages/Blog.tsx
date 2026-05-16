@@ -31,7 +31,7 @@ const Blog = () => {
           lead="Leituras técnicas e sóbrias sobre o momento contratual entre empresa e banco — sem promessas, sem atalhos."
         />
       </section>
-      <section className="border-b border-foreground/10 bg-background sticky top-0 z-10">
+      <section className="border-b border-foreground/10 bg-[#0d2b27] sticky top-0 z-10">
         <div className="container max-w-5xl">
           <div className="flex gap-2 overflow-x-auto py-3 scrollbar-none">
             <button
