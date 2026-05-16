@@ -38,8 +38,8 @@ const Blog = () => {
               onClick={() => setActiveCategory(null)}
               className={`shrink-0 rounded-sm border border-white/20 px-3 py-1 text-[11px] font-medium uppercase tracking-widest transition-colors outline-none focus:outline-none ${
                 activeCategory === null
-                  ? "border-white/40 bg-white/15 text-white font-semibold"
-                  : "border-white/40 text-white/80 hover:border-white/70 hover:text-white"
+                  ? "border-white bg-white/20 text-white font-semibold"
+                  : "border-white/60 text-white hover:border-white/70 hover:text-white"
               }`}
             >
               Todas
