@@ -17,7 +17,7 @@ const article: Article = {
     name: "Walter Inglez",
     role: "Advocacia e Consultoria",
   },
-  category: "Passivo Bancário",
+  category: "Gestão de Passivos",
   tags: ["renegociação", "contratos", "gestão de passivo"],
   readingTime: 7,
   body: (

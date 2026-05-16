@@ -18,7 +18,7 @@ const article: Article = {
     name: "Walter Inglez",
     role: "Advocacia e Consultoria",
   },
-  category: "Renegociação bancária empresarial",
+  category: "Renegociação",
   tags: [
     "renegociação",
     "passivo bancário",
