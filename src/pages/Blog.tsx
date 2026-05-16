@@ -36,10 +36,10 @@ const Blog = () => {
           <div className="flex flex-wrap gap-2 py-3">
             <button
               onClick={() => setActiveCategory(null)}
-              className={`shrink-0 rounded-sm border border-white/20 px-3 py-1 text-[11px] font-medium uppercase tracking-widest transition-colors ${
+              className={`shrink-0 rounded-sm border border-white/20 px-3 py-1 text-[11px] font-medium uppercase tracking-widest transition-colors outline-none focus:outline-none ${
                 activeCategory === null
                   ? "border-white/40 bg-white/15 text-white font-semibold"
-                  : "border-[#ffffff40] text-[#ffffffb3] hover:border-[#ffffff99] hover:text-white"
+                  : "border-white/40 text-white/80 hover:border-white/70 hover:text-white"
               }`}
             >
               Todas
@@ -50,10 +50,10 @@ const Blog = () => {
                 onClick={() =>
                   setActiveCategory(activeCategory === cat ? null : cat)
                 }
-                className={`shrink-0 rounded-sm border border-white/20 px-3 py-1 text-[11px] font-medium uppercase tracking-widest transition-colors ${
+                className={`shrink-0 rounded-sm border border-white/20 px-3 py-1 text-[11px] font-medium uppercase tracking-widest transition-colors outline-none focus:outline-none ${
                   activeCategory === cat
                     ? "border-white/40 bg-white/15 text-white font-semibold"
-                    : "border-[#ffffff40] text-[#ffffffb3] hover:border-[#ffffff99] hover:text-white"
+                    : "border-white/40 text-white/80 hover:border-white/70 hover:text-white"
                 }`}
               >
                 {cat}
