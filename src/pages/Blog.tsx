@@ -38,7 +38,7 @@ const Blog = () => {
               onClick={() => setActiveCategory(null)}
               className={`shrink-0 rounded-sm border border-white/20 px-3 py-1 text-[11px] font-medium uppercase tracking-widest transition-colors ${
                 activeCategory === null
-                  ? "border-white/80 bg-white/10 text-white"
+                  ? "border-white/40 bg-white/15 text-white font-semibold"
                   : "border-[#ffffff40] text-[#ffffffb3] hover:border-[#ffffff99] hover:text-white"
               }`}
             >
@@ -52,7 +52,7 @@ const Blog = () => {
                 }
                 className={`shrink-0 rounded-sm border border-white/20 px-3 py-1 text-[11px] font-medium uppercase tracking-widest transition-colors ${
                   activeCategory === cat
-                    ? "border-white/80 bg-white/10 text-white"
+                    ? "border-white/40 bg-white/15 text-white font-semibold"
                     : "border-[#ffffff40] text-[#ffffffb3] hover:border-[#ffffff99] hover:text-white"
                 }`}
               >

@@ -30,7 +30,7 @@ export const ArticleMeta = ({
         className,
       )}
     >
-      <span className="font-medium text-primary/90">{category}</span>
+      <span className="bg-primary/20 border border-primary text-primary px-2 py-0.5 text-xs uppercase tracking-widest">{category}</span>
       <span aria-hidden className="text-border">·</span>
       <time dateTime={publishedAt}>{formatPublishedDate(publishedAt)}</time>
       <span aria-hidden className="text-border">·</span>
