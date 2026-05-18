@@ -37,6 +37,7 @@ Se a resposta for NÃO a qualquer uma das três: descartar e buscar outro tema.
 3. Confirmar a data de publicação — máximo 90 dias
 4. Descartar qualquer link quebrado ou conteúdo pago
 Nunca redigir com base em conteúdo não confirmado.
+A referência final do artigo deve sempre ser a fonte primária — preferencialmente a notícia oficial do STJ, STF ou CJF com link direto para o portal do tribunal. Portais secundários como Conjur, Migalhas e JusBrasil servem apenas para localizar o tema — nunca como referência citada no artigo.
 
 ## TOM DE VOZ
 - Sóbrio, técnico, direto, sem promessa de resultado
