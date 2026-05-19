@@ -23,7 +23,8 @@ const articleUrls = files
     const content = readFileSync(join(articlesDir, file), "utf-8");
     const slug = content.match(/slug:\s*["'`]([^"'`]+)["'`]/)?.[1] ?? file.replace(".tsx", "");
     const publishedAt = content.match(/publishedAt:\s*["'`]([^"'`]+)["'`]/)?.[1] ?? new Date().toISOString().split("T")[0];
-    return { slug, publishedAt };
+    const updatedAt = content.match(/updatedAt:\s*["'`]([^"'`]+)["'`]/)?.[1];
+    return { slug, publishedAt, updatedAt };
   })
   .sort((a, b) => b.publishedAt.localeCompare(a.publishedAt));
 
@@ -37,9 +38,9 @@ const urlEntries = [
   </url>`
   ),
   ...articleUrls.map(
-    ({ slug, publishedAt }) => `  <url>
+    ({ slug, publishedAt, updatedAt }) => `  <url>
     <loc>${BASE_URL}/blog/${slug}</loc>
-    <lastmod>${publishedAt}</lastmod>
+    <lastmod>${updatedAt ?? publishedAt}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>`

@@ -8,6 +8,7 @@ import { ArticleMeta } from "@/components/blog/ArticleMeta";
 import { ArticleProse } from "@/components/blog/ArticleProse";
 import { ROUTES, blogPostPath } from "@/lib/routes";
 import { getArticleBySlug } from "@/lib/articles";
+import { articleJsonLd, organizationJsonLd } from "@/lib/seo";
 
 /**
  * BlogPost — Fase 3B.
@@ -59,6 +60,7 @@ const BlogPost = () => {
         path={blogPostPath(article.slug)}
         type="article"
         image={article.cover?.src}
+        jsonLd={[articleJsonLd(article), organizationJsonLd()]}
       />
 
       {/* Cabeçalho institucional do artigo */}

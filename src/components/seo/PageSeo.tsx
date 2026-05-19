@@ -6,6 +6,11 @@ import {
   type PageSeoInput,
 } from "@/lib/seo";
 
+type PageSeoProps = PageSeoInput & {
+  /** Schemas JSON-LD a injetar como <script type="application/ld+json">. */
+  jsonLd?: object[];
+};
+
 /**
  * Componente único para meta tags por rota.
  * Toda página deve renderizar <PageSeo /> uma vez.
@@ -16,7 +21,8 @@ export const PageSeo = ({
   path,
   image,
   type = "website",
-}: PageSeoInput) => {
+  jsonLd,
+}: PageSeoProps) => {
   const fullTitle = buildPageTitle(title);
   const canonical = buildCanonicalUrl(path);
   const ogImage = image ?? DEFAULT_OG_IMAGE;
@@ -44,6 +50,13 @@ export const PageSeo = ({
       <meta name="twitter:title" content={fullTitle} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={ogImage} />
+
+      {/* JSON-LD */}
+      {jsonLd?.map((schema, i) => (
+        <script key={i} type="application/ld+json">
+          {JSON.stringify(schema)}
+        </script>
+      ))}
     </Helmet>
   );
 };

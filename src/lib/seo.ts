@@ -5,6 +5,8 @@
  * inconsistências entre páginas. Consumido pelo componente <PageSeo />.
  */
 
+import type { Article } from "@/types/article";
+
 export type PageSeoInput = {
   title: string;
   description: string;
@@ -33,17 +35,47 @@ export function buildPageTitle(title: string): string {
   return title.includes(SITE_NAME) ? title : `${title} — ${SITE_NAME}`;
 }
 
-/**
- * JSON-LD: Organization (footer global).
- * Aplicação completa fica para a Fase 2, quando a identificação institucional
- * for finalizada (sociedade de advogados + endereços).
- */
 export function organizationJsonLd() {
   return {
     "@context": "https://schema.org",
     "@type": "Organization",
-    name: SITE_NAME,
-    url: SITE_URL,
+    name: "Walter Inglez – Advocacia e Consultoria",
+    url: "https://walteringlezadv.com.br",
+    logo: DEFAULT_OG_IMAGE,
+    description:
+      "Advocacia especializada em direito bancário do consumidor e gestão de passivos bancários.",
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Fortaleza",
+      addressRegion: "CE",
+      addressCountry: "BR",
+    },
+    sameAs: [
+      "https://www.instagram.com/walteringlezadv",
+      "https://www.facebook.com/walteringlezadv",
+    ],
+  };
+}
+
+export function articleJsonLd(article: Article) {
+  const canonical = buildCanonicalUrl(`/blog/${article.slug}`);
+  return {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: article.seo?.title ?? article.title,
+    description: article.seo?.description ?? article.excerpt,
+    datePublished: article.publishedAt,
+    dateModified: article.updatedAt ?? article.publishedAt,
+    author: {
+      "@type": "Person",
+      name: "Walter Inglez",
+      url: "https://walteringlezadv.com.br/sobre",
+    },
+    publisher: organizationJsonLd(),
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": canonical,
+    },
   };
 }
 
