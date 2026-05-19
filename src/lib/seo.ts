@@ -18,7 +18,7 @@ export type PageSeoInput = {
 
 const SITE_NAME = "Walter Inglez";
 // Base canônica do site. Ajustar quando o domínio definitivo for conectado.
-const SITE_URL = "https://walteringlez.com.br";
+const SITE_URL = "https://blog.walteringlezadv.com.br";
 // Imagem institucional padrão para Open Graph/Twitter quando a página não fornece uma própria.
 const DEFAULT_OG_IMAGE = `${SITE_URL}/og-image.png`;
 
