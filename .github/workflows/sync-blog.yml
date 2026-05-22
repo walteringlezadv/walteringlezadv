@@ -3,7 +3,7 @@ name: Sync articles to blog
 on:
   push:
     branches:
-      - main
+      - draft
     paths:
       - 'src/content/articles/**.tsx'
 
