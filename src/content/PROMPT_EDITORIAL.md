@@ -62,7 +62,7 @@ Sim. A CCB permite a cobrança de juros remuneratórios e moratórios após o ve
 ```
 *Este conteúdo tem finalidade exclusivamente informativa e não substitui a análise individual do caso concreto. Cada situação exige avaliação específica das condições contratuais, do estágio da cobrança e do contexto empresarial.*
 
-*Walter Inglez Advocacia e Consultoria | OAB/CE 51.563 | Fortaleza-CE e São Paulo-SP | Especialização em Gestão Estratégica de Passivo Bancário Empresarial*
+*Walter Inglez Advocacia e Consultoria | Especialização em Gestão Estratégica de Passivo Bancário Empresarial*
 ```
 
 ---
