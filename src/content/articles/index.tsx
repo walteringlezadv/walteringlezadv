@@ -1,4 +1,5 @@
 import type { Article } from "@/types/article";
+import creditoEmpresarialRestrito from "./credito-empresarial-restrito-leitura-passivo-maio-2026";
 import tema1288StjAlienacaoFiduciaria from "./tema-1288-stj-alienacao-fiduciaria-risco-imovel-garantia-maio-2026";
 import tema1409StjPenhoraFaturamento from "./tema-1409-stj-penhora-faturamento-execucao-bancaria-maio-2026";
 import tema1210StjRiscoPatrimonialSocios from "./tema-1210-stj-risco-patrimonial-socios-maio-2026";
@@ -21,6 +22,7 @@ import recuperacaoCredito from "./recuperacao-credito-estrategia-patrimonial-pre
  * 2. Importe-o aqui e adicione ao array `articles`.
  */
 export const articles: Article[] = [
+  creditoEmpresarialRestrito,
   tema1288StjAlienacaoFiduciaria,
   tema1409StjPenhoraFaturamento,
   tema1210StjRiscoPatrimonialSocios,
