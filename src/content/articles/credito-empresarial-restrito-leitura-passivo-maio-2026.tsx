@@ -2,9 +2,9 @@ import type { Article } from "@/types/article";
 
 const article: Article = {
   slug: "credito-empresarial-restrito-leitura-passivo-maio-2026",
-  title: "Crédito empresarial mais restrito exige leitura do passivo",
+  title: "Crédito empresarial mais restrito: por que ler o passivo antes de contratar capital de giro",
   description:
-    "Oferta de crédito mais seletiva exige leitura do passivo bancário antes de contratar capital de giro ou renegociar dívida empresarial.",
+    "Crédito empresarial mais seletivo exige análise do passivo, garantias e risco de execução antes de capital de giro ou renegociação.",
   excerpt:
     "Quando o crédito empresarial fica mais seletivo, a empresa pressionada por banco não pode decidir apenas pela parcela. Precisa entender o passivo, as garantias e a margem real de negociação.",
   publishedAt: "2026-05-22",
@@ -24,35 +24,34 @@ const article: Article = {
   body: (
     <>
       <p>
-        A publicação da Pesquisa Trimestral de Condições de Crédito pelo Banco
-        Central, em maio de 2026, reforça um ponto que já aparece na mesa de
-        muitos empresários: o crédito empresarial continua sendo procurado, mas
-        a leitura das instituições financeiras tende a ser mais seletiva quando
-        inadimplência, custo de funding e tolerância ao risco pesam sobre a
-        concessão de novas linhas.
+        Quando a empresa precisa de capital de giro para atravessar o mês, mas o
+        banco passa a exigir mais documentos, mais garantias ou uma nova
+        renegociação, o problema deixa de ser apenas financeiro. Ele passa a ser
+        também jurídico e estratégico.
+      </p>
+
+      <p>
+        As instituições financeiras consultadas na Pesquisa Trimestral de
+        Condições de Crédito, publicada pelo Banco Central em maio de 2026,
+        avaliaram a oferta de crédito como mais restritiva no primeiro trimestre,
+        com expectativa de maior restrição no segundo — especialmente por fatores
+        ligados a inadimplência e tolerância ao risco para micro, pequenas e
+        médias empresas.
       </p>
 
       <p>
         Para a empresa que depende de capital de giro, desconto de recebíveis,
-        conta garantida ou renegociação sucessiva, esse cenário não deve ser
-        lido como simples notícia econômica. Ele altera a posição negocial da
-        empresa. Quando o banco percebe risco maior, a proposta costuma vir com
+        conta garantida ou renegociação sucessiva, esse cenário altera a posição
+        negocial. Quando o banco percebe risco maior, a proposta costuma vir com
         mais condicionantes, prazo mais curto, reforço de garantia, assinatura
         de nova CCB ou consolidação de contratos anteriores.
-      </p>
-
-      <p>
-        O problema, portanto, não é apenas obter ou não obter crédito. O risco
-        está em aceitar uma nova operação sem compreender se ela aumenta o
-        fôlego operacional ou apenas reorganiza a dívida em posição jurídica
-        mais dura para a empresa.
       </p>
 
       <blockquote>
         <p>
           Em ambiente de crédito mais seletivo, a pergunta estratégica não é
-          “o banco aprovou?”, mas “qual posição jurídica a empresa assume ao
-          aceitar essa aprovação?”.
+          "o banco aprovou?", mas "qual posição jurídica a empresa assume ao
+          aceitar essa aprovação?".
         </p>
       </blockquote>
 
@@ -70,9 +69,9 @@ const article: Article = {
       <p>
         A diferença aparece nos documentos. Se a nova operação quita contratos
         antigos, consolida saldo devedor, acrescenta aval dos sócios ou exige
-        garantia real, ela não é apenas “capital de giro”. Ela pode ser uma
-        reestruturação do risco do banco contra a empresa. Para o empresário,
-        isso significa menor margem de defesa futura se a negociação fracassar.
+        garantia real, ela não é apenas "capital de giro". Ela pode ser uma
+        reestruturação do risco do banco contra a empresa — com menor margem de
+        defesa futura se a negociação fracassar.
       </p>
 
       <p>
@@ -139,8 +138,8 @@ const article: Article = {
         Um ambiente de crédito mais restritivo costuma tornar a negociação mais
         assimétrica. A empresa precisa de fôlego; o banco, percebendo risco,
         tende a pedir mais proteção. Esse movimento é compreensível do ponto de
-        vista financeiro, mas precisa ser analisado pelo empresário com cuidado
-        jurídico e econômico.
+        vista financeiro, mas precisa ser analisado com cuidado jurídico e
+        econômico.
       </p>
 
       <p>
@@ -149,14 +148,6 @@ const article: Article = {
         negociar com ajustes, defender-se de uma cobrança mal estruturada ou
         ajuizar medida própria quando houver fundamento técnico. A escolha não
         nasce da pressa. Nasce da leitura do cenário.
-      </p>
-
-      <p>
-        A análise deve responder a perguntas objetivas. Qual contrato originou a
-        dívida? Há CCB? O demonstrativo é claro? A garantia alcança bens dos
-        sócios? A dívida nova extingue ou apenas substitui a antiga? O custo da
-        operação cabe no fluxo real da empresa? A resposta a essas perguntas
-        define a margem de decisão.
       </p>
 
       <h2>Risco de decidir sem leitura do passivo</h2>
@@ -184,10 +175,49 @@ const article: Article = {
         </strong>
       </p>
 
+      <h2>Perguntas frequentes</h2>
+
+      <h3>Crédito empresarial mais restrito afeta pequenas empresas?</h3>
+      <p>
+        Sim. Quando as instituições financeiras percebem maior risco e menor
+        tolerância à inadimplência, micro, pequenas e médias empresas podem
+        enfrentar mais exigências para contratar ou renegociar crédito.
+      </p>
+
+      <h3>Capital de giro pode piorar o passivo bancário da empresa?</h3>
+      <p>
+        Pode, se for usado apenas para rolar dívida antiga sem análise dos
+        contratos, garantias, custo total e risco de execução.
+      </p>
+
+      <h3>Antes de aceitar uma renegociação bancária, o que a empresa deve observar?</h3>
+      <p>
+        Deve verificar se há nova CCB, confissão de dívida, aval dos sócios,
+        reforço de garantia, vencimento antecipado e alteração na executividade
+        da dívida.
+      </p>
+
+      <h3>Toda proposta do banco deve ser recusada?</h3>
+      <p>
+        Não. A proposta pode ser útil, mas precisa ser analisada dentro do mapa
+        do passivo. O ponto não é aceitar ou recusar de imediato — é entender o
+        risco antes da decisão.
+      </p>
+
       <h2>Referência</h2>
 
       <p>
-        Banco Central do Brasil. <a href="https://www.bcb.gov.br/publicacoes/ptc" target="_blank" rel="noopener noreferrer">Pesquisa Trimestral de Condições de Crédito</a>. Publicação institucional sobre condições de crédito no Sistema Financeiro Nacional.
+        Banco Central do Brasil.{" "}
+        <a
+          href="https://www.bcb.gov.br/publicacoes/ptc"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Pesquisa Trimestral de Condições de Crédito — Resultados de março de
+          2026
+        </a>
+        . Avaliações sobre o 1º trimestre de 2026 e expectativas para o 2º
+        trimestre de 2026.
       </p>
 
       <aside
@@ -197,12 +227,17 @@ const article: Article = {
       >
         <p>
           <em>
-            Este conteúdo tem finalidade exclusivamente informativa e não substitui a análise individual do caso concreto. Cada situação exige avaliação específica das condições contratuais, do estágio da cobrança e do contexto empresarial.
+            Este conteúdo tem finalidade exclusivamente informativa e não
+            substitui a análise individual do caso concreto. Cada situação exige
+            avaliação específica das condições contratuais, do estágio da
+            cobrança e do contexto empresarial.
           </em>
         </p>
         <p>
           <em>
-            Walter Inglez Advocacia e Consultoria | OAB/CE 51.563 | Fortaleza-CE e São Paulo-SP | Especialização em Gestão Estratégica de Passivo Bancário Empresarial
+            Walter Inglez Advocacia e Consultoria | OAB/CE 51.563 |
+            Fortaleza-CE e São Paulo-SP | Especialização em Gestão Estratégica
+            de Passivo Bancário Empresarial
           </em>
         </p>
       </aside>
@@ -210,7 +245,7 @@ const article: Article = {
   ),
   seo: {
     title:
-      "Crédito empresarial mais restrito e leitura do passivo — Walter Inglez",
+      "Crédito empresarial mais restrito: por que ler o passivo antes de contratar capital de giro — Walter Inglez",
     description:
       "Crédito empresarial mais seletivo exige análise do passivo, garantias e risco de execução antes de capital de giro ou renegociação.",
   },
