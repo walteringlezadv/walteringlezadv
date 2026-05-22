@@ -235,9 +235,8 @@ const article: Article = {
         </p>
         <p>
           <em>
-            Walter Inglez Advocacia e Consultoria | OAB/CE 51.563 |
-            Fortaleza-CE e São Paulo-SP | Especialização em Gestão Estratégica
-            de Passivo Bancário Empresarial
+            Walter Inglez Advocacia e Consultoria | Especialização em Gestão
+            Estratégica de Passivo Bancário Empresarial
           </em>
         </p>
       </aside>
