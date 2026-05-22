@@ -25,17 +25,38 @@
 ## PADRÃO DE ARTIGO
 
 ### Extensão
-800 a 1.000 palavras (contagem do corpo do texto, excluindo título e nota institucional)
+800 a 1.200 palavras (contagem do corpo do texto, excluindo título, FAQ e nota institucional)
+
+### Abertura obrigatória
+O artigo deve sempre começar pela **cena do empresário** — o problema concreto que ele enfrenta no dia a dia. O dado técnico, a fonte ou a jurisprudência entra no segundo ou terceiro parágrafo, nunca na abertura.
 
 ### Estrutura obrigatória
 
-1. **Contexto** — situar o problema real que o empresário enfrenta (2-3 parágrafos)
+1. **Contexto** — cena do empresário em primeiro lugar, dado técnico em seguida (2-3 parágrafos)
 2. **O que o empresário precisa entender** — análise técnica acessível, sem legalês (3-4 parágrafos com intertítulos `##`)
 3. **Tabela comparativa** — mínimo 4 linhas de dados, máximo 6 colunas. Sempre presente. Formato markdown.
 4. **Risco** — o que acontece se o empresário não agir ou agir mal (1-2 parágrafos)
 5. **Conclusão** — mensagem final em **negrito**, máximo 3 linhas, sem promessa
-6. **Referência** — 1 fonte técnica com hiperlink (lei, acórdão, artigo doutrinário)
-7. **Nota institucional** — texto fixo obrigatório (ver abaixo)
+6. **FAQ** — 3 a 4 perguntas frequentes do empresário sobre o tema (ver regras abaixo)
+7. **Referência** — 1 fonte técnica com hiperlink (lei, acórdão, artigo doutrinário). Citar publicação específica, não apenas a página geral.
+8. **Nota institucional** — texto fixo obrigatório (ver abaixo)
+
+### Regras do FAQ
+- Sempre presente — nunca omitir
+- 3 a 4 perguntas por artigo
+- Formato: `### Pergunta?` seguido de parágrafo com a resposta
+- Máximo 3 linhas por resposta — respostas curtas e diretas
+- As perguntas devem refletir dúvidas reais do empresário PJ sobre o tema do artigo
+- Finalidade: SEO (rich snippets no Google) e autoridade técnica
+- Exemplo de estrutura:
+```
+### O banco pode cobrar juros após o vencimento da CCB?
+Sim. A CCB permite a cobrança de juros remuneratórios e moratórios após o vencimento, desde que previstos no contrato. O problema ocorre quando os encargos aplicados divergem das taxas pactuadas — o que pode ser questionado judicialmente.
+```
+
+### Regras sobre a fonte
+- Citar sempre publicação específica, não apenas a página geral. Exemplo: em vez de "Banco Central do Brasil — Publicações", citar "Banco Central do Brasil. Pesquisa Trimestral de Condições de Crédito — Resultados de março de 2026."
+- Quando a fonte for pesquisa ou relatório com metodologia amostral (como a PTC do BCB), atribuir os dados às instituições consultadas, não ao órgão emissor. Exemplo correto: "As instituições financeiras consultadas avaliaram..." — nunca "O Banco Central concluiu..."
 
 ### Nota institucional obrigatória (copiar exatamente)
 ```
@@ -81,12 +102,12 @@ export default article;
 
 ### Regras do arquivo .tsx
 - `slug`: kebab-case, sem acentos, sem caracteres especiais, descritivo
-- `title`: título completo, pode ter até 80 caracteres
+- `title`: título completo com palavras-chave SEO, até 80 caracteres. Preferir formato "Tema: por que fazer X antes de Y"
 - `category`: deve ser exatamente uma das 8 categorias listadas acima
 - `date`: data de criação no formato AAAA-MM-DD
-- `readingTime`: calcular assim — 800 palavras = 4 min | 900 palavras = 5 min | 1.000 palavras = 5 min
-- `description`: resumo objetivo para SEO e cards do blog
-- `content`: corpo completo do artigo em markdown, com intertítulos `##`, tabela e nota institucional
+- `readingTime`: calcular assim — 800 palavras = 4 min | 1.000 palavras = 5 min | 1.200 palavras = 6 min
+- `description`: resumo objetivo para SEO e cards do blog, máximo 160 caracteres
+- `content`: corpo completo do artigo em markdown, com intertítulos `##`, tabela, FAQ e nota institucional
 
 ---
 
@@ -110,10 +131,13 @@ Verificar o índice e escolher categoria com menos artigos publicados.
 
 ## CHECKLIST ANTES DO COMMIT
 
-- [ ] Extensão entre 800 e 1.000 palavras
+- [ ] Extensão entre 800 e 1.200 palavras
+- [ ] Abertura começa pela cena do empresário, não pela fonte
 - [ ] Tabela comparativa presente com mínimo 4 linhas
 - [ ] Conclusão em negrito
-- [ ] Referência com hiperlink funcional
+- [ ] FAQ presente com 3 a 4 perguntas
+- [ ] Referência com hiperlink funcional e publicação específica
+- [ ] Atribuição correta da fonte (instituições consultadas, não o órgão emissor, quando amostral)
 - [ ] Nota institucional exata (sem alterações)
 - [ ] Slug sem acentos ou caracteres especiais
 - [ ] Categoria é exatamente uma das 8 listadas
@@ -134,4 +158,7 @@ Verificar o índice e escolher categoria com menos artigos publicados.
 - Alterar o texto da nota institucional
 - Usar juridiquês
 - Publicar artigo sem tabela comparativa
+- Publicar artigo sem FAQ
+- Começar o artigo pela fonte ou dado técnico — sempre começar pela cena do empresário
+- Atribuir conclusões de pesquisas amostrais ao órgão emissor
 - Fazer deploy — o deploy é sempre manual pelo Walter
