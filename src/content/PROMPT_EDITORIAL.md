@@ -1,190 +1,137 @@
 # GUIA EDITORIAL — Blog Walter Inglez Advocacia e Consultoria
-# Versão 2.1 — Leitura obrigatória antes de qualquer redação
 
-## IDENTIDADE
-- Escritório: Walter Inglez Advocacia e Consultoria
-- Especialidade: gestão estratégica de passivos bancários empresariais
-- Público-alvo: empresários PJ com dívida bancária acima de R$200 mil, sob pressão de banco, cobrança ou execução, com garantias ou risco patrimonial
-- Eixo central: "O maior risco é decidir no escuro sem compreender a operação, as garantias, o grau de executividade e a melhor estratégia entre negociar, defender ou ajuizar."
+## IDENTIDADE E POSICIONAMENTO
 
-## CATEGORIAS ACEITAS
-CCB | Capital de Giro | Garantias | Renegociação | Execução Bancária | Gestão de Passivos | Contratos Bancários | Patrimônio
+**Escritório:** Walter Inglez Advocacia e Consultoria | OAB/CE 51.563  
+**Especialização:** Gestão estratégica de passivo bancário empresarial  
+**Público-alvo:** Empresários PJ com dívidas bancárias relevantes (acima de R$ 200 mil), operação ativa, garantias envolvidas ou risco de execução  
+**Posicionamento:** "A dívida não é o único problema. O risco está em decidir no escuro."  
+**Eixo estratégico:** Negociar × Defender × Ajuizar  
+**WhatsApp:** +55 11 91498-8818  
 
-## FONTES AUTORIZADAS — ORDEM OBRIGATÓRIA
-1. STJ/SCON: https://scon.stj.jus.br/SCON/
-2. STF: https://jurisprudencia.stf.jus.br/pages/search
-3. CJF: https://www.cjf.jus.br/jurisprudencia/unificada/
-4. Teses e Súmulas STJ: https://www.tesesesumulas.com.br
-5. Banco Central: https://www.bcb.gov.br
-6. Migalhas: https://www.migalhas.com.br
-7. Conjur: https://www.conjur.com.br
-8. JusBrasil: https://www.jusbrasil.com.br
-9. TJCE: https://www.tjce.jus.br
-10. LeXML: https://www.lexml.gov.br
+---
 
-Regra absoluta: começar sempre pelo STJ. Avançar para fontes secundárias apenas se não houver precedente relevante nos últimos 90 dias no STJ. Máximo 2 tentativas por fonte antes de avançar para a próxima. Nunca apresentar conteúdo não verificado como fato.
+## TOM E VOZ
 
-## CRITÉRIOS DE SELEÇÃO DO TEMA — TODOS OBRIGATÓRIOS
-Responder às três perguntas antes de redigir:
-1. Esse tema afeta diretamente empresas com dívida bancária acima de R$200 mil?
-2. Tem impacto em execução, garantia, renegociação ou patrimônio do sócio?
-3. Foi publicado nos últimos 90 dias?
-Se a resposta for NÃO a qualquer uma das três: descartar e buscar outro tema.
+- Sóbrio, técnico, direto
+- Sem juridiquês (sem termos como "hodiernamente", "mister se faz", "consoante")
+- Sem promessa de resultado
+- Sem urgência artificial
+- O advogado é o estrategista. O cliente é o protagonista.
+- Linguagem de quem conhece o problema do empresário por dentro
 
-## DUPLA CHECAGEM OBRIGATÓRIA
-1. Acessar a URL original da fonte primária
-2. Confirmar que o link está ativo e o conteúdo é acessível gratuitamente
-3. Confirmar a data de publicação — máximo 90 dias
-4. Descartar qualquer link quebrado ou conteúdo pago
-Nunca redigir com base em conteúdo não confirmado.
-A referência final do artigo deve sempre ser a fonte primária — preferencialmente a notícia oficial do STJ, STF ou CJF com link direto para o portal do tribunal. Portais secundários como Conjur, Migalhas e JusBrasil servem apenas para localizar o tema — nunca como referência citada no artigo.
+---
 
-## TOM DE VOZ
-- Sóbrio, técnico, direto, sem promessa de resultado
-- Falar com o empresário, não com o advogado
-- Preferir: leitura do cenário | posição jurídica | margem de decisão | risco real
-- Evitar: combater o banco | seus direitos | garantia de resultado | sensacionalismo | juridiquês
+## PADRÃO DE ARTIGO
 
-## ESTRUTURA OBRIGATÓRIA DO ARTIGO
-Extensão: mínimo 800 palavras, máximo 1.000 palavras
-readingTime: até 800 palavras = 4 min | 800 a 1.000 palavras = 5 min
+### Extensão
+800 a 1.000 palavras (contagem do corpo do texto, excluindo título e nota institucional)
 
-Seção 1 — Abertura: dor real do empresário. Contextualizar o problema sem juridiquês. Mínimo 2 parágrafos.
-Seção 2 — Contexto jurídico ou de mercado: o precedente, a norma ou o dado de mercado que origina o artigo. Identificar o processo, o tribunal, a data e a tese fixada.
-Seção 3 — O que o empresário precisa entender: tradução prática do tema para quem tem dívida bancária. Mínimo 2 parágrafos.
-Seção 4 — Risco de não entender ou agir errado: consequências concretas de ignorar o tema ou agir sem leitura técnica. Mínimo 2 parágrafos.
-Seção 5 — Tabela comparativa de impacto prático: OBRIGATÓRIA. Mínimo 4 linhas de dados, 3 colunas. Comparar cenários, situações ou consequências relevantes para o público-alvo.
-Seção 6 — Conclusão: orientação estratégica com mensagem final OBRIGATORIAMENTE em negrito dentro de <strong>.
-Seção 7 — Referência: nome da fonte + link real e ativo + data de publicação + número do processo ou tema quando aplicável.
-Seção 8 — Nota institucional: usar o JSX exato do modelo abaixo, sem alterar nenhuma palavra.
+### Estrutura obrigatória
 
-## ARTIGOS DE REFERÊNCIA OBRIGATÓRIA
-Comparar o artigo novo com estes dois antes de finalizar. O novo artigo deve ter qualidade equivalente ou superior:
+1. **Contexto** — situar o problema real que o empresário enfrenta (2-3 parágrafos)
+2. **O que o empresário precisa entender** — análise técnica acessível, sem legalês (3-4 parágrafos com intertítulos `##`)
+3. **Tabela comparativa** — mínimo 4 linhas de dados, máximo 6 colunas. Sempre presente. Formato markdown.
+4. **Risco** — o que acontece se o empresário não agir ou agir mal (1-2 parágrafos)
+5. **Conclusão** — mensagem final em **negrito**, máximo 3 linhas, sem promessa
+6. **Referência** — 1 fonte técnica com hiperlink (lei, acórdão, artigo doutrinário)
+7. **Nota institucional** — texto fixo obrigatório (ver abaixo)
 
-Referência 1: "Confissão de dívida pode acelerar execução contra a empresa"
-URL: https://blog.walteringlezadv.com.br/blog/confissao-divida-pode-acelerar-execucao-empresa-abril-2026
-Padrão exigido: 3 cenários comparativos | tabela com mínimo 4 linhas | mensagem final memorável em negrito
+### Nota institucional obrigatória (copiar exatamente)
+```
+*Este conteúdo tem finalidade exclusivamente informativa e não substitui a análise individual do caso concreto. Cada situação exige avaliação específica das condições contratuais, do estágio da cobrança e do contexto empresarial.*
 
-Referência 2: "Garantias bancárias podem transferir risco ao patrimônio dos sócios"
-URL: https://blog.walteringlezadv.com.br/blog/garantias-bancarias-transferem-risco-patrimonio-socios-abril-2026
-Padrão exigido: tabela com mínimo 4 linhas | orientação preventiva | conexão clara entre dívida e patrimônio pessoal
+*Walter Inglez Advocacia e Consultoria | OAB/CE 51.563 | Fortaleza-CE e São Paulo-SP | Especialização em Gestão Estratégica de Passivo Bancário Empresarial*
+```
 
-## FORMATO DO ARQUIVO .tsx — MODELO EXATO E COMPLETO
-Usar exatamente este modelo. Não alterar classNames, estrutura JSX ou ordem dos campos.
+---
+
+## CATEGORIAS (usar exatamente estes nomes)
+
+1. CCB
+2. Capital de Giro
+3. Garantias
+4. Renegociação
+5. Execução Bancária
+6. Gestão de Passivos
+7. Contratos Bancários
+8. Patrimônio
+
+---
+
+## FORMATO DO ARQUIVO .TSX
 
 ```tsx
 import type { Article } from "@/types/article";
 
 const article: Article = {
-  slug: "[slug-unico-kebab-case-mes-ano]",
-  title: "[título direto ao empresário — máx 120 caracteres]",
-  description: "[descrição SEO — máx 160 caracteres]",
-  excerpt: "[resumo 2 linhas — máx 300 caracteres]",
-  publishedAt: "[AAAA-MM-DD]",
-  author: {
-    name: "Walter Inglez",
-    role: "Advocacia e Consultoria",
-  },
-  category: "[uma das 8 categorias aceitas]",
-  tags: ["tag1", "tag2", "tag3", "tag4"],
-  readingTime: [4 ou 5 conforme critério acima],
-  body: (
-    <>
-      <p>[parágrafo de abertura — dor real do empresário]</p>
-      <p>[segundo parágrafo de abertura]</p>
-
-      <h2>[título da seção 2 — contexto jurídico]</h2>
-      <p>[conteúdo — identificar processo, tribunal, data, tese]</p>
-      <p>[segundo parágrafo da seção 2]</p>
-
-      <h2>[título da seção 3 — o que o empresário precisa entender]</h2>
-      <p>[conteúdo prático]</p>
-      <p>[segundo parágrafo da seção 3]</p>
-
-      <h2>[título da seção 4 — risco de agir errado]</h2>
-      <p>[consequências concretas]</p>
-      <p>[segundo parágrafo da seção 4]</p>
-
-      <div className="my-8 overflow-x-auto rounded-md border border-border/50">
-        <table className="w-full text-left text-sm">
-          <thead className="bg-muted/40 text-foreground">
-            <tr>
-              <th className="px-4 py-3 font-semibold">[coluna 1]</th>
-              <th className="px-4 py-3 font-semibold">[coluna 2]</th>
-              <th className="px-4 py-3 font-semibold">[coluna 3]</th>
-            </tr>
-          </thead>
-          <tbody className="divide-y divide-border/50 text-muted-foreground">
-            <tr>
-              <td className="px-4 py-3">[dado linha 1]</td>
-              <td className="px-4 py-3">[dado linha 1]</td>
-              <td className="px-4 py-3">[dado linha 1]</td>
-            </tr>
-            <tr>
-              <td className="px-4 py-3">[dado linha 2]</td>
-              <td className="px-4 py-3">[dado linha 2]</td>
-              <td className="px-4 py-3">[dado linha 2]</td>
-            </tr>
-            <tr>
-              <td className="px-4 py-3">[dado linha 3]</td>
-              <td className="px-4 py-3">[dado linha 3]</td>
-              <td className="px-4 py-3">[dado linha 3]</td>
-            </tr>
-            <tr>
-              <td className="px-4 py-3">[dado linha 4]</td>
-              <td className="px-4 py-3">[dado linha 4]</td>
-              <td className="px-4 py-3">[dado linha 4]</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <h2>Conclusão</h2>
-      <p>[orientação estratégica]</p>
-      <p>
-        <strong>[mensagem final em negrito — direta, memorável, conectada ao risco real do empresário]</strong>
-      </p>
-
-      <h2>Referência</h2>
-      <p>
-        [Nome da fonte].{" "}
-        <a href="[URL completa e verificada]" target="_blank" rel="noopener noreferrer">
-          [título do artigo ou decisão]
-        </a>
-        . Publicado em [data]. [Número do processo ou tema quando aplicável].
-      </p>
-
-      <aside
-        role="note"
-        aria-label="Nota institucional"
-        className="mt-12 rounded-md border border-border/50 bg-muted/30 p-5 md:p-6 text-sm leading-relaxed text-muted-foreground"
-      >
-        <p className="mb-2 text-xs font-medium uppercase tracking-[0.18em] text-foreground/80">
-          Nota institucional
-        </p>
-        <p className="text-sm leading-relaxed text-muted-foreground">
-          Este conteúdo tem finalidade exclusivamente informativa e não
-          substitui a análise individual do caso concreto. Situações
-          envolvendo passivo bancário empresarial exigem avaliação dos
-          contratos, garantias, valores, documentos assinados e estágio
-          de cobrança.
-        </p>
-      </aside>
-    </>
-  ),
-  seo: {
-    title: "[título SEO — máx 60 caracteres — Walter Inglez]",
-    description: "[descrição SEO — máx 160 caracteres]",
-  },
+  slug: "slug-do-artigo-aqui",
+  title: "Título do Artigo Aqui",
+  category: "Categoria Aqui",
+  date: "AAAA-MM-DD",
+  readingTime: 5,
+  description: "Resumo do artigo em 1-2 frases. Máximo 160 caracteres.",
+  content: `
+[corpo do artigo em markdown]
+  `,
 };
 
 export default article;
 ```
 
-## RESTRIÇÕES ABSOLUTAS
-- Nunca prometer resultado
-- Nunca criar conteúdo genérico de direito amplo
-- Nunca alterar classNames, paleta visual ou estrutura .tsx sem instrução explícita
-- Nunca fazer commit com build quebrado
-- Nunca usar link quebrado ou conteúdo não verificado como fonte
-- Nunca encerrar a tarefa sem confirmar envio do e-mail
+### Regras do arquivo .tsx
+- `slug`: kebab-case, sem acentos, sem caracteres especiais, descritivo
+- `title`: título completo, pode ter até 80 caracteres
+- `category`: deve ser exatamente uma das 8 categorias listadas acima
+- `date`: data de criação no formato AAAA-MM-DD
+- `readingTime`: calcular assim — 800 palavras = 4 min | 900 palavras = 5 min | 1.000 palavras = 5 min
+- `description`: resumo objetivo para SEO e cards do blog
+- `content`: corpo completo do artigo em markdown, com intertítulos `##`, tabela e nota institucional
+
+---
+
+## SELEÇÃO DE TEMA
+
+### Fontes de pesquisa (usar na ordem, máximo 2 tentativas por fonte)
+1. STJ — jurisprudência recente em direito bancário: https://www.stj.jus.br/sites/portalp/Paginas/Comunicacao/Noticias.aspx
+2. Banco Central do Brasil — notas e relatórios: https://www.bcb.gov.br/publicacoes
+3. Conjur — artigos de direito bancário: https://www.conjur.com.br/direito-bancario
+
+### Critérios de seleção de tema
+- Relevante para empresário PJ com dívida bancária
+- Acontecimento recente (últimos 30 dias) OU tema perene de alta incidência prática
+- Não repetir tema já publicado (verificar slugs existentes em `src/content/articles/index.tsx`)
+- Prioridade: decisões do STJ, mudanças regulatórias do Bacen, ou riscos práticos de execução
+
+### Categorias com menor cobertura têm prioridade
+Verificar o índice e escolher categoria com menos artigos publicados.
+
+---
+
+## CHECKLIST ANTES DO COMMIT
+
+- [ ] Extensão entre 800 e 1.000 palavras
+- [ ] Tabela comparativa presente com mínimo 4 linhas
+- [ ] Conclusão em negrito
+- [ ] Referência com hiperlink funcional
+- [ ] Nota institucional exata (sem alterações)
+- [ ] Slug sem acentos ou caracteres especiais
+- [ ] Categoria é exatamente uma das 8 listadas
+- [ ] `readingTime` calculado corretamente
+- [ ] Arquivo nomeado igual ao slug: `[slug].tsx`
+- [ ] Import e export no formato correto do .tsx
+- [ ] Entrada adicionada em `src/content/articles/index.tsx`
+- [ ] URL adicionada em `public/sitemap.xml`
+
+---
+
+## O QUE NUNCA FAZER
+
+- Prometer resultado ("garantimos", "você vai recuperar", "certeza de êxito")
+- Citar testemunhos sem autorização expressa
+- Usar urgência artificial ("só até hoje", "últimas vagas")
+- Reproduzir decisão judicial sem citar a fonte
+- Alterar o texto da nota institucional
+- Usar juridiquês
+- Publicar artigo sem tabela comparativa
+- Fazer deploy — o deploy é sempre manual pelo Walter
