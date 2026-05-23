@@ -122,6 +122,7 @@ export default article;
 - Relevante para empresário PJ com dívida bancária
 - Acontecimento recente (últimos 30 dias) OU tema perene de alta incidência prática
 - Não repetir tema nem ângulo similar. Listar os títulos dos últimos 5 artigos publicados e confirmar que o novo tema aborda categoria, fonte e problema distintos. Slug diferente não é suficiente — o tema central deve ser diferente.
+- Priorizar sempre o tema de maior relevância recente (decisão do STJ, mudança regulatória, risco prático emergente). Se a categoria escolhida já tiver 2 artigos consecutivos publicados, obrigatoriamente escolher a categoria com menos artigos no índice, independentemente da relevância do momento.
 - Prioridade: decisões do STJ, mudanças regulatórias do Bacen, ou riscos práticos de execução
 
 ### Categorias com menor cobertura têm prioridade
