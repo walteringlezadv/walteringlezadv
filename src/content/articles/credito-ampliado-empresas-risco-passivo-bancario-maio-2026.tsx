@@ -2,7 +2,7 @@ import type { Article } from "@/types/article";
 const article: Article = {
   slug: "credito-ampliado-empresas-risco-passivo-bancario-maio-2026",
   title:
-    "Crédito ampliado às empresas cresceu: por que isso não reduz o risco do passivo bancário",
+    "Crédito ampliado às empresas: por que o crescimento do mercado não reduz o risco do seu passivo bancário",
   description:
     "Crédito ampliado às empresas exige leitura do passivo bancário, garantias e risco de execução antes de nova dívida ou renegociação.",
   excerpt:
@@ -237,14 +237,14 @@ const article: Article = {
       >
         <p>
           <em>
-            Conteúdo informativo. Não constitui aconselhamento jurídico e não
-            substitui análise jurídica individual do caso concreto.
+            Este conteúdo tem finalidade exclusivamente informativa e não
+            substitui a análise individual do caso concreto. Cada situação exige avaliação específica das condições contratuais, do estágio da cobrança e do contexto empresarial.
           </em>
         </p>
         <p>
           <em>
-            Walter Inglez Advocacia e Consultoria | Fortaleza-CE e São Paulo-SP
-            | Gestão Estratégica de Passivo Bancário Empresarial
+            Walter Inglez Advocacia e Consultoria | Especialização em Gestão
+            Estratégica de Passivo Bancário Empresarial
           </em>
         </p>
       </aside>
