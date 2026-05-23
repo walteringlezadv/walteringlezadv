@@ -129,9 +129,9 @@ const transporter = nodemailer.createTransport({
 
 await transporter.sendMail({
   from: `"Blog Walter Inglez" <${GMAIL_USER}>`,
-  to: GMAIL_USER,
-  subject: `[Blog WI] Novo artigo: ${latest.title}`,
+  to: "walter.inglezadv@gmail.com",
+  subject: `Novo artigo para revisão — ${latest.title}`,
   html,
 });
 
-console.log(`Email enviado para ${GMAIL_USER} ✓`);
+console.log("Email enviado para walter.inglezadv@gmail.com ✓");
