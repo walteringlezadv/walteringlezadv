@@ -25,7 +25,11 @@ jobs:
       - name: Detect new article
         id: detect
         run: |
-          NEW=$(git diff --name-status HEAD~1 HEAD -- 'src/content/articles/*.tsx' | grep '^A' | wc -l | tr -d ' ')
+          if git rev-parse HEAD~1 >/dev/null 2>&1; then
+            NEW=$(git diff --name-status HEAD~1 HEAD -- 'src/content/articles/*.tsx' | grep '^A' | wc -l | tr -d ' ')
+          else
+            NEW=$(git show --stat HEAD -- 'src/content/articles/*.tsx' | grep '\.tsx' | grep -v 'index.tsx' | wc -l | tr -d ' ')
+          fi
           echo "new_articles=$NEW" >> $GITHUB_OUTPUT
 
       - name: Install nodemailer
