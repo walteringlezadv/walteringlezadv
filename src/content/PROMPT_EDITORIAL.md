@@ -1,74 +1,31 @@
 # GUIA EDITORIAL — Blog Walter Inglez Advocacia e Consultoria
-
-## IDENTIDADE E POSICIONAMENTO
-
-**Escritório:** Walter Inglez Advocacia e Consultoria | OAB/CE 51.563  
-**Especialização:** Gestão estratégica de passivo bancário empresarial  
-**Público-alvo:** Empresários PJ com dívidas bancárias relevantes (acima de R$ 200 mil), operação ativa, garantias envolvidas ou risco de execução  
-**Posicionamento:** "A dívida não é o único problema. O risco está em decidir no escuro."  
-**Eixo estratégico:** Negociar × Defender × Ajuizar  
-**WhatsApp:** +55 11 91498-8818  
+# LEIA ESTE GUIA INTEGRALMENTE ANTES DE QUALQUER AÇÃO
 
 ---
 
-## TOM E VOZ
+## IDENTIDADE DO BLOG
 
-- Sóbrio, técnico, direto
-- Sem juridiquês (sem termos como "hodiernamente", "mister se faz", "consoante")
-- Sem promessa de resultado
-- Sem urgência artificial
-- O advogado é o estrategista. O cliente é o protagonista.
-- Linguagem de quem conhece o problema do empresário por dentro
-
----
-
-## PADRÃO DE ARTIGO
-
-### Extensão
-800 a 1.200 palavras (contagem do corpo do texto, excluindo título, FAQ e nota institucional)
-
-### Abertura obrigatória
-O artigo deve sempre começar pela **cena do empresário** — o problema concreto que ele enfrenta no dia a dia. O dado técnico, a fonte ou a jurisprudência entra no segundo ou terceiro parágrafo, nunca na abertura.
-
-### Estrutura obrigatória
-
-1. **Contexto** — cena do empresário em primeiro lugar, dado técnico em seguida (2-3 parágrafos)
-2. **O que o empresário precisa entender** — análise técnica acessível, sem legalês (3-4 parágrafos com intertítulos `##`)
-3. **Tabela comparativa** — mínimo 4 linhas de dados, máximo 6 colunas. Sempre presente. Formato markdown.
-4. **Risco** — o que acontece se o empresário não agir ou agir mal (1-2 parágrafos)
-5. **Conclusão** — mensagem final em **negrito**, máximo 3 linhas, sem promessa
-6. **FAQ** — 3 a 4 perguntas frequentes do empresário sobre o tema (ver regras abaixo)
-7. **Referência** — 1 fonte técnica com hiperlink (lei, acórdão, artigo doutrinário). Citar publicação específica, não apenas a página geral.
-8. **Nota institucional** — texto fixo obrigatório (ver abaixo)
-
-### Regras do FAQ
-- Sempre presente — nunca omitir
-- 3 a 4 perguntas por artigo
-- Formato: `### Pergunta?` seguido de parágrafo com a resposta
-- Máximo 3 linhas por resposta — respostas curtas e diretas
-- As perguntas devem refletir dúvidas reais do empresário PJ sobre o tema do artigo
-- Finalidade: SEO (rich snippets no Google) e autoridade técnica
-- Exemplo de estrutura:
-```
-### O banco pode cobrar juros após o vencimento da CCB?
-Sim. A CCB permite a cobrança de juros remuneratórios e moratórios após o vencimento, desde que previstos no contrato. O problema ocorre quando os encargos aplicados divergem das taxas pactuadas — o que pode ser questionado judicialmente.
-```
-
-### Regras sobre a fonte
-- Citar sempre publicação específica, não apenas a página geral. Exemplo: em vez de "Banco Central do Brasil — Publicações", citar "Banco Central do Brasil. Pesquisa Trimestral de Condições de Crédito — Resultados de março de 2026."
-- Quando a fonte for pesquisa ou relatório com metodologia amostral (como a PTC do BCB), atribuir os dados às instituições consultadas, não ao órgão emissor. Exemplo correto: "As instituições financeiras consultadas avaliaram..." — nunca "O Banco Central concluiu..."
-
-### Nota institucional obrigatória (copiar exatamente)
-```
-*Este conteúdo tem finalidade exclusivamente informativa e não substitui a análise individual do caso concreto. Cada situação exige avaliação específica das condições contratuais, do estágio da cobrança e do contexto empresarial.*
-
-*Walter Inglez Advocacia e Consultoria | Especialização em Gestão Estratégica de Passivo Bancário Empresarial*
-```
+**Escritório:** Walter Inglez Advocacia e Consultoria
+**Especialização:** Gestão estratégica de passivo bancário empresarial
+**Público:** Empresários PJ com dívidas bancárias acima de R$ 200 mil, operação ativa, garantias envolvidas ou risco de execução
+**Posicionamento:** "A dívida não é o único problema. O risco está em decidir no escuro."
+**Eixo:** Negociar × Defender × Ajuizar
+**WhatsApp:** +55 11 91498-8818
 
 ---
 
-## CATEGORIAS (usar exatamente estes nomes)
+## PASSO 0 — ANTES DE ESCOLHER O TEMA
 
+Execute estas verificações na ordem:
+
+### 0.1 — Liste os últimos 5 artigos publicados
+Leia `src/content/articles/index.tsx` e anote:
+- Título
+- Categoria
+- Slug
+
+### 0.2 — Conte artigos por categoria
+Some quantos artigos existem em cada uma das 8 categorias:
 1. CCB
 2. Capital de Giro
 3. Garantias
@@ -78,88 +35,179 @@ Sim. A CCB permite a cobrança de juros remuneratórios e moratórios após o ve
 7. Contratos Bancários
 8. Patrimônio
 
+### 0.3 — Identifique restrições obrigatórias
+- PROIBIDO: escolher categoria que aparece nos 2 últimos artigos publicados consecutivamente
+- PROIBIDO: escolher tema com ângulo similar ao de qualquer artigo dos últimos 5 publicados
+- OBRIGATÓRIO: se uma categoria tiver 2 artigos consecutivos, escolher obrigatoriamente a categoria com MENOS artigos no índice
+
+### 0.4 — Critério de escolha do tema
+- PRIMEIRO: buscar tema de alta relevância recente (últimos 30 dias) nas fontes abaixo
+- SEGUNDO: o tema deve pertencer a categoria diferente dos 2 últimos artigos
+- TERCEIRO: se não houver tema recente relevante, escolher tema perene da categoria com menos artigos
+
 ---
 
-## FORMATO DO ARQUIVO .TSX
+## PASSO 1 — PESQUISA DO TEMA
+
+Pesquise nas fontes na ordem indicada. Máximo 2 tentativas por fonte:
+
+1. STJ — decisões recentes em direito bancário: https://www.stj.jus.br/sites/portalp/Paginas/Comunicacao/Noticias.aspx
+2. Banco Central do Brasil: https://www.bcb.gov.br/publicacoes
+3. Conjur — direito bancário: https://www.conjur.com.br/direito-bancario
+
+**Critérios de aprovação do tema:**
+- URL da fonte está ativa e acessível
+- Conteúdo é gratuito e público
+- Data máxima de 90 dias
+- Relevante para empresário PJ com dívida bancária
+
+---
+
+## PASSO 2 — REDAÇÃO DO ARTIGO
+
+### Extensão
+800 a 1.200 palavras no corpo do texto.
+NÃO contar: título, FAQ, nota institucional.
+
+### Abertura OBRIGATÓRIA — regra absoluta
+O primeiro parágrafo DEVE começar com uma cena concreta do empresário.
+NUNCA começar com dado estatístico, fonte ou notícia.
+
+**EXEMPLO CORRETO de abertura:**
+> "O gerente ligou para dizer que o crédito foi aprovado. Você respirou. O mês vai fechar. A operação continua. Só que ninguém explicou o que aquele contrato representa."
+
+**EXEMPLO ERRADO de abertura — NUNCA FAZER:**
+> "O Banco Central publicou em abril de 2026 que o crédito ampliado às empresas alcançou R$ 7,1 trilhões..."
+
+### Estrutura obrigatória — nesta ordem exata
+
+1. **Abertura** — cena do empresário (1-2 parágrafos)
+2. **Dado ou contexto** — fonte técnica, jurisprudência ou dado do BCB (1 parágrafo)
+3. **O que o empresário precisa entender** — análise técnica sem juridiquês (3-4 parágrafos com intertítulos `##`)
+4. **Tabela comparativa** — OBRIGATÓRIA, mínimo 4 linhas, máximo 5 colunas
+5. **Risco** — o que acontece se o empresário não agir (1-2 parágrafos)
+6. **Conclusão** — frase final em `<strong>`, máximo 2 linhas, SEM promessa de resultado
+7. **FAQ** — OBRIGATÓRIO, exatamente 4 perguntas (ver regras abaixo)
+8. **Referência** — OBRIGATÓRIA, 1 fonte com hiperlink funcional
+9. **Nota institucional** — copiar EXATAMENTE o texto abaixo
+
+### Regras do FAQ
+- SEMPRE 4 perguntas — nem 3, nem 5
+- Formato: `<h3>Pergunta?</h3>` seguido de `<p>Resposta.</p>`
+- Máximo 3 linhas por resposta
+- Perguntas devem ser dúvidas reais do empresário sobre o tema
+
+### Nota institucional — COPIAR EXATAMENTE, SEM ALTERAR UMA PALAVRA
+```
+Este conteúdo tem finalidade exclusivamente informativa e não substitui a análise individual do caso concreto. Cada situação exige avaliação específica das condições contratuais, do estágio da cobrança e do contexto empresarial.
+
+Walter Inglez Advocacia e Consultoria | Especialização em Gestão Estratégica de Passivo Bancário Empresarial
+```
+
+### Tom e voz
+- Sóbrio, técnico, direto
+- SEM juridiquês: proibido usar "hodiernamente", "mister se faz", "consoante", "diga-se de passagem"
+- SEM promessa de resultado: proibido "garantimos", "você vai recuperar", "certeza de êxito"
+- SEM urgência artificial: proibido "só até hoje", "últimas vagas"
+- O advogado é o estrategista. O cliente é o protagonista.
+
+### Regras sobre atribuição de fontes
+- Pesquisas amostrais (como PTC do BCB): atribuir às instituições consultadas, NUNCA ao órgão emissor
+  - CORRETO: "As instituições financeiras consultadas avaliaram que..."
+  - ERRADO: "O Banco Central concluiu que..."
+- Citar sempre publicação específica, não apenas a página geral
+  - CORRETO: "Pesquisa Trimestral de Condições de Crédito — Resultados de março de 2026"
+  - ERRADO: "Banco Central do Brasil — Publicações"
+
+---
+
+## PASSO 3 — FORMATO DO ARQUIVO .TSX
+
+Nome do arquivo: `[slug].tsx`
+Slug: kebab-case, sem acentos, sem caracteres especiais
 
 ```tsx
 import type { Article } from "@/types/article";
 
 const article: Article = {
-  slug: "slug-do-artigo-aqui",
-  title: "Título do Artigo Aqui",
-  category: "Categoria Aqui",
-  date: "AAAA-MM-DD",
+  slug: "slug-aqui",
+  title: "Título com palavras-chave SEO — máximo 80 caracteres",
+  description: "Resumo SEO — máximo 160 caracteres, inclui dado concreto quando possível",
+  excerpt: "Resumo de 1-2 frases para card do blog",
+  publishedAt: "AAAA-MM-DD",
+  author: {
+    name: "Walter Inglez",
+    role: "Advocacia e Consultoria",
+  },
+  category: "Nome exato da categoria",
+  tags: ["tag1", "tag2", "tag3"],
   readingTime: 5,
-  description: "Resumo do artigo em 1-2 frases. Máximo 160 caracteres.",
-  content: `
-[corpo do artigo em markdown]
-  `,
+  body: (
+    <>
+      [corpo do artigo em JSX]
+    </>
+  ),
+  seo: {
+    title: "Título SEO longo com palavras-chave — Walter Inglez",
+    description: "Description SEO — máximo 160 caracteres",
+  },
 };
 
 export default article;
 ```
 
-### Regras do arquivo .tsx
-- `slug`: kebab-case, sem acentos, sem caracteres especiais, descritivo
-- `title`: título completo com palavras-chave SEO, até 80 caracteres. Preferir formato "Tema: por que fazer X antes de Y"
-- `category`: deve ser exatamente uma das 8 categorias listadas acima
-- `date`: data de criação no formato AAAA-MM-DD
-- `readingTime`: calcular assim — 800 palavras = 4 min | 1.000 palavras = 5 min | 1.200 palavras = 6 min
-- `description`: resumo objetivo para SEO e cards do blog, máximo 160 caracteres
-- `content`: corpo completo do artigo em markdown, com intertítulos `##`, tabela, FAQ e nota institucional
+**Cálculo do readingTime:**
+- até 800 palavras = 4 min
+- 800 a 1.000 palavras = 5 min
+- 1.000 a 1.200 palavras = 6 min
 
 ---
 
-## SELEÇÃO DE TEMA
+## PASSO 4 — COMMIT NO GITHUB
 
-### Fontes de pesquisa (usar na ordem, máximo 2 tentativas por fonte)
-1. STJ — jurisprudência recente em direito bancário: https://www.stj.jus.br/sites/portalp/Paginas/Comunicacao/Noticias.aspx
-2. Banco Central do Brasil — notas e relatórios: https://www.bcb.gov.br/publicacoes
-3. Conjur — artigos de direito bancário: https://www.conjur.com.br/direito-bancario
+Branch obrigatório: `draft`
+NUNCA fazer commit em `main`
+NUNCA fazer merge para `main`
 
-### Critérios de seleção de tema
-- Relevante para empresário PJ com dívida bancária
-- Acontecimento recente (últimos 30 dias) OU tema perene de alta incidência prática
-- Não repetir tema nem ângulo similar. Listar os títulos dos últimos 5 artigos publicados e confirmar que o novo tema aborda categoria, fonte e problema distintos. Slug diferente não é suficiente — o tema central deve ser diferente.
-- Priorizar sempre o tema de maior relevância recente (decisão do STJ, mudança regulatória, risco prático emergente). Se a categoria escolhida já tiver 2 artigos consecutivos publicados, obrigatoriamente escolher a categoria com menos artigos no índice, independentemente da relevância do momento.
-- Prioridade: decisões do STJ, mudanças regulatórias do Bacen, ou riscos práticos de execução
-
-### Categorias com menor cobertura têm prioridade
-Verificar o índice e escolher categoria com menos artigos publicados.
+Sequência obrigatória:
+1. `git checkout draft && git pull origin draft`
+2. Criar `src/content/articles/[slug].tsx`
+3. Atualizar `src/content/articles/index.tsx` — import no topo + entrada no array
+4. Verificar: `grep "[slug]" src/content/articles/index.tsx`
+5. Atualizar `public/sitemap.xml` com a nova URL
+6. `npm run build` — SE FALHAR: corrigir o erro antes de continuar
+7. `git add` nos 3 arquivos alterados
+8. `git commit -m "artigo: [slug]"`
+9. `git push origin draft`
+10. Verificar: `git log --oneline -1`
 
 ---
 
-## CHECKLIST ANTES DO COMMIT
+## CHECKLIST FINAL — verificar antes do commit
 
+- [ ] Abertura começa pela cena do empresário, não pelo dado
 - [ ] Extensão entre 800 e 1.200 palavras
-- [ ] Abertura começa pela cena do empresário, não pela fonte
-- [ ] Tabela comparativa presente com mínimo 4 linhas
-- [ ] Conclusão em negrito
-- [ ] FAQ presente com 3 a 4 perguntas
+- [ ] Tabela presente com mínimo 4 linhas
+- [ ] Conclusão em `<strong>`, sem promessa
+- [ ] FAQ com exatamente 4 perguntas
 - [ ] Referência com hiperlink funcional e publicação específica
-- [ ] Atribuição correta da fonte (instituições consultadas, não o órgão emissor, quando amostral)
-- [ ] Nota institucional exata (sem alterações)
+- [ ] Nota institucional copiada EXATAMENTE — sem OAB, sem cidades
 - [ ] Slug sem acentos ou caracteres especiais
 - [ ] Categoria é exatamente uma das 8 listadas
-- [ ] `readingTime` calculado corretamente
-- [ ] Arquivo nomeado igual ao slug: `[slug].tsx`
-- [ ] Import e export no formato correto do .tsx
-- [ ] Entrada adicionada em `src/content/articles/index.tsx`
-- [ ] URL adicionada em `public/sitemap.xml`
+- [ ] Build aprovado antes do commit
+- [ ] Commit no branch `draft`, não em `main`
 
 ---
 
-## O QUE NUNCA FAZER
+## PROIBIÇÕES ABSOLUTAS
 
-- Prometer resultado ("garantimos", "você vai recuperar", "certeza de êxito")
-- Citar testemunhos sem autorização expressa
-- Usar urgência artificial ("só até hoje", "últimas vagas")
-- Reproduzir decisão judicial sem citar a fonte
-- Alterar o texto da nota institucional
-- Usar juridiquês
-- Publicar artigo sem tabela comparativa
-- Publicar artigo sem FAQ
-- Começar o artigo pela fonte ou dado técnico — sempre começar pela cena do empresário
-- Atribuir conclusões de pesquisas amostrais ao órgão emissor
-- Fazer deploy — o deploy é sempre manual pelo Walter
+1. NUNCA publicar artigo sem tabela comparativa
+2. NUNCA publicar artigo sem FAQ com exatamente 4 perguntas
+3. NUNCA alterar o texto da nota institucional
+4. NUNCA começar o artigo pelo dado estatístico ou fonte
+5. NUNCA fazer commit em `main` — sempre em `draft`
+6. NUNCA fazer merge para `main`
+7. NUNCA fazer deploy — o deploy é sempre manual pelo Walter
+8. NUNCA prometer resultado ao leitor
+9. NUNCA usar juridiquês
+10. NUNCA escolher categoria que aparece nos 2 últimos artigos consecutivos
