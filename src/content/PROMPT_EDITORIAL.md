@@ -121,7 +121,7 @@ export default article;
 ### Critérios de seleção de tema
 - Relevante para empresário PJ com dívida bancária
 - Acontecimento recente (últimos 30 dias) OU tema perene de alta incidência prática
-- Não repetir tema já publicado (verificar slugs existentes em `src/content/articles/index.tsx`)
+- Não repetir tema nem ângulo similar. Listar os títulos dos últimos 5 artigos publicados e confirmar que o novo tema aborda categoria, fonte e problema distintos. Slug diferente não é suficiente — o tema central deve ser diferente.
 - Prioridade: decisões do STJ, mudanças regulatórias do Bacen, ou riscos práticos de execução
 
 ### Categorias com menor cobertura têm prioridade
