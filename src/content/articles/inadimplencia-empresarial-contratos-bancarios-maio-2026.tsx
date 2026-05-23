@@ -223,8 +223,10 @@ const article: Article = {
       >
         <p>
           <em>
-            Conteúdo informativo. Não constitui aconselhamento jurídico e não
-            substitui análise jurídica individual do caso concreto.
+            Este conteúdo tem finalidade exclusivamente informativa e não
+            substitui a análise individual do caso concreto. Cada situação
+            exige avaliação específica das condições contratuais, do estágio
+            da cobrança e do contexto empresarial.
           </em>
         </p>
         <p>
