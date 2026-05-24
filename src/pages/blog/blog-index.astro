@@ -1,0 +1,64 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+const allArticles = await getCollection('articles');
+const articles = allArticles.sort(
+  (a, b) => new Date(b.data.publishedAt).getTime() - new Date(a.data.publishedAt).getTime()
+);
+---
+
+<Layout
+  title="Blog — Walter Inglez"
+  description="Artigos técnicos sobre gestão de passivo bancário, execução, renegociação e contratos para empresários."
+  canonical="/blog"
+>
+  <header class="border-b border-[#f5f0e8]/10">
+    <div class="max-w-4xl mx-auto px-6 py-5 flex items-center justify-between">
+      <a href="/" class="font-serif text-lg font-semibold text-[#f5f0e8] hover:text-[#c4956a] transition-colors">
+        Walter Inglez
+      </a>
+      <a
+        href="https://wa.me/5511914988818?text=Quero%20uma%20leitura%20do%20meu%20caso"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="text-sm bg-[#c4956a] text-[#1a2e22] font-semibold px-4 py-2 rounded-lg hover:bg-[#c4956a]/90 transition-colors"
+      >
+        Falar no WhatsApp
+      </a>
+    </div>
+  </header>
+
+  <main class="max-w-4xl mx-auto px-6 py-12">
+    <h1 class="font-serif text-3xl font-bold text-[#f5f0e8] mb-2">Artigos</h1>
+    <p class="text-[#f5f0e8]/50 mb-10">Análise técnica sobre passivo bancário empresarial.</p>
+
+    <div class="space-y-6">
+      {articles.map((article) => (
+        <a
+          href={"/blog/" + article.slug}
+          class="block group border border-[#f5f0e8]/10 rounded-lg p-6 hover:border-[#c4956a]/40 transition-all"
+        >
+          <span class="text-xs uppercase tracking-widest text-[#c4956a] font-medium">
+            {article.data.category}
+          </span>
+          <h2 class="font-serif text-xl font-semibold text-[#f5f0e8] mt-2 mb-2 group-hover:text-[#c4956a] transition-colors">
+            {article.data.title}
+          </h2>
+          <p class="text-[#f5f0e8]/60 text-sm leading-relaxed">
+            {article.data.excerpt}
+          </p>
+          <div class="mt-4 text-xs text-[#f5f0e8]/30">
+            {new Date(article.data.publishedAt).toLocaleDateString('pt-BR', { day: '2-digit', month: 'long', year: 'numeric' })}
+          </div>
+        </a>
+      ))}
+    </div>
+  </main>
+
+  <footer class="border-t border-[#f5f0e8]/10 mt-8">
+    <div class="max-w-4xl mx-auto px-6 py-8 text-center text-sm text-[#f5f0e8]/30">
+      {new Date().getFullYear()} Walter Inglez Advocacia e Consultoria | OAB/CE 51.563
+    </div>
+  </footer>
+</Layout>
