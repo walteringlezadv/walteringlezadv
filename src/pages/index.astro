@@ -48,7 +48,7 @@ const articles = allArticles.sort(
     <div class="space-y-6">
       {articles.map((article) => (
         
-          href={`/blog/${article.slug}`}
+          href={"/blog/" + article.slug}
           class="block group border border-[#f5f0e8]/10 rounded-lg p-6 hover:border-[#c4956a]/40 hover:bg-[#f5f0e8]/3 transition-all"
         >
           <div class="flex items-start justify-between gap-4">
@@ -75,7 +75,7 @@ const articles = allArticles.sort(
 
   <footer class="border-t border-[#f5f0e8]/10 mt-8">
     <div class="max-w-4xl mx-auto px-6 py-8 text-center text-sm text-[#f5f0e8]/30">
-      © {new Date().getFullYear()} Walter Inglez Advocacia e Consultoria | OAB/CE 51.563 | Fortaleza-CE e São Paulo-SP
+      {new Date().getFullYear()} Walter Inglez Advocacia e Consultoria | OAB/CE 51.563 | Fortaleza-CE e São Paulo-SP
     </div>
   </footer>
 </Layout>
