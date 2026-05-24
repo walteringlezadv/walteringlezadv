@@ -2,20 +2,15 @@
 import Layout from '../../layouts/Layout.astro';
 import { getCollection } from 'astro:content';
 
-// Buscar todos os artigos
 const allArticles = await getCollection('articles');
 
-// Ordenar por data, mais recentes primeiro
 const articles = allArticles.sort(
   (a, b) => new Date(b.data.publishedAt).getTime() - new Date(a.data.publishedAt).getTime()
 );
 
-// Extrair categorias únicas dos artigos
 const categories = [...new Set(allArticles.map(a => a.data.category))].filter(Boolean).sort();
 
-// Helper: converter nome de categoria em slug de URL
-// Ex: "Gestão de Passivos" -> "gestao-de-passivos"
-function categoryToSlug(cat: string): string {
+function categoryToSlug(cat) {
   return cat
     .toLowerCase()
     .normalize('NFD')
@@ -33,7 +28,6 @@ const whatsappUrl = "https://wa.me/5511914988818?text=Quero%20uma%20leitura%20do
   description="Análises sóbrias e técnicas sobre gestão estratégica do passivo bancário empresarial."
   canonical="/blog"
 >
-  <!-- Cabeçalho da página -->
   <section class="border-b border-[#f5f0e8]/10">
     <div class="max-w-3xl mx-auto px-6 py-16 md:py-20">
       <p class="text-xs uppercase tracking-widest text-[#c4956a] mb-4">Blog</p>
@@ -46,7 +40,6 @@ const whatsappUrl = "https://wa.me/5511914988818?text=Quero%20uma%20leitura%20do
     </div>
   </section>
 
-  <!-- Barra de categorias -->
   <section class="border-b border-[#f5f0e8]/10 bg-[#0d2b27] sticky top-36 z-30">
     <div class="max-w-5xl mx-auto px-6">
       <div class="flex flex-wrap gap-2 py-3">
@@ -58,7 +51,7 @@ const whatsappUrl = "https://wa.me/5511914988818?text=Quero%20uma%20leitura%20do
         </a>
         {categories.map((cat) => (
           
-            href={`/blog/categoria/${categoryToSlug(cat)}`}
+            href={"/blog/categoria/" + categoryToSlug(cat)}
             class="shrink-0 rounded-sm border border-white/70 px-3 py-1 text-[11px] font-medium uppercase tracking-widest text-white hover:bg-white/20 transition-colors"
           >
             {cat}
@@ -68,7 +61,6 @@ const whatsappUrl = "https://wa.me/5511914988818?text=Quero%20uma%20leitura%20do
     </div>
   </section>
 
-  <!-- Lista de artigos -->
   <section class="border-b border-[#f5f0e8]/10">
     <div class="max-w-3xl mx-auto px-6 py-12 md:py-16">
       {articles.length === 0 ? (
@@ -82,7 +74,7 @@ const whatsappUrl = "https://wa.me/5511914988818?text=Quero%20uma%20leitura%20do
           {articles.map((article) => (
             <li>
               
-                href={`/blog/${article.slug}`}
+                href={"/blog/" + article.slug}
                 class="block group border border-[#f5f0e8]/10 rounded-lg p-6 md:p-8 hover:border-[#c4956a]/40 transition-all"
               >
                 <div class="flex items-start justify-between gap-4">
@@ -110,7 +102,6 @@ const whatsappUrl = "https://wa.me/5511914988818?text=Quero%20uma%20leitura%20do
     </div>
   </section>
 
-  <!-- Fechamento institucional -->
   <section>
     <div class="max-w-3xl mx-auto px-6 py-12 md:py-16 text-center">
       <p class="mx-auto mb-6 max-w-2xl text-sm md:text-base leading-relaxed text-[#f5f0e8]/70">
@@ -131,7 +122,6 @@ const whatsappUrl = "https://wa.me/5511914988818?text=Quero%20uma%20leitura%20do
     </div>
   </section>
 
-  <!-- Rodapé -->
   <footer class="border-t border-[#f5f0e8]/10 mt-8">
     <div class="max-w-4xl mx-auto px-6 py-8 text-center text-sm text-[#f5f0e8]/30">
       {new Date().getFullYear()} Walter Inglez Advocacia e Consultoria | OAB/CE 51.563 | Fortaleza-CE e São Paulo-SP
