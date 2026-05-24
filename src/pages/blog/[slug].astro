@@ -1,139 +1,70 @@
 ---
-import Layout from '../../../layouts/Layout.astro';
+import Layout from '../../layouts/Layout.astro';
 import { getCollection } from 'astro:content';
-
-function categoryToSlug(cat) {
-  return cat
-    .toLowerCase()
-    .normalize('NFD')
-    .replace(/[\u0300-\u036f]/g, '')
-    .replace(/[^a-z0-9\s-]/g, '')
-    .trim()
-    .replace(/\s+/g, '-');
-}
 
 export async function getStaticPaths() {
   const allArticles = await getCollection('articles');
-  const categoriesSet = new Set(allArticles.map(a => a.data.category).filter(Boolean));
-
-  return Array.from(categoriesSet).map((cat) => ({
-    params: { slug: categoryToSlug(cat) },
-    props: {
-      categoryName: cat,
-      articles: allArticles
-        .filter(a => a.data.category === cat)
-        .sort((a, b) => new Date(b.data.publishedAt).getTime() - new Date(a.data.publishedAt).getTime()),
-    },
+  return allArticles.map((article) => ({
+    params: { slug: article.slug },
+    props: { article },
   }));
 }
 
-const { categoryName, articles } = Astro.props;
+const { article } = Astro.props;
+const { Content } = await article.render();
 
-const allArticles = await getCollection('articles');
-const categories = [...new Set(allArticles.map(a => a.data.category))].filter(Boolean).sort();
+const formattedDate = new Date(article.data.publishedAt).toLocaleDateString('pt-BR', {
+  day: '2-digit',
+  month: 'long',
+  year: 'numeric'
+});
 
 const whatsappUrl = "https://wa.me/5511914988818?text=Quero%20uma%20leitura%20do%20meu%20caso";
-const pageTitle = categoryName + " — Blog Walter Inglez";
-const pageDescription = "Artigos sobre " + categoryName + " — análises técnicas sobre passivo bancário empresarial.";
-const canonicalPath = "/blog/categoria/" + categoryToSlug(categoryName);
-const countText = articles.length === 1 ? "1 artigo nesta categoria." : articles.length + " artigos nesta categoria.";
 ---
 
 <Layout
-  title={pageTitle}
-  description={pageDescription}
-  canonical={canonicalPath}
+  title={article.data.title + " — Walter Inglez"}
+  description={article.data.excerpt}
+  canonical={"/blog/" + article.slug}
+  type="article"
 >
-  <section class="border-b border-[#f5f0e8]/10">
-    <div class="max-w-3xl mx-auto px-6 py-16 md:py-20">
-      <p class="text-xs uppercase tracking-widest text-[#c4956a] mb-4">
-        <a href="/blog" class="hover:underline">Blog</a> · Categoria
+  <article class="max-w-3xl mx-auto px-6 py-12 md:py-16">
+    <!-- Breadcrumb -->
+    <p class="text-xs uppercase tracking-widest text-[#c4956a] mb-4">
+      <a href="/blog" class="hover:underline">Blog</a>
+      <span class="text-[#f5f0e8]/40 mx-2">·</span>
+      <span>{article.data.category}</span>
+    </p>
+
+    <!-- Título -->
+    <h1 class="font-serif text-3xl md:text-5xl font-bold text-[#f5f0e8] leading-tight mb-6">
+      {article.data.title}
+    </h1>
+
+    <!-- Data -->
+    <p class="text-sm text-[#f5f0e8]/40 mb-10">{formattedDate}</p>
+
+    <!-- Excerpt -->
+    <p class="text-lg md:text-xl text-[#f5f0e8]/80 leading-relaxed mb-12 italic border-l-2 border-[#c4956a]/60 pl-5">
+      {article.data.excerpt}
+    </p>
+
+    <!-- Corpo do artigo -->
+    <div class="prose-content text-[#f5f0e8]/85 text-base md:text-lg leading-relaxed">
+      <Content />
+    </div>
+
+    <!-- Nota institucional -->
+    <div class="mt-16 pt-8 border-t border-[#f5f0e8]/10">
+      <p class="text-xs italic leading-relaxed text-[#f5f0e8]/50">
+        Este conteúdo tem finalidade exclusivamente informativa e não substitui a análise individual do caso concreto.
       </p>
-      <h1 class="font-serif text-4xl md:text-5xl font-bold text-[#f5f0e8] leading-tight mb-6">
-        {categoryName}
-      </h1>
-      <p class="text-[#f5f0e8]/70 text-lg leading-relaxed">
-        {countText}
-      </p>
     </div>
-  </section>
+  </article>
 
-  <section class="border-b border-[#f5f0e8]/10 bg-[#0d2b27] sticky top-36 z-30">
-    <div class="max-w-5xl mx-auto px-6">
-      <div class="flex flex-wrap gap-2 py-3">
-        
-          href="/blog"
-          class="shrink-0 rounded-sm border border-white/70 px-3 py-1 text-[11px] font-medium uppercase tracking-widest text-white hover:bg-white/20 transition-colors"
-        >
-          Todas
-        </a>
-        {categories.map((cat) => (
-          
-            href={"/blog/categoria/" + categoryToSlug(cat)}
-            class={cat === categoryName
-              ? "shrink-0 rounded-sm border border-white bg-white/40 px-3 py-1 text-[11px] font-semibold uppercase tracking-widest text-white"
-              : "shrink-0 rounded-sm border border-white/70 px-3 py-1 text-[11px] font-medium uppercase tracking-widest text-white hover:bg-white/20 transition-colors"}
-          >
-            {cat}
-          </a>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <section class="border-b border-[#f5f0e8]/10">
-    <div class="max-w-3xl mx-auto px-6 py-12 md:py-16">
-      {articles.length === 0 ? (
-        <div class="text-center">
-          <p class="font-serif text-xl md:text-2xl italic leading-relaxed text-[#f5f0e8]/70">
-            Nenhum artigo nesta categoria ainda.
-          </p>
-          
-            href="/blog"
-            class="mt-6 inline-block text-sm text-[#c4956a] underline-offset-4 hover:underline"
-          >
-            Ver todos os artigos
-          </a>
-        </div>
-      ) : (
-        <ul class="space-y-10 md:space-y-12 list-none p-0">
-          {articles.map((article) => (
-            <li>
-              
-                href={"/blog/" + article.slug}
-                class="block group border border-[#f5f0e8]/10 rounded-lg p-6 md:p-8 hover:border-[#c4956a]/40 transition-all"
-              >
-                <div class="flex items-start justify-between gap-4">
-                  <div class="flex-1">
-                    <span class="text-xs uppercase tracking-widest text-[#c4956a] font-medium">
-                      {article.data.category}
-                    </span>
-                    <h2 class="font-serif text-xl md:text-2xl font-semibold text-[#f5f0e8] mt-2 mb-3 group-hover:text-[#c4956a] transition-colors leading-snug">
-                      {article.data.title}
-                    </h2>
-                    <p class="text-[#f5f0e8]/70 text-sm md:text-base leading-relaxed line-clamp-3">
-                      {article.data.excerpt}
-                    </p>
-                  </div>
-                  <span class="text-[#c4956a] text-xl mt-1 flex-shrink-0">→</span>
-                </div>
-                <div class="mt-5 text-xs text-[#f5f0e8]/40">
-                  {new Date(article.data.publishedAt).toLocaleDateString('pt-BR', { day: '2-digit', month: 'long', year: 'numeric' })}
-                </div>
-              </a>
-            </li>
-          ))}
-        </ul>
-      )}
-    </div>
-  </section>
-
-  <section>
+  <!-- CTA final -->
+  <section class="border-t border-[#f5f0e8]/10 bg-[#0a1f1c]/50">
     <div class="max-w-3xl mx-auto px-6 py-12 md:py-16 text-center">
-      <p class="mx-auto mb-6 max-w-2xl text-sm md:text-base leading-relaxed text-[#f5f0e8]/70">
-        Para entender como uma leitura técnica é conduzida antes de qualquer providência, veja
-        <a href="/como-funciona" class="text-[#c4956a] underline-offset-4 hover:underline">como funciona o processo</a>.
-      </p>
       <p class="mb-6 text-base italic text-[#f5f0e8]/70">
         Se o banco está pressionando e o papel está na mesa, este é o momento.
       </p>
@@ -145,12 +76,89 @@ const countText = articles.length === 1 ? "1 artigo nesta categoria." : articles
       >
         Solicitar triagem
       </a>
+      <p class="mt-8 text-sm text-[#f5f0e8]/50">
+        <a href="/blog" class="text-[#c4956a] hover:underline">← Ver outros artigos do blog</a>
+      </p>
     </div>
   </section>
 
+  <!-- Rodapé -->
   <footer class="border-t border-[#f5f0e8]/10 mt-8">
     <div class="max-w-4xl mx-auto px-6 py-8 text-center text-sm text-[#f5f0e8]/30">
       {new Date().getFullYear()} Walter Inglez Advocacia e Consultoria | OAB/CE 51.563 | Fortaleza-CE e São Paulo-SP
     </div>
   </footer>
 </Layout>
+
+<style is:global>
+  .prose-content h2 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1.875rem;
+    font-weight: 700;
+    color: #f5f0e8;
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+  }
+  .prose-content h3 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #f5f0e8;
+    margin-top: 2rem;
+    margin-bottom: 0.75rem;
+  }
+  .prose-content p {
+    margin-bottom: 1.25rem;
+  }
+  .prose-content a {
+    color: #c4956a;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
+  .prose-content a:hover {
+    color: #d4a57a;
+  }
+  .prose-content strong {
+    color: #f5f0e8;
+    font-weight: 600;
+  }
+  .prose-content em {
+    font-style: italic;
+  }
+  .prose-content ul, .prose-content ol {
+    margin: 1.25rem 0;
+    padding-left: 1.5rem;
+  }
+  .prose-content li {
+    margin-bottom: 0.5rem;
+  }
+  .prose-content blockquote {
+    border-left: 2px solid #c4956a;
+    padding-left: 1.25rem;
+    font-style: italic;
+    color: rgba(245, 240, 232, 0.7);
+    margin: 1.5rem 0;
+  }
+  .prose-content table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+    font-size: 0.9rem;
+  }
+  .prose-content th, .prose-content td {
+    border: 1px solid rgba(245, 240, 232, 0.2);
+    padding: 0.75rem;
+    text-align: left;
+  }
+  .prose-content th {
+    background-color: rgba(196, 149, 106, 0.1);
+    color: #f5f0e8;
+    font-weight: 600;
+  }
+  .prose-content hr {
+    border: none;
+    border-top: 1px solid rgba(245, 240, 232, 0.15);
+    margin: 2rem 0;
+  }
+</style>
