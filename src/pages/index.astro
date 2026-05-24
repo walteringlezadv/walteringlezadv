@@ -1,0 +1,81 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+const allArticles = await getCollection('articles');
+const articles = allArticles.sort(
+  (a, b) => new Date(b.data.publishedAt).getTime() - new Date(a.data.publishedAt).getTime()
+);
+---
+
+<Layout
+  title="Walter Inglez — Gestão Estratégica de Passivos Bancários"
+  description="Antes de renegociar, entenda o que o contrato realmente produz. Leitura técnica para empresários sob pressão bancária."
+  canonical="/"
+>
+  <header class="border-b border-[#f5f0e8]/10">
+    <div class="max-w-4xl mx-auto px-6 py-5">
+      <div class="flex items-center justify-between">
+        <div>
+          <h1 class="font-serif text-xl font-bold text-[#f5f0e8]">Walter Inglez</h1>
+          <p class="text-xs text-[#f5f0e8]/40 mt-0.5">Advocacia e Consultoria</p>
+        </div>
+        
+          href="https://wa.me/5511914988818?text=Quero%20uma%20leitura%20do%20meu%20caso"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-sm bg-[#c4956a] text-[#1a2e22] font-semibold px-4 py-2 rounded-lg hover:bg-[#c4956a]/90 transition-colors"
+        >
+          Falar no WhatsApp
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <section class="max-w-4xl mx-auto px-6 py-16 border-b border-[#f5f0e8]/10">
+    <p class="text-xs uppercase tracking-widest text-[#c4956a] mb-4">Gestão estratégica de passivo bancário</p>
+    <h2 class="font-serif text-4xl md:text-5xl font-bold text-[#f5f0e8] leading-tight mb-6">
+      A dívida não é o único problema.<br />
+      <span class="text-[#c4956a]">O risco está em decidir no escuro.</span>
+    </h2>
+    <p class="text-[#f5f0e8]/70 text-lg max-w-2xl leading-relaxed">
+      Análise técnica para empresários com dívidas bancárias relevantes. Sem promessa de resultado. Com clareza sobre o que está em jogo.
+    </p>
+  </section>
+
+  <main class="max-w-4xl mx-auto px-6 py-12">
+    <h3 class="font-serif text-2xl font-semibold text-[#f5f0e8] mb-8">Artigos recentes</h3>
+    <div class="space-y-6">
+      {articles.map((article) => (
+        
+          href={`/blog/${article.slug}`}
+          class="block group border border-[#f5f0e8]/10 rounded-lg p-6 hover:border-[#c4956a]/40 hover:bg-[#f5f0e8]/3 transition-all"
+        >
+          <div class="flex items-start justify-between gap-4">
+            <div class="flex-1">
+              <span class="text-xs uppercase tracking-widest text-[#c4956a] font-medium">
+                {article.data.category}
+              </span>
+              <h4 class="font-serif text-xl font-semibold text-[#f5f0e8] mt-2 mb-2 group-hover:text-[#c4956a] transition-colors leading-snug">
+                {article.data.title}
+              </h4>
+              <p class="text-[#f5f0e8]/60 text-sm leading-relaxed line-clamp-2">
+                {article.data.excerpt}
+              </p>
+            </div>
+            <span class="text-[#c4956a] text-xl mt-1 flex-shrink-0">→</span>
+          </div>
+          <div class="mt-4 text-xs text-[#f5f0e8]/30">
+            {new Date(article.data.publishedAt).toLocaleDateString('pt-BR', { day: '2-digit', month: 'long', year: 'numeric' })}
+          </div>
+        </a>
+      ))}
+    </div>
+  </main>
+
+  <footer class="border-t border-[#f5f0e8]/10 mt-8">
+    <div class="max-w-4xl mx-auto px-6 py-8 text-center text-sm text-[#f5f0e8]/30">
+      © {new Date().getFullYear()} Walter Inglez Advocacia e Consultoria | OAB/CE 51.563 | Fortaleza-CE e São Paulo-SP
+    </div>
+  </footer>
+</Layout>
