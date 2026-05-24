@@ -53,18 +53,26 @@ const emailUrl = "mailto:contato@walteringlezadv.com.br?subject=Solicita%C3%A7%C
       </h2>
 
       <div class="mt-10 grid gap-6 md:grid-cols-2 md:gap-8">
-        <!-- Para quem é -->
-        <div class="rounded-lg border border-[#f5f0e8]/15 bg-[#f5f0e8]/[0.02] p-6 md:p-8">
-          <h3 class="font-serif text-xl md:text-2xl text-[#f5f0e8]">
+        <!-- Para quem é — caixa afirmativa, destacada -->
+        <div class="relative rounded-lg border border-[#c4956a]/40 bg-[#c4956a]/[0.04] p-6 md:p-8">
+          <span class="absolute -top-3 left-6 inline-block px-3 py-1 bg-[#1a2e22] text-[10px] uppercase tracking-[0.2em] text-[#c4956a] font-semibold">
+            Aderente
+          </span>
+          <h3 class="font-serif text-xl md:text-2xl text-[#f5f0e8] mt-2">
             Para quem é
           </h3>
-          <ul class="mt-5 space-y-3 list-none p-0">
+          <p class="mt-2 text-xs text-[#f5f0e8]/55">
+            Cenários em que a triagem produz valor real.
+          </p>
+          <ul class="mt-6 space-y-4 list-none p-0">
             {paraQuemE.map((item) => (
               <li class="flex items-start gap-3">
-                <svg class="mt-1 h-4 w-4 shrink-0 text-[#c4956a]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
-                </svg>
-                <span class="text-sm md:text-base leading-relaxed text-[#f5f0e8]/85">
+                <span class="mt-0.5 inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#c4956a]/20">
+                  <svg class="h-3 w-3 text-[#c4956a]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                  </svg>
+                </span>
+                <span class="text-sm md:text-base leading-relaxed text-[#f5f0e8]">
                   {item}
                 </span>
               </li>
@@ -72,18 +80,26 @@ const emailUrl = "mailto:contato@walteringlezadv.com.br?subject=Solicita%C3%A7%C
           </ul>
         </div>
 
-        <!-- Para quem não é -->
-        <div class="rounded-lg border border-[#f5f0e8]/15 bg-[#f5f0e8]/[0.02] p-6 md:p-8">
-          <h3 class="font-serif text-xl md:text-2xl text-[#f5f0e8]">
+        <!-- Para quem não é — caixa restritiva, recuada -->
+        <div class="relative rounded-lg border border-[#f5f0e8]/10 bg-transparent p-6 md:p-8">
+          <span class="absolute -top-3 left-6 inline-block px-3 py-1 bg-[#1a2e22] text-[10px] uppercase tracking-[0.2em] text-[#f5f0e8]/40 font-semibold">
+            Não aderente
+          </span>
+          <h3 class="font-serif text-xl md:text-2xl text-[#f5f0e8]/55 mt-2">
             Para quem não é
           </h3>
-          <ul class="mt-5 space-y-3 list-none p-0">
+          <p class="mt-2 text-xs text-[#f5f0e8]/40">
+            Cenários fora do escopo técnico desta atuação.
+          </p>
+          <ul class="mt-6 space-y-4 list-none p-0">
             {paraQuemNaoE.map((item) => (
               <li class="flex items-start gap-3">
-                <svg class="mt-1 h-4 w-4 shrink-0 text-[#f5f0e8]/50" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-                </svg>
-                <span class="text-sm md:text-base leading-relaxed text-[#f5f0e8]/60">
+                <span class="mt-0.5 inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#f5f0e8]/[0.04]">
+                  <svg class="h-3 w-3 text-[#f5f0e8]/40" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                </span>
+                <span class="text-sm md:text-base leading-relaxed text-[#f5f0e8]/50">
                   {item}
                 </span>
               </li>
