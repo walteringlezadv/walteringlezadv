@@ -32,7 +32,6 @@ const emailUrl = "mailto:contato@walteringlezadv.com.br?subject=Solicita%C3%A7%C
   description="Critérios de aderência e próximos passos para empresas sob pressão bancária."
   canonical="/proximo-passo"
 >
-  <!-- Cabeçalho da página -->
   <section class="border-b border-[#f5f0e8]/10">
     <div class="max-w-3xl mx-auto px-6 py-16 md:py-20">
       <p class="text-xs uppercase tracking-widest text-[#c4956a] mb-4">Próximo Passo</p>
@@ -45,25 +44,17 @@ const emailUrl = "mailto:contato@walteringlezadv.com.br?subject=Solicita%C3%A7%C
     </div>
   </section>
 
-  <!-- Para quem é · Para quem não é -->
   <section class="border-b border-[#f5f0e8]/10">
     <div class="max-w-5xl mx-auto px-6 py-12 md:py-16">
       <h2 class="text-center font-serif text-3xl md:text-4xl font-bold text-[#f5f0e8] leading-tight tracking-tight">
         Para quem é · Para quem não é
       </h2>
 
-      <div class="mt-12 grid gap-12 md:grid-cols-2 md:gap-8">
-        <!-- COLUNA 1: Aderente -->
+      <div class="mt-12 grid gap-8 md:grid-cols-2">
         <div class="flex flex-col">
-          <!-- Etiqueta sóbria acima do título -->
-          <p class="text-center text-[10px] uppercase tracking-[0.32em] text-[#c4956a] font-semibold mb-3">
+          <p class="text-center text-[11px] uppercase tracking-[0.32em] text-[#c4956a] font-semibold mb-4">
             Aderente
           </p>
-          <!-- Título centralizado fora da caixa -->
-          <h3 class="text-center font-serif text-2xl md:text-3xl text-[#f5f0e8] mb-6">
-            Para quem é
-          </h3>
-          <!-- Caixa com conteúdo -->
           <div class="flex-1 rounded-lg border border-[#c4956a]/40 bg-[#c4956a]/[0.04] p-6 md:p-8">
             <p class="text-xs text-[#f5f0e8]/55 italic mb-6">
               Cenários em que a triagem produz valor real.
@@ -85,17 +76,10 @@ const emailUrl = "mailto:contato@walteringlezadv.com.br?subject=Solicita%C3%A7%C
           </div>
         </div>
 
-        <!-- COLUNA 2: Não aderente -->
         <div class="flex flex-col">
-          <!-- Etiqueta sóbria acima do título -->
-          <p class="text-center text-[10px] uppercase tracking-[0.32em] text-[#f5f0e8]/40 font-semibold mb-3">
+          <p class="text-center text-[11px] uppercase tracking-[0.32em] text-[#f5f0e8]/40 font-semibold mb-4">
             Não aderente
           </p>
-          <!-- Título centralizado fora da caixa -->
-          <h3 class="text-center font-serif text-2xl md:text-3xl text-[#f5f0e8]/55 mb-6">
-            Para quem não é
-          </h3>
-          <!-- Caixa com conteúdo -->
           <div class="flex-1 rounded-lg border border-[#f5f0e8]/10 bg-transparent p-6 md:p-8">
             <p class="text-xs text-[#f5f0e8]/40 italic mb-6">
               Cenários fora do escopo técnico desta atuação.
@@ -120,7 +104,6 @@ const emailUrl = "mailto:contato@walteringlezadv.com.br?subject=Solicita%C3%A7%C
     </div>
   </section>
 
-  <!-- O que esperar após a solicitação -->
   <section class="border-b border-[#f5f0e8]/10 bg-[#0a1f1c]/50">
     <div class="max-w-3xl mx-auto px-6 py-10 md:py-14">
       <h2 class="font-serif text-3xl md:text-4xl font-bold text-[#f5f0e8] leading-tight tracking-tight">
@@ -144,7 +127,6 @@ const emailUrl = "mailto:contato@walteringlezadv.com.br?subject=Solicita%C3%A7%C
     </div>
   </section>
 
-  <!-- Fechamento institucional - contato direto -->
   <section>
     <div class="max-w-3xl mx-auto px-6 py-12 md:py-16 text-center">
       <p class="mb-5 text-base italic text-[#f5f0e8]/70">
@@ -157,19 +139,10 @@ const emailUrl = "mailto:contato@walteringlezadv.com.br?subject=Solicita%C3%A7%C
         <p class="text-xs text-[#f5f0e8]/60">
           Envie as informações iniciais para avaliação técnica.
         </p>
-        
-          href={whatsappUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          class="inline-flex items-center justify-center gap-2 rounded-md px-6 py-3 text-base font-medium bg-[#c4956a] text-[#0a1f1c] hover:bg-[#d4a57a] transition-colors"
-        >
+        <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 rounded-md px-6 py-3 text-base font-medium bg-[#c4956a] text-[#0a1f1c] hover:bg-[#d4a57a] transition-colors">
           Solicitar triagem
         </a>
-        
-          href={emailUrl}
-          aria-label="Enviar informações iniciais por e-mail"
-          class="inline-flex items-center gap-2 text-sm font-medium text-[#f5f0e8] underline underline-offset-4 decoration-[#c4956a]/70 transition-colors hover:decoration-[#c4956a]"
-        >
+        <a href={emailUrl} aria-label="Enviar informações iniciais por e-mail" class="inline-flex items-center gap-2 text-sm font-medium text-[#f5f0e8] underline underline-offset-4 decoration-[#c4956a]/70 transition-colors hover:decoration-[#c4956a]">
           <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
             <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
           </svg>
@@ -182,7 +155,6 @@ const emailUrl = "mailto:contato@walteringlezadv.com.br?subject=Solicita%C3%A7%C
     </div>
   </section>
 
-  <!-- Rodapé -->
   <footer class="border-t border-[#f5f0e8]/10 mt-8">
     <div class="max-w-4xl mx-auto px-6 py-8 text-center text-sm text-[#f5f0e8]/30">
       {new Date().getFullYear()} Walter Inglez Advocacia e Consultoria | OAB/CE 51.563 | Fortaleza-CE e São Paulo-SP
