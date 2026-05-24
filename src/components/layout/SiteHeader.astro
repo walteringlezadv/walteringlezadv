@@ -23,31 +23,36 @@ const isActive = (href: string) => {
 
 <header class="sticky top-0 z-40 w-full border-b border-white/10 bg-[#0a1f1c]">
 
-  <div class="container mx-auto px-6 grid h-28 grid-cols-[auto_1fr_auto] items-center gap-8">
+  <!-- Linha institucional: lockup · tagline · CTA -->
+  <div class="container mx-auto px-6 grid h-36 grid-cols-[auto_1fr_auto] items-center gap-8">
 
-    <a href="/" class="flex items-center gap-5 group" aria-label="Walter Inglez — Advocacia e Consultoria">
+    <!-- Lockup (esquerda) -->
+    <a href="/" class="flex items-center gap-6 group" aria-label="Walter Inglez — Advocacia e Consultoria">
       <img src="/logo-wi.svg" alt="" aria-hidden="true"
-        class="h-20 w-20 shrink-0 opacity-90 group-hover:opacity-100 transition-opacity"
+        class="h-28 w-28 shrink-0 object-contain opacity-90 group-hover:opacity-100 transition-opacity"
         style="filter:brightness(0) invert(1) drop-shadow(0 1px 2px rgb(0 0 0/0.35))" />
-      <span aria-hidden="true" class="hidden sm:block h-14 w-px bg-white/20"></span>
+      <span aria-hidden="true" class="hidden sm:block h-20 w-px bg-white/20"></span>
       <span class="flex flex-col leading-tight">
-        <span class="font-serif text-2xl text-[#f5f0e8] tracking-[0.14em]">WALTER INGLEZ</span>
-        <span class="mt-1.5 text-[11px] uppercase tracking-[0.32em] text-[#c4956a]">Advocacia e Consultoria</span>
+        <span class="font-serif text-2xl md:text-3xl text-[#f5f0e8] tracking-[0.14em]">WALTER INGLEZ</span>
+        <span class="mt-2 text-[11px] uppercase tracking-[0.32em] text-[#c4956a]">Advocacia e Consultoria</span>
       </span>
     </a>
 
-    <p class="hidden lg:block text-center font-serif text-sm italic text-white/50">
+    <!-- Tagline (centro, desktop) -->
+    <p class="hidden lg:block text-center font-serif text-base italic text-white/50">
       Gestão Estratégica de Passivos
     </p>
 
+    <!-- CTA WhatsApp (direita, desktop) -->
     <div class="hidden md:flex items-center justify-end">
       <a href="https://wa.me/5511914988818?text=Quero%20uma%20leitura%20do%20meu%20caso"
         target="_blank" rel="noopener noreferrer"
-        class="inline-flex items-center gap-2 rounded-md px-4 py-2 text-sm font-medium bg-[#c4956a] text-[#0a1f1c] hover:bg-[#d4a57a] transition-colors">
+        class="inline-flex items-center gap-2 rounded-md px-5 py-2.5 text-sm font-medium bg-[#c4956a] text-[#0a1f1c] hover:bg-[#d4a57a] transition-colors">
         Solicitar triagem
       </a>
     </div>
 
+    <!-- Mobile toggle -->
     <button id="mobile-toggle" type="button"
       class="col-start-3 inline-flex h-10 w-10 items-center justify-center rounded-md text-[#f5f0e8] md:hidden"
       aria-label="Abrir menu" aria-expanded="false">
@@ -61,8 +66,9 @@ const isActive = (href: string) => {
 
   </div>
 
+  <!-- Navegação desktop -->
   <nav aria-label="Navegação principal" class="hidden md:block border-t border-white/10 bg-[#112420]">
-    <ul class="container mx-auto px-6 flex items-center justify-center gap-8 py-3 list-none">
+    <ul class="container mx-auto px-6 flex items-center justify-center gap-10 py-3.5 list-none">
       {navItems.map((item) => (
         <li>
           <a href={item.href}
@@ -78,6 +84,7 @@ const isActive = (href: string) => {
     </ul>
   </nav>
 
+  <!-- Navegação mobile -->
   <nav id="mobile-nav" aria-label="Navegação principal (móvel)"
     class="hidden border-t border-white/10 md:hidden bg-[#112420]">
     <p class="container mx-auto px-6 pt-3 text-center font-serif text-sm italic text-white/50">
