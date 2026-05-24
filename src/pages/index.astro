@@ -1,11 +1,10 @@
---- 
+---
 import Layout from '../layouts/Layout.astro';
 import { getCollection } from 'astro:content';
 const allArticles = await getCollection('articles');
 const articles = allArticles.sort(
   (a, b) => new Date(b.data.publishedAt).getTime() - new Date(a.data.publishedAt).getTime()
 );
-const currentPath = Astro.url.pathname ?? '/';
 const navItems = [
   { label: 'Home', href: '/' },
   { label: 'Como Funciona', href: '/como-funciona' },
@@ -50,10 +49,7 @@ const navItems = [
       <ul style="max-width:1280px; margin:0 auto; padding:0 1.5rem; display:flex; align-items:center; justify-content:center; gap:2rem; list-style:none; height:2.75rem;">
         {navItems.map(item => (
           <li>
-            <a href={item.href}
-              class={currentPath === item.href ? 'nav-active' : 'nav-item'}>
-              {item.label}
-            </a>
+            <a href={item.href} class="nav-item">{item.label}</a>
           </li>
         ))}
       </ul>
@@ -118,11 +114,5 @@ const navItems = [
   }
   .nav-item:hover {
     color: #f5f0e8;
-  }
-  .nav-active {
-    font-size: 0.875rem;
-    text-decoration: none;
-    color: #f5f0e8;
-    font-weight: 600;
   }
 </style>
