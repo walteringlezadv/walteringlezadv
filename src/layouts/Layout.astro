@@ -6,7 +6,6 @@ export interface Props {
   ogImage?: string;
   type?: 'website' | 'article';
 }
-
 const {
   title,
   description,
@@ -14,13 +13,11 @@ const {
   ogImage = '/og-image.png',
   type = 'website',
 } = Astro.props;
-
 const SITE_URL = 'https://blog.walteringlezadv.com.br';
 const fullTitle = title.includes('Walter Inglez') ? title : `${title} — Walter Inglez`;
 const canonicalURL = canonical ? `${SITE_URL}${canonical}` : SITE_URL;
 const ogImageURL = ogImage.startsWith('http') ? ogImage : `${SITE_URL}${ogImage}`;
 ---
-
 <!DOCTYPE html>
 <html lang="pt-BR">
   <head>
@@ -49,6 +46,60 @@ const ogImageURL = ogImage.startsWith('http') ? ogImage : `${SITE_URL}${ogImage}
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
   </head>
   <body class="bg-[#1a2e22] text-[#f5f0e8] font-sans min-h-screen">
+
+    <header style="background:#1a2e22; border-bottom:1px solid rgba(196,149,106,0.2); position:sticky; top:0; z-index:100;">
+      <nav style="max-width:1100px; margin:0 auto; padding:0 1.5rem; display:flex; align-items:center; justify-content:space-between; height:64px;">
+
+        <!-- Logo -->
+        <a href="/" style="text-decoration:none; display:flex; flex-direction:column; line-height:1.1;">
+          <span style="font-family:'Playfair Display', Georgia, serif; font-size:1.1rem; font-weight:700; color:#f5f0e8; letter-spacing:0.02em;">Walter Inglez</span>
+          <span style="font-size:0.65rem; color:#c4956a; letter-spacing:0.12em; text-transform:uppercase;">Advocacia e Consultoria</span>
+        </a>
+
+        <!-- Links desktop -->
+        <ul style="list-style:none; margin:0; padding:0; display:flex; gap:2rem; align-items:center;" id="nav-links">
+          <li><a href="/blog" style="font-family:'Playfair Display', Georgia, serif; color:#f5f0e8; text-decoration:none; font-size:0.95rem; opacity:0.9; transition:opacity .2s;" onmouseover="this.style.opacity='1';this.style.color='#c4956a'" onmouseout="this.style.opacity='0.9';this.style.color='#f5f0e8'">Blog</a></li>
+          <li><a href="/como-funciona" style="font-family:'Playfair Display', Georgia, serif; color:#f5f0e8; text-decoration:none; font-size:0.95rem; opacity:0.9;" onmouseover="this.style.opacity='1';this.style.color='#c4956a'" onmouseout="this.style.opacity='0.9';this.style.color='#f5f0e8'">Como Funciona</a></li>
+          <li><a href="/sobre" style="font-family:'Playfair Display', Georgia, serif; color:#f5f0e8; text-decoration:none; font-size:0.95rem; opacity:0.9;" onmouseover="this.style.opacity='1';this.style.color='#c4956a'" onmouseout="this.style.opacity='0.9';this.style.color='#f5f0e8'">Sobre</a></li>
+          <li><a href="/contato" style="font-family:'Playfair Display', Georgia, serif; color:#f5f0e8; text-decoration:none; font-size:0.95rem; opacity:0.9;" onmouseover="this.style.opacity='1';this.style.color='#c4956a'" onmouseout="this.style.opacity='0.9';this.style.color='#f5f0e8'">Contato</a></li>
+        </ul>
+
+        <!-- Hamburguer mobile -->
+        <button id="menu-toggle" aria-label="Abrir menu" style="display:none; background:none; border:none; cursor:pointer; padding:0.5rem; flex-direction:column; gap:5px;">
+          <span style="display:block; width:24px; height:2px; background:#f5f0e8;"></span>
+          <span style="display:block; width:24px; height:2px; background:#f5f0e8;"></span>
+          <span style="display:block; width:24px; height:2px; background:#f5f0e8;"></span>
+        </button>
+
+      </nav>
+
+      <!-- Mobile menu -->
+      <div id="mobile-menu" style="display:none; background:#1a2e22; border-top:1px solid rgba(196,149,106,0.2); padding:1rem 1.5rem;">
+        <ul style="list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:1rem;">
+          <li><a href="/blog" style="font-family:'Playfair Display', Georgia, serif; color:#f5f0e8; text-decoration:none; font-size:1rem;">Blog</a></li>
+          <li><a href="/como-funciona" style="font-family:'Playfair Display', Georgia, serif; color:#f5f0e8; text-decoration:none; font-size:1rem;">Como Funciona</a></li>
+          <li><a href="/sobre" style="font-family:'Playfair Display', Georgia, serif; color:#f5f0e8; text-decoration:none; font-size:1rem;">Sobre</a></li>
+          <li><a href="/contato" style="font-family:'Playfair Display', Georgia, serif; color:#f5f0e8; text-decoration:none; font-size:1rem;">Contato</a></li>
+        </ul>
+      </div>
+    </header>
+
     <slot />
+
   </body>
 </html>
+
+<style>
+  @media (max-width: 768px) {
+    #nav-links { display: none !important; }
+    #menu-toggle { display: flex !important; }
+  }
+</style>
+
+<script>
+  const toggle = document.getElementById('menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+  toggle?.addEventListener('click', () => {
+    mobileMenu.style.display = mobileMenu.style.display === 'none' ? 'block' : 'none';
+  });
+</script>
