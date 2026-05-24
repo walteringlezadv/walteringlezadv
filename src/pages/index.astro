@@ -1,35 +1,70 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import { getCollection } from 'astro:content';
-
 const allArticles = await getCollection('articles');
 const articles = allArticles.sort(
   (a, b) => new Date(b.data.publishedAt).getTime() - new Date(a.data.publishedAt).getTime()
 );
+const currentPath = Astro.url.pathname;
 ---
-
 <Layout
   title="Walter Inglez — Gestão Estratégica de Passivos Bancários"
   description="Antes de renegociar, entenda o que o contrato realmente produz. Leitura técnica para empresários sob pressão bancária."
   canonical="/"
 >
-  <header class="border-b border-[#f5f0e8]/10">
-    <div class="max-w-4xl mx-auto px-6 py-5">
-      <div class="flex items-center justify-between">
-        <div>
-          <h1 class="font-serif text-xl font-bold text-[#f5f0e8]">Walter Inglez</h1>
-          <p class="text-xs text-[#f5f0e8]/40 mt-0.5">Advocacia e Consultoria</p>
-        </div>
-        <a
-          href="https://wa.me/5511914988818?text=Quero%20uma%20leitura%20do%20meu%20caso"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="text-sm bg-[#c4956a] text-[#1a2e22] font-semibold px-4 py-2 rounded-lg hover:bg-[#c4956a]/90 transition-colors"
-        >
-          Falar no WhatsApp
-        </a>
-      </div>
+
+  <!-- HEADER INSTITUCIONAL -->
+  <header style="background:#0a1f1c; border-bottom:1px solid rgba(245,240,232,0.1); position:sticky; top:0; z-index:40;">
+
+    <!-- Linha superior: logo · tagline · CTA -->
+    <div style="max-width:1280px; margin:0 auto; padding:0 1.5rem; display:grid; grid-template-columns:auto 1fr auto; align-items:center; height:7rem; gap:2rem;">
+
+      <!-- Logo -->
+      <a href="/" style="text-decoration:none; display:flex; align-items:center; gap:1.25rem;">
+        <img src="/logo-wi.svg" alt="" aria-hidden="true"
+          style="height:5rem; width:5rem; filter:brightness(0) invert(1) drop-shadow(0 1px 2px rgba(0,0,0,0.35));" />
+        <span style="display:block; width:1px; height:3.5rem; background:rgba(245,240,232,0.2);"></span>
+        <span style="display:flex; flex-direction:column; line-height:1.2;">
+          <span style="font-family:'Playfair Display',Georgia,serif; font-size:1.6rem; font-weight:700; color:#f5f0e8; letter-spacing:0.14em;">WALTER INGLEZ</span>
+          <span style="font-size:0.7rem; color:#c4956a; letter-spacing:0.32em; text-transform:uppercase; margin-top:0.375rem;">Advocacia e Consultoria</span>
+        </span>
+      </a>
+
+      <!-- Tagline -->
+      <p style="text-align:center; font-family:'Playfair Display',Georgia,serif; font-size:0.875rem; font-style:italic; color:rgba(245,240,232,0.5);">
+        Gestão Estratégica de Passivos
+      </p>
+
+      <!-- CTA -->
+      <a href="https://wa.me/5511914988818?text=Quero%20uma%20leitura%20do%20meu%20caso"
+        target="_blank" rel="noopener noreferrer"
+        style="display:inline-flex; align-items:center; padding:0.5rem 1.25rem; background:#c4956a; color:#0a1f1c; font-size:0.875rem; font-weight:600; border-radius:0.375rem; text-decoration:none; white-space:nowrap;">
+        Solicitar triagem
+      </a>
+
     </div>
+
+    <!-- Linha de navegação -->
+    <nav style="background:#112420; border-top:1px solid rgba(245,240,232,0.1);">
+      <ul style="max-width:1280px; margin:0 auto; padding:0 1.5rem; display:flex; align-items:center; justify-content:center; gap:2rem; list-style:none; height:2.75rem;">
+        {[
+          { label: 'Home', href: '/' },
+          { label: 'Como Funciona', href: '/como-funciona' },
+          { label: 'Sobre', href: '/sobre' },
+          { label: 'Blog', href: '/blog' },
+          { label: 'Próximo Passo', href: '/proximo-passo' },
+          { label: 'Contato', href: '/contato' },
+        ].map(item => (
+          <li>
+            <a href={item.href}
+              style={`font-size:0.875rem; text-decoration:none; transition:color .2s; color:${currentPath === item.href ? '#f5f0e8' : 'rgba(245,240,232,0.6)'}; font-weight:${currentPath === item.href ? '600' : '400'};`}>
+              {item.label}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+
   </header>
 
   <section class="max-w-4xl mx-auto px-6 py-16 border-b border-[#f5f0e8]/10">
@@ -43,12 +78,11 @@ const articles = allArticles.sort(
     </p>
   </section>
 
-
   <main class="max-w-4xl mx-auto px-6 py-12">
     <h3 class="font-serif text-2xl font-semibold text-[#f5f0e8] mb-8">Artigos recentes</h3>
     <div class="space-y-6">
       {articles.map((article) => (
-        <a
+        
           href={"/blog/" + article.slug}
           class="block group border border-[#f5f0e8]/10 rounded-lg p-6 hover:border-[#c4956a]/40 hover:bg-[#f5f0e8]/3 transition-all"
         >
@@ -79,4 +113,5 @@ const articles = allArticles.sort(
       {new Date().getFullYear()} Walter Inglez Advocacia e Consultoria | OAB/CE 51.563 | Fortaleza-CE e São Paulo-SP
     </div>
   </footer>
+
 </Layout>
