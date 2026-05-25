@@ -1,0 +1,70 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { getCollection } from "astro:content";
+
+const articles = await getCollection("articles");
+
+const sorted = articles.sort((a, b) => {
+  const dateA = new Date(a.data.publishedAt).getTime();
+  const dateB = new Date(b.data.publishedAt).getTime();
+  return dateB - dateA;
+});
+
+function categoryToSlug(cat) {
+  return cat
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/\s+/g, "-");
+}
+
+const categories = Array.from(new Set(articles.map((a) => a.data.category)));
+---
+
+<Layout
+  title="Blog | Walter Inglez Advocacia"
+  description="Análises técnicas sobre gestão estratégica de passivo bancário empresarial."
+>
+  <main class="container mx-auto px-6 py-16 max-w-4xl">
+    <header class="mb-12">
+      <p class="text-sm uppercase tracking-widest text-[#c4956a] mb-3">Blog</p>
+      <h1 class="font-serif text-4xl md:text-5xl text-[#f5f0e8] leading-tight">
+        Análises técnicas sobre passivo bancário
+      </h1>
+      <p class="mt-4 text-white/70 text-lg max-w-2xl">
+        Conteúdo técnico para empresários com dívidas bancárias relevantes. Sem promessa de resultado. Com clareza sobre o que está em jogo.
+      </p>
+    </header>
+
+    <nav aria-label="Categorias" class="mb-12 flex flex-wrap gap-2">
+      <span class="text-sm px-4 py-2 rounded-full bg-[#c4956a] text-[#0a1f1c] font-medium">Todas</span>
+      {categories.map((cat) => (
+        
+          href={"/blog/categoria/" + categoryToSlug(cat)}
+          class="text-sm px-4 py-2 rounded-full border border-white/20 text-white/70 hover:border-[#c4956a] hover:text-[#c4956a] transition-colors"
+        >
+          {cat}
+        </a>
+      ))}
+    </nav>
+
+    <section class="space-y-6">
+      {sorted.map((article) => (
+        
+          href={"/blog/" + article.slug}
+          class="block p-6 rounded-lg border border-white/10 hover:border-[#c4956a]/40 transition-colors group"
+        >
+          <p class="text-xs uppercase tracking-widest text-[#c4956a] mb-2">
+            {article.data.category}
+          </p>
+          <h2 class="font-serif text-2xl text-[#f5f0e8] group-hover:text-[#c4956a] transition-colors mb-2">
+            {article.data.title}
+          </h2>
+          <p class="text-white/70 text-sm leading-relaxed">
+            {article.data.excerpt}
+          </p>
+        </a>
+      ))}
+    </section>
+  </main>
+</Layout>
