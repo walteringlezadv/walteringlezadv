@@ -19,6 +19,18 @@ function categoryToSlug(cat) {
 }
 
 const categories = Array.from(new Set(articles.map((a) => a.data.category)));
+
+const articleList = sorted.map((a) => ({
+  href: "/blog/" + a.slug,
+  category: a.data.category,
+  title: a.data.title,
+  excerpt: a.data.excerpt,
+}));
+
+const categoryList = categories.map((c) => ({
+  href: "/blog/categoria/" + categoryToSlug(c),
+  label: c,
+}));
 ---
 
 <Layout
@@ -38,30 +50,24 @@ const categories = Array.from(new Set(articles.map((a) => a.data.category)));
 
     <nav aria-label="Categorias" class="mb-12 flex flex-wrap gap-2">
       <span class="text-sm px-4 py-2 rounded-full bg-[#c4956a] text-[#0a1f1c] font-medium">Todas</span>
-      {categories.map((cat) => (
-        
-          href={"/blog/categoria/" + categoryToSlug(cat)}
-          class="text-sm px-4 py-2 rounded-full border border-white/20 text-white/70 hover:border-[#c4956a] hover:text-[#c4956a] transition-colors"
-        >
-          {cat}
+      {categoryList.map((cat) => (
+        <a href={cat.href} class="text-sm px-4 py-2 rounded-full border border-white/20 text-white/70 hover:border-[#c4956a] hover:text-[#c4956a] transition-colors">
+          {cat.label}
         </a>
       ))}
     </nav>
 
     <section class="space-y-6">
-      {sorted.map((article) => (
-        
-          href={"/blog/" + article.slug}
-          class="block p-6 rounded-lg border border-white/10 hover:border-[#c4956a]/40 transition-colors group"
-        >
+      {articleList.map((article) => (
+        <a href={article.href} class="block p-6 rounded-lg border border-white/10 hover:border-[#c4956a]/40 transition-colors group">
           <p class="text-xs uppercase tracking-widest text-[#c4956a] mb-2">
-            {article.data.category}
+            {article.category}
           </p>
           <h2 class="font-serif text-2xl text-[#f5f0e8] group-hover:text-[#c4956a] transition-colors mb-2">
-            {article.data.title}
+            {article.title}
           </h2>
           <p class="text-white/70 text-sm leading-relaxed">
-            {article.data.excerpt}
+            {article.excerpt}
           </p>
         </a>
       ))}
