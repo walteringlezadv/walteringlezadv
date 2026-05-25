@@ -2,11 +2,10 @@
 import Layout from '../../../layouts/Layout.astro';
 import { getCollection } from 'astro:content';
 
-function categoryToSlug(cat) {
-  return cat.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[^a-z0-9\s-]/g, '').trim().replace(/\s+/g, '-');
-}
-
 export async function getStaticPaths() {
+  function categoryToSlug(cat) {
+    return cat.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[^a-z0-9\s-]/g, '').trim().replace(/\s+/g, '-');
+  }
   const allArticles = await getCollection('articles');
   const categoriesSet = new Set(allArticles.map(a => a.data.category).filter(Boolean));
   return Array.from(categoriesSet).map((cat) => ({
@@ -19,6 +18,11 @@ export async function getStaticPaths() {
 }
 
 const { categoryName, articles } = Astro.props;
+
+function categoryToSlug(cat) {
+  return cat.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[^a-z0-9\s-]/g, '').trim().replace(/\s+/g, '-');
+}
+
 const allArticles = await getCollection('articles');
 const categories = [...new Set(allArticles.map(a => a.data.category))].filter(Boolean).sort();
 
