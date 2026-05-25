@@ -1,0 +1,130 @@
+---
+const navItems = [
+  { label: "Home", href: "/" },
+  { label: "Como Funciona", href: "/como-funciona" },
+  { label: "Sobre", href: "/sobre" },
+  { label: "Blog", href: "/blog" },
+  { label: "Próximo Passo", href: "/proximo-passo" },
+  { label: "Contato", href: "/contato" },
+];
+
+// Normaliza o path removendo barra final (mas mantém "/" da home)
+const rawPath = Astro.url.pathname;
+const currentPath = rawPath.length > 1 && rawPath.endsWith("/")
+  ? rawPath.slice(0, -1)
+  : rawPath;
+
+// Helper de comparação: trata Home como caso especial
+const isActive = (href: string) => {
+  if (href === "/") return currentPath === "/";
+  return currentPath === href || currentPath.startsWith(href + "/");
+};
+---
+
+<header class="sticky top-0 z-40 w-full border-b border-white/10 bg-[#0a1f1c]">
+
+  <!-- Linha institucional: lockup · tagline · CTA -->
+  <div class="container mx-auto px-6 grid h-36 grid-cols-[auto_1fr_auto] items-center gap-8">
+
+    <!-- Lockup (esquerda) -->
+    <a href="/" class="flex items-center gap-6 group" aria-label="Walter Inglez — Advocacia e Consultoria">
+      <img src="/logo-wi.svg" alt="" aria-hidden="true"
+        class="h-28 w-28 shrink-0 object-contain opacity-90 group-hover:opacity-100 transition-opacity"
+        style="filter:brightness(0) invert(1) drop-shadow(0 1px 2px rgb(0 0 0/0.35))" />
+      <span aria-hidden="true" class="hidden sm:block h-20 w-px bg-white/20"></span>
+      <span class="flex flex-col leading-tight">
+        <span class="font-serif text-2xl md:text-3xl text-[#f5f0e8] tracking-[0.14em]">WALTER INGLEZ</span>
+        <span class="mt-2 text-[11px] uppercase tracking-[0.32em] text-[#c4956a]">Advocacia e Consultoria</span>
+      </span>
+    </a>
+
+    <!-- Tagline (centro, desktop) -->
+    <p class="hidden lg:block text-center font-serif text-base italic text-white/50">
+      Gestão Estratégica de Passivos
+    </p>
+
+    <!-- CTA WhatsApp (direita, desktop) -->
+    <div class="hidden md:flex items-center justify-end">
+      <a href="https://wa.me/5511914988818?text=Quero%20uma%20leitura%20do%20meu%20caso"
+        target="_blank" rel="noopener noreferrer"
+        class="inline-flex items-center gap-2 rounded-md px-5 py-2.5 text-sm font-medium bg-[#c4956a] text-[#0a1f1c] hover:bg-[#d4a57a] transition-colors">
+        Solicitar triagem
+      </a>
+    </div>
+
+    <!-- Mobile toggle -->
+    <button id="mobile-toggle" type="button"
+      class="col-start-3 inline-flex h-10 w-10 items-center justify-center rounded-md text-[#f5f0e8] md:hidden"
+      aria-label="Abrir menu" aria-expanded="false">
+      <svg id="icon-menu" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+      </svg>
+      <svg id="icon-close" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+      </svg>
+    </button>
+
+  </div>
+
+  <!-- Navegação desktop -->
+  <nav aria-label="Navegação principal" class="hidden md:block border-t border-white/10 bg-[#112420]">
+    <ul class="container mx-auto px-6 flex items-center justify-center gap-10 py-3.5 list-none">
+      {navItems.map((item) => (
+        <li>
+          <a href={item.href}
+            class={`text-sm transition-colors hover:text-[#f5f0e8] ${
+              isActive(item.href)
+                ? "text-[#f5f0e8] font-medium"
+                : "text-white/60"
+            }`}>
+            {item.label}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </nav>
+
+  <!-- Navegação mobile -->
+  <nav id="mobile-nav" aria-label="Navegação principal (móvel)"
+    class="hidden border-t border-white/10 md:hidden bg-[#112420]">
+    <p class="container mx-auto px-6 pt-3 text-center font-serif text-sm italic text-white/50">
+      Gestão Estratégica de Passivos
+    </p>
+    <ul class="container mx-auto px-6 flex flex-col gap-1 py-3 list-none">
+      {navItems.map((item) => (
+        <li>
+          <a href={item.href}
+            class={`block rounded-md px-3 py-2 text-sm transition-colors hover:bg-white/10 hover:text-[#f5f0e8] ${
+              isActive(item.href)
+                ? "text-[#f5f0e8] font-medium"
+                : "text-white/60"
+            }`}>
+            {item.label}
+          </a>
+        </li>
+      ))}
+    </ul>
+    <div class="container mx-auto px-6 pb-4">
+      <a href="https://wa.me/5511914988818?text=Quero%20uma%20leitura%20do%20meu%20caso"
+        target="_blank" rel="noopener noreferrer"
+        class="flex w-full items-center justify-center gap-2 rounded-md px-4 py-2 text-sm font-medium bg-[#c4956a] text-[#0a1f1c] hover:bg-[#d4a57a] transition-colors">
+        Solicitar triagem
+      </a>
+    </div>
+  </nav>
+
+</header>
+
+<script>
+  const toggle = document.getElementById('mobile-toggle');
+  const nav = document.getElementById('mobile-nav');
+  const iconMenu = document.getElementById('icon-menu');
+  const iconClose = document.getElementById('icon-close');
+  toggle?.addEventListener('click', () => {
+    nav?.classList.toggle('hidden');
+    const isHidden = nav?.classList.contains('hidden');
+    toggle.setAttribute('aria-expanded', String(!isHidden));
+    iconMenu?.classList.toggle('hidden');
+    iconClose?.classList.toggle('hidden');
+  });
+</script>

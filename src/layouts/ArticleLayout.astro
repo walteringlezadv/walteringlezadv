@@ -1,0 +1,106 @@
+---
+import Layout from './Layout.astro';
+
+export interface Props {
+  title: string;
+  description: string;
+  slug: string;
+  publishedAt: string;
+  category: string;
+  excerpt: string;
+}
+
+const { title, description, slug, publishedAt, category, excerpt } = Astro.props;
+
+const SITE_URL = 'https://blog.walteringlezadv.com.br';
+const canonical = `/blog/${slug}`;
+
+const articleJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": title,
+  "description": description,
+  "datePublished": publishedAt,
+  "author": {
+    "@type": "Person",
+    "name": "Walter Inglez",
+    "url": `${SITE_URL}/sobre`
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Walter Inglez Advocacia e Consultoria",
+    "url": SITE_URL
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": `${SITE_URL}${canonical}`
+  }
+};
+---
+
+<Layout title={title} description={description} canonical={canonical} type="article">
+  <script type="application/ld+json" set:html={JSON.stringify(articleJsonLd)} />
+
+  <header class="border-b border-[#f5f0e8]/10">
+    <div class="max-w-4xl mx-auto px-6 py-5 flex items-center justify-between">
+      <a href="/" class="font-serif text-lg font-semibold text-[#f5f0e8] hover:text-[#c4956a] transition-colors">
+        Walter Inglez
+      </a>
+      <a href="/blog" class="text-sm text-[#f5f0e8]/60 hover:text-[#c4956a] transition-colors">
+        ← Todos os artigos
+      </a>
+    </div>
+  </header>
+
+  <main class="max-w-3xl mx-auto px-6 py-12">
+    <div class="mb-8">
+      <span class="text-xs uppercase tracking-widest text-[#c4956a] font-medium">{category}</span>
+      <h1 class="font-serif text-3xl md:text-4xl font-bold text-[#f5f0e8] mt-3 mb-4 leading-tight">
+        {title}
+      </h1>
+      <p class="text-[#f5f0e8]/70 text-lg leading-relaxed">{excerpt}</p>
+      <div class="mt-4 text-sm text-[#f5f0e8]/40">
+        {new Date(publishedAt).toLocaleDateString('pt-BR', { day: '2-digit', month: 'long', year: 'numeric' })}
+      </div>
+    </div>
+
+    <hr class="border-[#f5f0e8]/10 mb-10" />
+
+    <div class="prose prose-invert prose-lg max-w-none
+      prose-headings:font-serif prose-headings:text-[#f5f0e8]
+      prose-p:text-[#f5f0e8]/85 prose-p:leading-relaxed
+      prose-a:text-[#c4956a] prose-a:no-underline hover:prose-a:underline
+      prose-strong:text-[#f5f0e8]
+      prose-blockquote:border-[#c4956a] prose-blockquote:text-[#f5f0e8]/70
+      prose-table:text-sm prose-th:text-[#c4956a] prose-th:font-semibold
+      prose-td:text-[#f5f0e8]/80">
+      <slot />
+    </div>
+
+    <aside class="mt-12 rounded-lg border border-[#f5f0e8]/10 bg-[#f5f0e8]/5 p-6">
+      <p class="text-sm text-[#f5f0e8]/60 italic leading-relaxed">
+        Este conteúdo tem finalidade exclusivamente informativa e não substitui a análise individual do caso concreto. Cada situação exige avaliação específica das condições contratuais, do estágio da cobrança e do contexto empresarial.
+      </p>
+      <p class="text-sm text-[#f5f0e8]/50 mt-3">
+        Walter Inglez Advocacia e Consultoria | Especialização em Gestão Estratégica de Passivo Bancário Empresarial
+      </p>
+    </aside>
+
+    <div class="mt-10 text-center">
+      
+        href="https://wa.me/5511914988818?text=Quero%20uma%20leitura%20do%20meu%20caso"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-block bg-[#c4956a] text-[#1a2e22] font-semibold px-8 py-4 rounded-lg hover:bg-[#c4956a]/90 transition-colors"
+      >
+        Quero uma leitura do meu caso
+      </a>
+    </div>
+  </main>
+
+  <footer class="border-t border-[#f5f0e8]/10 mt-16">
+    <div class="max-w-4xl mx-auto px-6 py-8 text-center text-sm text-[#f5f0e8]/30">
+      © {new Date().getFullYear()} Walter Inglez Advocacia e Consultoria | OAB/CE 51.563
+    </div>
+  </footer>
+</Layout>

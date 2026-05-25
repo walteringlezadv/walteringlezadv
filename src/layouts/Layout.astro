@@ -1,0 +1,54 @@
+---
+import SiteHeader from '../components/layout/SiteHeader.astro';
+
+export interface Props {
+  title: string;
+  description: string;
+  canonical?: string;
+  ogImage?: string;
+  type?: 'website' | 'article';
+}
+const {
+  title,
+  description,
+  canonical,
+  ogImage = '/og-image.png',
+  type = 'website',
+} = Astro.props;
+const SITE_URL = 'https://blog.walteringlezadv.com.br';
+const fullTitle = title.includes('Walter Inglez') ? title : `${title} — Walter Inglez`;
+const canonicalURL = canonical ? `${SITE_URL}${canonical}` : SITE_URL;
+const ogImageURL = ogImage.startsWith('http') ? ogImage : `${SITE_URL}${ogImage}`;
+---
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    <meta name="author" content="Walter Inglez" />
+    <link rel="canonical" href={canonicalURL} />
+    <meta property="og:type" content={type} />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImageURL} />
+    <meta property="og:image:width" content="1280" />
+    <meta property="og:image:height" content="672" />
+    <meta property="og:site_name" content="Walter Inglez" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={fullTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageURL} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  </head>
+  <body class="bg-[#1a2e22] text-[#f5f0e8] font-sans min-h-screen">
+    <SiteHeader />
+    <slot />
+  </body>
+</html>

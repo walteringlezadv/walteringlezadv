@@ -1,0 +1,56 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const whatsappUrl = "https://wa.me/5511914988818?text=Quero%20uma%20leitura%20do%20meu%20caso";
+---
+
+<Layout
+  title="Contato — Walter Inglez"
+  description="Canais institucionais de contato."
+  canonical="/contato"
+>
+  <!-- Cabeçalho da página -->
+  <section class="border-b border-[#f5f0e8]/10">
+    <div class="max-w-3xl mx-auto px-6 py-16 md:py-20">
+      <p class="text-xs uppercase tracking-widest text-[#c4956a] mb-4">Contato</p>
+      <h1 class="font-serif text-4xl md:text-5xl font-bold text-[#f5f0e8] leading-tight mb-6">
+        Contato institucional
+      </h1>
+      <p class="text-[#f5f0e8]/70 text-lg leading-relaxed">
+        O canal preferencial de contato é a solicitação de triagem. Em até 48h úteis, retornamos com a confirmação de aderência e a indicação do próximo passo.
+      </p>
+    </div>
+  </section>
+
+  <!-- Canal preferencial -->
+  <section class="border-b border-[#f5f0e8]/10">
+    <div class="max-w-3xl mx-auto px-6 py-12 md:py-16 text-center">
+      <h2 class="font-serif text-3xl md:text-4xl font-bold text-[#f5f0e8] leading-tight tracking-tight">
+        Canal preferencial
+      </h2>
+      <p class="mx-auto mt-6 max-w-2xl text-base md:text-lg leading-relaxed text-[#f5f0e8]/70">
+        A solicitação de triagem é a porta de entrada institucional. Ela organiza as informações necessárias para a leitura inicial do cenário e garante retorno objetivo no prazo previsto.
+      </p>
+      <div class="mt-10 flex justify-center">
+        
+          href={whatsappUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center justify-center gap-2 rounded-md px-6 py-3 text-base font-medium bg-[#c4956a] text-[#0a1f1c] hover:bg-[#d4a57a] transition-colors"
+        >
+          Solicitar triagem
+        </a>
+      </div>
+      <p class="mx-auto mt-8 max-w-xl text-xs leading-relaxed text-[#f5f0e8]/55">
+        Exclusivo para empresas com operação ativa. Retorno em até 48h úteis para confirmação de aderência e orientação do próximo passo.
+      </p>
+    </div>
+  </section>
+
+  <!-- Rodapé -->
+  <footer class="border-t border-[#f5f0e8]/10 mt-8">
+    <div class="max-w-4xl mx-auto px-6 py-8 text-center text-sm text-[#f5f0e8]/30">
+      {new Date().getFullYear()} Walter Inglez Advocacia e Consultoria | OAB/CE 51.563 | Fortaleza-CE e São Paulo-SP
+    </div>
+  </footer>
+</Layout>
