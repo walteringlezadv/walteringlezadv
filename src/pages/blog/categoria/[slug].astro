@@ -2,161 +2,86 @@
 import Layout from '../../../layouts/Layout.astro';
 import { getCollection } from 'astro:content';
 
-// Helper: converter nome de categoria em slug de URL
-function categoryToSlug(cat: string): string {
-  return cat
-    .toLowerCase()
-    .normalize('NFD')
-    .replace(/[\u0300-\u036f]/g, '')
-    .replace(/[^a-z0-9\s-]/g, '')
-    .trim()
-    .replace(/\s+/g, '-');
+function categoryToSlug(cat) {
+  return cat.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[^a-z0-9\s-]/g, '').trim().replace(/\s+/g, '-');
 }
 
-// Gerar uma página estática para cada categoria existente
 export async function getStaticPaths() {
   const allArticles = await getCollection('articles');
   const categoriesSet = new Set(allArticles.map(a => a.data.category).filter(Boolean));
-
   return Array.from(categoriesSet).map((cat) => ({
     params: { slug: categoryToSlug(cat) },
     props: {
       categoryName: cat,
-      articles: allArticles
-        .filter(a => a.data.category === cat)
-        .sort((a, b) => new Date(b.data.publishedAt).getTime() - new Date(a.data.publishedAt).getTime()),
+      articles: allArticles.filter(a => a.data.category === cat).sort((a, b) => new Date(b.data.publishedAt).getTime() - new Date(a.data.publishedAt).getTime()),
     },
   }));
 }
 
 const { categoryName, articles } = Astro.props;
-
-// Buscar todas as categorias para a barra superior
 const allArticles = await getCollection('articles');
 const categories = [...new Set(allArticles.map(a => a.data.category))].filter(Boolean).sort();
 
 const whatsappUrl = "https://wa.me/5511914988818?text=Quero%20uma%20leitura%20do%20meu%20caso";
+const pageTitle = categoryName + " — Blog Walter Inglez";
+const pageDescription = "Artigos sobre " + categoryName + " — análises técnicas sobre passivo bancário empresarial.";
+const canonicalPath = "/blog/categoria/" + categoryToSlug(categoryName);
+const countText = articles.length === 1 ? "1 artigo nesta categoria." : articles.length + " artigos nesta categoria.";
 ---
 
-<Layout
-  title={`${categoryName} — Blog Walter Inglez`}
-  description={`Artigos sobre ${categoryName} — análises técnicas sobre passivo bancário empresarial.`}
-  canonical={`/blog/categoria/${categoryToSlug(categoryName)}`}
->
-  <!-- Cabeçalho da categoria -->
+<Layout title={pageTitle} description={pageDescription} canonical={canonicalPath}>
   <section class="border-b border-[#f5f0e8]/10">
     <div class="max-w-3xl mx-auto px-6 py-16 md:py-20">
-      <p class="text-xs uppercase tracking-widest text-[#c4956a] mb-4">
-        <a href="/blog" class="hover:underline">Blog</a> · Categoria
-      </p>
-      <h1 class="font-serif text-4xl md:text-5xl font-bold text-[#f5f0e8] leading-tight mb-6">
-        {categoryName}
-      </h1>
-      <p class="text-[#f5f0e8]/70 text-lg leading-relaxed">
-        {articles.length === 1
-          ? "1 artigo nesta categoria."
-          : `${articles.length} artigos nesta categoria.`}
-      </p>
+      <p class="text-xs uppercase tracking-widest text-[#c4956a] mb-4"><a href="/blog" class="hover:underline">Blog</a> · Categoria</p>
+      <h1 class="font-serif text-4xl md:text-5xl font-bold text-[#f5f0e8] leading-tight mb-6">{categoryName}</h1>
+      <p class="text-[#f5f0e8]/70 text-lg leading-relaxed">{countText}</p>
     </div>
   </section>
 
-  <!-- Barra de categorias -->
   <section class="border-b border-[#f5f0e8]/10 bg-[#0d2b27] sticky top-36 z-30">
     <div class="max-w-5xl mx-auto px-6">
       <div class="flex flex-wrap gap-2 py-3">
-        
-          href="/blog"
-          class="shrink-0 rounded-sm border border-white/70 px-3 py-1 text-[11px] font-medium uppercase tracking-widest text-white hover:bg-white/20 transition-colors"
-        >
-          Todas
-        </a>
-        {categories.map((cat) => {
-          const isActive = cat === categoryName;
-          return (
-            
-              href={`/blog/categoria/${categoryToSlug(cat)}`}
-              class={isActive
-                ? "shrink-0 rounded-sm border border-white bg-white/40 px-3 py-1 text-[11px] font-semibold uppercase tracking-widest text-white"
-                : "shrink-0 rounded-sm border border-white/70 px-3 py-1 text-[11px] font-medium uppercase tracking-widest text-white hover:bg-white/20 transition-colors"}
-            >
-              {cat}
-            </a>
-          );
-        })}
+        <a href="/blog" class="shrink-0 rounded-sm border border-white/70 px-3 py-1 text-[11px] font-medium uppercase tracking-widest text-white hover:bg-white/20 transition-colors">Todas</a>
+        {categories.map((cat) => (<a href={"/blog/categoria/" + categoryToSlug(cat)} class={cat === categoryName ? "shrink-0 rounded-sm border border-white bg-white/40 px-3 py-1 text-[11px] font-semibold uppercase tracking-widest text-white" : "shrink-0 rounded-sm border border-white/70 px-3 py-1 text-[11px] font-medium uppercase tracking-widest text-white hover:bg-white/20 transition-colors"}>{cat}</a>))}
       </div>
     </div>
   </section>
 
-  <!-- Lista de artigos da categoria -->
   <section class="border-b border-[#f5f0e8]/10">
     <div class="max-w-3xl mx-auto px-6 py-12 md:py-16">
       {articles.length === 0 ? (
         <div class="text-center">
-          <p class="font-serif text-xl md:text-2xl italic leading-relaxed text-[#f5f0e8]/70">
-            Nenhum artigo nesta categoria ainda.
-          </p>
-          
-            href="/blog"
-            class="mt-6 inline-block text-sm text-[#c4956a] underline-offset-4 hover:underline"
-          >
-            Ver todos os artigos
-          </a>
+          <p class="font-serif text-xl md:text-2xl italic leading-relaxed text-[#f5f0e8]/70">Nenhum artigo nesta categoria ainda.</p>
+          <p class="mt-6"><a href="/blog" class="inline-block text-sm text-[#c4956a] underline-offset-4 hover:underline">Ver todos os artigos</a></p>
         </div>
       ) : (
         <ul class="space-y-10 md:space-y-12 list-none p-0">
           {articles.map((article) => (
-            <li>
-              
-                href={`/blog/${article.slug}`}
-                class="block group border border-[#f5f0e8]/10 rounded-lg p-6 md:p-8 hover:border-[#c4956a]/40 transition-all"
-              >
-                <div class="flex items-start justify-between gap-4">
-                  <div class="flex-1">
-                    <span class="text-xs uppercase tracking-widest text-[#c4956a] font-medium">
-                      {article.data.category}
-                    </span>
-                    <h2 class="font-serif text-xl md:text-2xl font-semibold text-[#f5f0e8] mt-2 mb-3 group-hover:text-[#c4956a] transition-colors leading-snug">
-                      {article.data.title}
-                    </h2>
-                    <p class="text-[#f5f0e8]/70 text-sm md:text-base leading-relaxed line-clamp-3">
-                      {article.data.excerpt}
-                    </p>
-                  </div>
-                  <span class="text-[#c4956a] text-xl mt-1 flex-shrink-0">→</span>
+            <li><a href={"/blog/" + article.slug} class="block group border border-[#f5f0e8]/10 rounded-lg p-6 md:p-8 hover:border-[#c4956a]/40 transition-all">
+              <div class="flex items-start justify-between gap-4">
+                <div class="flex-1">
+                  <span class="text-xs uppercase tracking-widest text-[#c4956a] font-medium">{article.data.category}</span>
+                  <h2 class="font-serif text-xl md:text-2xl font-semibold text-[#f5f0e8] mt-2 mb-3 group-hover:text-[#c4956a] transition-colors leading-snug">{article.data.title}</h2>
+                  <p class="text-[#f5f0e8]/70 text-sm md:text-base leading-relaxed line-clamp-3">{article.data.excerpt}</p>
                 </div>
-                <div class="mt-5 text-xs text-[#f5f0e8]/40">
-                  {new Date(article.data.publishedAt).toLocaleDateString('pt-BR', { day: '2-digit', month: 'long', year: 'numeric' })}
-                </div>
-              </a>
-            </li>
+                <span class="text-[#c4956a] text-xl mt-1 flex-shrink-0">→</span>
+              </div>
+              <div class="mt-5 text-xs text-[#f5f0e8]/40">{new Date(article.data.publishedAt).toLocaleDateString('pt-BR', { day: '2-digit', month: 'long', year: 'numeric' })}</div>
+            </a></li>
           ))}
         </ul>
       )}
     </div>
   </section>
 
-  <!-- Fechamento institucional -->
   <section>
     <div class="max-w-3xl mx-auto px-6 py-12 md:py-16 text-center">
-      <p class="mx-auto mb-6 max-w-2xl text-sm md:text-base leading-relaxed text-[#f5f0e8]/70">
-        Para entender como uma leitura técnica é conduzida antes de qualquer providência, veja
-        <a href="/como-funciona" class="text-[#c4956a] underline-offset-4 hover:underline">como funciona o processo</a>.
-      </p>
-      <p class="mb-6 text-base italic text-[#f5f0e8]/70">
-        Se o banco está pressionando e o papel está na mesa, este é o momento.
-      </p>
-      
-        href={whatsappUrl}
-        target="_blank"
-        rel="noopener noreferrer"
-        class="inline-flex items-center justify-center gap-2 rounded-md px-6 py-3 text-base font-medium bg-[#c4956a] text-[#0a1f1c] hover:bg-[#d4a57a] transition-colors"
-      >
-        Solicitar triagem
-      </a>
+      <p class="mx-auto mb-6 max-w-2xl text-sm md:text-base leading-relaxed text-[#f5f0e8]/70">Para entender como uma leitura técnica é conduzida antes de qualquer providência, veja <a href="/como-funciona" class="text-[#c4956a] underline-offset-4 hover:underline">como funciona o processo</a>.</p>
+      <p class="mb-6 text-base italic text-[#f5f0e8]/70">Se o banco está pressionando e o papel está na mesa, este é o momento.</p>
+      <p><a href={whatsappUrl} target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 rounded-md px-6 py-3 text-base font-medium bg-[#c4956a] text-[#0a1f1c] hover:bg-[#d4a57a] transition-colors">Solicitar triagem</a></p>
     </div>
   </section>
 
-  <!-- Rodapé -->
   <footer class="border-t border-[#f5f0e8]/10 mt-8">
     <div class="max-w-4xl mx-auto px-6 py-8 text-center text-sm text-[#f5f0e8]/30">
       {new Date().getFullYear()} Walter Inglez Advocacia e Consultoria | OAB/CE 51.563 | Fortaleza-CE e São Paulo-SP
