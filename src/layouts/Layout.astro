@@ -1,5 +1,6 @@
 ---
 import SiteHeader from '../components/layout/SiteHeader.astro';
+import SiteFooter from '../components/layout/SiteFooter';
 
 export interface Props {
   title: string;
@@ -8,6 +9,7 @@ export interface Props {
   ogImage?: string;
   type?: 'website' | 'article';
 }
+
 const {
   title,
   description,
@@ -15,6 +17,7 @@ const {
   ogImage = '/og-image.png',
   type = 'website',
 } = Astro.props;
+
 const SITE_URL = 'https://blog.walteringlezadv.com.br';
 const fullTitle = title.includes('Walter Inglez') ? title : `${title} — Walter Inglez`;
 const canonicalURL = canonical ? `${SITE_URL}${canonical}` : SITE_URL;
@@ -47,8 +50,11 @@ const ogImageURL = ogImage.startsWith('http') ? ogImage : `${SITE_URL}${ogImage}
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
   </head>
-  <body class="bg-[#1a2e22] text-[#f5f0e8] font-sans min-h-screen">
+  <body class="bg-[#1a2e22] text-[#f5f0e8] font-sans min-h-screen flex flex-col">
     <SiteHeader />
-    <slot />
+    <main class="flex-1">
+      <slot />
+    </main>
+    <SiteFooter client:load />
   </body>
 </html>
