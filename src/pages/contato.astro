@@ -1,9 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
-
 const whatsappUrl = "https://wa.me/5511914988818?text=Quero%20uma%20leitura%20do%20meu%20caso";
 ---
-
 <Layout
   title="Contato — Walter Inglez"
   description="Canais institucionais de contato."
@@ -32,7 +30,7 @@ const whatsappUrl = "https://wa.me/5511914988818?text=Quero%20uma%20leitura%20do
         A solicitação de triagem é a porta de entrada institucional. Ela organiza as informações necessárias para a leitura inicial do cenário e garante retorno objetivo no prazo previsto.
       </p>
       <div class="mt-10 flex justify-center">
-        
+        <a
           href={whatsappUrl}
           target="_blank"
           rel="noopener noreferrer"
@@ -46,11 +44,4 @@ const whatsappUrl = "https://wa.me/5511914988818?text=Quero%20uma%20leitura%20do
       </p>
     </div>
   </section>
-
-  <!-- Rodapé -->
-  <footer class="border-t border-[#f5f0e8]/10 mt-8">
-    <div class="max-w-4xl mx-auto px-6 py-8 text-center text-sm text-[#f5f0e8]/30">
-      {new Date().getFullYear()} Walter Inglez Advocacia e Consultoria | OAB/CE 51.563 | Fortaleza-CE e São Paulo-SP
-    </div>
-  </footer>
 </Layout>
