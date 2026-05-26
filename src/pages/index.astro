@@ -1,13 +1,11 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import { getCollection } from 'astro:content';
-
 const allArticles = await getCollection('articles');
 const articles = allArticles.sort(
   (a, b) => new Date(b.data.publishedAt).getTime() - new Date(a.data.publishedAt).getTime()
 );
 ---
-
 <Layout
   title="Walter Inglez — Gestão Estratégica de Passivos Bancários"
   description="Antes de renegociar, entenda o que o contrato realmente produz. Leitura técnica para empresários sob pressão bancária."
@@ -21,7 +19,6 @@ const articles = allArticles.sort(
     </h2>
     <p class="text-[#f5f0e8]/70 text-lg max-w-2xl leading-relaxed">Análise técnica para empresários com dívidas bancárias relevantes. Sem promessa de resultado. Com clareza sobre o que está em jogo.</p>
   </section>
-
   <main class="max-w-4xl mx-auto px-6 py-12">
     <h3 class="font-serif text-2xl font-semibold text-[#f5f0e8] mb-8">Artigos recentes</h3>
     <div class="space-y-6">
@@ -42,10 +39,4 @@ const articles = allArticles.sort(
       ))}
     </div>
   </main>
-
-  <footer class="border-t border-[#f5f0e8]/10 mt-8">
-    <div class="max-w-4xl mx-auto px-6 py-8 text-center text-sm text-[#f5f0e8]/30">
-      {new Date().getFullYear()} Walter Inglez Advocacia e Consultoria | OAB/CE 51.563 | Fortaleza-CE e São Paulo-SP
-    </div>
-  </footer>
 </Layout>
