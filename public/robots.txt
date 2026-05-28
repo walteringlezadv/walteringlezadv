@@ -1,6 +1,4 @@
 User-agent: *
 Allow: /
 
-Disallow: /cdn-cgi/
-
 Sitemap: https://blog.walteringlezadv.com.br/sitemap-index.xml
