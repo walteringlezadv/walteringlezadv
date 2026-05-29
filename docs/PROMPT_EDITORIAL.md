@@ -12,7 +12,7 @@ Posicionamento: "A dívida não é o único problema. O risco está em decidir n
 - Sem juridiquês, sem promessas de resultado
 - O empresário é o protagonista; o advogado é o estrategista
 - Nunca usar: "garantimos", "você vai ganhar", "resultado assegurado"
-- Sempre incluir ao final: "Este conteúdo tem finalidade exclusivamente informativa e não substitui a análise individual do caso concreto."
+- Sempre incluir ao final a nota institucional conforme seção "Nota institucional obrigatória" deste guia
 
 ## Extensão
 
@@ -65,9 +65,8 @@ Corpo com as seguintes seções em ordem:
 
 ## Nota institucional obrigatória (copiar exatamente)
 
-*Este conteúdo tem finalidade exclusivamente informativa e não substitui a análise individual do caso concreto.*
-
-*Walter Inglez Advocacia e Consultoria | OAB/CE 51.563 | Fortaleza-CE e São Paulo-SP | [+55 11 91498-8818](https://wa.me/5511914988818)*
+*Este conteúdo tem finalidade exclusivamente informativa e não substitui a análise individual do caso concreto. Para avaliar sua situação específica, consulte um advogado habilitado.*
+*Walter Inglez Advocacia e Consultoria — CNPJ 55.880.505/0001-80*
 
 ## Formato do arquivo
 
