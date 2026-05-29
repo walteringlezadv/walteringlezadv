@@ -74,6 +74,3 @@ A empresa deve revisar o título, as garantias, o valor atualizado, os prazos pr
 ## Referência
 
 Superior Tribunal de Justiça. [Para Terceira Turma, depósito em execução não vai para juízo universal após falência da devedora](https://www.stj.jus.br/sites/portalp/Paginas/Comunicacao/Noticias/2026/06052026-Para-Terceira-Turma--deposito-em-execucao-nao-vai-para-juizo-universal-apos-falencia-da-devedora.aspx). Publicado em 6 de maio de 2026.
-
-*Este conteúdo tem finalidade exclusivamente informativa e não substitui a análise individual do caso concreto.*  
-*Walter Inglez Advocacia e Consultoria | OAB/CE 04325 | Fortaleza-CE e São Paulo-SP | [+55 11 91498-8818](https://wa.me/5511914988818)*
