@@ -5,7 +5,7 @@ on:
     branches:
       - draft
     paths:
-      - 'src/content/articles/**.tsx'
+      - 'src/content/articles/**.md'
 
 permissions:
   contents: read
@@ -32,9 +32,9 @@ jobs:
         id: detect
         run: |
           if git rev-parse HEAD~1 >/dev/null 2>&1; then
-            NEW=$(git diff --name-status HEAD~1 HEAD -- 'src/content/articles/*.tsx' | grep '^A' | wc -l | tr -d ' ')
+            NEW=$(git diff --name-status HEAD~1 HEAD -- 'src/content/articles/*.md' | grep '^A' | wc -l | tr -d ' ')
           else
-            NEW=$(git show --stat HEAD -- 'src/content/articles/*.tsx' | grep '\.tsx' | grep -v 'index.tsx' | wc -l | tr -d ' ')
+            NEW=$(git show --stat HEAD -- 'src/content/articles/*.md' | grep '\.md' | wc -l | tr -d ' ')
           fi
           echo "new_articles=$NEW" >> $GITHUB_OUTPUT
 
@@ -46,9 +46,9 @@ jobs:
         run: |
           # Detecta nome do artigo novo
           if git rev-parse HEAD~1 >/dev/null 2>&1; then
-            ARTICLE=$(git diff --name-status HEAD~1 HEAD -- 'src/content/articles/*.tsx' | grep '^A' | head -1 | awk '{print $2}' | xargs basename | sed 's/\.tsx$//')
+            ARTICLE=$(git diff --name-status HEAD~1 HEAD -- 'src/content/articles/*.md' | grep '^A' | head -1 | awk '{print $2}' | xargs basename | sed 's/\.md$//')
           else
-            ARTICLE=$(git show --stat HEAD -- 'src/content/articles/*.tsx' | grep '\.tsx' | grep -v 'index.tsx' | head -1 | awk '{print $1}' | xargs basename | sed 's/\.tsx$//')
+            ARTICLE=$(git show --stat HEAD -- 'src/content/articles/*.md' | grep '\.md' | head -1 | awk '{print $1}' | xargs basename | sed 's/\.md$//')
           fi
 
           # Verifica se ja existe PR aberto de draft para main
@@ -68,9 +68,9 @@ jobs:
 
           echo "pr_url=$PR_URL" >> $GITHUB_OUTPUT
 
-      - name: Install nodemailer
+      - name: Install email dependencies
         if: steps.detect.outputs.new_articles != '0'
-        run: npm install nodemailer
+        run: npm install nodemailer gray-matter marked
 
       - name: Send article email
         if: steps.detect.outputs.new_articles != '0'
