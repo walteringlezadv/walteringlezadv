@@ -42,7 +42,3 @@ Há ainda uma camada adicional, que vale nomear: a **operação satélite**. Con
 A decisão do TJ-MG reafirma que o cliente tem direito à indenização quando a negativação é indevida — mas o real prejuízo de quem opera uma empresa não está no valor da reparação. Está no tempo que separa a inscrição da retirada, e no que acontece com a operação durante esse intervalo. Por isso, a renegociação só funciona como estratégia quando antecedida de uma auditoria do passivo: identificar todas as operações vivas, mapear vencimentos, e exigir que o escopo do acordo seja descrito de forma nominal e exaustiva.
 
 **A renegociação não é o problema. Renegociar sem auditar o passivo, sim.**
-
----
-
-*Este conteúdo tem finalidade exclusivamente informativa e não substitui a análise individual do caso concreto. Walter Inglez Advocacia e Consultoria — OAB/CE 04325 — CNPJ 55.880.505/0001-80.*
