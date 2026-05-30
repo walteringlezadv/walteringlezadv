@@ -1,8 +1,8 @@
 /**
- * Envia email com o artigo mais recente e o post LinkedIn correspondente.
- * Executado pelo GitHub Actions após push de novo artigo.
+ * Envia email com o artigo aguardando aprovacao, link do Pull Request e o post LinkedIn correspondente.
+ * Executado pelo GitHub Actions apos push de novo artigo no branch draft.
  *
- * Env vars obrigatórias: GMAIL_USER, GMAIL_APP_PASSWORD
+ * Env vars obrigatorias: GMAIL_USER, GMAIL_APP_PASSWORD, PR_URL
  */
 import { readFileSync, readdirSync } from "fs";
 import { join, dirname } from "path";
@@ -91,12 +91,25 @@ const linkedinHtml = linkedinContent
 
 // ── 4. Montagem do email ────────────────────────────────────────────────────
 
-const { GMAIL_USER, GMAIL_APP_PASSWORD } = process.env;
+const { GMAIL_USER, GMAIL_APP_PASSWORD, PR_URL } = process.env;
 
 if (!GMAIL_USER || !GMAIL_APP_PASSWORD) {
-  console.error("GMAIL_USER e GMAIL_APP_PASSWORD são obrigatórios.");
+  console.error("GMAIL_USER e GMAIL_APP_PASSWORD sao obrigatorios.");
   process.exit(1);
 }
+
+const prButton = PR_URL ? `
+  <div style="background:#1a2e22;border-radius:8px;padding:1.8em;margin-bottom:2.5em;text-align:center">
+    <p style="margin:0 0 1em;color:#f5f0e8;font-size:.75em;letter-spacing:.15em;text-transform:uppercase">Artigo aguardando aprovacao</p>
+    <a href="${PR_URL}" style="display:inline-block;background:#c4956a;color:#1a2e22;padding:1em 2.5em;border-radius:6px;text-decoration:none;font-weight:bold;font-family:Georgia,serif;font-size:1.05em">
+      Revisar e aprovar artigo
+    </a>
+    <p style="margin:1.2em 0 0;color:#f5f0e8;font-size:.78em;opacity:.85;line-height:1.5">
+      Abra o link, leia o artigo abaixo, e clique em <strong>Merge pull request</strong> no GitHub para publicar.<br>
+      Funciona pelo Mac e pelo iPhone.
+    </p>
+  </div>
+` : "";
 
 const html = `
 <!DOCTYPE html>
@@ -104,10 +117,12 @@ const html = `
 <head><meta charset="UTF-8"></head>
 <body style="font-family:Georgia,serif;max-width:700px;margin:0 auto;padding:2em;color:#1a1a1a">
 
+  ${prButton}
+
   <div style="border-bottom:2px solid #003732;padding-bottom:1em;margin-bottom:2em">
     <p style="margin:0;font-size:.8em;text-transform:uppercase;letter-spacing:.15em;color:#888">Walter Inglez Advocacia</p>
     <h1 style="margin:.3em 0 0;color:#003732;font-size:1.6em">${latest.title}</h1>
-    <p style="margin:.5em 0 0;font-size:.85em;color:#888">Publicado em ${latest.publishedAt} · /blog/${latest.slug}</p>
+    <p style="margin:.5em 0 0;font-size:.85em;color:#888">Aguardando aprovacao · sera publicado em /blog/${latest.slug}</p>
   </div>
 
   ${articleHtml}
@@ -130,8 +145,8 @@ const transporter = nodemailer.createTransport({
 await transporter.sendMail({
   from: `"Blog Walter Inglez" <${GMAIL_USER}>`,
   to: "walter.inglezadv@gmail.com",
-  subject: `Novo artigo para revisão — ${latest.title}`,
+  subject: `Artigo aguarda aprovacao — ${latest.title}`,
   html,
 });
 
-console.log("Email enviado para walter.inglezadv@gmail.com ✓");
+console.log("Email enviado para walter.inglezadv@gmail.com com link do PR ✓");
