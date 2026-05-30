@@ -7,12 +7,18 @@ on:
     paths:
       - 'src/content/articles/**.tsx'
 
+permissions:
+  contents: read
+  pull-requests: write
+
 jobs:
   sync:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -32,6 +38,36 @@ jobs:
           fi
           echo "new_articles=$NEW" >> $GITHUB_OUTPUT
 
+      - name: Create or reuse Pull Request
+        if: steps.detect.outputs.new_articles != '0'
+        id: pr
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          # Detecta nome do artigo novo
+          if git rev-parse HEAD~1 >/dev/null 2>&1; then
+            ARTICLE=$(git diff --name-status HEAD~1 HEAD -- 'src/content/articles/*.tsx' | grep '^A' | head -1 | awk '{print $2}' | xargs basename | sed 's/\.tsx$//')
+          else
+            ARTICLE=$(git show --stat HEAD -- 'src/content/articles/*.tsx' | grep '\.tsx' | grep -v 'index.tsx' | head -1 | awk '{print $1}' | xargs basename | sed 's/\.tsx$//')
+          fi
+
+          # Verifica se ja existe PR aberto de draft para main
+          EXISTING=$(gh pr list --base main --head draft --state open --json number --jq '.[0].number // empty')
+
+          if [ -n "$EXISTING" ]; then
+            PR_URL=$(gh pr view "$EXISTING" --json url --jq '.url')
+            echo "PR existente atualizado pelo novo commit: $PR_URL"
+          else
+            PR_URL=$(gh pr create \
+              --base main \
+              --head draft \
+              --title "Artigo aguarda aprovacao: $ARTICLE" \
+              --body "Artigo redigido automaticamente pela tarefa agendada. Revisar conteudo e aprovar com **Merge pull request** para publicar no blog.")
+            echo "PR criado: $PR_URL"
+          fi
+
+          echo "pr_url=$PR_URL" >> $GITHUB_OUTPUT
+
       - name: Install nodemailer
         if: steps.detect.outputs.new_articles != '0'
         run: npm install nodemailer
@@ -41,4 +77,5 @@ jobs:
         env:
           GMAIL_USER: walter.inglezadv@gmail.com
           GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+          PR_URL: ${{ steps.pr.outputs.pr_url }}
         run: node scripts/send-article-email.mjs
