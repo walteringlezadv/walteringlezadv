@@ -2,12 +2,17 @@
  * Envia email com o artigo aguardando aprovacao, link do Pull Request e o post LinkedIn correspondente.
  * Executado pelo GitHub Actions apos push de novo artigo no branch draft.
  *
- * Env vars obrigatorias: GMAIL_USER, GMAIL_APP_PASSWORD, PR_URL
+ * Le arquivos .md (frontmatter YAML + body markdown) da pasta src/content/articles/.
+ *
+ * Env vars obrigatorias: GMAIL_USER, GMAIL_APP_PASSWORD
+ * Env var opcional: PR_URL (link do Pull Request criado pelo workflow)
  */
 import { readFileSync, readdirSync } from "fs";
 import { join, dirname } from "path";
 import { fileURLToPath } from "url";
 import nodemailer from "nodemailer";
+import matter from "gray-matter";
+import { marked } from "marked";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const root = join(__dirname, "..");
@@ -15,16 +20,19 @@ const articlesDir = join(root, "src/content/articles");
 
 // ── 1. Artigo mais recente ──────────────────────────────────────────────────
 
-const files = readdirSync(articlesDir).filter(
-  (f) => f.endsWith(".tsx") && f !== "index.tsx"
-);
+const files = readdirSync(articlesDir).filter((f) => f.endsWith(".md"));
 
 const articles = files.map((file) => {
-  const content = readFileSync(join(articlesDir, file), "utf-8");
-  const slug        = content.match(/slug:\s*["'`]([^"'`]+)["'`]/)?.[1] ?? file.replace(".tsx", "");
-  const title       = content.match(/title:\s*["'`\n\s]*([^"'`]+)["'`]/)?.[1]?.trim().replace(/\s+/g, " ") ?? slug;
-  const publishedAt = content.match(/publishedAt:\s*["'`]([^"'`]+)["'`]/)?.[1] ?? "2000-01-01";
-  return { slug, title, publishedAt, content };
+  const raw = readFileSync(join(articlesDir, file), "utf-8");
+  const { data, content } = matter(raw);
+  return {
+    slug: file.replace(/\.md$/, ""),
+    title: data.title ?? file,
+    publishedAt: data.publishedAt ?? "2000-01-01",
+    excerpt: data.excerpt ?? "",
+    category: data.category ?? "",
+    body: content,
+  };
 });
 
 articles.sort((a, b) => b.publishedAt.localeCompare(a.publishedAt));
@@ -37,26 +45,23 @@ if (!latest) {
 
 console.log(`Artigo mais recente: ${latest.slug} (${latest.publishedAt})`);
 
-// ── 2. Corpo HTML do artigo ─────────────────────────────────────────────────
+// ── 2. Corpo HTML do artigo (markdown -> HTML com estilos inline) ───────────
 
-const bodyMatch = latest.content.match(/body:\s*\(\s*<>([\s\S]*?)<\/>\s*\)/);
-const rawJsx = bodyMatch?.[1] ?? "";
+marked.setOptions({ gfm: true, breaks: false });
+const rawHtml = marked.parse(latest.body);
 
-const articleHtml = rawJsx
-  .replace(/<h2>([\s\S]*?)<\/h2>/g, "<h2 style='color:#003732;margin-top:2em'>$1</h2>")
-  .replace(/<h3>([\s\S]*?)<\/h3>/g, "<h3 style='color:#003732;margin-top:1.5em'>$1</h3>")
-  .replace(/<strong>([\s\S]*?)<\/strong>/g, "<strong>$1</strong>")
-  .replace(/<em>([\s\S]*?)<\/em>/g, "<em>$1</em>")
-  .replace(/<blockquote>([\s\S]*?)<\/blockquote>/g,
-    "<blockquote style='border-left:3px solid #003732;padding-left:1em;color:#555;margin:1.5em 0'>$1</blockquote>")
-  .replace(/<aside[\s\S]*?<\/aside>/g, "")
-  .replace(/<ul>([\s\S]*?)<\/ul>/g, "<ul style='padding-left:1.5em'>$1</ul>")
-  .replace(/<ol>([\s\S]*?)<\/ol>/g, "<ol style='padding-left:1.5em'>$1</ol>")
-  .replace(/<li>([\s\S]*?)<\/li>/g, "<li style='margin-bottom:.5em'>$1</li>")
-  .replace(/<p>([\s\S]*?)<\/p>/g, "<p style='margin:1em 0;line-height:1.7'>$1</p>")
-  .replace(/{\/\*[\s\S]*?\*\/}/g, "")
-  .replace(/<[^>]+>/g, "")
-  .trim();
+const articleHtml = rawHtml
+  .replace(/<h2>/g, "<h2 style='color:#003732;margin-top:2em;font-size:1.3em'>")
+  .replace(/<h3>/g, "<h3 style='color:#003732;margin-top:1.5em;font-size:1.1em'>")
+  .replace(/<blockquote>/g, "<blockquote style='border-left:3px solid #003732;padding-left:1em;color:#555;margin:1.5em 0;font-style:italic'>")
+  .replace(/<ul>/g, "<ul style='padding-left:1.5em'>")
+  .replace(/<ol>/g, "<ol style='padding-left:1.5em'>")
+  .replace(/<li>/g, "<li style='margin-bottom:.5em;line-height:1.6'>")
+  .replace(/<p>/g, "<p style='margin:1em 0;line-height:1.7'>")
+  .replace(/<table>/g, "<table style='border-collapse:collapse;width:100%;margin:1.5em 0;font-size:.92em'>")
+  .replace(/<th>/g, "<th style='border:1px solid #ccc;padding:.6em;background:#f4f4f4;text-align:left'>")
+  .replace(/<td>/g, "<td style='border:1px solid #ccc;padding:.6em;vertical-align:top'>")
+  .replace(/<a /g, "<a style='color:#003732;text-decoration:underline' ");
 
 // ── 3. Post LinkedIn correspondente ────────────────────────────────────────
 
@@ -80,14 +85,14 @@ if (match) {
 }
 
 const linkedinHtml = linkedinContent
-  .replace(/^# (.+)$/gm, "<h3 style='color:#003732;margin-top:1.5em'>$1</h3>")
-  .replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>")
-  .replace(/\*(.+?)\*/g, "<em>$1</em>")
-  .replace(/^(\d+)\. (.+)$/gm, "<li style='margin-bottom:.5em'>$2</li>")
-  .replace(/^- (.+)$/gm, "<li style='margin-bottom:.5em'>$1</li>")
-  .replace(/\n{2,}/g, "</p><p style='margin:1em 0;line-height:1.7'>")
-  .replace(/^/, "<p style='margin:1em 0;line-height:1.7'>")
-  .replace(/$/, "</p>");
+  ? marked.parse(linkedinContent)
+      .replace(/<h1>/g, "<h3 style='color:#003732;margin-top:1.5em'>")
+      .replace(/<\/h1>/g, "</h3>")
+      .replace(/<h2>/g, "<h3 style='color:#003732;margin-top:1.5em'>")
+      .replace(/<\/h2>/g, "</h3>")
+      .replace(/<p>/g, "<p style='margin:1em 0;line-height:1.7'>")
+      .replace(/<li>/g, "<li style='margin-bottom:.5em'>")
+  : "";
 
 // ── 4. Montagem do email ────────────────────────────────────────────────────
 
@@ -120,9 +125,10 @@ const html = `
   ${prButton}
 
   <div style="border-bottom:2px solid #003732;padding-bottom:1em;margin-bottom:2em">
-    <p style="margin:0;font-size:.8em;text-transform:uppercase;letter-spacing:.15em;color:#888">Walter Inglez Advocacia</p>
+    <p style="margin:0;font-size:.8em;text-transform:uppercase;letter-spacing:.15em;color:#888">Walter Inglez Advocacia${latest.category ? ` · ${latest.category}` : ""}</p>
     <h1 style="margin:.3em 0 0;color:#003732;font-size:1.6em">${latest.title}</h1>
     <p style="margin:.5em 0 0;font-size:.85em;color:#888">Aguardando aprovacao · sera publicado em /blog/${latest.slug}</p>
+    ${latest.excerpt ? `<p style="margin:1em 0 0;font-style:italic;color:#555;line-height:1.5">${latest.excerpt}</p>` : ""}
   </div>
 
   ${articleHtml}
