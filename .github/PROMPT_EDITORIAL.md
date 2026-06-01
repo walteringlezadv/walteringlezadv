@@ -1,15 +1,58 @@
-### Tom e voz
-- Sóbrio, técnico, direto
-- SEM juridiquês ("hodiernamente", "mister se faz", "consoante")
-- SEM promessa ("garantimos", "você vai recuperar")
-- SEM urgência artificial ("últimas vagas")
-- O advogado é o estrategista. O cliente é o protagonista.
+# PROMPT EDITORIAL — Blog Walter Inglez Advocacia e Consultoria
 
-### Atribuição de fontes
-- Pesquisas amostrais: atribuir às instituições, NUNCA ao órgão emissor
+Documento único de orientação para geração de artigos do blog
+(blog.walteringlezadv.com.br). Repositório: walteringlezadv/walteringlezadv (Astro).
+
+---
+
+## Tom e voz
+
+- Sóbrio, técnico, direto.
+- SEM juridiquês ("hodiernamente", "mister se faz", "consoante").
+- SEM promessa ("garantimos", "você vai recuperar").
+- SEM urgência artificial ("últimas vagas").
+- O advogado é o estrategista. O cliente é o protagonista.
+- Avatar: empresário PJ com dívida bancária relevante (acima de R$200 mil),
+  garantias envolvidas ou risco de execução.
+- Eixo estratégico: Negociar × Defender × Ajuizar.
+
+---
+
+## PASSO 1 — ESCOLHA DO TEMA (autônoma)
+
+NÃO buscar arquivo externo de tema. O tema é proposto por você, Manus,
+com liberdade de pesquisa, dentro destas regras:
+
+1. Liste os artigos já existentes em `src/content/articles/*.md` e leia o
+   frontmatter (`category`, `tags`, `publishedAt`) de cada um.
+2. Identifique quais das 8 categorias estão sub-representadas ou sem artigo
+   recente, e quais ângulos já foram cobertos (para não repetir).
+3. Pesquise livremente fontes técnicas e dados atuais e proponha UM tema que:
+   - não repita a categoria das 2 publicações mais recentes;
+   - traga ângulo distinto dos artigos vizinhos (evitar fadiga de série);
+   - sirva ao avatar (empresário PJ, dívida acima de R$200 mil, garantias
+     ou risco de execução);
+   - encaixe no eixo Negociar × Defender × Ajuizar.
+4. Registre o tema escolhido e a justificativa na descrição do PR, para a
+   revisão de Walter.
+
+**NUNCA encerrar a tarefa por "falta de tema".** Sem dados de pesquisa
+suficientes, escolher o tema pelas lacunas das 8 categorias.
+
+**As 8 categorias:** CCB · Capital de Giro · Garantias · Renegociação ·
+Execução Bancária · Gestão de Passivos · Contratos Bancários · Patrimônio.
+
+---
+
+## PASSO 2 — PESQUISA E ATRIBUIÇÃO DE FONTES
+
+Pesquise com liberdade, priorizando fontes primárias e publicações
+específicas e datadas. Regras de atribuição obrigatórias:
+
+- Pesquisas amostrais: atribuir às instituições, NUNCA ao órgão emissor.
   - CORRETO: "As instituições financeiras consultadas avaliaram que..."
   - ERRADO: "O Banco Central concluiu que..."
-- Citar publicação específica:
+- Citar a publicação específica:
   - CORRETO: "Pesquisa Trimestral de Condições de Crédito — março de 2026"
   - ERRADO: "Banco Central — Publicações"
 
@@ -71,26 +114,31 @@ Resposta curta.
 ## Referência
 
 [Nome da publicação específica](https://url-da-fonte)
-
----
-
-Este conteúdo tem finalidade exclusivamente informativa e não substitui a análise individual do caso concreto. Cada situação exige avaliação específica das condições contratuais, do estágio da cobrança e do contexto empresarial.
-
-Walter Inglez Advocacia e Consultoria | Especialização em Gestão Estratégica de Passivo Bancário Empresarial
 ```
 
+**ATENÇÃO — NÃO incluir a nota institucional/disclaimer no `.md`.**
+O layout (`src/layouts/ArticleLayout.astro`) injeta a nota automaticamente.
+Incluir no corpo gera disclaimer DUPLICADO. O artigo termina na seção
+`## Referência`.
+
+**IMPORTANTE:** NÃO HÁ arquivo `index.tsx` para atualizar. O Astro descobre o
+artigo automaticamente pela presença do `.md` na pasta `articles/`.
+
 ---
 
-## PASSO 4 — COMMIT NO GITHUB
+## PASSO 4 — COMMIT NO GITHUB (branch por artigo)
 
-**Branch obrigatório:** `draft`
-**NUNCA fazer commit em `main`. NUNCA fazer merge para `main`.**
+NUNCA commitar ou fazer merge em `main`. **NUNCA reusar uma branch nem fazer
+`git pull`** — é o que gera a divergência que encerra a tarefa. Cada artigo
+nasce em uma branch NOVA, cortada do `main` atual.
 
 ### Sequência obrigatória:
 
-1. `git checkout draft && git pull origin draft`
-2. Criar `src/content/articles/[slug].md` com a estrutura do PASSO 3
-3. Atualizar `public/sitemap.xml` adicionando a nova URL:
+1. `git fetch origin`
+2. `git checkout -B artigo/[slug] origin/main`
+   (branch nova a partir do `main` atualizado — não diverge; NÃO usar `git pull`)
+3. Criar `src/content/articles/[slug].md` com a estrutura do PASSO 3.
+4. Atualizar `public/sitemap.xml` adicionando a nova URL:
 ```xml
    <url>
      <loc>https://blog.walteringlezadv.com.br/blog/[slug]</loc>
@@ -99,43 +147,45 @@ Walter Inglez Advocacia e Consultoria | Especialização em Gestão Estratégica
      <priority>0.8</priority>
    </url>
 ```
-4. `npm run build` — SE FALHAR: corrigir antes de continuar. NÃO commitar com build quebrado.
-5. `git add src/content/articles/[slug].md public/sitemap.xml`
-6. `git commit -m "artigo: [slug]"`
-7. `git push origin draft`
-8. Verificar: `git log --oneline -1`
+5. `npm run build` — SE FALHAR: corrigir antes de continuar. NÃO commitar com build quebrado.
+6. `git add src/content/articles/[slug].md public/sitemap.xml`
+7. `git commit -m "artigo: [slug]"`
+8. `git push origin artigo/[slug]`
+9. Verificar: `git log --oneline -1`
 
-**IMPORTANTE:** NÃO HÁ MAIS arquivo `index.tsx` para atualizar. O Astro descobre o artigo automaticamente pela presença do arquivo `.md` na pasta `articles/`.
+NÃO fazer merge para `main`. NÃO fazer deploy. **Walter aprova o PR manualmente.**
 
 ---
 
 ## CHECKLIST FINAL — verificar antes do commit
 
+- [ ] Tema escolhido conforme PASSO 1 (sem repetir categoria das 2 últimas publicações)
 - [ ] Arquivo é `.md` (NÃO `.tsx`)
 - [ ] Frontmatter YAML entre `---` no topo
 - [ ] Abertura começa pela cena do empresário
-- [ ] 800-1.200 palavras no corpo
+- [ ] 800–1.000 palavras no corpo
 - [ ] Tabela Markdown com mínimo 4 linhas
 - [ ] Conclusão em `**negrito**`, sem promessa
 - [ ] FAQ com exatamente 4 perguntas em formato `### `
 - [ ] Referência com link Markdown
-- [ ] Nota institucional copiada EXATAMENTE
+- [ ] Disclaimer/nota institucional NÃO incluído no `.md` (o layout injeta)
 - [ ] Slug sem acentos
 - [ ] Categoria é uma das 8 listadas
 - [ ] `npm run build` passou
-- [ ] Commit em `draft`, NÃO em `main`
+- [ ] Commit em branch `artigo/[slug]` cortada do `main`, NÃO em `main`
 
 ---
 
 ## PROIBIÇÕES ABSOLUTAS
 
-1. NUNCA criar arquivo `.tsx` — apenas `.md`
-2. NUNCA tentar atualizar `src/content/articles/index.tsx` — não existe
-3. NUNCA usar JSX no corpo do artigo
-4. NUNCA publicar sem tabela comparativa
-5. NUNCA publicar sem FAQ de 4 perguntas
-6. NUNCA alterar a nota institucional
-7. NUNCA começar pelo dado — sempre pela cena
-8. NUNCA commitar em `main` — sempre em `draft`
-9. NUNCA fazer merge para `main`
-10. NUNCA fazer deploy — Walter aprova manualmente
+1. NUNCA criar arquivo `.tsx` — apenas `.md`.
+2. NUNCA tentar atualizar `src/content/articles/index.tsx` — não existe.
+3. NUNCA usar JSX no corpo do artigo.
+4. NUNCA publicar sem tabela comparativa.
+5. NUNCA publicar sem FAQ de 4 perguntas.
+6. NUNCA incluir a nota institucional/disclaimer no `.md` — o layout injeta automaticamente.
+7. NUNCA começar pelo dado — sempre pela cena.
+8. NUNCA commitar ou fazer merge em `main`.
+9. NUNCA reusar branch nem fazer `git pull` — cada artigo nasce em branch nova `artigo/[slug]` cortada do `main` (PASSO 4).
+10. NUNCA fazer deploy — Walter aprova manualmente.
+11. NUNCA encerrar a tarefa por "falta de tema" — escolher pelas lacunas das categorias (PASSO 1).
