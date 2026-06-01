@@ -3,6 +3,7 @@ name: Sync articles to blog
 on:
   push:
     branches:
+      - 'artigo/**'
       - draft
     paths:
       - 'src/content/articles/**.md'
@@ -44,6 +45,9 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
+          # Branch que disparou o workflow (artigo/... ou draft)
+          BRANCH="$GITHUB_REF_NAME"
+
           # Detecta nome do artigo novo
           if git rev-parse HEAD~1 >/dev/null 2>&1; then
             ARTICLE=$(git diff --name-status HEAD~1 HEAD -- 'src/content/articles/*.md' | grep '^A' | head -1 | awk '{print $2}' | xargs basename | sed 's/\.md$//')
@@ -51,8 +55,8 @@ jobs:
             ARTICLE=$(git show --stat HEAD -- 'src/content/articles/*.md' | grep '\.md' | head -1 | awk '{print $1}' | xargs basename | sed 's/\.md$//')
           fi
 
-          # Verifica se ja existe PR aberto de draft para main
-          EXISTING=$(gh pr list --base main --head draft --state open --json number --jq '.[0].number // empty')
+          # Verifica se ja existe PR aberto desta branch para main
+          EXISTING=$(gh pr list --base main --head "$BRANCH" --state open --json number --jq '.[0].number // empty')
 
           if [ -n "$EXISTING" ]; then
             PR_URL=$(gh pr view "$EXISTING" --json url --jq '.url')
@@ -60,7 +64,7 @@ jobs:
           else
             PR_URL=$(gh pr create \
               --base main \
-              --head draft \
+              --head "$BRANCH" \
               --title "Artigo aguarda aprovacao: $ARTICLE" \
               --body "Artigo redigido automaticamente pela tarefa agendada. Revisar conteudo e aprovar com **Merge pull request** para publicar no blog.")
             echo "PR criado: $PR_URL"
