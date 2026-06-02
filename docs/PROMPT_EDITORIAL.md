@@ -1,97 +1,191 @@
-# Guia Editorial — Blog Walter Inglez Advocacia e Consultoria
+# PROMPT EDITORIAL — Blog Walter Inglez Advocacia e Consultoria
 
-## Identidade do blog
+Documento único de orientação para geração de artigos do blog
+(blog.walteringlezadv.com.br). Repositório: walteringlezadv/walteringlezadv (Astro).
 
-Blog jurídico especializado em gestão estratégica de passivo bancário empresarial. Público-alvo: empresários PJ com dívidas bancárias relevantes, sob pressão de banco, cobrança ou escritório terceirizado. Prioridade: empresas com operação ativa, dívida acima de R$200 mil, garantias envolvidas ou risco de execução.
+---
 
-Posicionamento: "A dívida não é o único problema. O risco está em decidir no escuro."
+## Tom e voz
 
-## Tom e linguagem
+- Sóbrio, técnico, direto.
+- SEM juridiquês ("hodiernamente", "mister se faz", "consoante").
+- SEM promessa ("garantimos", "você vai recuperar").
+- SEM urgência artificial ("últimas vagas").
+- O advogado é o estrategista. O cliente é o protagonista.
+- Avatar: empresário PJ com dívida bancária relevante (acima de R$200 mil),
+  garantias envolvidas ou risco de execução.
+- Eixo estratégico: Negociar × Defender × Ajuizar.
 
-- Sóbrio, técnico, direto
-- Sem juridiquês, sem promessas de resultado
-- O empresário é o protagonista; o advogado é o estrategista
-- Nunca usar: "garantimos", "você vai ganhar", "resultado assegurado"
-- Sempre incluir ao final a nota institucional conforme seção "Nota institucional obrigatória" deste guia
+---
 
-## Extensão
+## PASSO 1 — ESCOLHA DO TEMA (autônoma)
 
-800 a 1.000 palavras por artigo.
+NÃO buscar arquivo externo de tema. O tema é proposto por você, Manus,
+com liberdade de pesquisa, dentro destas regras:
 
-## Categorias disponíveis (usar exatamente uma por artigo)
+1. Liste os artigos já existentes em `src/content/articles/*.md` e leia o
+   frontmatter (`category`, `tags`, `publishedAt`) de cada um.
+2. Identifique quais das 8 categorias estão sub-representadas ou sem artigo
+   recente, e quais ângulos já foram cobertos (para não repetir).
+3. Pesquise livremente fontes técnicas e dados atuais e proponha UM tema que:
+   - não repita a categoria das 2 publicações mais recentes;
+   - traga ângulo distinto dos artigos vizinhos (evitar fadiga de série);
+   - sirva ao avatar (empresário PJ, dívida acima de R$200 mil, garantias
+     ou risco de execução);
+   - encaixe no eixo Negociar × Defender × Ajuizar.
+4. Registre o tema escolhido e a justificativa na descrição do PR, para a
+   revisão de Walter.
 
-- CCB
-- Capital de Giro
-- Garantias
-- Renegociação
-- Execução Bancária
-- Gestão de Passivos
-- Contratos Bancários
-- Patrimônio
+**NUNCA encerrar a tarefa por "falta de tema".** Sem dados de pesquisa
+suficientes, escolher o tema pelas lacunas das 8 categorias.
 
-## Regra de distância temática
+**As 8 categorias:** CCB · Capital de Giro · Garantias · Renegociação ·
+Execução Bancária · Gestão de Passivos · Contratos Bancários · Patrimônio.
 
-Não repetir a mesma categoria nos últimos 2 artigos publicados. Verificar os slugs existentes em src/content/articles/ antes de escolher o tema.
+---
 
-## Fontes de pesquisa (nesta ordem de prioridade)
+## PASSO 2 — PESQUISA E ATRIBUIÇÃO DE FONTES
 
-1. STJ — https://www.stj.jus.br/sites/portalp/Paginas/Comunicacao/Noticias.aspx
-2. TJSP — https://www.tjsp.jus.br/Noticias
-3. Banco Central do Brasil — https://www.bcb.gov.br/publicacoes
-4. Febraban — https://portal.febraban.org.br/
-5. Conjur — https://www.conjur.com.br/
+Pesquise com liberdade, priorizando fontes primárias e publicações
+específicas e datadas. Regras de atribuição obrigatórias:
 
-Critérios de seleção do tema:
-- URL ativa e conteúdo gratuito
-- Data máxima de 90 dias
-- Relevância direta para empresários PJ com dívida bancária
+- Pesquisas amostrais: atribuir às instituições, NUNCA ao órgão emissor.
+  - CORRETO: "As instituições financeiras consultadas avaliaram que..."
+  - ERRADO: "O Banco Central concluiu que..."
+- Citar a publicação específica:
+  - CORRETO: "Pesquisa Trimestral de Condições de Crédito — março de 2026"
+  - ERRADO: "Banco Central — Publicações"
 
-## Estrutura obrigatória do artigo
+---
 
-O artigo deve seguir exatamente este formato markdown:
+## PASSO 3 — FORMATO DO ARQUIVO MARKDOWN
 
-Frontmatter com: title, excerpt, publishedAt, category, tags, seo.title, seo.description
+**Nome do arquivo:** `[slug].md` (kebab-case, sem acentos, sem caracteres especiais)
+**Localização:** `src/content/articles/[slug].md`
 
-Corpo com as seguintes seções em ordem:
-1. Parágrafo de abertura: contexto do fato jurídico ou econômico
-2. Parágrafo de desenvolvimento: o que aconteceu, quem decidiu, qual o impacto
-3. H2: Contexto jurídico (2-3 parágrafos + citação técnica em blockquote)
-4. Tabela comparativa obrigatória (mínimo 4 linhas de dados)
-5. H2: O que o empresário precisa entender (2-3 parágrafos)
-6. H2: Risco de não entender ou agir errado (1-2 parágrafos)
-7. H2: Conclusão (1 parágrafo + frase de impacto em negrito)
-8. H2: Referência (hiperlink para a fonte)
-9. Nota institucional em itálico
+**Estrutura obrigatória:**
 
-## Nota institucional obrigatória (copiar exatamente)
+```markdown
+---
+title: "Título com palavras-chave SEO — máximo 80 caracteres"
+excerpt: "Resumo de 1-2 frases para card do blog, incluindo dado concreto quando possível"
+publishedAt: "AAAA-MM-DD"
+category: "Nome exato da categoria"
+tags: ["tag1", "tag2", "tag3"]
+seo:
+  title: "Título SEO longo com palavras-chave — Walter Inglez"
+  description: "Description SEO — máximo 160 caracteres"
+---
 
-*Este conteúdo tem finalidade exclusivamente informativa e não substitui a análise individual do caso concreto. Para avaliar sua situação específica, consulte um advogado habilitado.*
-*Walter Inglez Advocacia e Consultoria — CNPJ 55.880.505/0001-80*
+Primeiro parágrafo da abertura — cena do empresário.
 
-## Formato do arquivo
+Segundo parágrafo da abertura.
 
-- Extensão: .md
-- Nome: slug em kebab-case, descritivo, até 60 caracteres, sem acentos
-- Salvar em: src/content/articles/[slug].md
-- readingTime: até 800 palavras = 4 min | 800 a 1.000 palavras = 5 min
+## Subtítulo da seção
 
-## Tabela comparativa obrigatória
+Conteúdo do artigo...
 
-Inserir após o H2 "Contexto jurídico". Mínimo 4 linhas de dados. Formato:
+## Tabela comparativa
 
-| Situação | Postura reativa | Leitura estratégica |
-|---|---|---|
-| [linha 1] | [dado] | [dado] |
-| [linha 2] | [dado] | [dado] |
-| [linha 3] | [dado] | [dado] |
-| [linha 4] | [dado] | [dado] |
+| Coluna A | Coluna B | Coluna C |
+|----------|----------|----------|
+| ...      | ...      | ...      |
 
-## Regra de equilíbrio editorial
+## Risco
 
-Distribuir os artigos entre as 8 categorias ao longo do tempo. Evitar 3 artigos seguidos na mesma categoria.
+Parágrafo sobre consequências.
 
-## Commit após redação
+**Frase final em negrito, sem promessa.**
 
-- Branch: draft
-- Mensagem: feat: artigo [slug] — [categoria]
-- Não fazer push para main — merge é feito manualmente pelo Walter
+## Perguntas frequentes
+
+### Pergunta 1?
+Resposta curta.
+
+### Pergunta 2?
+Resposta curta.
+
+### Pergunta 3?
+Resposta curta.
+
+### Pergunta 4?
+Resposta curta.
+
+## Referência
+
+[Nome da publicação específica](https://url-da-fonte)
+```
+
+**ATENÇÃO — NÃO incluir a nota institucional/disclaimer no `.md`.**
+O layout (`src/layouts/ArticleLayout.astro`) injeta a nota automaticamente.
+Incluir no corpo gera disclaimer DUPLICADO. O artigo termina na seção
+`## Referência`.
+
+**IMPORTANTE:** NÃO HÁ arquivo `index.tsx` para atualizar. O Astro descobre o
+artigo automaticamente pela presença do `.md` na pasta `articles/`.
+
+---
+
+## PASSO 4 — COMMIT NO GITHUB (branch por artigo)
+
+NUNCA commitar ou fazer merge em `main`. **NUNCA reusar uma branch nem fazer
+`git pull`** — é o que gera a divergência que encerra a tarefa. Cada artigo
+nasce em uma branch NOVA, cortada do `main` atual.
+
+### Sequência obrigatória:
+
+1. `git fetch origin`
+2. `git checkout -B artigo/[slug] origin/main`
+   (branch nova a partir do `main` atualizado — não diverge; NÃO usar `git pull`)
+3. Criar `src/content/articles/[slug].md` com a estrutura do PASSO 3.
+4. Atualizar `public/sitemap.xml` adicionando a nova URL:
+```xml
+   <url>
+     <loc>https://blog.walteringlezadv.com.br/blog/[slug]</loc>
+     <lastmod>AAAA-MM-DD</lastmod>
+     <changefreq>weekly</changefreq>
+     <priority>0.8</priority>
+   </url>
+```
+5. `npm run build` — SE FALHAR: corrigir antes de continuar. NÃO commitar com build quebrado.
+6. `git add src/content/articles/[slug].md public/sitemap.xml`
+7. `git commit -m "artigo: [slug]"`
+8. `git push origin artigo/[slug]`
+9. Verificar: `git log --oneline -1`
+
+NÃO fazer merge para `main`. NÃO fazer deploy. **Walter aprova o PR manualmente.**
+
+---
+
+## CHECKLIST FINAL — verificar antes do commit
+
+- [ ] Tema escolhido conforme PASSO 1 (sem repetir categoria das 2 últimas publicações)
+- [ ] Arquivo é `.md` (NÃO `.tsx`)
+- [ ] Frontmatter YAML entre `---` no topo
+- [ ] Abertura começa pela cena do empresário
+- [ ] 800–1.000 palavras no corpo
+- [ ] Tabela Markdown com mínimo 4 linhas
+- [ ] Conclusão em `**negrito**`, sem promessa
+- [ ] FAQ com exatamente 4 perguntas em formato `### `
+- [ ] Referência com link Markdown
+- [ ] Disclaimer/nota institucional NÃO incluído no `.md` (o layout injeta)
+- [ ] Slug sem acentos
+- [ ] Categoria é uma das 8 listadas
+- [ ] `npm run build` passou
+- [ ] Commit em branch `artigo/[slug]` cortada do `main`, NÃO em `main`
+
+---
+
+## PROIBIÇÕES ABSOLUTAS
+
+1. NUNCA criar arquivo `.tsx` — apenas `.md`.
+2. NUNCA tentar atualizar `src/content/articles/index.tsx` — não existe.
+3. NUNCA usar JSX no corpo do artigo.
+4. NUNCA publicar sem tabela comparativa.
+5. NUNCA publicar sem FAQ de 4 perguntas.
+6. NUNCA incluir a nota institucional/disclaimer no `.md` — o layout injeta automaticamente.
+7. NUNCA começar pelo dado — sempre pela cena.
+8. NUNCA commitar ou fazer merge em `main`.
+9. NUNCA reusar branch nem fazer `git pull` — cada artigo nasce em branch nova `artigo/[slug]` cortada do `main` (PASSO 4).
+10. NUNCA fazer deploy — Walter aprova manualmente.
+11. NUNCA encerrar a tarefa por "falta de tema" — escolher pelas lacunas das categorias (PASSO 1).
