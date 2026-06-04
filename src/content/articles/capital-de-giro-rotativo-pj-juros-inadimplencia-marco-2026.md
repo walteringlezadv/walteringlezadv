@@ -75,7 +75,7 @@ Não. Ele pode ser instrumento legítimo de gestão de caixa. O problema surge q
 
 **Juros altos tornam a dívida automaticamente irregular?**
 
-Não. Juros elevados exigem análise técnica, mas não tornam a dívida automaticamente inválida. É necessário examinar contrato, modalidade, encargos, evolução do saldo e comparação com a taxa média divulgada pelo Banco Central para operações semelhantes.O STJ está definindo esse critério no Tema Repetitivo 1.378 — leitura recomendada no artigo Taxa média não resolve sozinha o risco dos juros bancários.
+Não. Juros elevados exigem análise técnica, mas não tornam a dívida automaticamente inválida. É necessário examinar contrato, modalidade, encargos, evolução do saldo e comparação com a taxa média divulgada pelo Banco Central para operações semelhantes.O STJ está definindo esse critério no Tema Repetitivo 1.378 — leitura recomendada no artigo [Taxa média não resolve sozinha o risco dos juros bancários](/blog/tema-1378-stj-juros-bancarios-contratos-empresariais-junho-2026).
 
 **Antes de renegociar, o que deve ser conferido?**
 
