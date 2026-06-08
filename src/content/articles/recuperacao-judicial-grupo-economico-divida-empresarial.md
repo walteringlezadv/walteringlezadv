@@ -1,7 +1,7 @@
 ---
 title: "Recuperação judicial de grupo econômico exige leitura separada"
 excerpt: "Recuperação judicial de grupo econômico exige exame individual de cada empresa, especialmente atividade regular, contabilidade e passivos."
-publishedAt: "2026-06-09"
+publishedAt: "2026-06-08"
 category: "Gestão de Passivos"
 tags:
   - recuperação judicial de grupo econômico
