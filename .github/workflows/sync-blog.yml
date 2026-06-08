@@ -1,85 +1,111 @@
-name: Sync articles to blog
+name: Sync Blog
 
 on:
   push:
     branches:
-      - 'artigo/**'
       - draft
     paths:
       - 'src/content/articles/**.md'
 
-permissions:
-  contents: read
-  pull-requests: write
-
 jobs:
-  sync:
+  create-pr-and-notify:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+
     steps:
-      - name: Checkout repository
+      - name: Checkout
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0
+          fetch-depth: 2
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-
-      - name: Install dependencies
-        run: npm ci --legacy-peer-deps
-
-      - name: Detect new article
-        id: detect
+      - name: Identify article from latest commit
+        id: article
         run: |
-          if git rev-parse HEAD~1 >/dev/null 2>&1; then
-            NEW=$(git diff --name-status HEAD~1 HEAD -- 'src/content/articles/*.md' | grep '^A' | wc -l | tr -d ' ')
-          else
-            NEW=$(git show --stat HEAD -- 'src/content/articles/*.md' | grep '\.md' | wc -l | tr -d ' ')
-          fi
-          echo "new_articles=$NEW" >> $GITHUB_OUTPUT
+          # Find the .md article file changed in the most recent commit only
+          CHANGED=$(git show --name-only --format='' HEAD \
+            | grep '^src/content/articles/.*\.md$' \
+            | head -1)
 
-      - name: Create or reuse Pull Request
-        if: steps.detect.outputs.new_articles != '0'
+          if [ -z "$CHANGED" ]; then
+            echo "No article .md found in latest commit — skipping."
+            echo "skip=true" >> $GITHUB_OUTPUT
+            exit 0
+          fi
+
+          echo "skip=false" >> $GITHUB_OUTPUT
+          echo "file=$CHANGED" >> $GITHUB_OUTPUT
+
+          SLUG=$(basename "$CHANGED" .md)
+          TITLE=$(grep '^title:' "$CHANGED" | head -1 \
+            | sed 's/^title:[[:space:]]*//' | tr -d '"')
+          EXCERPT=$(grep '^excerpt:' "$CHANGED" | head -1 \
+            | sed 's/^excerpt:[[:space:]]*//' | tr -d '"')
+          CATEGORY=$(grep '^category:' "$CHANGED" | head -1 \
+            | sed 's/^category:[[:space:]]*//' | tr -d '"')
+
+          echo "slug=$SLUG"       >> $GITHUB_OUTPUT
+          echo "title=$TITLE"     >> $GITHUB_OUTPUT
+          echo "excerpt=$EXCERPT" >> $GITHUB_OUTPUT
+          echo "category=$CATEGORY" >> $GITHUB_OUTPUT
+
+          echo "Artigo identificado: $TITLE ($SLUG)"
+
+      - name: Create Pull Request
         id: pr
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          # Branch que disparou o workflow (artigo/... ou draft)
-          BRANCH="$GITHUB_REF_NAME"
+        if: steps.article.outputs.skip != 'true'
+        uses: peter-evans/create-pull-request@v6
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          base: main
+          branch: draft
+          title: "artigo: ${{ steps.article.outputs.slug }}"
+          body: |
+            **Categoria:** ${{ steps.article.outputs.category }}
+            **Slug:** ${{ steps.article.outputs.slug }}
 
-          # Detecta nome do artigo novo
-          if git rev-parse HEAD~1 >/dev/null 2>&1; then
-            ARTICLE=$(git diff --name-status HEAD~1 HEAD -- 'src/content/articles/*.md' | grep '^A' | head -1 | awk '{print $2}' | xargs basename | sed 's/\.md$//')
-          else
-            ARTICLE=$(git show --stat HEAD -- 'src/content/articles/*.md' | grep '\.md' | head -1 | awk '{print $1}' | xargs basename | sed 's/\.md$//')
-          fi
+            ${{ steps.article.outputs.excerpt }}
+          labels: artigo
+          delete-branch: false
 
-          # Verifica se ja existe PR aberto desta branch para main
-          EXISTING=$(gh pr list --base main --head "$BRANCH" --state open --json number --jq '.[0].number // empty')
-
-          if [ -n "$EXISTING" ]; then
-            PR_URL=$(gh pr view "$EXISTING" --json url --jq '.url')
-            echo "PR existente atualizado pelo novo commit: $PR_URL"
-          else
-            PR_URL=$(gh pr create \
-              --base main \
-              --head "$BRANCH" \
-              --title "Artigo aguarda aprovacao: $ARTICLE" \
-              --body "Artigo redigido automaticamente pela tarefa agendada. Revisar conteudo e aprovar com **Merge pull request** para publicar no blog.")
-            echo "PR criado: $PR_URL"
-          fi
-
-          echo "pr_url=$PR_URL" >> $GITHUB_OUTPUT
-
-      - name: Install email dependencies
-        if: steps.detect.outputs.new_articles != '0'
-        run: npm install nodemailer gray-matter marked
-
-      - name: Send article email
-        if: steps.detect.outputs.new_articles != '0'
-        env:
-          GMAIL_USER: walter.inglezadv@gmail.com
-          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
-          PR_URL: ${{ steps.pr.outputs.pr_url }}
-        run: node scripts/send-article-email.mjs
+      - name: Send email notification
+        if: >
+          steps.article.outputs.skip != 'true' &&
+          steps.pr.outputs.pull-request-url != ''
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: smtp.gmail.com
+          server_port: 465
+          secure: true
+          username: ${{ secrets.GMAIL_USER }}
+          password: ${{ secrets.GMAIL_APP_PASSWORD }}
+          to: ${{ secrets.GMAIL_USER }}
+          from: "Blog Walter Inglez <${{ secrets.GMAIL_USER }}>"
+          subject: >-
+            Artigo aguardando aprovacao —
+            ${{ steps.article.outputs.title }}
+          html_body: |
+            <p><strong>Artigo aguardando aprovação</strong></p>
+            <p>
+              <a href="${{ steps.pr.outputs.pull-request-url }}"
+                 style="background:#1a2e22;color:#f5f0e8;padding:10px 20px;
+                        border-radius:4px;text-decoration:none;font-weight:bold;">
+                Revisar e aprovar artigo
+              </a>
+            </p>
+            <p>Abra o link, leia o artigo, e clique em
+               <strong>Merge pull request</strong> no GitHub para publicar.<br>
+               Funciona pelo Mac e pelo iPhone.</p>
+            <hr>
+            <p>
+              <strong>Walter Inglez Advocacia
+              · ${{ steps.article.outputs.category }}</strong>
+            </p>
+            <h2>${{ steps.article.outputs.title }}</h2>
+            <p>
+              Aguardando aprovação
+              · será publicado em
+              /blog/${{ steps.article.outputs.slug }}
+            </p>
+            <p>${{ steps.article.outputs.excerpt }}</p>
