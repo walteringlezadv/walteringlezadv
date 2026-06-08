@@ -176,7 +176,10 @@ A publicação é feita exclusivamente pelo código Python do prompt da tarefa M
 9. NUNCA reusar branch nem fazer `git pull` — cada artigo nasce em branch nova `artigo/[slug]` cortada do `main` (PASSO 4).
 10. NUNCA fazer deploy — Walter aprova manualmente.
 11. NUNCA encerrar a tarefa por "falta de tema" — escolher pelas lacunas das categorias (PASSO 1).
-
+12. NUNCA usar notas de rodapé [^n] no corpo do artigo nem nas referências —
+    usar exclusivamente links inline na seção ### Referências, no formato
+    [Texto da fonte](URL).
+    
 ## PADRÃO SEO — OBRIGATÓRIO PARA TODOS OS ARTIGOS
 
 ### Frontmatter SEO
