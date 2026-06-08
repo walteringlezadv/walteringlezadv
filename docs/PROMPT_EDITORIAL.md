@@ -189,3 +189,81 @@ NÃO fazer merge para `main`. NÃO fazer deploy. **Walter aprova o PR manualment
 9. NUNCA reusar branch nem fazer `git pull` — cada artigo nasce em branch nova `artigo/[slug]` cortada do `main` (PASSO 4).
 10. NUNCA fazer deploy — Walter aprova manualmente.
 11. NUNCA encerrar a tarefa por "falta de tema" — escolher pelas lacunas das categorias (PASSO 1).
+
+## PADRÃO SEO — OBRIGATÓRIO PARA TODOS OS ARTIGOS
+
+### Frontmatter SEO
+
+Cada artigo deve incluir o bloco `seo` no frontmatter YAML:
+
+```yaml
+seo:
+  title: "Keyword principal + complemento informacional"  # ≤60 caracteres
+  description: "Keyword principal + valor para o empresário, sem promessa de resultado"  # 150-160 caracteres
+```
+
+Regras:
+- `seo.title` pode diferir do `title` do artigo. Deve conter a keyword principal e ter no máximo 60 caracteres.
+- `seo.description` é a meta description. Deve conter a keyword principal, ter entre 150 e 160 caracteres, e NUNCA incluir promessa de resultado ("como evitar", "como ganhar", "solução para").
+- `excerpt` deve conter a keyword principal e ter no máximo 200 caracteres.
+- `tags` devem incluir a keyword principal e 3-5 variações de cauda longa.
+
+### Keyword Strategy
+
+Antes de redigir, definir:
+- 1 KEYWORD PRINCIPAL: termo exato que o empresário pesquisaria (ex: "alienação fiduciária de imóvel", "penhora de faturamento empresa")
+- 3-5 KEYWORDS DE CAUDA LONGA: perguntas ou frases completas (ex: "o banco pode penhorar o faturamento da minha empresa", "como funciona a alienação fiduciária em dívida empresarial")
+
+### Distribuição de Keywords no Corpo
+
+- Keyword principal DEVE aparecer: no título H1, no primeiro parágrafo, e em pelo menos 1 subtítulo H2.
+- Keywords de cauda longa devem aparecer naturalmente nos subtítulos H2 e nas perguntas da FAQ.
+- Densidade natural. Sem keyword stuffing. Se parecer forçado, reescrever.
+
+### Estrutura de Subtítulos (H2)
+
+- Mínimo 3, máximo 5 subtítulos H2.
+- Cada H2 deve conter ao menos 1 termo de busca relevante.
+- PROIBIDO em subtítulos: promessa de resultado, linguagem de venda, clickbait.
+- BOM: "Da mora à consolidação: o que acontece e em qual prazo"
+- RUIM: "Como evitar o leilão e salvar seu imóvel"
+
+### FAQ (Perguntas Frequentes)
+
+- 3 a 4 perguntas no final do artigo.
+- Cada pergunta deve espelhar uma busca real do empresário (cauda longa).
+- Resposta direta, 2-3 frases, sem remissão vaga.
+- BOM: "O banco pode leiloar meu imóvel sem me avisar?"
+- RUIM: "O que é alienação fiduciária?"
+
+### Referências e Links
+
+- Toda citação legal deve ter link para fonte primária (Planalto para leis, BCB para dados).
+- Formato: `[Lei nº X, de DD de mês de AAAA — Planalto](URL)`
+- Se a lei foi alterada por outra (ex: Lei 9.514/1997 alterada pela Lei 14.711/2023), citar ambas.
+
+### Checklist SEO (PASSO 3.5 do prompt)
+
+Antes de publicar, o artigo deve atender TODOS os critérios abaixo:
+
+| # | Critério | Peso |
+|---|----------|------|
+| 1 | Keyword principal no H1, 1º parágrafo e ≥1 H2 | 20% |
+| 2 | seo.title ≤60 chars com keyword | 10% |
+| 3 | seo.description 150-160 chars com keyword, sem promessa | 15% |
+| 4 | ≥3 H2 com termos de busca reais | 15% |
+| 5 | FAQ com 3-4 perguntas de cauda longa | 15% |
+| 6 | Links para fontes primárias | 10% |
+| 7 | Nenhum título/subtítulo com promessa | 10% |
+| 8 | Densidade de keyword natural (sem stuffing) | 5% |
+
+Score ≥95% = todos os critérios atendidos integralmente.
+Score <95% = revisar e iterar (máximo 3 rodadas).
+
+### PROIBIÇÕES SEO (OAB Provimento 205/2021)
+
+- NUNCA usar "como evitar", "como ganhar", "como resolver", "solução para" em títulos ou subtítulos.
+- NUNCA prometer resultado ("proteja seu patrimônio", "salve sua empresa").
+- NUNCA usar linguagem de urgência artificial ("antes que seja tarde", "última chance").
+- NUNCA incluir CTA comercial no corpo ou conclusão do artigo ("entre em contato", "agende consulta").
+- Tom SEMPRE sóbrio, técnico, informacional.
