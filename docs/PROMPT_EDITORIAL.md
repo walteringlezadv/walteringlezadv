@@ -126,35 +126,22 @@ artigo automaticamente pela presença do `.md` na pasta `articles/`.
 
 ---
 
-## PASSO 4 — COMMIT NO GITHUB (branch por artigo)
+## PASSO 4 — PUBLICAÇÃO VIA API GITHUB
 
-NUNCA commitar ou fazer merge em `main`. **NUNCA reusar uma branch nem fazer
-`git pull`** — é o que gera a divergência que encerra a tarefa. Cada artigo
-nasce em uma branch NOVA, cortada do `main` atual.
+A publicação é feita exclusivamente pelo código Python do prompt da tarefa Manus, via GitHub Contents API, com autenticação por token. NÃO usar git commands — Manus não possui credenciais git para `git push`.
 
-### Sequência obrigatória:
+**Regras absolutas:**
+- Branch de destino: SEMPRE `draft`. NUNCA `main`.
+- O código Python do prompt da tarefa é a única forma autorizada de entregar o arquivo.
+- NÃO fazer merge. NÃO fazer deploy. Walter recebe e-mail automático e aprova o PR manualmente.
 
-1. `git fetch origin`
-2. `git checkout -B artigo/[slug] origin/main`
-   (branch nova a partir do `main` atualizado — não diverge; NÃO usar `git pull`)
-3. Criar `src/content/articles/[slug].md` com a estrutura do PASSO 3.
-4. Atualizar `public/sitemap.xml` adicionando a nova URL:
-```xml
-   <url>
-     <loc>https://blog.walteringlezadv.com.br/blog/[slug]</loc>
-     <lastmod>AAAA-MM-DD</lastmod>
-     <changefreq>weekly</changefreq>
-     <priority>0.8</priority>
-   </url>
-```
-5. `npm run build` — SE FALHAR: corrigir antes de continuar. NÃO commitar com build quebrado.
-6. `git add src/content/articles/[slug].md public/sitemap.xml`
-7. `git commit -m "artigo: [slug]"`
-8. `git push origin artigo/[slug]`
-9. Verificar: `git log --oneline -1`
+**Sitemap:** atualizado manualmente por Walter após o merge, ou pelo GitHub Action se configurado. NÃO incluir atualização de sitemap.xml no commit do artigo.
 
-NÃO fazer merge para `main`. NÃO fazer deploy. **Walter aprova o PR manualmente.**
-
+**Resultado esperado ao final do PASSO 4:**
+- Arquivo `src/content/articles/[slug].md` criado na branch `draft`
+- HTTP 201 retornado pela API
+- GitHub Action `sync-blog.yml` disparado automaticamente
+- PR criado com e-mail de notificação para Walter
 ---
 
 ## CHECKLIST FINAL — verificar antes do commit
