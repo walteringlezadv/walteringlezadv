@@ -67,8 +67,7 @@ Pode discutir a extensão, a proporcionalidade, a pertinência dos bens localiza
 
 Podem mudar. Quando a pesquisa patrimonial se aproxima de ativos relevantes, a negociação deixa de ser apenas financeira e passa a envolver garantias, constrições possíveis, preservação operacional e custo de litígio.
 
-## Referência
+### Referências
 
-[^1]: [STJ — Quarta Turma autoriza uso do Serp-Jud para localizar bens em execuções civis](https://www.stj.jus.br/sites/portalp/Paginas/Comunicacao/Noticias/2026/10042026-Quarta-Turma-autoriza-uso-do-Serp-Jud-para-localizar-bens-em-execucoes-civis.aspx)
-[^2]: [Lei nº 14.382, de 27 de junho de 2022 — Planalto](https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2022/lei/l14382.htm)
-[^3]: [Lei nº 13.105, de 16 de março de 2015 — Código de Processo Civil — Planalto](https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2015/lei/l13105.htm)
+- [STJ — Quarta Turma autoriza uso do Serp-Jud, REsp 2.226.101-SC, julgado em 7/4/2026](https://www.stj.jus.br/sites/portalp/Paginas/Comunicacao/Noticias/2026/10042026-Quarta-Turma-autoriza-uso-do-Serp-Jud-para-localizar-bens-em-execucoes-civis.aspx)
+- [Lei nº 14.382, de 27 de junho de 2022 — Planalto](https://www.planalto.gov.br/ccivil_03/_ato2022-2026/2022/lei/l14382.htm)
