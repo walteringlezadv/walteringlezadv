@@ -5,6 +5,7 @@ import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
   site: 'https://blog.walteringlezadv.com.br',
+  trailingSlash: 'always',
   integrations: [
     react(),
     tailwind(),
