@@ -15,4 +15,4 @@ fontes:
   - https://www.bcb.gov.br/content/estabilidadefinanceira/Leiaute_de_documentos/scrdoc3040/SCR_InstrucoesDePreenchimento_Doc3044.pdf (BCB, Instruções de Preenchimento do Documento 3044, acesso em 11/06/2026)
   - https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2022/Exm/Res-CMN-5037-22.pdf (Resolução CMN nº 5.037/2022)
   - https://www.bcb.gov.br/estabilidadefinanceira/exibenormativo?tipo=Resolu%C3%A7%C3%A3o%20CMN&numero=5057 (Resolução CMN nº 5.057/2022)
-dado_a_verificar: confirmar se Resolução CMN 5.057/2022 trata especificamente de renegociação no SCR ou se a norma aplicável é outra; verificar campos do Doc 3044 que registram evento de renegociação
+dado_a_verificar: VERIFICADO — CMN 5.037/2022 é a norma-base do Doc 3044 (cessão, reporte geral). CMN 5.057/2022 cobre exclusivamente portabilidade (Doc 3044, Seção 3, itens a/c de mai/2026). Renegociação está nos itens f/g da Seção 3 do Doc 3044, sem resolução CMN específica adicional. Todas as fontes acessíveis e confirmadas.
