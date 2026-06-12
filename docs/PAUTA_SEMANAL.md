@@ -1,4 +1,4 @@
-# Pauta Atual — Blog Walter Inglez
+# Pauta Semanal — Blog Walter Inglez
 
 Arquivo sobrescrito a cada ciclo editorial.
 Vazio = Manus encerra sem redigir.
