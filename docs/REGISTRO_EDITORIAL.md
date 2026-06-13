@@ -33,3 +33,4 @@ MANUTENÇÃO:
 | 2026-04-26 | banco-ofereceu-renegociacao-o-que-analisar-antes-de-aceitar | Renegociação | Proposta de renegociação bancária (conceitual) | Nem toda proposta reduz o problema; entender o que se assina e que risco se consolida |
 | 2025-04-02 | clausulas-silenciosas-contratos-bancarios | Contratos Bancários | Cláusulas contratuais bancárias (leitura contratual) | Cláusulas que mudam o equilíbrio da relação sem aparecer no dia a dia |
 | 2025-03-18 | quando-renegociar-passivo-bancario | Gestão de Passivos | Renegociação — ponto de virada contratual (conceitual) | Há um momento em que renegociar deixa de ser opção e passa a ser estrutura |
+| registro-scr-renegociacao-operacoes-credito-empresarial | Contratos Bancários | Doc SCR 3044 + Res. CMN 5.037/2022 + Res. CMN 5.057/2022 | Leitura do registro SCR antes de assinar renegociação |
