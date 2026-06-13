@@ -11,19 +11,19 @@ jobs:
   create-pr-and-notify:
     runs-on: ubuntu-latest
     permissions:
-      contents: write
+      contents: read
       pull-requests: write
 
     steps:
       - name: Checkout
         uses: actions/checkout@v4
         with:
+          ref: draft
           fetch-depth: 2
 
       - name: Identify article from latest commit
         id: article
         run: |
-          # Find the .md article file changed in the most recent commit only
           CHANGED=$(git show --name-only --format='' HEAD \
             | grep '^src/content/articles/.*\.md$' \
             | head -1)
@@ -52,27 +52,43 @@ jobs:
 
           echo "Artigo identificado: $TITLE ($SLUG)"
 
-      - name: Create Pull Request
+      - name: Create or update Pull Request
         id: pr
         if: steps.article.outputs.skip != 'true'
-        uses: peter-evans/create-pull-request@v6
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          base: main
-          branch: draft
-          title: "artigo: ${{ steps.article.outputs.slug }}"
-          body: |
-            **Categoria:** ${{ steps.article.outputs.category }}
-            **Slug:** ${{ steps.article.outputs.slug }}
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          # Check if PR from draft to main already exists
+          EXISTING=$(gh pr list --base main --head draft --json number --jq '.[0].number' 2>/dev/null)
 
-            ${{ steps.article.outputs.excerpt }}
-          labels: artigo
-          delete-branch: false
+          if [ -n "$EXISTING" ]; then
+            echo "PR #$EXISTING already exists — updating title and body."
+            gh pr edit "$EXISTING" \
+              --title "artigo: ${{ steps.article.outputs.slug }}" \
+              --body "**Categoria:** ${{ steps.article.outputs.category }}
+          **Slug:** ${{ steps.article.outputs.slug }}
+
+          ${{ steps.article.outputs.excerpt }}"
+            PR_URL=$(gh pr view "$EXISTING" --json url --jq '.url')
+          else
+            echo "Creating new PR from draft to main."
+            PR_URL=$(gh pr create \
+              --base main \
+              --head draft \
+              --title "artigo: ${{ steps.article.outputs.slug }}" \
+              --body "**Categoria:** ${{ steps.article.outputs.category }}
+          **Slug:** ${{ steps.article.outputs.slug }}
+
+          ${{ steps.article.outputs.excerpt }}")
+          fi
+
+          echo "pr-url=$PR_URL" >> $GITHUB_OUTPUT
+          echo "PR URL: $PR_URL"
 
       - name: Send email notification
         if: >
           steps.article.outputs.skip != 'true' &&
-          steps.pr.outputs.pull-request-url != ''
+          steps.pr.outputs.pr-url != ''
         uses: dawidd6/action-send-mail@v3
         with:
           server_address: smtp.gmail.com
@@ -88,7 +104,7 @@ jobs:
           html_body: |
             <p><strong>Artigo aguardando aprovação</strong></p>
             <p>
-              <a href="${{ steps.pr.outputs.pull-request-url }}"
+              <a href="${{ steps.pr.outputs.pr-url }}"
                  style="background:#1a2e22;color:#f5f0e8;padding:10px 20px;
                         border-radius:4px;text-decoration:none;font-weight:bold;">
                 Revisar e aprovar artigo
