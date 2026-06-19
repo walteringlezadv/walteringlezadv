@@ -9,7 +9,7 @@ seo:
   description: "Entenda o que muda na cessão de crédito bancário para FIDC e cobrança empresarial. STJ valida a manutenção dos juros originais e da fiança no contrato."
 ---
 
-O telefone toca e, do outro lado da linha, não é mais o gerente do banco cobrando o saldo devedor da empresa, mas sim o representante de um Fundo de Investimento em Direitos Creditórios (FIDC) ou de uma assessoria de cobrança terceirizada. O empresário, que até ontem tentava negociar a composição do passivo diretamente com a instituição financeira de origem, descobre que a operação foi vendida. A **cessão de crédito bancário** altera a dinâmica da cobrança e exige uma leitura imediata do cenário para evitar decisões no escuro.
+O telefone toca e, do outro lado da linha, não é mais o gerente do banco cobrando o saldo devedor da empresa, mas sim o representante de um Fundo de Investimento em Direitos Creditórios (FIDC) ou de uma assessoria de cobrança terceirizada. O empresário, que até ontem tentava negociar a composição do passivo diretamente com a instituição financeira de origem, descobre que a operação foi vendida. A **cessão de crédito bancário** altera a dinâmica da cobrança e exige uma leitura imediata do cenário para evitar decisões no escuro. Há uma diferença relevante entre o banco terceirizar a cobrança — caso em que continua sendo o credor — e ceder o crédito a um fundo ou empresa de recuperação, que passa a ser o novo titular da dívida. Este artigo trata da segunda hipótese.
 
 A transferência do crédito não é uma anistia nem um recomeço. Pelo contrário, a chegada de um novo credor especializado em recuperação de recebíveis muda o ritmo da pressão sobre o caixa e o patrimônio da pessoa jurídica. Compreender a operação, os limites legais do cessionário e o grau de executividade do contrato original é o primeiro passo antes de apresentar qualquer proposta ou aceitar um acordo imposto pela nova gestão da dívida.
 
@@ -25,7 +25,7 @@ Uma dúvida comum entre empresários é se a venda da dívida para uma empresa q
 
 O Superior Tribunal de Justiça (STJ) firmou entendimento de que a transferência do título de crédito implica a transferência de todos os direitos que lhe são inerentes. No julgamento do REsp 1.984.424/SP, a 3ª Turma do STJ decidiu que a cessão civil de Cédula de Crédito Bancário transmite ao cessionário o direito de cobrar os juros e demais encargos na forma originalmente pactuada, ainda que o novo credor não integre o Sistema Financeiro Nacional (SFN).
 
-Em relação às garantias, a 4ª Turma do STJ, ao julgar o REsp 1.726.161/SP, validou a celebração de contrato acessório de fiança na cessão de crédito em operação de securitização de recebíveis, tendo por cessionário um FIDC. A decisão reconheceu o FIDC como instituição financeira e confirmou que a garantia fidejussória permanece hígida.
+Em relação às garantias, a 4ª Turma do STJ, ao julgar o REsp 1.726.161/SP, validou a celebração de contrato acessório de fiança na cessão de crédito em operação de securitização de recebíveis, tendo por cessionário um FIDC. A decisão equiparou o FIDC a instituição financeira para os fins da Lei nº 4.595/1964 e confirmou que a garantia fidejussória permanece hígida.
 
 ## Comparativo: Negociação com Banco de Origem × FIDC
 
@@ -51,7 +51,7 @@ O banco não precisa da autorização da empresa para vender a dívida, mas o C�
 Não. O STJ já validou a transferência e a manutenção da fiança e do aval em casos de cessão de crédito para Fundos de Investimento em Direitos Creditórios (FIDC).
 
 ### O FIDC pode cobrar os mesmos juros que o banco cobrava?
-Sim. A jurisprudência do STJ (REsp 1.984.424/SP) estabelece que a cessão de crédito transmite ao novo credor o direito de cobrar os juros e encargos na forma originalmente pactuada no contrato bancário.
+Sim, conforme as condições do contrato original. A jurisprudência do STJ (REsp 1.984.424/SP) estabelece que a cessão de crédito transmite ao novo credor o direito de cobrar os juros e encargos na forma originalmente pactuada no contrato bancário.
 
 ### O que muda na negociação quando a dívida vai para uma empresa de cobrança?
 A empresa de cobrança ou FIDC adquire a dívida com deságio e tem como foco exclusivo a recuperação rápida do capital, o que geralmente resulta em táticas de cobrança mais agressivas e rápida judicialização se não houver acordo.
