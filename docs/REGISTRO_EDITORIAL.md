@@ -9,6 +9,7 @@ MANUTENÇÃO:
 
 | Data | Slug | Categoria | Dispositivo legal central | Ângulo central |
 |---|---|---|---|---|
+| 2026-06-19 | cessao-credito-bancario-fidc-cobranca-empresa | Contratos Bancários | Art. 286–298 CC + STJ REsp 1.726.161 (fiança em cessão a FIDC) + STJ REsp 1.984.424 (encargos mantidos) | Quando o banco vende a dívida, verificar validade da cessão e encargos transferidos é o primeiro passo |
 | 2026-06-15 | sisbajud-bloqueio-teimosia-execucao-bancaria-empresas | Execução Bancária | SISBAJUD — Portaria SEP nº 3/2026 (bloqueio permanente / teimosinha até 12 meses) | Bloqueio sem aviso prévio e ordem permanente mudam a lógica de defesa da empresa executada |
 | 2026-06-09 | alienacao-fiduciaria-imovel-divida-empresarial | Garantias | Lei 14.711/2023 + Lei 9.514/1997 (alienação fiduciária de imóvel) | Caminho do credor: garantia, consolidação e leilão antes de responder ao banco |
 | 2026-06-09 | serp-jud-execucao-bancaria-risco-patrimonial-empresa | Execução Bancária | Serp-Jud (REsp 2.226.101-SC — conferir nº) | Decisão fundamentada para pesquisa de bens e margem de defesa da devedora |
