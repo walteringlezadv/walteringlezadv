@@ -1,10 +1,25 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import { getCollection } from 'astro:content';
+
 const allArticles = await getCollection('articles');
 const articles = allArticles.sort(
   (a, b) => new Date(b.data.publishedAt).getTime() - new Date(a.data.publishedAt).getTime()
 );
+
+function categoryToSlug(cat) {
+  return cat
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/\s+/g, "-");
+}
+
+const categories = Array.from(new Set(allArticles.map((a) => a.data.category)));
+const categoryList = categories.map((c) => ({
+  href: "/blog/categoria/" + categoryToSlug(c),
+  label: c,
+}));
 ---
 <Layout
   title="Walter Inglez — Gestão Estratégica de Passivos Bancários"
@@ -19,8 +34,19 @@ const articles = allArticles.sort(
     </h2>
     <p class="text-[#f5f0e8]/70 text-lg max-w-2xl leading-relaxed">Análise técnica para empresários com dívidas bancárias relevantes. Sem promessa de resultado. Com clareza sobre o que está em jogo.</p>
   </section>
+
   <main class="max-w-4xl mx-auto px-6 py-12">
     <h3 class="font-serif text-2xl font-semibold text-[#f5f0e8] mb-8">Artigos recentes</h3>
+
+    <nav aria-label="Categorias" class="mb-10 flex flex-wrap gap-2">
+      <span class="text-sm px-4 py-2 rounded-full bg-[#c4956a] text-[#0a1f1c] font-medium">Todas</span>
+      {categoryList.map((cat) => (
+        <a href={cat.href} class="text-sm px-4 py-2 rounded-full border border-[#f5f0e8]/20 text-[#f5f0e8]/70 hover:border-[#c4956a] hover:text-[#c4956a] transition-colors">
+          {cat.label}
+        </a>
+      ))}
+    </nav>
+
     <div class="space-y-6">
       {articles.map((article) => (
         <a href={"/blog/" + article.slug} class="block group border border-[#f5f0e8]/10 rounded-lg p-6 hover:border-[#c4956a]/40 transition-all">
