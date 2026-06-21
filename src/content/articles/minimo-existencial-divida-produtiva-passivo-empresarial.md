@@ -2,7 +2,7 @@
 title: "Mínimo existencial não reorganiza dívida produtiva da empresa"
 excerpt: "A regra do superendividamento protege dívidas de consumo da pessoa natural. Para o empresário, confundir esse campo com passivo produtivo reduz a margem de decisão."
 publishedAt: "2026-06-06"
-category: "Patrimonio"
+category: "Patrimônio"
 tags:
   - "mínimo existencial"
   - "superendividamento"
