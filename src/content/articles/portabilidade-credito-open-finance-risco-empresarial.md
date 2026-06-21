@@ -1,7 +1,7 @@
 ---
 title: "Portabilidade de crédito via Open Finance: o que muda para a empresa com passivo bancário"
 excerpt: "A portabilidade de crédito pelo Open Finance cria canal digital de migração, mas a estrutura de garantias e coobrigações depende da nova operação. Entenda o que verificar."
-publishedAt: "2026-06-23"
+publishedAt: "2026-06-21"
 category: "Renegociação"
 tags: ["portabilidade de crédito Open Finance", "portabilidade de crédito empresarial PJ", "portabilidade bancária PJ", "migrar dívida bancária empresa", "Open Finance empresa passivo", "renegociação bancária portabilidade"]
 seo:
