@@ -9,8 +9,10 @@ MANUTENÇÃO:
 
 | Data | Slug | Categoria | Dispositivo legal central | Ângulo central |
 |---|---|---|---|---|
-| 2026-06-19 | cessao-credito-bancario-fidc-cobranca-empresa | Contratos Bancários | Art. 286–298 CC + STJ REsp 1.726.161 (fiança em cessão a FIDC) + STJ REsp 1.984.424 (encargos mantidos) | Quando o banco vende a dívida, verificar validade da cessão e encargos transferidos é o primeiro passo |
-| 2026-06-15 | sisbajud-bloqueio-teimosia-execucao-bancaria-empresas | Execução Bancária | SISBAJUD — Portaria SEP nº 3/2026 (bloqueio permanente / teimosinha até 12 meses) | Bloqueio sem aviso prévio e ordem permanente mudam a lógica de defesa da empresa executada |
+| 2026-06-21 | portabilidade-credito-open-finance-risco-empresarial | Renegociação | Resolução Conjunta nº 15/2025 + CMN 5.057/2022 (portabilidade de crédito via Open Finance) | Canal digital encurta migração, mas garantias e coobrigações dependem da nova operação — portar não é renegociar |
+| 2026-06-19 | cessao-credito-bancario-fidc-cobranca-empresa | Contratos Bancários | Art. 286–298 CC + STJ 4ª Turma, REsp 1.726.161 (fiança válida em cessão a FIDC) | Quando o banco vende a dívida, verificar validade da cessão, encargos e coobrigação antes de qualquer proposta |
+| 2026-06-15 | sisbajud-bloqueio-teimosia-execucao-bancaria-empresas | Execução Bancária | Manual SISBAJUD 2026 + art. 854 CPC (teimosinha — reiteração automática de bloqueio) | Bloqueio automático ampliado de 30 dias para até 1 ano; prazo e estratégia de defesa da empresa |
+| 2026-06-12 | registro-scr-renegociacao-operacoes-credito-empresarial | Contratos Bancários | SCR (Sistema de Informações de Crédito do BCB) | Composição sem leitura do histórico bancário consolida risco; SCR registra renegociações, cessões e portabilidade |
 | 2026-06-09 | alienacao-fiduciaria-imovel-divida-empresarial | Garantias | Lei 14.711/2023 + Lei 9.514/1997 (alienação fiduciária de imóvel) | Caminho do credor: garantia, consolidação e leilão antes de responder ao banco |
 | 2026-06-09 | serp-jud-execucao-bancaria-risco-patrimonial-empresa | Execução Bancária | Serp-Jud (REsp 2.226.101-SC — conferir nº) | Decisão fundamentada para pesquisa de bens e margem de defesa da devedora |
 | 2026-06-08 | recuperacao-judicial-grupo-economico-divida-empresarial | Gestão de Passivos | Recuperação judicial de grupo econômico (STJ Inf. 887 / REsp 2.218.122-RS — conferir) | Exame individual de cada empresa: atividade, contabilidade e passivos |
@@ -35,4 +37,3 @@ MANUTENÇÃO:
 | 2026-04-26 | banco-ofereceu-renegociacao-o-que-analisar-antes-de-aceitar | Renegociação | Proposta de renegociação bancária (conceitual) | Nem toda proposta reduz o problema; entender o que se assina e que risco se consolida |
 | 2025-04-02 | clausulas-silenciosas-contratos-bancarios | Contratos Bancários | Cláusulas contratuais bancárias (leitura contratual) | Cláusulas que mudam o equilíbrio da relação sem aparecer no dia a dia |
 | 2025-03-18 | quando-renegociar-passivo-bancario | Gestão de Passivos | Renegociação — ponto de virada contratual (conceitual) | Há um momento em que renegociar deixa de ser opção e passa a ser estrutura |
-| 2026-06-13 | registro-scr-renegociacao-operacoes-credito-empresarial | Contratos Bancários | Doc SCR 3044 + Res. CMN 5.037/2022 + Res. CMN 5.057/2022 | Leitura do registro SCR antes de assinar renegociação |
