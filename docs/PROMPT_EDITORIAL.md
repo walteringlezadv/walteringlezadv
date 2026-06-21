@@ -3,52 +3,97 @@
 Documento único de orientação para geração de artigos do blog
 (blog.walteringlezadv.com.br). Repositório: walteringlezadv/walteringlezadv (Astro).
 
+**Versão:** 7.0
+**Vigência:** 21/06/2026
+**Substitui:** v5 (06/06/2026) e v6 (não publicada)
+**Aprovação:** Walter Inglez
+
 ---
 
-## Tom e voz
+## 1 — ESCOPO E GOVERNANÇA
+
+### O que este documento cobre
+
+Padrão editorial completo para produção de artigos do blog de passivos bancários: tom, formato, estrutura do arquivo markdown, regras de SEO, checklist de qualidade, proibições e gestão de riscos editoriais.
+
+### O que este documento NÃO cobre
+
+A publicação do artigo (commit, merge, deploy) é disciplinada pelo POP DE PUBLICAÇÃO, documento separado. Este prompt termina na entrega do arquivo `.md` revisado e aprovado por Walter.
+
+### Documentos vinculados
+
+| Documento | Localização | Função |
+|---|---|---|
+| POP DE PUBLICAÇÃO | docs/POP_PUBLICACAO.md | Fluxo de commit, merge, deploy e atualização do registro |
+| PAUTA_SEMANAL.md | docs/PAUTA_SEMANAL.md (branch main) | Temas da semana, produzidos pelo Radar (Manus) |
+| REGISTRO_EDITORIAL.md | docs/REGISTRO_EDITORIAL.md (branch main) | Fonte única de verdade dos artigos publicados |
+| PROMPT_EDITORIAL.md | docs/PROMPT_EDITORIAL.md (branch main) | Este documento |
+
+### Regra de alteração
+
+Qualquer alteração neste documento requer aprovação de Walter. Versões anteriores devem ser arquivadas com data no nome do arquivo. O número de versão é incremental.
+
+---
+
+## 2 — RESPONSABILIDADES
+
+| Papel | Quem | Atribuição |
+|---|---|---|
+| Radar (pesquisa de temas) | Manus (terça-feira) | Pesquisa oportunidades, produz PAUTA_SEMANAL.md com 3 slots (temas blog + tabela Instagram) |
+| Seleção do tema | Walter | Escolhe o slot da PAUTA_SEMANAL a ser redigido |
+| Redação do artigo | Claude (projeto Blog Passivos) | Redige conforme este prompt, entrega .md para revisão |
+| Revisão técnica | Walter | Valida conteúdo jurídico, precisão de dados, aderência editorial |
+| Revisão de qualidade | Claude (projeto Blog Passivos) | Aplica checklist de qualidade e SEO antes da entrega |
+| Publicação | Walter | Commit, merge e deploy conforme POP DE PUBLICAÇÃO |
+| Registro | Claude (projeto Blog Passivos) + Walter | Claude prepara a linha do REGISTRO_EDITORIAL.md; Walter commita no repo |
+
+**Regra de ouro:** nenhum artigo é publicado sem revisão técnica de Walter. Claude não tem autoridade para publicar.
+
+---
+
+## 3 — TOM E VOZ
 
 - Sóbrio, técnico, direto.
 - SEM juridiquês ("hodiernamente", "mister se faz", "consoante").
 - SEM promessa ("garantimos", "você vai recuperar").
 - SEM urgência artificial ("últimas vagas").
 - O advogado é o estrategista. O cliente é o protagonista.
-- Avatar: empresário PJ com dívida bancária relevante (acima de R$200 mil),
-  garantias envolvidas ou risco de execução.
+- Avatar: empresário PJ com dívida bancária relevante (acima de R$200 mil), garantias envolvidas ou risco de execução.
 - Eixo estratégico: Negociar × Defender × Ajuizar.
 
 ---
 
-## PASSO 1 — ESCOLHA DO TEMA (autônoma)
+## 4 — FLUXO DE PRODUÇÃO
 
-NÃO buscar arquivo externo de tema. O tema é proposto por você, Manus,
-com liberdade de pesquisa, dentro destas regras:
+### PASSO 1 — RECEBER O TEMA
 
-1. Liste os artigos já existentes em `src/content/articles/*.md` e leia o
-   frontmatter (`category`, `tags`, `publishedAt`) de cada um.
-2. Identifique quais das 8 categorias estão sub-representadas ou sem artigo
-   recente, e quais ângulos já foram cobertos (para não repetir).
-3. Pesquise livremente fontes técnicas e dados atuais e proponha UM tema que:
-   - não repita a categoria das 2 publicações mais recentes;
-   - traga ângulo distinto dos artigos vizinhos (evitar fadiga de série);
-   - sirva ao avatar (empresário PJ, dívida acima de R$200 mil, garantias
-     ou risco de execução);
-   - encaixe no eixo Negociar × Defender × Ajuizar.
-4. Registre o tema escolhido e a justificativa na descrição do PR, para a
-   revisão de Walter.
+O tema vem da PAUTA_SEMANAL.md, selecionado por Walter. O slot contém: tema, dispositivo legal central, ângulo, categoria, slug, fontes e briefing.
 
-**NUNCA encerrar a tarefa por "falta de tema".** Sem dados de pesquisa
-suficientes, escolher o tema pelas lacunas das 8 categorias.
+Claude NÃO escolhe tema. Se Walter não indicar o slot, perguntar.
 
-**As 8 categorias:** CCB · Capital de Giro · Garantias · Renegociação ·
-Execução Bancária · Gestão de Passivos · Contratos Bancários · Patrimônio.
+Antes de redigir, Claude deve:
+1. Ler o REGISTRO_EDITORIAL.md para confirmar que o slug não existe.
+2. Confirmar que a categoria não repete as duas publicações mais recentes.
+3. Se houver conflito, alertar Walter antes de prosseguir.
 
----
+### PASSO 2 — PESQUISA E VERIFICAÇÃO
 
-## PASSO 2 — PESQUISA E ATRIBUIÇÃO DE FONTES
+**Regra Zero:** nenhum dado numérico sem verificação em fonte primária (BCB API, IBGE, Planalto, portais de jurisprudência). Dado da pauta não confirmado → alertar Walter, não redigir.
 
-Pesquise com liberdade, priorizando fontes primárias e publicações
-específicas e datadas. Regras de atribuição obrigatórias:
+Fontes do BCB: https://api.bcb.gov.br/dados/serie/bcdata.sgs.[ID]/dados/ultimos/10?formato=json
+Defasagem típica BCB/IBGE: 45-60 dias.
 
+**Verificação jurídica obrigatória:** antes de redigir, Claude deve localizar e ler o texto normativo primário (lei, resolução, súmula) que disciplina o instituto tratado no artigo. A verificação consiste em:
+1. Identificar a norma-base do instituto (ex: Resolução CMN nº 5.057/2022 para portabilidade de crédito).
+2. Pesquisar e ler os dispositivos específicos que regulam a mecânica (constituição, extinção, efeitos sobre garantias, prazos).
+3. Registrar os artigos consultados no output de verificação.
+4. Somente após essa leitura, redigir as consequências jurídicas no artigo.
+
+NÃO presumir funcionamento com base em institutos análogos. NÃO usar fontes secundárias (blogs, artigos de terceiros) como substituto da norma. Fontes secundárias servem para contexto, nunca para fundamentação.
+
+Exemplo do que evitar: portabilidade de crédito opera por liquidação e reconstituição, não por cessão contratual — confundir os dois produz erro em cascata sobre garantias, aval e coobrigações.
+
+Regras de atribuição:
 - Pesquisas amostrais: atribuir às instituições, NUNCA ao órgão emissor.
   - CORRETO: "As instituições financeiras consultadas avaliaram que..."
   - ERRADO: "O Banco Central concluiu que..."
@@ -56,32 +101,77 @@ específicas e datadas. Regras de atribuição obrigatórias:
   - CORRETO: "Pesquisa Trimestral de Condições de Crédito — março de 2026"
   - ERRADO: "Banco Central — Publicações"
 
+### PASSO 3 — KEYWORD STRATEGY
+
+Antes de redigir, definir:
+- 1 KEYWORD PRINCIPAL: termo exato que o empresário pesquisaria (ex: "alienação fiduciária de imóvel", "penhora de faturamento empresa")
+- 3-5 KEYWORDS DE CAUDA LONGA: perguntas ou frases completas (ex: "o banco pode penhorar o faturamento da minha empresa")
+
+### PASSO 4 — REDAÇÃO
+
+Redigir conforme a estrutura definida na seção 5 (Formato do Arquivo). 800-1.000 palavras no corpo.
+
+Regras de redação:
+- Abertura pela cena do empresário — nunca pelo dado.
+- Tabela comparativa obrigatória (mínimo 4 linhas de dados).
+- Frase final em negrito, sem promessa, antes da FAQ.
+- FAQ com exatamente 4 perguntas em formato `### `.
+- Referências com links inline, formato `[Nome da norma — Fonte](URL)`.
+- SEM CTA, SEM número OAB, SEM disclaimer, SEM promessa.
+
+### PASSO 5 — CHECKLIST DE QUALIDADE E SEO
+
+Aplicar integralmente o checklist da seção 7 antes de entregar a Walter. Se score < 95%, iterar (máximo 3 rodadas). Registrar score e rodadas.
+
+### PASSO 6 — ENTREGA
+
+Entregar o arquivo `.md` completo para revisão de Walter. Aguardar aprovação. Após aprovação, a publicação segue o POP DE PUBLICAÇÃO (documento separado).
+
+### PROTOCOLO DE REVISÃO (quando Walter identifica erro)
+
+Se Walter ou revisor externo identificar erro no artigo entregue:
+1. Claude recebe o apontamento e classifica: erro de mecânica jurídica, erro de dado, erro editorial ou erro de SEO.
+2. Para erros de mecânica jurídica: Claude retorna ao PASSO 2, refaz a verificação na norma-base, identifica a origem do erro e corrige todas as seções afetadas (não apenas o trecho apontado — erros de mecânica propagam).
+3. Para erros de dado: verificar na fonte primária e corrigir.
+4. Para erros editoriais ou de SEO: corrigir e reaplicar checklist.
+5. Entregar versão corrigida com registro das alterações feitas.
+
+Não defender o texto original. Se o erro é procedente, corrigir. Se não for procedente, fundamentar com a norma.
+
+### NOTA OPERACIONAL — ACESSO AO REPO
+
+Claude no projeto Blog Passivos não tem acesso direto ao repositório GitHub. Para que o PASSO 1 funcione, Walter deve:
+- Carregar o REGISTRO_EDITORIAL.md como conhecimento do projeto Blog Passivos, OU
+- Colar o conteúdo do registro na conversa quando solicitar um novo artigo.
+
+Sem o registro disponível, Claude não pode verificar duplicação de slug nem repetição de categoria.
+
 ---
 
-## PASSO 3 — FORMATO DO ARQUIVO MARKDOWN
+## 5 — FORMATO DO ARQUIVO MARKDOWN
 
 **Nome do arquivo:** `[slug].md` (kebab-case, sem acentos, sem caracteres especiais)
-**Localização:** `src/content/articles/[slug].md`
+**Localização de destino:** `src/content/articles/[slug].md`
 
-**Estrutura obrigatória:**
+### Estrutura obrigatória
 
 ```markdown
 ---
 title: "Título com palavras-chave SEO — máximo 80 caracteres"
-excerpt: "Resumo de 1-2 frases para card do blog, incluindo dado concreto quando possível"
+excerpt: "Resumo de 1-2 frases para card do blog, incluindo dado concreto quando possível — máximo 200 caracteres"
 publishedAt: "AAAA-MM-DD"
 category: "Nome exato da categoria"
-tags: ["tag1", "tag2", "tag3"]
+tags: ["keyword principal", "cauda longa 1", "cauda longa 2", "cauda longa 3"]
 seo:
-  title: "Título SEO longo com palavras-chave — Walter Inglez"
-  description: "Description SEO — máximo 160 caracteres"
+  title: "Título SEO com keyword — máximo 60 caracteres"
+  description: "Description SEO — 150 a 160 caracteres, com keyword, sem promessa"
 ---
 
 Primeiro parágrafo da abertura — cena do empresário.
 
 Segundo parágrafo da abertura.
 
-## Subtítulo da seção
+## Subtítulo H2 com termo de busca
 
 Conteúdo do artigo...
 
@@ -91,126 +181,48 @@ Conteúdo do artigo...
 |----------|----------|----------|
 | ...      | ...      | ...      |
 
-## Risco
+## Risco / Consequências
 
-Parágrafo sobre consequências.
+Parágrafo analítico sobre consequências.
 
 **Frase final em negrito, sem promessa.**
 
 ## Perguntas frequentes
 
-### Pergunta 1?
-Resposta curta.
+### Pergunta 1 (cauda longa)?
+Resposta direta, 2-3 frases.
 
-### Pergunta 2?
-Resposta curta.
+### Pergunta 2 (cauda longa)?
+Resposta direta, 2-3 frases.
 
-### Pergunta 3?
-Resposta curta.
+### Pergunta 3 (cauda longa)?
+Resposta direta, 2-3 frases.
 
-### Pergunta 4?
-Resposta curta.
+### Pergunta 4 (cauda longa)?
+Resposta direta, 2-3 frases.
 
-## Referência
+## Referências
 
-[Nome da publicação específica](https://url-da-fonte)
+[Nome da norma ou publicação — Fonte](URL)
 ```
+
+**As 8 categorias válidas:** CCB · Capital de Giro · Garantias · Renegociação · Execução Bancária · Gestão de Passivos · Contratos Bancários · Patrimônio.
 
 **ATENÇÃO — NÃO incluir a nota institucional/disclaimer no `.md`.**
 O layout (`src/layouts/ArticleLayout.astro`) injeta a nota automaticamente.
-Incluir no corpo gera disclaimer DUPLICADO. O artigo termina na seção
-`## Referência`.
+Incluir no corpo gera disclaimer DUPLICADO.
 
-**IMPORTANTE:** NÃO HÁ arquivo `index.tsx` para atualizar. O Astro descobre o
-artigo automaticamente pela presença do `.md` na pasta `articles/`.
+**IMPORTANTE:** NÃO HÁ arquivo `index.tsx` para atualizar. O Astro descobre o artigo automaticamente pela presença do `.md` na pasta `articles/`.
 
 ---
 
-## PASSO 4 — PUBLICAÇÃO VIA API GITHUB
-
-A publicação é feita exclusivamente pelo código Python do prompt da tarefa Manus, via GitHub Contents API, com autenticação por token. NÃO usar git commands — Manus não possui credenciais git para `git push`.
-
-**Regras absolutas:**
-- Branch de destino: SEMPRE `draft`. NUNCA `main`.
-- O código Python do prompt da tarefa é a única forma autorizada de entregar o arquivo.
-- NÃO fazer merge. NÃO fazer deploy. Walter recebe e-mail automático e aprova o PR manualmente.
-
-**Sitemap:** atualizado manualmente por Walter após o merge, ou pelo GitHub Action se configurado. NÃO incluir atualização de sitemap.xml no commit do artigo.
-
-**Resultado esperado ao final do PASSO 4:**
-- Arquivo `src/content/articles/[slug].md` criado na branch `draft`
-- HTTP 201 retornado pela API
-- GitHub Action `sync-blog.yml` disparado automaticamente
-- PR criado com e-mail de notificação para Walter
----
-
-## CHECKLIST FINAL — verificar antes do commit
-
-- [ ] Tema escolhido conforme PASSO 1 (sem repetir categoria das 2 últimas publicações)
-- [ ] Arquivo é `.md` (NÃO `.tsx`)
-- [ ] Frontmatter YAML entre `---` no topo
-- [ ] Abertura começa pela cena do empresário
-- [ ] 800–1.000 palavras no corpo
-- [ ] Tabela Markdown com mínimo 4 linhas
-- [ ] Conclusão em `**negrito**`, sem promessa
-- [ ] FAQ com exatamente 4 perguntas em formato `### `
-- [ ] Referência com link Markdown
-- [ ] Disclaimer/nota institucional NÃO incluído no `.md` (o layout injeta)
-- [ ] Slug sem acentos
-- [ ] Categoria é uma das 8 listadas
-- [ ] `npm run build` passou
-- [ ] Commit em branch `artigo/[slug]` cortada do `main`, NÃO em `main`
-
----
-
-## PROIBIÇÕES ABSOLUTAS
-
-1. NUNCA criar arquivo `.tsx` — apenas `.md`.
-2. NUNCA tentar atualizar `src/content/articles/index.tsx` — não existe.
-3. NUNCA usar JSX no corpo do artigo.
-4. NUNCA publicar sem tabela comparativa.
-5. NUNCA publicar sem FAQ de 4 perguntas.
-6. NUNCA incluir a nota institucional/disclaimer no `.md` — o layout injeta automaticamente.
-7. NUNCA começar pelo dado — sempre pela cena.
-8. NUNCA commitar ou fazer merge em `main`.
-9. NUNCA reusar branch nem fazer `git pull` — cada artigo nasce em branch nova `artigo/[slug]` cortada do `main` (PASSO 4).
-10. NUNCA fazer deploy — Walter aprova manualmente.
-11. NUNCA encerrar a tarefa por "falta de tema" — escolher pelas lacunas das categorias (PASSO 1).
-12. NUNCA usar notas de rodapé [^n] no corpo do artigo nem nas referências —
-    usar exclusivamente links inline na seção ### Referências, no formato
-    [Texto da fonte](URL).
-    
-## PADRÃO SEO — OBRIGATÓRIO PARA TODOS OS ARTIGOS
-
-### Frontmatter SEO
-
-Cada artigo deve incluir o bloco `seo` no frontmatter YAML:
-
-```yaml
-seo:
-  title: "Keyword principal + complemento informacional"  # ≤60 caracteres
-  description: "Keyword principal + valor para o empresário, sem promessa de resultado"  # 150-160 caracteres
-```
-
-Regras:
-- `seo.title` pode diferir do `title` do artigo. Deve conter a keyword principal e ter no máximo 60 caracteres.
-- `seo.description` é a meta description. Deve conter a keyword principal, ter entre 150 e 160 caracteres, e NUNCA incluir promessa de resultado ("como evitar", "como ganhar", "solução para").
-- `excerpt` deve conter a keyword principal e ter no máximo 200 caracteres.
-- `tags` devem incluir a keyword principal e 3-5 variações de cauda longa.
-
-### Keyword Strategy
-
-Antes de redigir, definir:
-- 1 KEYWORD PRINCIPAL: termo exato que o empresário pesquisaria (ex: "alienação fiduciária de imóvel", "penhora de faturamento empresa")
-- 3-5 KEYWORDS DE CAUDA LONGA: perguntas ou frases completas (ex: "o banco pode penhorar o faturamento da minha empresa", "como funciona a alienação fiduciária em dívida empresarial")
-
-### Distribuição de Keywords no Corpo
+## 6 — DISTRIBUIÇÃO DE KEYWORDS
 
 - Keyword principal DEVE aparecer: no título H1, no primeiro parágrafo, e em pelo menos 1 subtítulo H2.
 - Keywords de cauda longa devem aparecer naturalmente nos subtítulos H2 e nas perguntas da FAQ.
 - Densidade natural. Sem keyword stuffing. Se parecer forçado, reescrever.
 
-### Estrutura de Subtítulos (H2)
+### Estrutura de subtítulos (H2)
 
 - Mínimo 3, máximo 5 subtítulos H2.
 - Cada H2 deve conter ao menos 1 termo de busca relevante.
@@ -218,42 +230,99 @@ Antes de redigir, definir:
 - BOM: "Da mora à consolidação: o que acontece e em qual prazo"
 - RUIM: "Como evitar o leilão e salvar seu imóvel"
 
-### FAQ (Perguntas Frequentes)
+### Referências e links
 
-- 3 a 4 perguntas no final do artigo.
-- Cada pergunta deve espelhar uma busca real do empresário (cauda longa).
-- Resposta direta, 2-3 frases, sem remissão vaga.
-- BOM: "O banco pode leiloar meu imóvel sem me avisar?"
-- RUIM: "O que é alienação fiduciária?"
-
-### Referências e Links
-
-- Toda citação legal deve ter link para fonte primária (Planalto para leis, BCB para dados).
+- Toda citação legal deve ter link para fonte primária (Planalto para leis, BCB para dados, portais de jurisprudência para precedentes).
 - Formato: `[Lei nº X, de DD de mês de AAAA — Planalto](URL)`
 - Se a lei foi alterada por outra (ex: Lei 9.514/1997 alterada pela Lei 14.711/2023), citar ambas.
+- NÃO usar notas de rodapé `[^n]` — exclusivamente links inline na seção `## Referências`.
 
-### Checklist SEO (PASSO 3.5 do prompt)
+---
 
-Antes de publicar, o artigo deve atender TODOS os critérios abaixo:
+## 7 — CHECKLIST DE QUALIDADE E SEO
+
+### Checklist editorial (portão de qualidade)
+
+| # | Critério | Tipo |
+|---|----------|------|
+| E1 | Abertura pela cena do empresário, não pelo dado | Obrigatório |
+| E2 | Arquivo é `.md`, não `.tsx` | Obrigatório |
+| E3 | Frontmatter YAML entre `---` no topo | Obrigatório |
+| E4 | 800-1.000 palavras no corpo | Obrigatório |
+| E5 | Tabela markdown com mínimo 4 linhas de dados | Obrigatório |
+| E6 | Frase final em `**negrito**`, sem promessa | Obrigatório |
+| E7 | FAQ com exatamente 4 perguntas em formato `### ` | Obrigatório |
+| E8 | Referências com link markdown | Obrigatório |
+| E9 | Disclaimer/nota institucional NÃO incluído no `.md` | Obrigatório |
+| E10 | Slug sem acentos, kebab-case | Obrigatório |
+| E11 | Categoria é uma das 8 válidas | Obrigatório |
+| E12 | Categoria não repete as 2 publicações mais recentes | Obrigatório |
+| E13 | Dados numéricos verificados em fonte primária | Obrigatório |
+| E14 | Mecânica jurídica verificada na norma-base (artigos específicos consultados e registrados) | Obrigatório |
+
+### Checklist SEO (pontuação)
 
 | # | Critério | Peso |
 |---|----------|------|
-| 1 | Keyword principal no H1, 1º parágrafo e ≥1 H2 | 20% |
-| 2 | seo.title ≤60 chars com keyword | 10% |
-| 3 | seo.description 150-160 chars com keyword, sem promessa | 15% |
-| 4 | ≥3 H2 com termos de busca reais | 15% |
-| 5 | FAQ com 3-4 perguntas de cauda longa | 15% |
-| 6 | Links para fontes primárias | 10% |
-| 7 | Nenhum título/subtítulo com promessa | 10% |
-| 8 | Densidade de keyword natural (sem stuffing) | 5% |
+| S1 | Keyword principal no H1, 1º parágrafo e ≥1 H2 | 20% |
+| S2 | seo.title ≤60 chars com keyword | 10% |
+| S3 | seo.description 150-160 chars com keyword, sem promessa | 15% |
+| S4 | ≥3 H2 com termos de busca reais | 15% |
+| S5 | FAQ com 4 perguntas de cauda longa | 15% |
+| S6 | Links para fontes primárias | 10% |
+| S7 | Nenhum título/subtítulo com promessa | 10% |
+| S8 | Densidade de keyword natural (sem stuffing) | 5% |
 
 Score ≥95% = todos os critérios atendidos integralmente.
-Score <95% = revisar e iterar (máximo 3 rodadas).
+Score <95% = iterar (máximo 3 rodadas).
 
-### PROIBIÇÕES SEO (OAB Provimento 205/2021)
+**Regra de bloqueio:** se qualquer item E1-E14 falhar, o artigo NÃO pode ser entregue. Corrigir antes.
 
-- NUNCA usar "como evitar", "como ganhar", "como resolver", "solução para" em títulos ou subtítulos.
-- NUNCA prometer resultado ("proteja seu patrimônio", "salve sua empresa").
-- NUNCA usar linguagem de urgência artificial ("antes que seja tarde", "última chance").
-- NUNCA incluir CTA comercial no corpo ou conclusão do artigo ("entre em contato", "agende consulta").
-- Tom SEMPRE sóbrio, técnico, informacional.
+---
+
+## 8 — GESTÃO DE RISCOS EDITORIAIS
+
+| Risco | Probabilidade | Impacto | Mitigação |
+|---|---|---|---|
+| Erro na mecânica jurídica do instituto | Média | Crítico | PASSO 2: verificar norma-base antes de redigir. Não presumir por analogia |
+| Dado numérico defasado ou incorreto | Média | Alto | Regra Zero: fonte primária obrigatória. Defasagem BCB/IBGE: 45-60 dias |
+| Repetição de categoria recente | Baixa | Médio | PASSO 1: conferir REGISTRO_EDITORIAL antes de redigir |
+| Repetição de ângulo já coberto | Baixa | Médio | PASSO 1: ler registro, identificar ângulos vizinhos |
+| Promessa de resultado no texto | Baixa | Crítico (OAB) | Checklist E6 + Proibições (seção 9). Violação = bloqueio |
+| Disclaimer duplicado no blog | Baixa | Baixo | Checklist E9: nunca incluir nota institucional no `.md` |
+| Slug já existente na branch | Baixa | Médio | PASSO 1: verificar existência antes de redigir |
+| Afirmação categórica sem base normativa | Média | Alto | Verificar dispositivo normativo antes de afirmar. Se a norma for omissa ou ambígua, usar linguagem condicional E alertar Walter na entrega |
+| Confusão entre institutos jurídicos similares | Média | Crítico | PASSO 2: ler a norma-base do instituto específico. Identificar diferenças de mecânica (ex: cessão vs portabilidade, novação vs renegociação). Registrar a distinção no output de verificação |
+
+**Protocolo de interrupção:** se qualquer risco de impacto Crítico se materializar durante a redação, interromper e alertar Walter antes de prosseguir.
+
+---
+
+## 9 — PROIBIÇÕES ABSOLUTAS
+
+1. NUNCA criar arquivo `.tsx` — apenas `.md`.
+2. NUNCA tentar atualizar `src/content/articles/index.tsx` — não existe.
+3. NUNCA usar JSX no corpo do artigo.
+4. NUNCA publicar sem tabela comparativa.
+5. NUNCA publicar sem FAQ de 4 perguntas.
+6. NUNCA incluir a nota institucional/disclaimer no `.md` — o layout injeta automaticamente.
+7. NUNCA começar pelo dado — sempre pela cena do empresário.
+8. NUNCA usar notas de rodapé `[^n]` — exclusivamente links inline na seção `## Referências`.
+9. NUNCA usar "como evitar", "como ganhar", "como resolver", "solução para" em títulos ou subtítulos.
+10. NUNCA prometer resultado ("proteja seu patrimônio", "salve sua empresa").
+11. NUNCA usar linguagem de urgência artificial ("antes que seja tarde", "última chance").
+12. NUNCA incluir CTA comercial no corpo ou conclusão do artigo ("entre em contato", "agende consulta").
+13. NUNCA escolher tema autonomamente — o tema vem da PAUTA_SEMANAL, selecionado por Walter.
+14. NUNCA redigir sem verificar a mecânica jurídica específica do instituto na norma-base.
+15. NUNCA presumir funcionamento de instituto jurídico por analogia com instituto similar.
+
+**Compliance editorial:** OAB Provimento 205/2021. Tom SEMPRE sóbrio, técnico, informacional.
+
+---
+
+## 10 — REGISTRO DE VERSÕES
+
+| Versão | Data | Alteração |
+|---|---|---|
+| 5.0 | 06/06/2026 | Regras de bloqueio anti-repetição, SEO obrigatório |
+| 7.0 | 21/06/2026 | Migração de Manus para Claude. Remoção de PASSO 1 autônomo e PASSO 4 (API/token). Inclusão de seções PMBOK: escopo, responsabilidades, riscos, interfaces. Verificação jurídica obrigatória detalhada (PASSO 2). Protocolo de revisão. Nota operacional sobre acesso ao repo. Vinculação com POP DE PUBLICAÇÃO |
