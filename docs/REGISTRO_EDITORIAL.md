@@ -9,6 +9,7 @@ MANUTENÇÃO:
 
 | Data | Slug | Categoria | Dispositivo legal central | Ângulo central |
 |---|---|---|---|---|
+| 2026-06-26 | medidas-atipicas-execucao-bancaria-tema-1137-stj | Execução Bancária | Tema 1.137/STJ (art. 139, IV, CPC) — requisitos cumulativos para medidas executivas atípicas | STJ fixou requisitos em precedente qualificado; empresa precisa conhecer os limites para impugnar decisões genéricas |
 | 2026-06-21 | portabilidade-credito-open-finance-risco-empresarial | Renegociação | Resolução Conjunta nº 15/2025 + CMN 5.057/2022 (portabilidade de crédito via Open Finance) | Canal digital encurta migração, mas garantias e coobrigações dependem da nova operação — portar não é renegociar |
 | 2026-06-19 | cessao-credito-bancario-fidc-cobranca-empresa | Contratos Bancários | Art. 286–298 CC + STJ 4ª Turma, REsp 1.726.161 (fiança válida em cessão a FIDC) | Quando o banco vende a dívida, verificar validade da cessão, encargos e coobrigação antes de qualquer proposta |
 | 2026-06-15 | sisbajud-bloqueio-teimosia-execucao-bancaria-empresas | Execução Bancária | Manual SISBAJUD 2026 + art. 854 CPC (teimosinha — reiteração automática de bloqueio) | Bloqueio automático ampliado de 30 dias para até 1 ano; prazo e estratégia de defesa da empresa |
