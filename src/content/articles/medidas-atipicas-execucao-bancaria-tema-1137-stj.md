@@ -1,0 +1,77 @@
+---
+title: "Medidas atípicas na execução bancária: o que muda com o Tema 1.137"
+excerpt: "STJ fixou 4 requisitos cumulativos para CNH, passaporte e cartão em execução. Saiba o que mudou e como a empresa pode se defender."
+publishedAt: "2026-06-26"
+category: "Execução Bancária"
+tags:
+  - medidas atípicas execução bancária
+  - Tema 1137 STJ medidas executivas atípicas
+  - juiz pode suspender CNH por dívida bancária empresa
+  - bloqueio cartão crédito execução dívida empresa
+seo:
+  title: "Medidas Atípicas Execução Bancária — Tema 1.137 STJ"
+  description: "O STJ fixou 4 requisitos para medidas atípicas na execução bancária. Entenda quando o juiz pode suspender CNH, reter passaporte ou bloquear cartão."
+---
+
+O empresário recebe a intimação e, junto com ela, uma surpresa: depois de tentativas frustradas de bloqueio de ativos e localização de bens, o credor pediu e o juiz deferiu a suspensão da CNH e o bloqueio dos cartões de crédito. A pressão, desta vez, não é patrimonial. É pessoal.
+
+Esse tipo de decisão se tornou mais frequente nos últimos anos. São as chamadas medidas atípicas na execução bancária: desde a entrada em vigor do CPC/2015, o art. 139, IV, autoriza o juiz a adotar instrumentos de coerção pessoal que não estão expressamente previstos em lei para forçar o pagamento de uma dívida. O STJ já vinha exigindo subsidiariedade, fundamentação e contraditório em decisões individuais, mas até o julgamento do Tema 1.137, em dezembro de 2025, faltava uma tese repetitiva com força uniformizadora nacional.
+
+## O que são medidas atípicas na execução bancária
+
+Medidas atípicas são instrumentos de coerção pessoal que o juiz pode determinar com base no art. 139, IV, do CPC. Diferentemente da penhora, do bloqueio via SISBAJUD ou da constrição de faturamento, que atingem o patrimônio, as medidas atípicas atingem a rotina do devedor. O objetivo não é apreender bens, mas pressionar a pessoa a pagar.
+
+Na prática, as mais comuns são a suspensão da Carteira Nacional de Habilitação, a retenção de passaporte e o bloqueio de cartões de crédito. Em pedidos mais extremos, já se discutem restrições menos usuais, como linhas telefônicas, mas essas medidas exigem controle ainda mais rigoroso de proporcionalidade. O STF já declarou, na ADI 5.941, que o art. 139, IV, é constitucional, desde que cada medida observe o devido processo legal, a proporcionalidade e a razoabilidade no caso concreto.
+
+## O que o Tema 1.137 do STJ mudou
+
+Em dezembro de 2025, a 2a Seção do STJ julgou o Tema 1.137, em recurso repetitivo, e fixou uma tese vinculante para todo o país. A decisão estabeleceu que as medidas atípicas são cabíveis, mas somente se o juiz cumprir quatro requisitos, todos ao mesmo tempo.
+
+| Requisito | O que significa na prática | O que a empresa deve verificar |
+|---|---|---|
+| Ponderação entre efetividade e menor onerosidade | O juiz precisa equilibrar o direito do credor com o impacto sobre o devedor | A decisão considerou o porte da dívida, a situação da empresa e o efeito da medida? |
+| Subsidiariedade | Medidas típicas (SISBAJUD, Renajud, Infojud) devem ser tentadas antes | O credor esgotou os meios tradicionais de busca de bens? |
+| Fundamentação específica | A decisão não pode ser genérica, precisa explicar por que aquela medida funciona naquele caso | O juiz apenas copiou o texto da lei ou analisou a situação concreta? |
+| Contraditório, proporcionalidade e prazo | A medida exige contraditório substancial, em regra prévia advertência ou oportunidade de manifestação, e deve ser proporcional, com duração definida | A empresa teve oportunidade de se manifestar? Há prazo para a medida acabar? |
+
+A tese, fixada em recurso repetitivo, funciona como precedente qualificado: tribunais de todo o país devem aplicá-la em casos análogos. Medidas atípicas ainda vigentes, deferidas antes do Tema 1.137 sem fundamentação concreta, sem contraditório ou sem limitação temporal, podem ser objeto de pedido de revisão, conforme o estágio processual.
+
+## Medida atípica não é punição
+
+O STJ já havia decidido, no AREsp 1.495.012/SP, que a suspensão de CNH ou passaporte só se justifica se tiver potencial real de induzir o pagamento. Se o devedor não tem recursos e a medida apenas o penaliza sem possibilidade de resultado, ela perde a legitimidade.
+
+Isso é relevante para o empresário que já demonstrou incapacidade financeira. Manter restrição de CNH por tempo indeterminado contra quem já teve todos os bens bloqueados não é coerção, é punição. E punição não é função do processo civil.
+
+## Onde está o risco para a empresa
+
+O risco está em dois momentos: antes e depois da decisão.
+
+Antes, o risco é não saber que essas medidas existem. O empresário que enfrenta execução bancária sem assessoria técnica pode ser surpreendido por restrição de CNH ou cartão sem que o credor tenha demonstrado esgotamento dos meios típicos, e sem que a empresa tenha tido oportunidade de se manifestar.
+
+Depois, o risco é não reagir a tempo. A empresa que recebe a decisão e não impugna com base nos critérios do tema repetitivo perde a janela de defesa. O instrumento processual adequado é o agravo de instrumento, e a fundamentação precisa demonstrar qual dos requisitos cumulativos foi descumprido.
+
+**O Tema 1.137 não proibiu as medidas atípicas na execução bancária. Ele definiu onde começa e onde termina o poder do juiz, e esse limite é exatamente o espaço em que a defesa da empresa precisa operar.**
+
+## Perguntas frequentes
+
+### O juiz pode suspender a CNH do sócio por dívida bancária da empresa?
+Não automaticamente. O sócio precisa integrar validamente o polo passivo da execução, por exemplo, como avalista, fiador, devedor solidário, coobrigado ou após decisão de desconsideração da personalidade jurídica. Sem esse vínculo processual, medida pessoal contra o sócio por dívida apenas da pessoa jurídica tende a ser indevida. Mesmo havendo o vínculo, os requisitos do Tema 1.137 devem ser cumpridos.
+
+### Medidas atípicas podem ser aplicadas sem ouvir a empresa antes?
+Em regra, o Tema 1.137 exige contraditório substancial, com prévia advertência ou oportunidade de manifestação do executado. Excepcionalmente, em casos de urgência devidamente fundamentados, o juiz pode decidir antes e ouvir depois, mas precisa justificar por que a oitiva prévia comprometeria a eficácia da medida.
+
+### A decisão que determina medida atípica precisa ter prazo?
+Sim. O Tema 1.137 exige que a decisão observe a proporcionalidade inclusive quanto à sua vigência temporal. Medida sem prazo definido pode ser impugnada por descumprir esse requisito.
+
+### O que fazer se a empresa já sofreu medida atípica antes do Tema 1.137?
+Se a medida ainda está vigente e foi deferida sem fundamentação concreta, sem contraditório ou sem limitação temporal, a empresa pode requerer sua revisão com base nos critérios fixados pelo STJ. O pedido depende do estágio processual, pode haver preclusão ou necessidade de demonstrar que a restrição permanece ativa. O tribunal local é obrigado a aplicar o precedente qualificado.
+
+## Referências
+
+[Lei 13.105, de 16 de março de 2015 — Código de Processo Civil, art. 139, IV — Planalto](https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2015/lei/l13105.htm)
+
+[STJ — Tema 1.137, 2a Seção, REsp 1.955.539/SP, rel. Min. Marco Buzzi, j. 04/12/2025](https://processo.stj.jus.br/repetitivos/temas_repetitivos/pesquisa.jsp?novaConsulta=true&tipo_pesquisa=T&cod_tema_inicial=1137&cod_tema_final=1137)
+
+[STJ — STJ fixa critérios para adoção de medidas executivas atípicas, 27/01/2026](https://www.stj.jus.br/sites/portalp/Paginas/Comunicacao/Noticias/2026/27012026-STJ-fixa-criterios-para-uso-de-medidas-atipicas-na-execucao-civil.aspx)
+
+[STF — ADI 5.941, rel. Min. Luiz Fux, Plenário, j. 09/02/2023](https://portal.stf.jus.br/processos/detalhe.asp?incidente=5458217)
