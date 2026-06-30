@@ -1,7 +1,7 @@
 ---
 title: "Renegociar dívida bancária empresarial: quando vale a pena e quando consolida o problema"
 excerpt: "Procurar o banco para renegociar pode reorganizar o passivo ou aprofundar o risco. O que muda na dívida, nas garantias e nas defesas anteriores."
-publishedAt: "2026-07-02"
+publishedAt: "2026-06-30"
 category: "Renegociação"
 tags: ["renegociar dívida bancária empresarial", "vale a pena renegociar dívida com banco", "novação contrato bancário", "Súmula 286 STJ", "garantias em renegociação bancária", "renegociação bancária empresarial"]
 seo:
