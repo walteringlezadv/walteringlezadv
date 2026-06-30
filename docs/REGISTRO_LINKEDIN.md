@@ -11,6 +11,7 @@ MANUTENÇÃO:
 
 | # | Data | Tema | Ângulo | Hashtags variáveis | Artigo associado | Impressões |
 |---|---|---|---|---|---|---|
+| 8 | 2026-06-30 | Fraude à execução em transferência a descendentes | Risco patrimonial nasce na assinatura do contrato bancário (aval/fiança/garantia real), não na transferência ao filho | #PatrimônioEmpresarial #ExecuçãoBancária | fraude-execucao-transferencia-bens-aval-pessoal-empresarial | — |
 | 7 | 2026-06-22 | Portabilidade de crédito via Open Finance | Portar não é renegociar — é trocar de operação | #PortabilidadeDeCrédito | portabilidade-credito-open-finance-risco-empresarial | 23 |
 | 6 | ~2026-06-08 | Mínimo existencial e dívida empresarial | Superendividamento protege consumo da pessoa natural, não dívida produtiva da empresa | — | minimo-existencial-divida-produtiva-passivo-empresarial | 43 |
 | 5 | ~2026-06-08 | Tema 1.378 STJ — juros bancários | Taxa média do BC não prova abusividade sozinha; contexto da operação sustenta a tese | #STJ #DívidaEmpresarial #ContratosBancários #GestãoDePassivos | tema-1378-stj-juros-bancarios-contratos-empresariais-junho-2026 | 35 |
