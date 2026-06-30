@@ -9,6 +9,7 @@ MANUTENÇÃO:
 
 | Data | Slug | Categoria | Dispositivo legal central | Ângulo central |
 |---|---|---|---|---|
+| 2026-06-30 | renegociar-divida-bancaria-empresa-vale-a-pena-quando | Renegociação | CC arts. 360, 361, 364, 366 (novação) + Súmula 286/STJ + REsp 1.348.081/RS + AgInt no AREsp 2.022.105/MS | Decisão prospectiva: 3 cenários em que renegociar funciona, 3 em que consolida; substância × rótulo na novação; distinção fiança/aval; CDC e PJ |
 | 2026-06-29 | fraude-execucao-transferencia-bens-aval-pessoal-empresarial | Patrimônio | CPC art. 792 + Súmula 375/STJ + REsp 1.981.646/SP (3ª Turma, 2022) | Transferência a descendente em execução vira fraude — gatilho é o aval/fiança/garantia real que vincula o sócio à dívida da PJ; tratamento próprio para hipoteca e alienação fiduciária |
 | 2026-06-26 | medidas-atipicas-execucao-bancaria-tema-1137-stj | Execução Bancária | Tema 1.137/STJ (art. 139, IV, CPC) — requisitos cumulativos para medidas executivas atípicas | STJ fixou requisitos em precedente qualificado; empresa precisa conhecer os limites para impugnar decisões genéricas |
 | 2026-06-21 | portabilidade-credito-open-finance-risco-empresarial | Renegociação | Resolução Conjunta nº 15/2025 + CMN 5.057/2022 (portabilidade de crédito via Open Finance) | Canal digital encurta migração, mas garantias e coobrigações dependem da nova operação — portar não é renegociar |
