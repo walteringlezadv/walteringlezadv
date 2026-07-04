@@ -9,6 +9,7 @@ MANUTENÇÃO:
 
 | Data | Slug | Categoria | Dispositivo legal central | Ângulo central |
 |---|---|---|---|---|
+| 2026-07-04 | acao-revisional-contrato-bancario-empresa-tema-1378-stj | Contratos Bancários | Tema 1.378/STJ (REsp 2.227.276/AL e outros 3) + Súmulas 297, 380, 381 e 382/STJ + REsp 1.061.530/RS + REsp 2.001.086 e 2.020.811 (teoria finalista mitigada) | Revisional PJ não segue lógica automática do consumidor: primeiro debate é o regime (CDC × CC), depois o critério probatório em debate no Tema 1.378 |
 | 2026-06-30 | renegociar-divida-bancaria-empresa-vale-a-pena-quando | Renegociação | CC arts. 360, 361, 364, 366 (novação) + Súmula 286/STJ + REsp 1.348.081/RS + AgInt no AREsp 2.022.105/MS | Decisão prospectiva: 3 cenários em que renegociar funciona, 3 em que consolida; substância × rótulo na novação; distinção fiança/aval; CDC e PJ |
 | 2026-06-29 | fraude-execucao-transferencia-bens-aval-pessoal-empresarial | Patrimônio | CPC art. 792 + Súmula 375/STJ + REsp 1.981.646/SP (3ª Turma, 2022) | Transferência a descendente em execução vira fraude — gatilho é o aval/fiança/garantia real que vincula o sócio à dívida da PJ; tratamento próprio para hipoteca e alienação fiduciária |
 | 2026-06-26 | medidas-atipicas-execucao-bancaria-tema-1137-stj | Execução Bancária | Tema 1.137/STJ (art. 139, IV, CPC) — requisitos cumulativos para medidas executivas atípicas | STJ fixou requisitos em precedente qualificado; empresa precisa conhecer os limites para impugnar decisões genéricas |
