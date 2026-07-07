@@ -11,6 +11,8 @@ MANUTENÇÃO:
 
 | # | Data | Tema | Ângulo | Hashtags variáveis | Artigo associado | Impressões |
 |---|---|---|---|---|---|---|
+| 10 | 2026-07-07 | Ação revisional bancária na PJ e Tema 1.378 | Antes de discutir juros, definir o regime jurídico (CDC × CC); Tema 1.378 restringe uso da taxa média como prova exclusiva de abusividade | #ContratosBancários #AçãoRevisional | acao-revisional-contrato-bancario-empresa-tema-1378-stj | — |
+| 9 | 2026-07-02 | Renegociar dívida bancária empresarial | Substância × rótulo: art. 364 CC + Súmula 286/STJ. Cláusula de novação com ressalva mantém garantias; nova assinatura do garantidor projeta risco sobre saldo com encargos discutíveis | #RenegociaçãoBancária #DireitoEmpresarial | renegociar-divida-bancaria-empresa-vale-a-pena-quando | — |
 | 8 | 2026-06-30 | Fraude à execução em transferência a descendentes | Risco patrimonial nasce na assinatura do contrato bancário (aval/fiança/garantia real), não na transferência ao filho | #PatrimônioEmpresarial #ExecuçãoBancária | fraude-execucao-transferencia-bens-aval-pessoal-empresarial | — |
 | 7 | 2026-06-22 | Portabilidade de crédito via Open Finance | Portar não é renegociar — é trocar de operação | #PortabilidadeDeCrédito | portabilidade-credito-open-finance-risco-empresarial | 23 |
 | 6 | ~2026-06-08 | Mínimo existencial e dívida empresarial | Superendividamento protege consumo da pessoa natural, não dívida produtiva da empresa | — | minimo-existencial-divida-produtiva-passivo-empresarial | 43 |
