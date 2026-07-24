@@ -11,6 +11,7 @@ MANUTENÇÃO:
 
 | # | Data | Tema | Ângulo | Hashtags variáveis | Artigo associado | Impressões |
 |---|---|---|---|---|---|---|
+| 11 | 2026-07-22 | MP 1.376/2026 e a composição de dívidas rurais (CARROSSEL) | Enquadramento legal e aprovação do crédito são planos distintos: art. 5º submete a contratação às políticas internas do banco e o risco permanece com a instituição | #CréditoRural #RenegociaçãoBancária | mp-1376-composicao-dividas-rurais-renegociacao-bancaria | — |
 | 10 | 2026-07-07 | Ação revisional bancária na PJ e Tema 1.378 | Antes de discutir juros, definir o regime jurídico (CDC × CC); Tema 1.378 restringe uso da taxa média como prova exclusiva de abusividade | #ContratosBancários #AçãoRevisional | acao-revisional-contrato-bancario-empresa-tema-1378-stj | — |
 | 9 | 2026-07-02 | Renegociar dívida bancária empresarial | Substância × rótulo: art. 364 CC + Súmula 286/STJ. Cláusula de novação com ressalva mantém garantias; nova assinatura do garantidor projeta risco sobre saldo com encargos discutíveis | #RenegociaçãoBancária #DireitoEmpresarial | renegociar-divida-bancaria-empresa-vale-a-pena-quando | — |
 | 8 | 2026-06-30 | Fraude à execução em transferência a descendentes | Risco patrimonial nasce na assinatura do contrato bancário (aval/fiança/garantia real), não na transferência ao filho | #PatrimônioEmpresarial #ExecuçãoBancária | fraude-execucao-transferencia-bens-aval-pessoal-empresarial | — |
