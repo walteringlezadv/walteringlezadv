@@ -1,92 +1,85 @@
 ---
-title: "Capital de giro rotativo PJ: quando o custo sobe e a margem de decisão diminui"
-excerpt: "Com juros do capital de giro rotativo PJ em 38,97% ao ano em março de 2026, a empresa que renova sem leitura técnica pode estar consolidando risco, não ganhando fôlego."
+title: "Capital de giro rotativo PJ: juros caem e inadimplência sobe"
+excerpt: "A taxa do capital de giro rotativo PJ caiu de 39,68% em abril para 34,86% ao ano em julho de 2026. No mesmo mês, a inadimplência PJ chegou a 4,19%."
 publishedAt: "2026-06-04"
 category: "Capital de Giro"
-tags:
-  - capital de giro rotativo
-  - juros PJ
-  - inadimplência empresarial
-  - CCB
-  - garantias bancárias
-  - renegociação bancária
-  - execução bancária
-  - gestão de passivos
+tags: ["capital de giro rotativo PJ", "juros do capital de giro 2026", "inadimplência PJ julho 2026", "renovar capital de giro", "taxa média do Banco Central contrato antigo"]
 seo:
-  title: "Capital de giro rotativo PJ: juros em alta e risco para a empresa | Walter Inglez"
-  description: "Juros do capital de giro rotativo PJ chegaram a 38,97% ao ano em março de 2026 (Banco Central, SGS 20724). Entenda quando a renovação vira risco e o que examinar antes de assinar."
-  canonical: "https://blog.walteringlezadv.com.br/blog/capital-de-giro-rotativo-pj-juros-inadimplencia-marco-2026"
+  title: "Capital de giro PJ: juros caem, mas inadimplência sobe"
+  description: "Em julho de 2026, os juros do capital de giro rotativo PJ ficaram em 34,86% a.a. e a inadimplência em 4,19%. Entenda o impacto antes de renovar a linha."
 ---
 
-Nos dados do Banco Central, os juros do capital de giro rotativo PJ chegaram a 38,97% ao ano em março de 2026 — avanço de quase seis pontos percentuais em relação a novembro de 2025, quando estavam em 33,09% ao ano.
+*Atualizado em 12 de setembro de 2026, com os dados do Banco Central referentes a julho de 2026.*
 
-O empresário que mantém a operação de pé muitas vezes não percebe o momento exato em que o capital de giro deixou de ser apoio de caixa e passou a funcionar como rolagem permanente da dívida. A empresa continua faturando, o relacionamento bancário parece administrável, mas a margem real de decisão diminui a cada renovação.
+O gerente liga na segunda-feira com uma notícia boa: os juros do capital de giro rotativo PJ baixaram e o banco pode renovar a linha da empresa. O empresário respira. Na mesma semana, a planilha do financeiro mostra duas parcelas atrasadas em outro banco e um cliente grande que ainda não pagou.
 
-Esse ponto exige leitura técnica. Não se trata apenas de comparar taxas ou buscar parcela menor. Em operações de capital de giro rotativo, o risco aparece na combinação entre custo financeiro, garantias já entregues, vencimentos próximos, pressão de cobrança e capacidade concreta de pagamento.
+As duas cenas acontecem ao mesmo tempo, e os números do Banco Central de julho de 2026 ajudam a entender por quê. O preço do dinheiro novo caiu. O atraso na carteira de crédito das empresas aumentou.
 
-## O que os dados recentes indicam
+## O que aconteceu com os juros do capital de giro rotativo PJ
 
-A série do Banco Central para taxa média de juros do capital de giro rotativo de pessoas jurídicas (SGS 20724) mostra avanço consistente desde o segundo semestre de 2025. Em novembro de 2025, a taxa estava em 33,09% ao ano. Em janeiro de 2026, subiu para 33,54%. Em fevereiro, 35,82%. Em março, chegou a 38,97% ao ano — o maior patamar da série recente.
+A taxa média de juros das novas operações de capital de giro rotativo para pessoas jurídicas chegou a 39,68% ao ano em abril de 2026. Em julho, estava em 34,86% ao ano. A queda de quase cinco pontos em três meses aparece na série oficial.
 
-Na mesma direção, a inadimplência da carteira de crédito livre de pessoas jurídicas em capital de giro com prazo superior a 365 dias (SGS 21091) tem apresentado trajetória ascendente desde o final de 2025. O indicador mede a carteira com atraso superior a 90 dias e tende a afetar diretamente as condições de renovação, exigência de garantias, intensidade de cobrança e reprecificação do risco pela instituição financeira.
+O recuo precisa ser lido com o calendário ao lado. Em julho de 2025, a mesma taxa era de 33,77% ao ano. O capital de giro rotativo ficou mais barato que no pico de abril, mas continua mais caro do que estava um ano antes.
 
-| Indicador observado | Novembro/2025 | Março/2026 | Leitura prática |
-|---|---|---|---|
-| Juros do capital de giro rotativo PJ (SGS 20724) | 33,09% a.a. | 38,97% a.a. | A renovação pode ficar mais cara mesmo sem aumento do saldo principal. |
-| Inadimplência em capital de giro PJ acima de 365 dias (SGS 21091) | Trajetória ascendente | Trajetória ascendente | O banco tende a tratar risco de atraso com menor flexibilidade. |
-| Operação ativa com garantias | Depende do contrato | Depende do contrato | O risco não está apenas na taxa, mas na garantia acionável. |
-| Empresa com caixa pressionado | Situação operacional | Situação operacional | A estratégia deve separar caixa, dívida, garantia e defesa possível. |
+Há também um detalhe de definição. A série do Banco Central é calculada sobre as novas operações contratadas no mês. A queda da taxa média não altera automaticamente o contrato já assinado. A empresa continua submetida às condições pactuadas, inclusive aos eventuais indexadores previstos no instrumento.
 
-## Por que a renovação automática pode ser perigosa
+## Inadimplência PJ em julho de 2026: o outro lado do dado
 
-A renovação de capital de giro costuma parecer a saída mais simples. Ela posterga o problema imediato, evita o vencimento seco e reduz o atrito com o banco naquele mês. O ponto crítico é que essa decisão pode reorganizar a dívida contra a empresa.
+Enquanto os juros das novas operações recuavam, a inadimplência da carteira de crédito livre das pessoas jurídicas subiu. O Banco Central mede esse indicador como o percentual da carteira com pelo menos uma parcela atrasada há mais de 90 dias.
 
-Em alguns casos, a empresa aceita nova CCB, reforça aval, mantém alienação fiduciária, consolida encargos anteriores e transforma uma pressão de curto prazo em obrigação mais robusta. A sensação é de fôlego. A consequência pode ser perda de margem para discutir o contrato, negociar em melhores termos ou preservar patrimônio essencial à atividade.
+Em julho de 2026, esse percentual chegou a 4,19%. Em julho de 2025, era 3,71%. O resultado de julho é o maior desde maio de 2018, quando o indicador também marcou 4,19%.
 
-Antes de renovar, é preciso compreender a posição jurídica da operação. A pergunta não é apenas "qual parcela cabe no caixa?". A pergunta correta é: o que será reconhecido, quais garantias serão mantidas ou ampliadas, qual será o grau de executividade do novo instrumento e o que acontece se houver novo atraso.
+Juro caindo e inadimplência subindo não é contradição, porque os indicadores medem universos e momentos distintos. A taxa é calculada sobre as novas concessões do mês. A inadimplência considera o estoque da carteira de crédito livre com atraso superior a 90 dias. Esses dados, isoladamente, não permitem identificar o perfil de cada tomador nem explicar a causa da variação.
 
-## Negociar, defender ou ajuizar
+## Tabela: juros do capital de giro e inadimplência PJ mês a mês
 
-Quando o capital de giro rotativo entra em ciclo de rolagem, o empresário precisa abandonar a leitura isolada da taxa. A estratégia depende do conjunto.
+| Mês | Juros capital de giro rotativo PJ (% ao ano, novas operações) | Inadimplência PJ, crédito livre (% da carteira com atraso acima de 90 dias) |
+|---|---|---|
+| Jul/2025 | 33,77 | 3,71 |
+| Jan/2026 | 33,54 | 3,76 |
+| Abr/2026 | 39,68 | 4,01 |
+| Mai/2026 | 35,84 | 4,11 |
+| Jun/2026 | 34,71 | 3,98 |
+| Jul/2026 | 34,86 | 4,19 |
 
-Negociar pode ser adequado quando há fluxo previsível, documentação clara e espaço para ajustar prazo, carência ou garantias sem criar risco maior. Defender pode ser necessário quando a cobrança já avançou, com execução, bloqueio ou tentativa de atingir patrimônio de sócios. Ajuizar pode fazer sentido quando a leitura técnica identifica abuso contratual, cobrança incompatível com a operação ou necessidade de organizar o debate antes que a iniciativa fique integralmente com o banco.
+Fonte: Banco Central do Brasil, séries SGS 20724 e 21086, consultadas em 11/09/2026. Os valores mais recentes são preliminares e o Banco Central pode revisá-los.
 
-## O que deve ser examinado antes de assinar
+## Juros caíram: vale renovar o capital de giro agora?
 
-A primeira camada é contratual. O empresário deve identificar quais instrumentos existem, quem assinou, quais garantias foram dadas e se há aval, fiança, alienação fiduciária, cessão fiduciária de recebíveis ou trava bancária.
+A resposta depende menos da taxa do mês e mais do que a renovação faz com o passivo que já existe. Três perguntas ajudam a separar uma coisa da outra.
 
-A segunda camada é econômica: saldo original, saldo atual, encargos, capitalização, tarifas, vencimentos e histórico de renegociações.
+A primeira: a nova linha paga despesa operacional ou paga parcela de outra dívida? Se o capital de giro estiver sendo usado para pagar outra dívida, a empresa estará substituindo uma obrigação por outra. A operação pode apenas adiar o problema ou produzir uma reestruturação útil. Isso depende do custo total, do prazo, das garantias e da capacidade real de amortização.
 
-A terceira camada é processual e patrimonial. Se a dívida já está vencida, é preciso medir o risco de execução, protesto, bloqueio de ativos, busca de bens, consolidação de garantia ou responsabilização de terceiros. Essa leitura define a margem de decisão.
+A segunda: o que muda nas garantias? Renovações podem vir acompanhadas de aval dos sócios, cessão de recebíveis ou garantia real. Uma taxa alguns pontos menor pode sair cara se a operação amarrar um imóvel ou o faturamento que antes estava livre. Vale reler o que analisar [antes de aceitar uma renegociação proposta pelo banco](/blog/banco-ofereceu-renegociacao-o-que-analisar-antes-de-aceitar/).
 
-## Risco
+A terceira: qual é a posição da empresa nos outros bancos? As informações registradas no Sistema de Informações de Crédito podem integrar a análise feita por outras instituições na concessão, renovação ou reavaliação de crédito. Por isso, a posição global da empresa deve ser considerada antes de uma nova contratação. O artigo sobre [como o SCR registra renegociações da empresa](/blog/registro-scr-renegociacao-operacoes-credito-empresarial/) detalha esse ponto.
 
-O risco real não está em usar capital de giro. Muitas empresas precisam desse instrumento para atravessar ciclos de caixa. O risco está em renovar no escuro, sem entender se a operação continua sendo crédito produtivo ou se passou a ser dívida rolada, cara, garantida e com alto potencial de execução.
+Nenhuma dessas perguntas se resolve pela taxa média publicada. Ela serve como referência de mercado, não como diagnóstico da empresa.
 
-Com juros em trajetória de alta e inadimplência avançando, a análise deve ser feita antes da assinatura da próxima CCB, antes da entrega de nova garantia e antes de aceitar confissão ampla de dívida. Nesse momento, a empresa ainda pode comparar cenários. Depois, a discussão costuma começar em posição mais estreita.
+## O risco de decidir só pela parcela
 
-**Se o capital de giro da empresa passou a depender de renovações sucessivas, o primeiro passo não é aceitar ou recusar a proposta do banco — é compreender a operação, as garantias, o risco de execução e a margem real entre negociar, defender ou ajuizar.**
+O movimento de julho cria uma armadilha conhecida. O banco oferece crédito novo mais barato, a parcela do mês cabe no caixa, e a empresa aceita sem medir o que o acordo consolida. Meses depois, o passivo total pode estar maior, as garantias podem ter sido ampliadas e a margem para negociar ou discutir a operação pode ter diminuído.
+
+O caminho mais seguro é inverter a ordem. Primeiro, mapear quanto se deve, a quem, com qual garantia e em qual estágio de cobrança. Depois, comparar a proposta com esse mapa. Só então decidir se o caso pede negociar, defender ou ajuizar.
+
+**Juro menor no mercado não reduz a dívida que a empresa já tem; o que muda o quadro é a decisão tomada com o passivo inteiro à vista.**
 
 ## Perguntas frequentes
 
-**Capital de giro rotativo é sempre um problema para a empresa?**
+### Qual é a taxa de juros do capital de giro rotativo PJ em 2026?
+Pela série 20724 do Banco Central, a taxa média das novas operações de capital de giro rotativo para empresas foi de 34,86% ao ano em julho de 2026. O pico do ano até ali foi em abril, com 39,68% ao ano.
 
-Não. Ele pode ser instrumento legítimo de gestão de caixa. O problema surge quando a operação vira rolagem contínua, com custo crescente, garantias relevantes e baixa capacidade de amortização real.
+### A queda da taxa média reduz os juros do meu contrato antigo?
+Não automaticamente. A série mede novas operações contratadas no mês. O contrato já assinado segue as condições pactuadas, inclusive eventuais indexadores, e qualquer mudança depende de negociação ou de discussão específica sobre aquele contrato.
 
-**Juros altos tornam a dívida automaticamente irregular?**
+### Por que a inadimplência PJ subiu em julho de 2026 se os juros caíram?
+Os dois indicadores medem coisas diferentes. A taxa média é calculada sobre as novas concessões do mês; a inadimplência considera o estoque da carteira com atraso acima de 90 dias. Os dados, sozinhos, não explicam a causa da variação.
 
-Não. Juros elevados exigem análise técnica, mas não tornam a dívida automaticamente inválida. É necessário examinar contrato, modalidade, encargos, evolução do saldo e comparação com a taxa média divulgada pelo Banco Central para operações semelhantes.O STJ está definindo esse critério no Tema Repetitivo 1.378 — leitura recomendada no artigo [Taxa média não resolve sozinha o risco dos juros bancários](/blog/tema-1378-stj-juros-bancarios-contratos-empresariais-junho-2026).
+### Juros acima da média do Banco Central são automaticamente abusivos?
+Não. A taxa média é uma referência estatística, não um teto automático. A análise depende da modalidade, do período, do risco da operação, das garantias e das circunstâncias da contratação, tema discutido no artigo sobre [o Tema 1.378 do STJ e a taxa média](/blog/tema-1378-stj-juros-bancarios-contratos-empresariais-junho-2026/).
 
-**Antes de renegociar, o que deve ser conferido?**
+## Referências
 
-Devem ser conferidos saldo, encargos, garantias, avalistas, vencimentos, instrumentos assinados, histórico de renovações e consequências em caso de novo atraso.
+[Taxa média de juros das operações de crédito com recursos livres, Pessoas jurídicas, Capital de giro rotativo (SGS 20724), Banco Central do Brasil](https://dadosabertos.bcb.gov.br/dataset/20724-taxa-media-de-juros-das-operacoes-de-credito-com-recursos-livres---pessoas-juridicas---capita)
 
-**Quando a discussão deixa de ser financeira e passa a ser jurídica?**
-
-Isso ocorre quando a dívida envolve garantias reais, execução, protesto, bloqueio de ativos, vencimento antecipado, confissão de dívida ou risco de atingir patrimônio pessoal dos sócios.
-
-## Referência
-
-Banco Central do Brasil — [Série SGS 20724](https://www3.bcb.gov.br/sgspub/consultarvalores/consultarValoresSeries.do?method=consultarGraficoPorId&hdOidSeriesSelecionadas=20724): Taxa média de juros das operações de crédito com recursos livres — Pessoas jurídicas — Capital de giro rotativo.
-
-Banco Central do Brasil — [Série SGS 21091](https://www3.bcb.gov.br/sgspub/consultarvalores/consultarValoresSeries.do?method=consultarGraficoPorId&hdOidSeriesSelecionadas=21091): Inadimplência da carteira de crédito com recursos livres — Pessoas jurídicas — Capital de giro com prazo superior a 365 dias.
+[Inadimplência da carteira de crédito com recursos livres, Pessoas jurídicas, Total (SGS 21086), Banco Central do Brasil](https://dadosabertos.bcb.gov.br/dataset/21086-inadimplencia-da-carteira-de-credito-com-recursos-livres---pessoas-juridicas---total)
