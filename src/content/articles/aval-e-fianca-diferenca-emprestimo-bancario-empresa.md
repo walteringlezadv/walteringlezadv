@@ -1,6 +1,6 @@
 ---
 title: "Diferença entre aval e fiança no empréstimo bancário da empresa"
-excerpt: "Aval e fiança garantem a dívida da empresa de formas diferentes. Benefício de ordem, assinatura do cônjuge e renegociação mudam a posição do sócio garantidor."
+excerpt: "Entenda a diferença entre aval e fiança na dívida bancária da empresa: benefício de ordem, assinatura do cônjuge, renegociação e o risco pessoal do sócio."
 publishedAt: "2026-09-17"
 category: "Garantias"
 tags: ["diferença entre aval e fiança", "avalista paga a dívida da empresa", "fiador tem benefício de ordem", "cônjuge precisa assinar aval em CCB", "sócio garantidor empréstimo bancário"]
