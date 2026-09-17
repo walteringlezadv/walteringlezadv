@@ -22,7 +22,7 @@ const {
 
 const SITE_URL = 'https://blog.walteringlezadv.com.br';
 const fullTitle = title.includes('Walter Inglez') ? title : `${title} — Walter Inglez`;
-const canonicalURL = canonical ? `${SITE_URL}${canonical}` : SITE_URL;
+const canonicalURL = canonical ? SITE_URL + (canonical.endsWith('/') ? canonical : canonical + '/') : SITE_URL + '/';
 const ogImageURL = ogImage.startsWith('http') ? ogImage : `${SITE_URL}${ogImage}`;
 ---
 <!DOCTYPE html>

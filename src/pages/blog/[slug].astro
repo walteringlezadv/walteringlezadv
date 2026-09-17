@@ -24,7 +24,7 @@ const pageTitle = article.data.title + " — Walter Inglez";
 const articleUrl = "/blog/" + article.slug;
 ---
 
-<Layout title={pageTitle} description={article.data.excerpt} canonical={articleUrl} type="article">
+<Layout title={pageTitle} description={article.data.seo?.description ?? article.data.excerpt} canonical={articleUrl} type="article">
   <article class="max-w-3xl mx-auto px-6 py-12 md:py-16">
     <p class="text-xs uppercase tracking-widest text-[#c4956a] mb-4"><a href="/blog" class="hover:underline">Blog</a><span class="text-[#f5f0e8]/40 mx-2">·</span><span>{article.data.category}</span></p>
     <h1 class="font-serif text-3xl md:text-5xl font-bold text-[#f5f0e8] leading-tight mb-6">{article.data.title}</h1>
